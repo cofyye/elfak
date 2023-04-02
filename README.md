@@ -1,4 +1,4 @@
 # elfak
 ELFAK Repository
 
-Ovde ce biti postavljeni projekti koji su pravljeni na fakultetu
+Ovde ce biti postavljeni radovi koji su pravljeni na fakultetu
