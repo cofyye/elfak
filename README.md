@@ -1,4 +1,4 @@
-# elfak
-ELFAK Repository
+# Faculty of Electronic Engineering - elfak
+Faculty of Electronic Engineering Repository
 
-Ovde ce biti postavljeni radovi koji su pravljeni na fakultetu
+All works on second grade on faculty.
