@@ -1,5 +1,6 @@
 #include "LetterO.h"
 
 void LetterO::power(Game& game) {
-	game.playerCurrentK += 1;
+	int value = game.getPlayerCurrentK() + 1;
+	game.setPlayerCurrentK(value);
 }

@@ -121,11 +121,11 @@ void Game::printBoard() {
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0, 4 });
 	for (int i = 0; i < this->size; i++) {
 		for (int j = 0; j < this->size; j++) {
-			if (this->mat[i][j]->c == '0') {
+			if (this->mat[i][j]->getChar() == '0') {
 				cout << ' ' << " ";
 			}
 			else {
-				cout << this->mat[i][j]->c << " ";
+				cout << this->mat[i][j]->getChar() << " ";
 			}
 		}
 		cout << endl;
@@ -146,12 +146,6 @@ void Game::setPosition() {
 }
 
 void Game::rollDice() {
-	static bool first = true;
-	if (first)
-	{
-		srand(time(NULL)); //seeding for the first time only!
-		first = false;
-	}
 	*this->playerDice = 1 + rand() % ((6 + 1) - 1);
 }
 
@@ -164,11 +158,11 @@ void Game::progressPlayer() {
 	while (this->isPlaying) {
 		this->printStar();
 		Sleep(sleepTime3);
-		cout << this->mat[this->playerX][this->playerY]->c << "\b";
+		cout << this->mat[this->playerX][this->playerY]->getChar() << "\b";
 		Sleep(sleepTime3);
 		this->printStar();
 		Sleep(sleepTime3);
-		cout << this->mat[this->playerX][this->playerY]->c;
+		cout << this->mat[this->playerX][this->playerY]->getChar();
 		Sleep(sleepTime3);
 
 		if (this->playerLetX) {
@@ -180,11 +174,11 @@ void Game::progressPlayer() {
 			this->setPosition();
 			this->printStar();
 			Sleep(sleepTime3);
-			cout << this->mat[this->playerX][this->playerY]->c << "\b";
+			cout << this->mat[this->playerX][this->playerY]->getChar() << "\b";
 			Sleep(sleepTime3);
 			this->printStar();
 			Sleep(sleepTime3);
-			cout << this->mat[this->playerX][this->playerY]->c;
+			cout << this->mat[this->playerX][this->playerY]->getChar();
 			Sleep(sleepTime3);
 
 			if (i + 1 == *this->playerDice) {
@@ -197,11 +191,11 @@ void Game::progressPlayer() {
 			this->isPlaying = false;
 		}
 		else {
-			this->playerLetH = 0;
+			this->playerLetH = false;
 		}
-		if (this->mat[this->playerX][this->playerY]->c != 'X') {
+		if (this->mat[this->playerX][this->playerY]->getChar() != 'X') {
 			this->playerCounterX = 0;
-			this->playerLetX = 0;
+			this->playerLetX = false;
 		}
 	}
 }
@@ -226,7 +220,7 @@ void Game::start() {
 			this->playerCurrentK += 1;
 		}
 
-		if (this->playerLetP) this->playerLetP = 0;
+		if (this->playerLetP) this->playerLetP = false;
 	}
 	Sleep(sleepTime2);
 	system("cls");
