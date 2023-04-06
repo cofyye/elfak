@@ -113,6 +113,7 @@ void Game::progressRollDice() {
 	Sleep(sleepTime2);
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0, 2 });
 	this->rollDice();
+	*this->playerDice = 5;
 	cout << "\r\u001b[32m[OUTPUT] \u001b[36mDice number is " << *this->playerDice << "\u001b[0m" << endl << endl;
 	Sleep(sleepTime1);
 }
@@ -146,6 +147,12 @@ void Game::setPosition() {
 }
 
 void Game::rollDice() {
+	static bool first = true;
+	if (first)
+	{
+		srand(time(NULL));
+		first = false;
+	}
 	*this->playerDice = 1 + rand() % ((6 + 1) - 1);
 }
 
