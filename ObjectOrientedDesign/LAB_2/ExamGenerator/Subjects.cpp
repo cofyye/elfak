@@ -47,6 +47,11 @@ void Subjects::push(Subject* element) {
 	this->arr = newArr;
 }
 
+void Subjects::printSubjectsMainMenu() {
+	// Print list of all subjects for main menu
+
+}
+
 void Subjects::printSubjects() {
 	// Print list of all subjects
 	cout << "\u001b[32m[OUTPUT] \u001b[36mList of all subjects [\u001b[33m" << this->getNumberOfElements() << "\u001b[36m]\u001b[0m \n";
@@ -63,8 +68,29 @@ void Subjects::printAreas() {
 		cout << "\u001b[32m[OUTPUT] \u001b[36mList of all areas [\u001b[33m" << this->arr[j]->areas->getNumberOfElements() << "\u001b[36m] from subject [\u001b[33m" << this->arr[j]->name << "\u001b[36m] \u001b[0m \n";
 		Sleep(SLEEP_TIME_2);
 		for (int i = 0; i < this->arr[j]->areas->getNumberOfElements(); i++) {
-			cout << "\u001b[32m[OUTPUT] \u001b[36mArea name : \u001b[33m" << this->arr[j]->areas->getElement(i)->getName() << "\u001b[0m \n";
+			cout << "\t\u001b[32m[OUTPUT] \u001b[36mArea name : \u001b[33m" << this->arr[j]->areas->getElement(i)->getName() << "\u001b[0m \n";
 			Sleep(SLEEP_TIME_1);
+		}
+	}
+}
+
+void Subjects::printQTs(string type) {
+	// Print all questions or tasks of all areas of all subjects
+	// Loop through all subjects
+	for (int i = 0; i < this->currentEl; i++) {
+		// Set wType from type to print correct value
+		string wType = type == "questions" || type == "tasks" ? type : "questions and tasks";
+		// For each subject, loop through all his areas
+		for (int j = 0; j < this->arr[i]->areas->getNumberOfElements(); j++) {
+			// Print info about subject and area
+			cout << "\u001b[32m[OUTPUT] \u001b[36mList of all " << wType << " [\u001b[33m" << this->arr[i]->areas->getElement(j)->getNumberOfElements(wType) << "\u001b[36m] from area [\u001b[33m" << this->arr[i]->areas->getElement(j)->getName() << "\u001b[36m] and subject [\u001b[33m" << this->arr[i]->getName() << "\u001b[36m] \u001b[0m \n";
+			Sleep(SLEEP_TIME_2);
+			// For each area, loop through all his questions and tasks
+			for (int k = 0; k < this->arr[i]->areas->getElement(j)->getNumberOfElements(wType); k++) {
+				// Print info about subject, area and questions or tasks or both depends on wType
+				cout << "\t\u001b[32m[OUTPUT] \u001b[36m" << this->arr[i]->areas->getElement(j)->getElement(k)->getType() << " name : \u001b[33m" << this->arr[i]->areas->getElement(j)->getElement(k)->getName() << " \u001b[0m \n";
+				Sleep(SLEEP_TIME_1);
+			}
 		}
 	}
 }

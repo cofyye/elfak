@@ -10,8 +10,10 @@ public:
 	Subjects();
 	~Subjects();
 	void push(Subject* element);
+	void printSubjectsMainMenu();
 	void printSubjects();
 	void printAreas();
+	void printQTs(std::string type);
 	void loadAllAssets();
 	Subject pop();
 	Subject shift();

@@ -164,9 +164,12 @@ T Array<T>::remove(int index) {
 
 template <class T>
 T* Array<T>::getElement(int index) {
+	// Check if index is out ranged
 	if (index < 0 || index >= this->currentEl) {
+		// If true, return a empty value
 		return new T();
 	}
 
+	// If false, return a element
 	return this->arr[index];
 }
