@@ -1,0 +1,27 @@
+Celi Brojevi ~ Diskretna Matematika
+Tautologija ~ Diskretna Matematika
+Skupovi ~ Diskretna Matematika
+Relacije ~ Diskretna Matematika
+Redovi ~ Diskretna Matematika
+Celi Brojevi ~ Matematika 1
+Matrice ~ Matematika 1
+Skupovi ~ Matematika 1
+Analiticka Geometrija ~ Matematika 1
+Trigonometrija ~ Matematika 1
+Polinomi ~ Matematika 1
+Petlje ~ Algoritmi i Programiranje
+Makroi ~ Algoritmi i Programiranje
+Tipovi Podataka ~ Algoritmi i Programiranje
+Varijable ~ Algoritmi i Programiranje
+Funckije ~ Algoritmi i Programiranje
+Enkapsulacija ~ Objektno Orijentisano Programiranje
+Nasledjivanje ~ Objektno Orijentisano Programiranje
+Polimorfizam ~ Objektno Orijentisano Programiranje
+Apstraktna Klasa ~ Objektno Orijentisano Programiranje
+Funkcije ~ Objektno Orijentisano Programiranje
+Funkcije ~ Objektno Orijentisano Projektovanje
+Klase ~ Objektno Orijentisano Projektovanje
+UML ~ Objektno Orijentisano Projektovanje
+QT ~ Objektno Orijentisano Projektovanje
+C# ~ Objektno Orijentisano Projektovanje
+

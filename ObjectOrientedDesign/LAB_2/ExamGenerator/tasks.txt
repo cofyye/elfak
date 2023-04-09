@@ -1,0 +1,35 @@
+Zadatak 1 ~ Celi Brojevi ~ Diskretna Matematika
+Zadatak 2 ~ Celi Brojevi ~ Diskretna Matematika
+Zadatak 3 ~ Celi Brojevi ~ Diskretna Matematika
+Zadatak 4 ~ Celi Brojevi ~ Diskretna Matematika
+Zadatak 5 ~ Celi Brojevi ~ Diskretna Matematika
+Zadatak 1 ~ Tautologija ~ Diskretna Matematika
+Zadatak 2 ~ Tautologija ~ Diskretna Matematika
+Zadatak 3 ~ Tautologija ~ Diskretna Matematika
+Zadatak 4 ~ Tautologija ~ Diskretna Matematika
+Zadatak 5 ~ Tautologija ~ Diskretna Matematika
+Zadatak 1 ~ Skupovi ~ Diskretna Matematika
+Zadatak 2 ~ Skupovi ~ Diskretna Matematika
+Zadatak 3 ~ Skupovi ~ Diskretna Matematika
+Zadatak 4 ~ Skupovi ~ Diskretna Matematika
+Zadatak 5 ~ Skupovi ~ Diskretna Matematika
+Zadatak 1 ~ Relacije ~ Diskretna Matematika
+Zadatak 2 ~ Relacije ~ Diskretna Matematika
+Zadatak 3 ~ Relacije ~ Diskretna Matematika
+Zadatak 4 ~ Relacije ~ Diskretna Matematika
+Zadatak 5 ~ Relacije ~ Diskretna Matematika
+Zadatak 1 ~ Redovi ~ Diskretna Matematika
+Zadatak 2 ~ Redovi ~ Diskretna Matematika
+Zadatak 3 ~ Redovi ~ Diskretna Matematika
+Zadatak 4 ~ Redovi ~ Diskretna Matematika
+Zadatak 5 ~ Redovi ~ Diskretna Matematika
+Zadatak 1 ~ Celi Brojevi ~ Matematika 1
+Zadatak 2 ~ Celi Brojevi ~ Matematika 1
+Zadatak 3 ~ Celi Brojevi ~ Matematika 1
+Zadatak 4 ~ Celi Brojevi ~ Matematika 1
+Zadatak 5 ~ Celi Brojevi ~ Matematika 1
+Zadatak 1 ~ Matrice ~ Matematika 1
+Zadatak 2 ~ Matrice ~ Matematika 1
+Zadatak 3 ~ Matrice ~ Matematika 1
+Zadatak 4 ~ Matrice ~ Matematika 1
+Zadatak 5 ~ Matrice ~ Matematika 1
