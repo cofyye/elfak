@@ -33,3 +33,98 @@ Zadatak 2 ~ Matrice ~ Matematika 1
 Zadatak 3 ~ Matrice ~ Matematika 1
 Zadatak 4 ~ Matrice ~ Matematika 1
 Zadatak 5 ~ Matrice ~ Matematika 1
+Zadatak 1 ~ Skupovi ~ Matematika 1
+Zadatak 2 ~ Skupovi ~ Matematika 1
+Zadatak 3 ~ Skupovi ~ Matematika 1
+Zadatak 4 ~ Skupovi ~ Matematika 1
+Zadatak 5 ~ Skupovi ~ Matematika 1
+Zadatak 1 ~ Analiticka Geometrija ~ Matematika 1
+Zadatak 2 ~ Analiticka Geometrija ~ Matematika 1
+Zadatak 3 ~ Analiticka Geometrija ~ Matematika 1
+Zadatak 4 ~ Analiticka Geometrija ~ Matematika 1
+Zadatak 5 ~ Analiticka Geometrija ~ Matematika 1
+Zadatak 1 ~ Trigonometrija ~ Matematika 1
+Zadatak 2 ~ Trigonometrija ~ Matematika 1
+Zadatak 3 ~ Trigonometrija ~ Matematika 1
+Zadatak 4 ~ Trigonometrija ~ Matematika 1
+Zadatak 5 ~ Trigonometrija ~ Matematika 1
+Zadatak 1 ~ Polinomi ~ Matematika 1
+Zadatak 2 ~ Polinomi ~ Matematika 1
+Zadatak 3 ~ Polinomi ~ Matematika 1
+Zadatak 4 ~ Polinomi ~ Matematika 1
+Zadatak 5 ~ Polinomi ~ Matematika 1
+Zadatak 1 ~ Petlje ~ Algoritmi i Programiranje
+Zadatak 2 ~ Petlje ~ Algoritmi i Programiranje
+Zadatak 3 ~ Petlje ~ Algoritmi i Programiranje
+Zadatak 4 ~ Petlje ~ Algoritmi i Programiranje
+Zadatak 5 ~ Petlje ~ Algoritmi i Programiranje
+Zadatak 1 ~ Makroi ~ Algoritmi i Programiranje
+Zadatak 2 ~ Makroi ~ Algoritmi i Programiranje
+Zadatak 3 ~ Makroi ~ Algoritmi i Programiranje
+Zadatak 4 ~ Makroi ~ Algoritmi i Programiranje
+Zadatak 5 ~ Makroi ~ Algoritmi i Programiranje
+Zadatak 1 ~ Tipovi Podataka ~ Algoritmi i Programiranje
+Zadatak 2 ~ Tipovi Podataka ~ Algoritmi i Programiranje
+Zadatak 3 ~ Tipovi Podataka ~ Algoritmi i Programiranje
+Zadatak 4 ~ Tipovi Podataka ~ Algoritmi i Programiranje
+Zadatak 5 ~ Tipovi Podataka ~ Algoritmi i Programiranje
+Zadatak 1 ~ Varijable ~ Algoritmi i Programiranje
+Zadatak 2 ~ Varijable ~ Algoritmi i Programiranje
+Zadatak 3 ~ Varijable ~ Algoritmi i Programiranje
+Zadatak 4 ~ Varijable ~ Algoritmi i Programiranje
+Zadatak 5 ~ Varijable ~ Algoritmi i Programiranje
+Zadatak 1 ~ Funckije ~ Algoritmi i Programiranje
+Zadatak 2 ~ Funckije ~ Algoritmi i Programiranje
+Zadatak 3 ~ Funckije ~ Algoritmi i Programiranje
+Zadatak 4 ~ Funckije ~ Algoritmi i Programiranje
+Zadatak 5 ~ Funckije ~ Algoritmi i Programiranje
+Zadatak 1 ~ Enkapsulacija ~ Objektno Orijentisano Programiranje
+Zadatak 2 ~ Enkapsulacija ~ Objektno Orijentisano Programiranje
+Zadatak 3 ~ Enkapsulacija ~ Objektno Orijentisano Programiranje
+Zadatak 4 ~ Enkapsulacija ~ Objektno Orijentisano Programiranje
+Zadatak 5 ~ Enkapsulacija ~ Objektno Orijentisano Programiranje
+Zadatak 1 ~ Nasledjivanje ~ Objektno Orijentisano Programiranje
+Zadatak 2 ~ Nasledjivanje ~ Objektno Orijentisano Programiranje
+Zadatak 3 ~ Nasledjivanje ~ Objektno Orijentisano Programiranje
+Zadatak 4 ~ Nasledjivanje ~ Objektno Orijentisano Programiranje
+Zadatak 5 ~ Nasledjivanje ~ Objektno Orijentisano Programiranje
+Zadatak 1 ~ Polimorfizam ~ Objektno Orijentisano Programiranje
+Zadatak 2 ~ Polimorfizam ~ Objektno Orijentisano Programiranje
+Zadatak 3 ~ Polimorfizam ~ Objektno Orijentisano Programiranje
+Zadatak 4 ~ Polimorfizam ~ Objektno Orijentisano Programiranje
+Zadatak 5 ~ Polimorfizam ~ Objektno Orijentisano Programiranje
+Zadatak 1 ~ Apstraktna Klasa ~ Objektno Orijentisano Programiranje
+Zadatak 2 ~ Apstraktna Klasa ~ Objektno Orijentisano Programiranje
+Zadatak 3 ~ Apstraktna Klasa ~ Objektno Orijentisano Programiranje
+Zadatak 4 ~ Apstraktna Klasa ~ Objektno Orijentisano Programiranje
+Zadatak 5 ~ Apstraktna Klasa ~ Objektno Orijentisano Programiranje
+Zadatak 1 ~ Funkcije ~ Objektno Orijentisano Programiranje
+Zadatak 2 ~ Funkcije ~ Objektno Orijentisano Programiranje
+Zadatak 3 ~ Funkcije ~ Objektno Orijentisano Programiranje
+Zadatak 4 ~ Funkcije ~ Objektno Orijentisano Programiranje
+Zadatak 5 ~ Funkcije ~ Objektno Orijentisano Programiranje
+Zadatak 1 ~ Funkcije ~ Objektno Orijentisano Projektovanje
+Zadatak 2 ~ Funkcije ~ Objektno Orijentisano Projektovanje
+Zadatak 3 ~ Funkcije ~ Objektno Orijentisano Projektovanje
+Zadatak 4 ~ Funkcije ~ Objektno Orijentisano Projektovanje
+Zadatak 5 ~ Funkcije ~ Objektno Orijentisano Projektovanje
+Zadatak 1 ~ Klase ~ Objektno Orijentisano Projektovanje
+Zadatak 2 ~ Klase ~ Objektno Orijentisano Projektovanje
+Zadatak 3 ~ Klase ~ Objektno Orijentisano Projektovanje
+Zadatak 4 ~ Klase ~ Objektno Orijentisano Projektovanje
+Zadatak 5 ~ Klase ~ Objektno Orijentisano Projektovanje
+Zadatak 1 ~ UML ~ Objektno Orijentisano Projektovanje
+Zadatak 2 ~ UML ~ Objektno Orijentisano Projektovanje
+Zadatak 3 ~ UML ~ Objektno Orijentisano Projektovanje
+Zadatak 4 ~ UML ~ Objektno Orijentisano Projektovanje
+Zadatak 5 ~ UML ~ Objektno Orijentisano Projektovanje
+Zadatak 1 ~ QT ~ Objektno Orijentisano Projektovanje
+Zadatak 2 ~ QT ~ Objektno Orijentisano Projektovanje
+Zadatak 3 ~ QT ~ Objektno Orijentisano Projektovanje
+Zadatak 4 ~ QT ~ Objektno Orijentisano Projektovanje
+Zadatak 5 ~ QT ~ Objektno Orijentisano Projektovanje
+Zadatak 1 ~ C# ~ Objektno Orijentisano Projektovanje
+Zadatak 2 ~ C# ~ Objektno Orijentisano Projektovanje
+Zadatak 3 ~ C# ~ Objektno Orijentisano Projektovanje
+Zadatak 4 ~ C# ~ Objektno Orijentisano Projektovanje
+Zadatak 5 ~ C# ~ Objektno Orijentisano Projektovanje

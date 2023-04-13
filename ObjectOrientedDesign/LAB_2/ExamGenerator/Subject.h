@@ -16,7 +16,11 @@ private:
 public:
 	Subject();
 	Subject(std::string name);
+	Area* getArea(int index);
 	inline std::string getName() {
 		return this->name;
+	}
+	inline int getNumberOfElements() {
+		return this->areas->getNumberOfElements();
 	}
 };

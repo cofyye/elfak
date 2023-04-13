@@ -1,25 +1,22 @@
 #pragma once
 
+#include "Array.h"
 #include "Subject.h"
 
 class Subjects {
 private:
-	int currentEl;
-	Subject** arr;
+	Array<Subject>* arr;
 public:
 	Subjects();
 	~Subjects();
-	void push(Subject* element);
-	void printSubjectsMainMenu();
 	void printSubjects();
 	void printAreas();
 	void printQTs(std::string type);
+	void printQTsSpecific(Area* area, std::string type);
 	void loadAllAssets();
-	Subject pop();
-	Subject shift();
-	Subject remove(int index);
-
+	void push(Subject* subject);
+	Subject* getElement(int index);
 	inline int getNumberOfElements() {
-		return this->currentEl;
+		return this->arr->getNumberOfElements();
 	}
 };

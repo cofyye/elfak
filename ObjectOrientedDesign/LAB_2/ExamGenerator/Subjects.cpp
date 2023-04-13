@@ -10,8 +10,7 @@ using namespace std;
 
 Subjects::Subjects() {
 	// Initialization
-	this->currentEl = 0;
-	this->arr = new Subject*[this->currentEl];
+	this->arr = new Array<Subject>[1];
 }
 
 Subjects::~Subjects() {
@@ -19,56 +18,25 @@ Subjects::~Subjects() {
 	if (this->arr != 0) {
 		delete[] this->arr;
 	}
-	this->currentEl = 0;
-}
-
-void Subjects::push(Subject* element) {
-	// Change size of current elements to one more
-	this->currentEl += 1;
-
-	// Initialization of a new array
-	Subject** newArr = new Subject*[this->currentEl];
-
-	// Check if size of current elements greater than one
-	if (this->currentEl > 1) {
-		// Copy old elements into new array
-		for (int i = 0; i < this->currentEl - 1; i++) {
-			newArr[i] = this->arr[i];
-		}
-	}
-	
-	// Push element into array
-	newArr[this->currentEl - 1] = element;
-
-	// Delete old array
-	delete[] this->arr;
-
-	// Initialization of a old array to new one
-	this->arr = newArr;
-}
-
-void Subjects::printSubjectsMainMenu() {
-	// Print list of all subjects for main menu
-
 }
 
 void Subjects::printSubjects() {
 	// Print list of all subjects
-	cout << "\u001b[32m[OUTPUT] \u001b[36mList of all subjects [\u001b[33m" << this->getNumberOfElements() << "\u001b[36m]\u001b[0m \n";
+	cout << "\u001b[32m[OUTPUT] \u001b[36mList of all subjects [\u001b[33m" << this->arr->getNumberOfElements() << "\u001b[36m]\u001b[0m \n";
 	Sleep(SLEEP_TIME_2);
-	for (int i = 0; i < this->currentEl; i++) {
-		cout << "\u001b[32m[OUTPUT] \u001b[36mSubject name : \u001b[33m" << this->arr[i]->getName() << "\u001b[0m \n";
+	for (int i = 0; i < this->arr->getNumberOfElements(); i++) {
+		cout << "\u001b[32m[OUTPUT] \u001b[36mSubject name : \u001b[33m" << this->arr->getElement(i)->getName() << "\u001b[0m \n";
 		Sleep(SLEEP_TIME_1);
 	}
 }
 
 void Subjects::printAreas() {
 	// Print list of all areas from all subjects
-	for (int j = 0; j < this->currentEl; j++) {
-		cout << "\u001b[32m[OUTPUT] \u001b[36mList of all areas [\u001b[33m" << this->arr[j]->areas->getNumberOfElements() << "\u001b[36m] from subject [\u001b[33m" << this->arr[j]->name << "\u001b[36m] \u001b[0m \n";
+	for (int j = 0; j < this->arr->getNumberOfElements(); j++) {
+		cout << "\u001b[32m[OUTPUT] \u001b[36mList of all areas [\u001b[33m" << this->arr->getElement(j)->areas->getNumberOfElements() << "\u001b[36m] from subject [\u001b[33m" << this->arr->getElement(j)->name << "\u001b[36m] \u001b[0m \n";
 		Sleep(SLEEP_TIME_2);
-		for (int i = 0; i < this->arr[j]->areas->getNumberOfElements(); i++) {
-			cout << "\t\u001b[32m[OUTPUT] \u001b[36mArea name : \u001b[33m" << this->arr[j]->areas->getElement(i)->getName() << "\u001b[0m \n";
+		for (int i = 0; i < this->arr->getElement(j)->areas->getNumberOfElements(); i++) {
+			cout << "\t\u001b[32m[OUTPUT] \u001b[36mArea name : \u001b[33m" << this->arr->getElement(j)->areas->getElement(i)->getName() << "\u001b[0m \n";
 			Sleep(SLEEP_TIME_1);
 		}
 	}
@@ -77,124 +45,62 @@ void Subjects::printAreas() {
 void Subjects::printQTs(string type) {
 	// Print all questions or tasks of all areas of all subjects
 	// Loop through all subjects
-	for (int i = 0; i < this->currentEl; i++) {
+	for (int i = 0; i < this->arr->getNumberOfElements(); i++) {
 		// Set wType from type to print correct value
 		string wType = type == "questions" || type == "tasks" ? type : "questions and tasks";
 		// For each subject, loop through all his areas
-		for (int j = 0; j < this->arr[i]->areas->getNumberOfElements(); j++) {
+		for (int j = 0; j < this->arr->getElement(i)->areas->getNumberOfElements(); j++) {
 			// Print info about subject and area
-			cout << "\u001b[32m[OUTPUT] \u001b[36mList of all " << wType << " [\u001b[33m" << this->arr[i]->areas->getElement(j)->getNumberOfElements(wType) << "\u001b[36m] from area [\u001b[33m" << this->arr[i]->areas->getElement(j)->getName() << "\u001b[36m] and subject [\u001b[33m" << this->arr[i]->getName() << "\u001b[36m] \u001b[0m \n";
+			cout << "\u001b[32m[OUTPUT] \u001b[36mList of all " << wType << " [\u001b[33m" << this->arr->getElement(i)->areas->getElement(j)->getNumberOfElements(wType) << "\u001b[36m] from area [\u001b[33m" << this->arr->getElement(i)->areas->getElement(j)->getName() << "\u001b[36m] and subject [\u001b[33m" << this->arr->getElement(i)->getName() << "\u001b[36m] \u001b[0m \n";
 			Sleep(SLEEP_TIME_2);
+			// If wType is tasks, must fix next problem
+			// Starting index must set from end of questions type
+			int startIndex = wType == "tasks" ? this->arr->getElement(i)->areas->getElement(j)->getNumberOfElements("questions") : 0;
+			int endIndex = wType == "questions" ? this->arr->getElement(i)->areas->getElement(j)->getNumberOfElements("questions") : this->arr->getElement(i)->areas->getElement(j)->getNumberOfElements("both");
 			// For each area, loop through all his questions and tasks
-			for (int k = 0; k < this->arr[i]->areas->getElement(j)->getNumberOfElements(wType); k++) {
+			for (int k = startIndex; k < endIndex; k++) {
 				// Print info about subject, area and questions or tasks or both depends on wType
-				cout << "\t\u001b[32m[OUTPUT] \u001b[36m" << this->arr[i]->areas->getElement(j)->getElement(k)->getType() << " name : \u001b[33m" << this->arr[i]->areas->getElement(j)->getElement(k)->getName() << " \u001b[0m \n";
+				cout << "\t\u001b[32m[OUTPUT] \u001b[36m" << this->arr->getElement(i)->areas->getElement(j)->getElement(k)->getType() << " name : \u001b[33m" << this->arr->getElement(i)->areas->getElement(j)->getElement(k)->getName() << " \u001b[0m \n";
 				Sleep(SLEEP_TIME_1);
 			}
 		}
 	}
 }
 
-
-Subject Subjects::pop() {
-	// If list is empty, return empty subject
-	if (this->currentEl < 1) {
-		return Subject();
-	}
-
-	// Initialization of a new array
-	Subject** newArr = new Subject*[this->currentEl];
+void Subjects::printQTsSpecific(Area* area, string type) {
+	// Print all questions or tasks of all areas of subject
 	
-	// Initialization of a element who will be removed
-	Subject temp = *this->arr[this->currentEl-1];
+	// Set wType from type to print correct value
+	string wType = type == "questions" || type == "tasks" ? type : "questions and tasks";
 
-	// Remove element from tail
-	for (int i = 0; i < this->currentEl-1; i++) {
-		newArr[i] = this->arr[i];
+	// Print info about subject and area
+	cout << "\u001b[32m[OUTPUT] \u001b[36mList of all " << wType << " [\u001b[33m" << area->getNumberOfElements(wType) << "\u001b[36m] from area [\u001b[33m" << area->getName() << "\u001b[36m] and subject [\u001b[33m" << area->getName() << "\u001b[36m] \u001b[0m \n";
+	Sleep(SLEEP_TIME_2);
+	// If wType is tasks, must fix next problem
+	// Starting index must set from end of questions type
+	int startIndex = wType == "tasks" ? area->getNumberOfElements("questions") : 0;
+	int endIndex = wType == "questions" ? area->getNumberOfElements("questions") : area->getNumberOfElements("both");
+	// Loop through all his questions and tasks
+	for (int i = startIndex; i < endIndex; i++) {
+		// Print info about area and questions or tasks or both depends on wType
+		cout << "\t\u001b[32m[OUTPUT] \u001b[36m" << area->getElement(i)->getType() << " name : \u001b[33m" << area->getElement(i)->getName() << " \u001b[0m \n";
+		Sleep(SLEEP_TIME_1);
 	}
-
-	// Delete old array
-	delete[] this->arr;
-
-	// Decrease current element for one
-	this->currentEl -= 1;
-	// Initialization of a old array to new one
-	this->arr = newArr;
-	
-	// Return removed element
-	return temp;
-}
-
-Subject Subjects::shift() {
-	// If list is empty, return empty subject
-	if (this->currentEl < 1) {
-		return Subject();
-	}
-
-	// Initialization of a new array
-	Subject** newArr = new Subject * [this->currentEl];
-
-	// Initialization of a element who will be removed
-	Subject temp = *this->arr[0];
-
-	// Remove element from head
-	for (int i = 1, j = 0; i < this->currentEl; i++, j++) {
-		newArr[j] = this->arr[i];
-	}
-
-	// Delete old array
-	delete[] this->arr;
-
-	// Decrease current element for one
-	this->currentEl -= 1;
-	// Initialization of a old array to new one
-	this->arr = newArr;
-
-	// Return removed element
-	return temp;
-}
-
-Subject Subjects::remove(int index) {
-	// If list is empty, return empty subject
-	if (this->currentEl < 1) {
-		return Subject();
-	}
-
-	// Check if index is correct
-	if (index < 0 || index >= this->currentEl) {
-		return Subject();
-	}
-
-	// Initialization of a new array
-	Subject** newArr = new Subject * [this->currentEl+1];
-
-	// Initialization of a element who will be removed
-	Subject temp = *this->arr[index];
-
-	// Remove element with specific index
-	int j = 0;
-	for (int i = 0; i < index; i++, j++) {
-		newArr[j] = this->arr[i];
-	}
-	for (int i = index + 1; i < this->currentEl; i++, j++) {
-		newArr[j] = this->arr[i];
-	}
-
-	// Delete old array
-	delete[] this->arr;
-
-	// Decrease current element for one
-	this->currentEl -= 1;
-	// Initialization of a old array to new one
-	this->arr = newArr;
-
-	// Return removed element
-	return temp;
 }
 
 void Subjects::loadAllAssets() {
 	// Load all assets for each subject like areas, questions, tasks etc etc
-	for (int i = 0; i < this->currentEl; i++) {
-		this->arr[i]->loadAllAssets();
+	for (int i = 0; i < this->arr->getNumberOfElements(); i++) {
+		this->arr->getElement(i)->loadAllAssets();
 	}
+}
+
+void Subjects::push(Subject* subject) {
+	// Push subject into array;
+	this->arr->push(subject);
+}
+
+Subject* Subjects::getElement(int index) {
+	// Return a element of this index
+	return this->arr->getElement(index);
 }

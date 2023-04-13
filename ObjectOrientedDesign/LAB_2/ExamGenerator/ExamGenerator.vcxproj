@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Blanket.cpp" />
+    <ClCompile Include="GenerateBlanket.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Area.cpp" />
     <ClCompile Include="QuestionTask.cpp" />
@@ -143,6 +145,8 @@
   <ItemGroup>
     <ClInclude Include="Area.h" />
     <ClInclude Include="Array.h" />
+    <ClInclude Include="Blanket.h" />
+    <ClInclude Include="GenerateBlanket.h" />
     <ClInclude Include="QuestionTask.h" />
     <ClInclude Include="Subject.h" />
     <ClInclude Include="Subjects.h" />

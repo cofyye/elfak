@@ -1,0 +1,40 @@
+
+Generated blanket is for subject [Diskretna Matematika]
+This blanket have [4] question(s) and [4] task(s)
+Question name : Pitanje 5 from area [Relacije] Generated 1 time(s)
+Question name : Pitanje 1 from area [Skupovi] Generated 1 time(s)
+Question name : Pitanje 1 from area [Celi Brojevi] Generated 1 time(s)
+Question name : Pitanje 3 from area [Tautologija] Generated 1 time(s)
+Task name : Zadatak 1 from area [Tautologija] Generated 1 time(s)
+Task name : Zadatak 3 from area [Celi Brojevi] Generated 1 time(s)
+Task name : Zadatak 4 from area [Skupovi] Generated 1 time(s)
+Task name : Zadatak 2 from area [Relacije] Generated 1 time(s)
+-------------------------------------------------
+Generated blanket is for subject [Objektno Orijentisano Programiranje]
+This blanket have [4] question(s) and [5] task(s)
+Question name : Pitanje 1 from area [Enkapsulacija] Generated 1 time(s)
+Question name : Pitanje 3 from area [Polimorfizam] Generated 1 time(s)
+Question name : Pitanje 3 from area [Nasledjivanje] Generated 1 time(s)
+Question name : Pitanje 4 from area [Apstraktna Klasa] Generated 1 time(s)
+Task name : Zadatak 3 from area [Apstraktna Klasa] Generated 1 time(s)
+Task name : Zadatak 5 from area [Polimorfizam] Generated 1 time(s)
+Task name : Zadatak 4 from area [Nasledjivanje] Generated 1 time(s)
+Task name : Zadatak 5 from area [Funkcije] Generated 1 time(s)
+Task name : Zadatak 4 from area [Enkapsulacija] Generated 1 time(s)
+-------------------------------------------------
+Generated blanket is for subject [Matematika 1]
+This blanket have [2] question(s) and [2] task(s)
+Question name : Pitanje 5 from area [Analiticka Geometrija] Generated 1 time(s)
+Question name : Pitanje 2 from area [Celi Brojevi] Generated 1 time(s)
+Task name : Zadatak 5 from area [Trigonometrija] Generated 1 time(s)
+Task name : Zadatak 4 from area [Celi Brojevi] Generated 1 time(s)
+-------------------------------------------------
+Generated blanket is for subject [Diskretna Matematika]
+This blanket have [4] question(s) and [2] task(s)
+Question name : Pitanje 3 from area [Skupovi] Generated 1 time(s)
+Question name : Pitanje 3 from area [Redovi] Generated 1 time(s)
+Question name : Pitanje 4 from area [Tautologija] Generated 1 time(s)
+Question name : Pitanje 4 from area [Relacije] Generated 1 time(s)
+Task name : Zadatak 1 from area [Relacije] Generated 1 time(s)
+Task name : Zadatak 3 from area [Skupovi] Generated 1 time(s)
+-------------------------------------------------

@@ -17,6 +17,10 @@ Subject::Subject(string name) {
 	this->areas = new Array<Area>();
 }
 
+Area* Subject::getArea(int index) {
+	return this->areas->getElement(index);
+}
+
  void Subject::loadAllAssets() {
 	// Initialization of a files
 	ifstream* areasFile = new ifstream("areas.txt");
@@ -92,6 +96,34 @@ Subject::Subject(string name) {
 
 	}
 	// END : Load Questions
+
+	// START : Load Tasks
+	while (getline(*tasksFile, line)) {
+		// Separate task, area and subject with delimiter ~
+		string taskName = line.substr(0, line.find("~"));
+		string rest = line.substr(line.find("~") + 1, line.length());
+		string areaName = rest.substr(0, rest.find("~"));
+		string subjectName = rest.substr(rest.find("~") + 1, rest.length());
+
+		// Trim right and left whitespaces
+		boost::algorithm::trim(taskName);
+		boost::algorithm::trim(areaName);
+		boost::algorithm::trim(subjectName);
+
+		// If current name of subject equal subject name from file, then go into block
+		if (this->name == subjectName) {
+			// Loop through all areas and then add task to specific area
+			for (int i = 0; i < this->areas->getNumberOfElements(); i++) {
+				if (this->areas->getElement(i)->getName() == areaName) {
+					QuestionTask* questionTask = new QuestionTask(taskName, "Task");
+					this->areas->getElement(i)->addQuestionTask(questionTask);
+					break;
+				}
+			}
+		}
+
+	}
+	// END : Load Tasks
 
 	// Closing all files
 	areasFile->close();

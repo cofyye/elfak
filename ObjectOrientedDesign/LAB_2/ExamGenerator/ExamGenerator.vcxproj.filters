@@ -30,6 +30,12 @@
     <ClCompile Include="Subjects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Blanket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerateBlanket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="subjects.txt">
@@ -62,6 +68,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerateBlanket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Blanket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
