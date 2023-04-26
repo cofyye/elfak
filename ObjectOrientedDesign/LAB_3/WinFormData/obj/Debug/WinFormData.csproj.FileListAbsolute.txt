@@ -1,0 +1,7 @@
+C:\Users\filip\Desktop\cofyye_repos\WinForm\WinFormData\obj\Debug\WinFormData.csproj.AssemblyReference.cache
+C:\Users\filip\Desktop\cofyye_repos\WinForm\WinFormData\obj\Debug\WinFormData.csproj.CoreCompileInputs.cache
+C:\Users\filip\Desktop\cofyye_repos\WinForm\WinFormData\bin\Debug\WinFormData.dll.config
+C:\Users\filip\Desktop\cofyye_repos\WinForm\WinFormData\bin\Debug\WinFormData.dll
+C:\Users\filip\Desktop\cofyye_repos\WinForm\WinFormData\bin\Debug\WinFormData.pdb
+C:\Users\filip\Desktop\cofyye_repos\WinForm\WinFormData\obj\Debug\WinFormData.dll
+C:\Users\filip\Desktop\cofyye_repos\WinForm\WinFormData\obj\Debug\WinFormData.pdb
