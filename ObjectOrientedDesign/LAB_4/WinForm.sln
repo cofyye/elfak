@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormMain", "FormMain\FormMain.csproj", "{9D68EAA3-A5EB-41CF-842D-3E5745317823}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F486D228-288D-4298-9684-0BC96C81F84F} = {F486D228-288D-4298-9684-0BC96C81F84F}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormDriver", "FormDriver\FormDriver.csproj", "{F486D228-288D-4298-9684-0BC96C81F84F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +15,6 @@ Global
 		{9D68EAA3-A5EB-41CF-842D-3E5745317823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D68EAA3-A5EB-41CF-842D-3E5745317823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D68EAA3-A5EB-41CF-842D-3E5745317823}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F486D228-288D-4298-9684-0BC96C81F84F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F486D228-288D-4298-9684-0BC96C81F84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F486D228-288D-4298-9684-0BC96C81F84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F486D228-288D-4298-9684-0BC96C81F84F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

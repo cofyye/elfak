@@ -9,10 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FormDriver\FormDriver.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Compile Update="FormDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -1,4 +1,4 @@
-namespace FormDriverNS
+namespace Forms
 {
     public partial class FormDriver : Form
     {

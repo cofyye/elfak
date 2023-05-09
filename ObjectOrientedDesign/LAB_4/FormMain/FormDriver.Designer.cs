@@ -1,4 +1,4 @@
-﻿namespace FormDriverNS
+﻿namespace Forms
 {
     partial class FormDriver
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDriver));
             GroupBoxDetails = new GroupBox();
             ButtonPicture = new Button();
             PictureBoxAvatar = new PictureBox();
@@ -48,8 +49,27 @@
             LabelLastName = new Label();
             LabelName = new Label();
             GroupBoxCategory = new GroupBox();
+            BtnDeleteCategory = new Button();
+            BtnNewCategory = new Button();
+            dataGridView1 = new DataGridView();
+            ColCategory = new DataGridViewTextBoxColumn();
+            ColDateFrom = new DataGridViewTextBoxColumn();
+            ColDateTo = new DataGridViewTextBoxColumn();
+            GroupBoxRestriction = new GroupBox();
+            BtnDeleteRestriction = new Button();
+            BtnNewRestriction = new Button();
+            dataGridView2 = new DataGridView();
+            BtnSave = new Button();
+            BtnCancel = new Button();
+            ColCategoryRestriction = new DataGridViewTextBoxColumn();
+            ColDateFromRestriction = new DataGridViewTextBoxColumn();
+            ColDateToRestriction = new DataGridViewTextBoxColumn();
             GroupBoxDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBoxAvatar).BeginInit();
+            GroupBoxCategory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            GroupBoxRestriction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // GroupBoxDetails
@@ -228,18 +248,183 @@
             // 
             // GroupBoxCategory
             // 
+            GroupBoxCategory.Controls.Add(BtnDeleteCategory);
+            GroupBoxCategory.Controls.Add(BtnNewCategory);
+            GroupBoxCategory.Controls.Add(dataGridView1);
             GroupBoxCategory.Location = new Point(12, 353);
             GroupBoxCategory.Name = "GroupBoxCategory";
-            GroupBoxCategory.Size = new Size(640, 162);
+            GroupBoxCategory.Size = new Size(640, 230);
             GroupBoxCategory.TabIndex = 1;
             GroupBoxCategory.TabStop = false;
             GroupBoxCategory.Text = "Kategorija";
+            // 
+            // BtnDeleteCategory
+            // 
+            BtnDeleteCategory.BackgroundImageLayout = ImageLayout.None;
+            BtnDeleteCategory.Image = (Image)resources.GetObject("BtnDeleteCategory.Image");
+            BtnDeleteCategory.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnDeleteCategory.Location = new Point(482, 180);
+            BtnDeleteCategory.Name = "BtnDeleteCategory";
+            BtnDeleteCategory.Size = new Size(152, 44);
+            BtnDeleteCategory.TabIndex = 18;
+            BtnDeleteCategory.Text = "Obrisi Kategoriju";
+            BtnDeleteCategory.TextAlign = ContentAlignment.MiddleRight;
+            BtnDeleteCategory.UseVisualStyleBackColor = true;
+            // 
+            // BtnNewCategory
+            // 
+            BtnNewCategory.BackgroundImageLayout = ImageLayout.None;
+            BtnNewCategory.Image = (Image)resources.GetObject("BtnNewCategory.Image");
+            BtnNewCategory.Location = new Point(6, 180);
+            BtnNewCategory.Name = "BtnNewCategory";
+            BtnNewCategory.Size = new Size(194, 44);
+            BtnNewCategory.TabIndex = 19;
+            BtnNewCategory.Text = "Dodaj Novu Kategoriju";
+            BtnNewCategory.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnNewCategory.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColCategory, ColDateFrom, ColDateTo });
+            dataGridView1.Location = new Point(6, 26);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(628, 148);
+            dataGridView1.TabIndex = 0;
+            // 
+            // ColCategory
+            // 
+            ColCategory.HeaderText = "Kategorija";
+            ColCategory.MinimumWidth = 6;
+            ColCategory.Name = "ColCategory";
+            ColCategory.ReadOnly = true;
+            ColCategory.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColCategory.Width = 125;
+            // 
+            // ColDateFrom
+            // 
+            ColDateFrom.HeaderText = "Datum Od";
+            ColDateFrom.MinimumWidth = 6;
+            ColDateFrom.Name = "ColDateFrom";
+            ColDateFrom.ReadOnly = true;
+            ColDateFrom.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColDateFrom.Width = 125;
+            // 
+            // ColDateTo
+            // 
+            ColDateTo.HeaderText = "Datum Do";
+            ColDateTo.MinimumWidth = 6;
+            ColDateTo.Name = "ColDateTo";
+            ColDateTo.ReadOnly = true;
+            ColDateTo.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColDateTo.Width = 125;
+            // 
+            // GroupBoxRestriction
+            // 
+            GroupBoxRestriction.Controls.Add(BtnDeleteRestriction);
+            GroupBoxRestriction.Controls.Add(BtnNewRestriction);
+            GroupBoxRestriction.Controls.Add(dataGridView2);
+            GroupBoxRestriction.Location = new Point(18, 589);
+            GroupBoxRestriction.Name = "GroupBoxRestriction";
+            GroupBoxRestriction.Size = new Size(628, 226);
+            GroupBoxRestriction.TabIndex = 2;
+            GroupBoxRestriction.TabStop = false;
+            GroupBoxRestriction.Text = "Zabrana Upravljanja";
+            // 
+            // BtnDeleteRestriction
+            // 
+            BtnDeleteRestriction.BackgroundImageLayout = ImageLayout.None;
+            BtnDeleteRestriction.Image = (Image)resources.GetObject("BtnDeleteRestriction.Image");
+            BtnDeleteRestriction.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnDeleteRestriction.Location = new Point(491, 176);
+            BtnDeleteRestriction.Name = "BtnDeleteRestriction";
+            BtnDeleteRestriction.Size = new Size(137, 44);
+            BtnDeleteRestriction.TabIndex = 20;
+            BtnDeleteRestriction.Text = "Obrisi Zabranu";
+            BtnDeleteRestriction.TextAlign = ContentAlignment.MiddleRight;
+            BtnDeleteRestriction.UseVisualStyleBackColor = true;
+            // 
+            // BtnNewRestriction
+            // 
+            BtnNewRestriction.BackgroundImageLayout = ImageLayout.None;
+            BtnNewRestriction.Image = (Image)resources.GetObject("BtnNewRestriction.Image");
+            BtnNewRestriction.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnNewRestriction.Location = new Point(6, 176);
+            BtnNewRestriction.Name = "BtnNewRestriction";
+            BtnNewRestriction.Size = new Size(177, 44);
+            BtnNewRestriction.TabIndex = 20;
+            BtnNewRestriction.Text = "Dodaj Novu Zabranu";
+            BtnNewRestriction.TextAlign = ContentAlignment.MiddleRight;
+            BtnNewRestriction.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { ColCategoryRestriction, ColDateFromRestriction, ColDateToRestriction });
+            dataGridView2.Location = new Point(6, 26);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(628, 148);
+            dataGridView2.TabIndex = 0;
+            // 
+            // BtnSave
+            // 
+            BtnSave.Location = new Point(164, 845);
+            BtnSave.Name = "BtnSave";
+            BtnSave.Size = new Size(135, 32);
+            BtnSave.TabIndex = 18;
+            BtnSave.Text = "Prosledi";
+            BtnSave.UseVisualStyleBackColor = true;
+            // 
+            // BtnCancel
+            // 
+            BtnCancel.Location = new Point(305, 845);
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.Size = new Size(135, 32);
+            BtnCancel.TabIndex = 19;
+            BtnCancel.Text = "Zatvori";
+            BtnCancel.UseVisualStyleBackColor = true;
+            // 
+            // ColCategoryRestriction
+            // 
+            ColCategoryRestriction.HeaderText = "Kategorija";
+            ColCategoryRestriction.MinimumWidth = 6;
+            ColCategoryRestriction.Name = "ColCategoryRestriction";
+            ColCategoryRestriction.ReadOnly = true;
+            ColCategoryRestriction.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColCategoryRestriction.Width = 125;
+            // 
+            // ColDateFromRestriction
+            // 
+            ColDateFromRestriction.HeaderText = "Datum Od";
+            ColDateFromRestriction.MinimumWidth = 6;
+            ColDateFromRestriction.Name = "ColDateFromRestriction";
+            ColDateFromRestriction.ReadOnly = true;
+            ColDateFromRestriction.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColDateFromRestriction.Width = 125;
+            // 
+            // ColDateToRestriction
+            // 
+            ColDateToRestriction.HeaderText = "Datum Do";
+            ColDateToRestriction.MinimumWidth = 6;
+            ColDateToRestriction.Name = "ColDateToRestriction";
+            ColDateToRestriction.ReadOnly = true;
+            ColDateToRestriction.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColDateToRestriction.Width = 125;
             // 
             // FormDriver
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(664, 681);
+            ClientSize = new Size(664, 889);
+            Controls.Add(BtnCancel);
+            Controls.Add(BtnSave);
+            Controls.Add(GroupBoxRestriction);
             Controls.Add(GroupBoxCategory);
             Controls.Add(GroupBoxDetails);
             Name = "FormDriver";
@@ -247,6 +432,10 @@
             GroupBoxDetails.ResumeLayout(false);
             GroupBoxDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBoxAvatar).EndInit();
+            GroupBoxCategory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            GroupBoxRestriction.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
@@ -272,5 +461,20 @@
         private ComboBox ComboBoxGender;
         private PictureBox PictureBoxAvatar;
         private Button ButtonPicture;
+        private Button BtnDeleteCategory;
+        private Button BtnNewCategory;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ColCategory;
+        private DataGridViewTextBoxColumn ColDateFrom;
+        private DataGridViewTextBoxColumn ColDateTo;
+        private GroupBox GroupBoxRestriction;
+        private Button BtnDeleteRestriction;
+        private Button BtnNewRestriction;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn ColCategoryRestriction;
+        private DataGridViewTextBoxColumn ColDateFromRestriction;
+        private DataGridViewTextBoxColumn ColDateToRestriction;
+        private Button BtnSave;
+        private Button BtnCancel;
     }
 }

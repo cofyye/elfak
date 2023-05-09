@@ -7,27 +7,14 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "FormMain/1.0.0": {
-        "dependencies": {
-          "FormDriver": "1.0.0"
-        },
         "runtime": {
           "FormMain.dll": {}
-        }
-      },
-      "FormDriver/1.0.0": {
-        "runtime": {
-          "FormDriver.dll": {}
         }
       }
     }
   },
   "libraries": {
     "FormMain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "FormDriver/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

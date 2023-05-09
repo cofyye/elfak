@@ -1,33 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {
-      "FormDriver/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/FormDriver.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/FormDriver.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
-      }
-    }
+    "net6.0-windows7.0": {}
   },
-  "libraries": {
-    "FormDriver/1.0.0": {
-      "type": "project",
-      "path": "../FormDriver/FormDriver.csproj",
-      "msbuildProject": "../FormDriver/FormDriver.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": [
-      "FormDriver >= 1.0.0"
-    ]
+    "net6.0-windows7.0": []
   },
   "packageFolders": {
     "C:\\Users\\filip\\.nuget\\packages\\": {}
@@ -55,11 +33,7 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {
-            "C:\\Users\\filip\\Desktop\\cofyye_repos\\WinForm\\FormDriver\\FormDriver.csproj": {
-              "projectPath": "C:\\Users\\filip\\Desktop\\cofyye_repos\\WinForm\\FormDriver\\FormDriver.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

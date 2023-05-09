@@ -1,6 +1,4 @@
-using FormDriverNS;
-
-namespace FormMain
+namespace Forms
 {
     public partial class FormMain : Form
     {

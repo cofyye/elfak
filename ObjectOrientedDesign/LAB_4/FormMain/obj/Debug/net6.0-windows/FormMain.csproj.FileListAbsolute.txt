@@ -15,10 +15,5 @@ C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\re
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.pdb
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.genruntimeconfig.cache
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\ref\FormMain.dll
-C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.FormMain.resources
-C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\bin\Debug\net6.0-windows\FormDriver.deps.json
-C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\bin\Debug\net6.0-windows\FormDriver.runtimeconfig.json
-C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\bin\Debug\net6.0-windows\FormDriver.exe
-C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\bin\Debug\net6.0-windows\FormDriver.dll
-C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\bin\Debug\net6.0-windows\FormDriver.pdb
-C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.csproj.CopyComplete
+C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\Forms.FormDriver.resources
+C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\Forms.FormMain.resources

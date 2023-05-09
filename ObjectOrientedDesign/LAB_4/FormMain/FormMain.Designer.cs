@@ -1,4 +1,4 @@
-﻿namespace FormMain
+﻿namespace Forms
 {
     partial class FormMain
     {
@@ -33,7 +33,7 @@
             GroupBoxListDrivers = new GroupBox();
             button1 = new Button();
             BtnChangeDriver = new Button();
-            dataGridView1 = new DataGridView();
+            DataGridViewDrivers = new DataGridView();
             ColName = new DataGridViewTextBoxColumn();
             ColLastName = new DataGridViewTextBoxColumn();
             ColDriverLicense = new DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@
             BtnSort = new Button();
             ComboBoxSort = new ComboBox();
             GroupBoxListDrivers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewDrivers).BeginInit();
             SuspendLayout();
             // 
             // DateTimeValue
@@ -58,7 +58,7 @@
             // 
             GroupBoxListDrivers.Controls.Add(button1);
             GroupBoxListDrivers.Controls.Add(BtnChangeDriver);
-            GroupBoxListDrivers.Controls.Add(dataGridView1);
+            GroupBoxListDrivers.Controls.Add(DataGridViewDrivers);
             GroupBoxListDrivers.Controls.Add(BtnAddDriver);
             GroupBoxListDrivers.Location = new Point(12, 59);
             GroupBoxListDrivers.Name = "GroupBoxListDrivers";
@@ -92,17 +92,17 @@
             BtnChangeDriver.TextAlign = ContentAlignment.MiddleRight;
             BtnChangeDriver.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DataGridViewDrivers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColName, ColLastName, ColDriverLicense });
-            dataGridView1.Location = new Point(6, 26);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(764, 295);
-            dataGridView1.TabIndex = 1;
+            DataGridViewDrivers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridViewDrivers.Columns.AddRange(new DataGridViewColumn[] { ColName, ColLastName, ColDriverLicense });
+            DataGridViewDrivers.Location = new Point(6, 26);
+            DataGridViewDrivers.Name = "DataGridViewDrivers";
+            DataGridViewDrivers.RowHeadersVisible = false;
+            DataGridViewDrivers.RowHeadersWidth = 51;
+            DataGridViewDrivers.RowTemplate.Height = 29;
+            DataGridViewDrivers.Size = new Size(764, 295);
+            DataGridViewDrivers.TabIndex = 1;
             // 
             // ColName
             // 
@@ -175,7 +175,7 @@
             Name = "FormMain";
             Text = "Form1";
             GroupBoxListDrivers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewDrivers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,7 +187,7 @@
         private Button BtnAddDriver;
         private Button BtnSort;
         private ComboBox ComboBoxSort;
-        private DataGridView dataGridView1;
+        private DataGridView DataGridViewDrivers;
         private Button button1;
         private Button BtnChangeDriver;
         private DataGridViewTextBoxColumn ColName;
