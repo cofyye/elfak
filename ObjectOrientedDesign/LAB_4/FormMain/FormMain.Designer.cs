@@ -1,0 +1,197 @@
+﻿namespace FormMain
+{
+    partial class FormMain
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            DateTimeValue = new Label();
+            GroupBoxListDrivers = new GroupBox();
+            button1 = new Button();
+            BtnChangeDriver = new Button();
+            dataGridView1 = new DataGridView();
+            ColName = new DataGridViewTextBoxColumn();
+            ColLastName = new DataGridViewTextBoxColumn();
+            ColDriverLicense = new DataGridViewTextBoxColumn();
+            BtnAddDriver = new Button();
+            BtnSort = new Button();
+            ComboBoxSort = new ComboBox();
+            GroupBoxListDrivers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // DateTimeValue
+            // 
+            DateTimeValue.AutoSize = true;
+            DateTimeValue.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            DateTimeValue.Location = new Point(12, 22);
+            DateTimeValue.Name = "DateTimeValue";
+            DateTimeValue.Size = new Size(180, 23);
+            DateTimeValue.TabIndex = 0;
+            DateTimeValue.Text = "22:44:33 09.05.2023.";
+            // 
+            // GroupBoxListDrivers
+            // 
+            GroupBoxListDrivers.Controls.Add(button1);
+            GroupBoxListDrivers.Controls.Add(BtnChangeDriver);
+            GroupBoxListDrivers.Controls.Add(dataGridView1);
+            GroupBoxListDrivers.Controls.Add(BtnAddDriver);
+            GroupBoxListDrivers.Location = new Point(12, 59);
+            GroupBoxListDrivers.Name = "GroupBoxListDrivers";
+            GroupBoxListDrivers.Size = new Size(776, 379);
+            GroupBoxListDrivers.TabIndex = 1;
+            GroupBoxListDrivers.TabStop = false;
+            GroupBoxListDrivers.Text = "Lista Vozaca";
+            // 
+            // button1
+            // 
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(641, 333);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 46);
+            button1.TabIndex = 3;
+            button1.Text = "Obrisi Vozaca";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // BtnChangeDriver
+            // 
+            BtnChangeDriver.BackgroundImage = (Image)resources.GetObject("BtnChangeDriver.BackgroundImage");
+            BtnChangeDriver.BackgroundImageLayout = ImageLayout.None;
+            BtnChangeDriver.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnChangeDriver.Location = new Point(141, 327);
+            BtnChangeDriver.Name = "BtnChangeDriver";
+            BtnChangeDriver.Size = new Size(129, 46);
+            BtnChangeDriver.TabIndex = 2;
+            BtnChangeDriver.Text = "Izmeni Vozaca";
+            BtnChangeDriver.TextAlign = ContentAlignment.MiddleRight;
+            BtnChangeDriver.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColName, ColLastName, ColDriverLicense });
+            dataGridView1.Location = new Point(6, 26);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(764, 295);
+            dataGridView1.TabIndex = 1;
+            // 
+            // ColName
+            // 
+            ColName.HeaderText = "Ime";
+            ColName.MinimumWidth = 6;
+            ColName.Name = "ColName";
+            ColName.ReadOnly = true;
+            ColName.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColName.Width = 125;
+            // 
+            // ColLastName
+            // 
+            ColLastName.HeaderText = "Prezime";
+            ColLastName.MinimumWidth = 6;
+            ColLastName.Name = "ColLastName";
+            ColLastName.ReadOnly = true;
+            ColLastName.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColLastName.Width = 125;
+            // 
+            // ColDriverLicense
+            // 
+            ColDriverLicense.HeaderText = "Broj vozacke dozvole";
+            ColDriverLicense.MinimumWidth = 6;
+            ColDriverLicense.Name = "ColDriverLicense";
+            ColDriverLicense.ReadOnly = true;
+            ColDriverLicense.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColDriverLicense.Width = 125;
+            // 
+            // BtnAddDriver
+            // 
+            BtnAddDriver.BackgroundImage = (Image)resources.GetObject("BtnAddDriver.BackgroundImage");
+            BtnAddDriver.BackgroundImageLayout = ImageLayout.None;
+            BtnAddDriver.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnAddDriver.Location = new Point(6, 327);
+            BtnAddDriver.Name = "BtnAddDriver";
+            BtnAddDriver.Size = new Size(129, 46);
+            BtnAddDriver.TabIndex = 0;
+            BtnAddDriver.Text = "Dodaj Vozaca";
+            BtnAddDriver.TextAlign = ContentAlignment.MiddleRight;
+            BtnAddDriver.UseVisualStyleBackColor = true;
+            BtnAddDriver.Click += BtnAddDriver_Click;
+            // 
+            // BtnSort
+            // 
+            BtnSort.Location = new Point(396, 15);
+            BtnSort.Name = "BtnSort";
+            BtnSort.Size = new Size(94, 39);
+            BtnSort.TabIndex = 2;
+            BtnSort.Text = "Sortiraj";
+            BtnSort.UseVisualStyleBackColor = true;
+            // 
+            // ComboBoxSort
+            // 
+            ComboBoxSort.FormattingEnabled = true;
+            ComboBoxSort.Items.AddRange(new object[] { "Broj vozacke dozvole", "Ime", "Prezime" });
+            ComboBoxSort.Location = new Point(496, 21);
+            ComboBoxSort.Name = "ComboBoxSort";
+            ComboBoxSort.Size = new Size(292, 28);
+            ComboBoxSort.TabIndex = 3;
+            // 
+            // FormMain
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(ComboBoxSort);
+            Controls.Add(BtnSort);
+            Controls.Add(GroupBoxListDrivers);
+            Controls.Add(DateTimeValue);
+            Name = "FormMain";
+            Text = "Form1";
+            GroupBoxListDrivers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label DateTimeValue;
+        private GroupBox GroupBoxListDrivers;
+        private Button BtnAddDriver;
+        private Button BtnSort;
+        private ComboBox ComboBoxSort;
+        private DataGridView dataGridView1;
+        private Button button1;
+        private Button BtnChangeDriver;
+        private DataGridViewTextBoxColumn ColName;
+        private DataGridViewTextBoxColumn ColLastName;
+        private DataGridViewTextBoxColumn ColDriverLicense;
+    }
+}
