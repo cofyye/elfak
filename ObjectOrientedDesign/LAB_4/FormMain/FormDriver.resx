@@ -60,16 +60,16 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnDeleteCategory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABwSURBVEhL5c0xCoBAEEPRPaFnsvSg3kNnCxsR3sZCRD+k
-        CEz+tN8wV7ZTlsotzqI05GqUZIjouEjvn3+QdiKBOpFAnUigTiRQJxKoEwnUiQTqRAJ1IoE6kUCdpIP3
-        PVgrx2g0fTPMVEme9Nu++Ryt7fYQppOL9fmeAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAHBJREFUSEvlzTEKgEAQQ9E9oWey9KDeQ2cLGxHexkJEP6QITP603zBXtlOWyi3O
+        ojTkapRkiOi4SO+ff5B2IoE6kUCdSKBOJFAnEqgTCdSJBOpEAnUigTqRQJ2kg/c9WCvHaDR9M8xUSZ70
+        2775HK3t9hCmk4v1+Z4AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="BtnNewCategory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAW9JREFUSEvdlElKBEEQRRtFNw4HUe+gXkBUxCuI4nwIEY/heB4HnD2E6EI36ntl
+        DAAACwwBP0AiyAAAAW9JREFUSEvdlElKBEEQRRtFNw4HUe+gXkBUxCuI4nwIEY/heB4HnD2E6EI36ntl
         x6Yqs7JpetUfHnTmz8qojoqIztBrHNbhEh7hs4u/L0DPM31pFd7gt8ArrEDPGoETiAuuYRdmYKLLLOzB
         DcS5Y/DZouLyL9iAtof0NsGzEaRVpiUun3ejRy1ABFl2IyU/VuTcN09JT1LaAr0XGHOjLivCA+Y8l5a2
         AKNwC/prbtR1BZo71SqttgBqH/TPq1VNT6BpteRUCmB16dsnDX2A5mS1+ldcWCI0Ba69q6FBBJgG1+/V
@@ -89,22 +89,22 @@
   </metadata>
   <data name="BtnDeleteRestriction.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABwSURBVEhL5c0xCoBAEEPRPaFnsvSg3kNnCxsR3sZCRD+k
-        CEz+tN8wV7ZTlsotzqI05GqUZIjouEjvn3+QdiKBOpFAnUigTiRQJxKoEwnUiQTqRAJ1IoE6kUCdpIP3
-        PVgrx2g0fTPMVEme9Nu++Ryt7fYQppOL9fmeAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAHBJREFUSEvlzTEKgEAQQ9E9oWey9KDeQ2cLGxHexkJEP6QITP603zBXtlOWyi3O
+        ojTkapRkiOi4SO+ff5B2IoE6kUCdSKBOJFAnEqgTCdSJBOpEAnUigTqRQJ2kg/c9WCvHaDR9M8xUSZ70
+        2775HK3t9hCmk4v1+Z4AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="BtnNewRestriction.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFvSURBVEhL3ZRJSgRBEEUbRTcOB1HvoF5AVMQriOJ8CBGP
-        4XgeB5w9hOhCN+p7ZcemKrOyaXrVHx505s/KqI6KiM7QaxzW4RIe4bOLvy9AzzN9aRXe4LfAK6xAzxqB
-        E4gLrmEXZmCiyyzswQ3EuWPw2aLi8i/YgLaH9DbBsxGkVaYlLp93o0ctQARZdiMlP1bk3DdPSU9S2gK9
-        Fxhzoy4rwgPmPJeWtgCjcAv6a27UdQWaO9UqrbYAah/0z6tVTU+gabXkVApgdenbJw19gOZktfpXXFgi
-        NAWuvauhQQSYBtfv1aqmQaRoDvSTKXK2aNqhOZUCHIL+abWqKcrU9u+3TO9AP1mmNpqDywO2f0ptAbZB
-        7xmSjaacih6y7W3/XrUI3/ADS260yYEVQWx//3pOer65l/vMERRl/iOI2P52qE1kCYvVcgCRc9/cy9sm
-        b0NORQdXBMphzotpycmPZUU4Wx7AZpR7OAO97AcdBnU6f0PPk4YcmDkAAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAW9JREFUSEvdlElKBEEQRRtFNw4HUe+gXkBUxCuI4nwIEY/heB4HnD2E6EI36ntl
+        x6Yqs7JpetUfHnTmz8qojoqIztBrHNbhEh7hs4u/L0DPM31pFd7gt8ArrEDPGoETiAuuYRdmYKLLLOzB
+        DcS5Y/DZouLyL9iAtof0NsGzEaRVpiUun3ejRy1ABFl2IyU/VuTcN09JT1LaAr0XGHOjLivCA+Y8l5a2
+        AKNwC/prbtR1BZo71SqttgBqH/TPq1VNT6BpteRUCmB16dsnDX2A5mS1+ldcWCI0Ba69q6FBBJgG1+/V
+        qqZBpGgO9JMpcrZo2qE5lQIcgv5ptaopytT277dM70A/WaY2moPLA7Z/Sm0BtkHvGZKNppyKHrLtbf9e
+        tQjf8ANLbrTJgRVBbH//ek56vrmX+8wRFGX+I4jY/naoTWQJi9VyAJFz39zL2yZvQ05FB1cEymHOi2nJ
+        yY9lRThbHsBmlHs4A73sBx0GdTp/Q8+ThhyYOQAAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="ColCategoryRestriction.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

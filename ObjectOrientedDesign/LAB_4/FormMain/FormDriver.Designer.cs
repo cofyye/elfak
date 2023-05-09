@@ -59,11 +59,11 @@
             BtnDeleteRestriction = new Button();
             BtnNewRestriction = new Button();
             dataGridView2 = new DataGridView();
-            BtnSave = new Button();
-            BtnCancel = new Button();
             ColCategoryRestriction = new DataGridViewTextBoxColumn();
             ColDateFromRestriction = new DataGridViewTextBoxColumn();
             ColDateToRestriction = new DataGridViewTextBoxColumn();
+            BtnSave = new Button();
+            BtnCancel = new Button();
             GroupBoxDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBoxAvatar).BeginInit();
             GroupBoxCategory.SuspendLayout();
@@ -110,6 +110,7 @@
             // 
             // PictureBoxAvatar
             // 
+            PictureBoxAvatar.BorderStyle = BorderStyle.FixedSingle;
             PictureBoxAvatar.Location = new Point(414, 34);
             PictureBoxAvatar.Name = "PictureBoxAvatar";
             PictureBoxAvatar.Size = new Size(220, 185);
@@ -167,7 +168,9 @@
             LabelDriverLicenseNum.Text = "Br. Vozacke Dozvole";
             // 
             // DTPUntilDate
-            // 
+            //
+            DTPUntilDate.CustomFormat = "dd.MM.yyyy.";
+            DTPUntilDate.Format = DateTimePickerFormat.Custom;
             DTPUntilDate.Location = new Point(152, 163);
             DTPUntilDate.Name = "DTPUntilDate";
             DTPUntilDate.Size = new Size(218, 27);
@@ -184,6 +187,8 @@
             // 
             // DTPExpiredDate
             // 
+            DTPExpiredDate.CustomFormat = "dd.MM.yyyy.";
+            DTPExpiredDate.Format = DateTimePickerFormat.Custom;
             DTPExpiredDate.Location = new Point(152, 130);
             DTPExpiredDate.Name = "DTPExpiredDate";
             DTPExpiredDate.Size = new Size(218, 27);
@@ -200,6 +205,8 @@
             // 
             // DTPBirthDate
             // 
+            DTPBirthDate.CustomFormat = "dd.MM.yyyy.";
+            DTPBirthDate.Format = DateTimePickerFormat.Custom;
             DTPBirthDate.Location = new Point(152, 97);
             DTPBirthDate.Name = "DTPBirthDate";
             DTPBirthDate.Size = new Size(218, 27);
@@ -282,6 +289,7 @@
             BtnNewCategory.Text = "Dodaj Novu Kategoriju";
             BtnNewCategory.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnNewCategory.UseVisualStyleBackColor = true;
+            BtnNewCategory.Click += BtnNewCategory_Click;
             // 
             // dataGridView1
             // 
@@ -359,6 +367,7 @@
             BtnNewRestriction.Text = "Dodaj Novu Zabranu";
             BtnNewRestriction.TextAlign = ContentAlignment.MiddleRight;
             BtnNewRestriction.UseVisualStyleBackColor = true;
+            BtnNewRestriction.Click += BtnNewRestriction_Click;
             // 
             // dataGridView2
             // 
@@ -371,24 +380,6 @@
             dataGridView2.RowTemplate.Height = 29;
             dataGridView2.Size = new Size(628, 148);
             dataGridView2.TabIndex = 0;
-            // 
-            // BtnSave
-            // 
-            BtnSave.Location = new Point(164, 845);
-            BtnSave.Name = "BtnSave";
-            BtnSave.Size = new Size(135, 32);
-            BtnSave.TabIndex = 18;
-            BtnSave.Text = "Prosledi";
-            BtnSave.UseVisualStyleBackColor = true;
-            // 
-            // BtnCancel
-            // 
-            BtnCancel.Location = new Point(305, 845);
-            BtnCancel.Name = "BtnCancel";
-            BtnCancel.Size = new Size(135, 32);
-            BtnCancel.TabIndex = 19;
-            BtnCancel.Text = "Zatvori";
-            BtnCancel.UseVisualStyleBackColor = true;
             // 
             // ColCategoryRestriction
             // 
@@ -417,6 +408,25 @@
             ColDateToRestriction.SortMode = DataGridViewColumnSortMode.NotSortable;
             ColDateToRestriction.Width = 125;
             // 
+            // BtnSave
+            // 
+            BtnSave.Location = new Point(164, 845);
+            BtnSave.Name = "BtnSave";
+            BtnSave.Size = new Size(135, 32);
+            BtnSave.TabIndex = 18;
+            BtnSave.Text = "Prosledi";
+            BtnSave.UseVisualStyleBackColor = true;
+            // 
+            // BtnCancel
+            // 
+            BtnCancel.Location = new Point(305, 845);
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.Size = new Size(135, 32);
+            BtnCancel.TabIndex = 19;
+            BtnCancel.Text = "Zatvori";
+            BtnCancel.UseVisualStyleBackColor = true;
+            BtnCancel.Click += BtnCancel_Click;
+            // 
             // FormDriver
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -427,7 +437,10 @@
             Controls.Add(GroupBoxRestriction);
             Controls.Add(GroupBoxCategory);
             Controls.Add(GroupBoxDetails);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FormDriver";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Vozac";
             GroupBoxDetails.ResumeLayout(false);
             GroupBoxDetails.PerformLayout();

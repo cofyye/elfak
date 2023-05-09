@@ -70,6 +70,7 @@
             // button1
             // 
             button1.BackgroundImageLayout = ImageLayout.None;
+            button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(641, 333);
             button1.Name = "button1";
@@ -81,12 +82,12 @@
             // 
             // BtnChangeDriver
             // 
-            BtnChangeDriver.BackgroundImage = (Image)resources.GetObject("BtnChangeDriver.BackgroundImage");
             BtnChangeDriver.BackgroundImageLayout = ImageLayout.None;
+            BtnChangeDriver.Image = (Image)resources.GetObject("BtnChangeDriver.Image");
             BtnChangeDriver.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnChangeDriver.Location = new Point(141, 327);
+            BtnChangeDriver.Location = new Point(142, 327);
             BtnChangeDriver.Name = "BtnChangeDriver";
-            BtnChangeDriver.Size = new Size(129, 46);
+            BtnChangeDriver.Size = new Size(134, 46);
             BtnChangeDriver.TabIndex = 2;
             BtnChangeDriver.Text = "Izmeni Vozaca";
             BtnChangeDriver.TextAlign = ContentAlignment.MiddleRight;
@@ -133,12 +134,12 @@
             // 
             // BtnAddDriver
             // 
-            BtnAddDriver.BackgroundImage = (Image)resources.GetObject("BtnAddDriver.BackgroundImage");
             BtnAddDriver.BackgroundImageLayout = ImageLayout.None;
+            BtnAddDriver.Image = (Image)resources.GetObject("BtnAddDriver.Image");
             BtnAddDriver.ImageAlign = ContentAlignment.MiddleLeft;
             BtnAddDriver.Location = new Point(6, 327);
             BtnAddDriver.Name = "BtnAddDriver";
-            BtnAddDriver.Size = new Size(129, 46);
+            BtnAddDriver.Size = new Size(130, 46);
             BtnAddDriver.TabIndex = 0;
             BtnAddDriver.Text = "Dodaj Vozaca";
             BtnAddDriver.TextAlign = ContentAlignment.MiddleRight;
@@ -172,8 +173,11 @@
             Controls.Add(BtnSort);
             Controls.Add(GroupBoxListDrivers);
             Controls.Add(DateTimeValue);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FormMain";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Lista Vozaca";
             GroupBoxListDrivers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)DataGridViewDrivers).EndInit();
             ResumeLayout(false);

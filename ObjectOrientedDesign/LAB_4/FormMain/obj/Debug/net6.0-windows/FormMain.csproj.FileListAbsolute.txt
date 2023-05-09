@@ -17,3 +17,5 @@ C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\Fo
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\ref\FormMain.dll
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\Forms.FormDriver.resources
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\Forms.FormMain.resources
+C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.FormCategory.resources
+C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.FormRestriction.resources
