@@ -168,7 +168,7 @@
             LabelDriverLicenseNum.Text = "Br. Vozacke Dozvole";
             // 
             // DTPUntilDate
-            //
+            // 
             DTPUntilDate.CustomFormat = "dd.MM.yyyy.";
             DTPUntilDate.Format = DateTimePickerFormat.Custom;
             DTPUntilDate.Location = new Point(152, 163);
@@ -416,6 +416,7 @@
             BtnSave.TabIndex = 18;
             BtnSave.Text = "Prosledi";
             BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
             // 
             // BtnCancel
             // 

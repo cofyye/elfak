@@ -19,3 +19,7 @@ C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\Fo
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\Forms.FormMain.resources
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.FormCategory.resources
 C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.FormRestriction.resources
+C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\bin\Debug\net6.0-windows\WinFormData.dll
+C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\bin\Debug\net6.0-windows\WinFormData.pdb
+C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\bin\Debug\net6.0-windows\WinFormData.dll.config
+C:\Users\filip\Desktop\cofyye_repos\WinForm\FormMain\obj\Debug\net6.0-windows\FormMain.csproj.CopyComplete

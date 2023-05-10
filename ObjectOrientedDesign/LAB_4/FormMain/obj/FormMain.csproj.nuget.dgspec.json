@@ -27,7 +27,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\filip\\Desktop\\cofyye_repos\\WinForm\\WinFormData\\WinFormData.csproj": {
+                "projectPath": "C:\\Users\\filip\\Desktop\\cofyye_repos\\WinForm\\WinFormData\\WinFormData.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -60,6 +64,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\filip\\Desktop\\cofyye_repos\\WinForm\\WinFormData\\WinFormData.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\filip\\Desktop\\cofyye_repos\\WinForm\\WinFormData\\WinFormData.csproj",
+        "projectName": "WinFormData",
+        "projectPath": "C:\\Users\\filip\\Desktop\\cofyye_repos\\WinForm\\WinFormData\\WinFormData.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
       }
     }
   }

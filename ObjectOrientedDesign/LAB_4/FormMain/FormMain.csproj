@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WinFormData\WinFormData.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="FormDriver.cs">
       <SubType>Form</SubType>
     </Compile>
