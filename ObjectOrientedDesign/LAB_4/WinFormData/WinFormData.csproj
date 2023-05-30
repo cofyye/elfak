@@ -42,7 +42,9 @@
     <Compile Include="Category.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="DriverList.cs" />
-    <Compile Include="Restriction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

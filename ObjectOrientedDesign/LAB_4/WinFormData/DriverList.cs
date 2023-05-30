@@ -10,7 +10,7 @@ namespace WinFormData
 
         #region Atributes
 
-        private List<Driver> drivers;
+        private readonly List<Driver> drivers;
 
         #endregion
 
@@ -35,25 +35,31 @@ namespace WinFormData
 
         #region Methodes
 
-        public bool addDriver(Driver driver)
+        public bool AddDriver(Driver driver)
         {
-            if (isInList(driver))
+            if (IsInList(driver))
                 return false;
 
-            drivers.Add(driver);
+            drivers.Insert(0, driver);
             return true;
         }
 
-        public bool deletePerson(Driver driver)
+        public bool AddCategory(Driver driver, List<Category> categories)
         {
-            if (!isInList(driver))
+            driver.Categories = categories;
+            return true;
+        }
+
+        public bool DeletePerson(Driver driver)
+        {
+            if (!IsInList(driver))
                 return false;
 
             drivers.Remove(driver);
             return true;
         }
 
-        public bool deleteDriver(String licenseNumber)
+        public bool DeleteDriver(String licenseNumber)
         {
             Driver tmp = null;
 
@@ -75,7 +81,7 @@ namespace WinFormData
             return false;
         }
 
-        public bool isInList(Driver driver)
+        public bool IsInList(Driver driver)
         {
             foreach (var v in drivers)
             {
@@ -86,7 +92,7 @@ namespace WinFormData
             return false;
         }
 
-        public bool isInList(String licenseNumber)
+        public bool IsInList(String licenseNumber)
         {
             foreach (var v in drivers)
             {
@@ -97,7 +103,7 @@ namespace WinFormData
             return false;
         }
 
-        public Driver getDriver(String licenseNumber)
+        public Driver GetDriver(String licenseNumber)
         {
             foreach (var v in drivers)
             {

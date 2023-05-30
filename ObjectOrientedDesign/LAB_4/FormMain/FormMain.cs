@@ -1,31 +1,27 @@
 using System.Windows.Forms;
 using WinFormData;
-using static System.Windows.Forms.DataFormats;
 
 namespace Forms
 {
     public partial class FormMain : Form
     {
-        private FormDriver formDriver = new FormDriver();
+        private readonly FormDriver formDriver = new();
+        private void LoadDrivers()
+        {
+            DataGridViewDrivers.DataSource = DriverList.Instance.DriverListValues.ToList();
+        }
 
         public FormMain()
         {
             InitializeComponent();
+            ComboBoxSort.SelectedIndex = 0;
+            ComboBoxSort.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void BtnAddDriver_Click(object sender, EventArgs e)
         {
-            formDriver.FormClosed += FormDriverClosedEventHandler;
             formDriver.ShowDialog();
-        }
-
-        private void FormDriverClosedEventHandler(object sender, FormClosedEventArgs e)
-        {
-            string firstName = DriverList.Instance.DriverListValues[DriverList.Instance.DriverListValues.Count - 1].FirstName;
-            string lastName = DriverList.Instance.DriverListValues[DriverList.Instance.DriverListValues.Count - 1].LastName;
-            string licenseNumber = DriverList.Instance.DriverListValues[DriverList.Instance.DriverListValues.Count - 1].LicenseNumber;
-
-            DataGridViewDrivers.Rows.Add(firstName, lastName, licenseNumber);
+            LoadDrivers();
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -34,6 +30,17 @@ namespace Forms
             {
                 e.Cancel = true;
             }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            LoadDrivers();
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            DateTimeValue.Text = DateTime.Now.ToString("HH:mm:ss dd.MM.yyyy.");
         }
     }
 }

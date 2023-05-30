@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace WinFormData
 {
@@ -6,24 +7,33 @@ namespace WinFormData
     {
         #region Atributes
 
-        String firstName;
-        String lastName;
-
+        String categoryValue;
+        String dateFrom;
+        String dateTo;
 
         #endregion
 
         #region Properties
 
-        public String FirstName
+        [DisplayName("Kategorija")]
+        public String CategoryValue
         {
-            get { return firstName; }
-            set { firstName = value; }
+            get { return categoryValue; }
+            set { categoryValue = value; }
         }
 
-        public String LastName
+        [DisplayName("Datum Od")]
+        public String DateFrom
         {
-            get { return lastName; }
-            set { lastName = value; }
+            get { return dateFrom; }
+            set { dateFrom = value; }
+        }
+
+        [DisplayName("Datum Do")]
+        public String DateTo
+        {
+            get { return dateTo; }
+            set { dateTo = value; }
         }
         #endregion
 
@@ -31,6 +41,13 @@ namespace WinFormData
 
         public Category()
         {
+        }
+
+        public Category(String categoryValue, String dateFrom, String dateTo)
+        {
+            this.categoryValue = categoryValue;
+            this.dateFrom = dateFrom;
+            this.dateTo = dateTo;
         }
         #endregion
     }

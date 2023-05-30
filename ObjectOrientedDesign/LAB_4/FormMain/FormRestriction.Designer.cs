@@ -56,6 +56,7 @@
             BtnSave.TabIndex = 14;
             BtnSave.Text = "Prosledi";
             BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
             // 
             // DTPDateTo
             // 

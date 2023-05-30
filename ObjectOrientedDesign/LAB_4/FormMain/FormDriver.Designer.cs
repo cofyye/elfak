@@ -51,25 +51,20 @@
             GroupBoxCategory = new GroupBox();
             BtnDeleteCategory = new Button();
             BtnNewCategory = new Button();
-            dataGridView1 = new DataGridView();
-            ColCategory = new DataGridViewTextBoxColumn();
-            ColDateFrom = new DataGridViewTextBoxColumn();
-            ColDateTo = new DataGridViewTextBoxColumn();
+            DataGridViewCategories = new DataGridView();
             GroupBoxRestriction = new GroupBox();
             BtnDeleteRestriction = new Button();
             BtnNewRestriction = new Button();
-            dataGridView2 = new DataGridView();
-            ColCategoryRestriction = new DataGridViewTextBoxColumn();
-            ColDateFromRestriction = new DataGridViewTextBoxColumn();
-            ColDateToRestriction = new DataGridViewTextBoxColumn();
+            DataGridViewRestrictions = new DataGridView();
             BtnSave = new Button();
             BtnCancel = new Button();
+            openFileDialog1 = new OpenFileDialog();
             GroupBoxDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBoxAvatar).BeginInit();
             GroupBoxCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewCategories).BeginInit();
             GroupBoxRestriction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewRestrictions).BeginInit();
             SuspendLayout();
             // 
             // GroupBoxDetails
@@ -107,6 +102,7 @@
             ButtonPicture.TabIndex = 17;
             ButtonPicture.Text = "Dodaj Sliku";
             ButtonPicture.UseVisualStyleBackColor = true;
+            ButtonPicture.Click += ButtonPicture_Click;
             // 
             // PictureBoxAvatar
             // 
@@ -257,7 +253,7 @@
             // 
             GroupBoxCategory.Controls.Add(BtnDeleteCategory);
             GroupBoxCategory.Controls.Add(BtnNewCategory);
-            GroupBoxCategory.Controls.Add(dataGridView1);
+            GroupBoxCategory.Controls.Add(DataGridViewCategories);
             GroupBoxCategory.Location = new Point(12, 353);
             GroupBoxCategory.Name = "GroupBoxCategory";
             GroupBoxCategory.Size = new Size(640, 230);
@@ -291,50 +287,22 @@
             BtnNewCategory.UseVisualStyleBackColor = true;
             BtnNewCategory.Click += BtnNewCategory_Click;
             // 
-            // dataGridView1
+            // DataGridViewCategories
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColCategory, ColDateFrom, ColDateTo });
-            dataGridView1.Location = new Point(6, 26);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(628, 148);
-            dataGridView1.TabIndex = 0;
-            // 
-            // ColCategory
-            // 
-            ColCategory.HeaderText = "Kategorija";
-            ColCategory.MinimumWidth = 6;
-            ColCategory.Name = "ColCategory";
-            ColCategory.ReadOnly = true;
-            ColCategory.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColCategory.Width = 125;
-            // 
-            // ColDateFrom
-            // 
-            ColDateFrom.HeaderText = "Datum Od";
-            ColDateFrom.MinimumWidth = 6;
-            ColDateFrom.Name = "ColDateFrom";
-            ColDateFrom.ReadOnly = true;
-            ColDateFrom.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColDateFrom.Width = 125;
-            // 
-            // ColDateTo
-            // 
-            ColDateTo.HeaderText = "Datum Do";
-            ColDateTo.MinimumWidth = 6;
-            ColDateTo.Name = "ColDateTo";
-            ColDateTo.ReadOnly = true;
-            ColDateTo.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColDateTo.Width = 125;
+            DataGridViewCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridViewCategories.Location = new Point(6, 26);
+            DataGridViewCategories.Name = "DataGridViewCategories";
+            DataGridViewCategories.RowHeadersVisible = false;
+            DataGridViewCategories.RowHeadersWidth = 51;
+            DataGridViewCategories.RowTemplate.Height = 29;
+            DataGridViewCategories.Size = new Size(628, 148);
+            DataGridViewCategories.TabIndex = 0;
             // 
             // GroupBoxRestriction
             // 
             GroupBoxRestriction.Controls.Add(BtnDeleteRestriction);
             GroupBoxRestriction.Controls.Add(BtnNewRestriction);
-            GroupBoxRestriction.Controls.Add(dataGridView2);
+            GroupBoxRestriction.Controls.Add(DataGridViewRestrictions);
             GroupBoxRestriction.Location = new Point(18, 589);
             GroupBoxRestriction.Name = "GroupBoxRestriction";
             GroupBoxRestriction.Size = new Size(628, 226);
@@ -369,44 +337,16 @@
             BtnNewRestriction.UseVisualStyleBackColor = true;
             BtnNewRestriction.Click += BtnNewRestriction_Click;
             // 
-            // dataGridView2
+            // DataGridViewRestrictions
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { ColCategoryRestriction, ColDateFromRestriction, ColDateToRestriction });
-            dataGridView2.Location = new Point(6, 26);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(628, 148);
-            dataGridView2.TabIndex = 0;
-            // 
-            // ColCategoryRestriction
-            // 
-            ColCategoryRestriction.HeaderText = "Kategorija";
-            ColCategoryRestriction.MinimumWidth = 6;
-            ColCategoryRestriction.Name = "ColCategoryRestriction";
-            ColCategoryRestriction.ReadOnly = true;
-            ColCategoryRestriction.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColCategoryRestriction.Width = 125;
-            // 
-            // ColDateFromRestriction
-            // 
-            ColDateFromRestriction.HeaderText = "Datum Od";
-            ColDateFromRestriction.MinimumWidth = 6;
-            ColDateFromRestriction.Name = "ColDateFromRestriction";
-            ColDateFromRestriction.ReadOnly = true;
-            ColDateFromRestriction.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColDateFromRestriction.Width = 125;
-            // 
-            // ColDateToRestriction
-            // 
-            ColDateToRestriction.HeaderText = "Datum Do";
-            ColDateToRestriction.MinimumWidth = 6;
-            ColDateToRestriction.Name = "ColDateToRestriction";
-            ColDateToRestriction.ReadOnly = true;
-            ColDateToRestriction.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColDateToRestriction.Width = 125;
+            DataGridViewRestrictions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridViewRestrictions.Location = new Point(6, 26);
+            DataGridViewRestrictions.Name = "DataGridViewRestrictions";
+            DataGridViewRestrictions.RowHeadersVisible = false;
+            DataGridViewRestrictions.RowHeadersWidth = 51;
+            DataGridViewRestrictions.RowTemplate.Height = 29;
+            DataGridViewRestrictions.Size = new Size(628, 148);
+            DataGridViewRestrictions.TabIndex = 0;
             // 
             // BtnSave
             // 
@@ -428,6 +368,10 @@
             BtnCancel.UseVisualStyleBackColor = true;
             BtnCancel.Click += BtnCancel_Click;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FormDriver
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -447,9 +391,9 @@
             GroupBoxDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBoxAvatar).EndInit();
             GroupBoxCategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewCategories).EndInit();
             GroupBoxRestriction.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewRestrictions).EndInit();
             ResumeLayout(false);
         }
 
@@ -477,18 +421,13 @@
         private Button ButtonPicture;
         private Button BtnDeleteCategory;
         private Button BtnNewCategory;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ColCategory;
-        private DataGridViewTextBoxColumn ColDateFrom;
-        private DataGridViewTextBoxColumn ColDateTo;
+        private DataGridView DataGridViewCategories;
         private GroupBox GroupBoxRestriction;
         private Button BtnDeleteRestriction;
         private Button BtnNewRestriction;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn ColCategoryRestriction;
-        private DataGridViewTextBoxColumn ColDateFromRestriction;
-        private DataGridViewTextBoxColumn ColDateToRestriction;
+        private DataGridView DataGridViewRestrictions;
         private Button BtnSave;
         private Button BtnCancel;
+        private OpenFileDialog openFileDialog1;
     }
 }

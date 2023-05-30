@@ -75,7 +75,7 @@
             DTPDateFrom.TabIndex = 3;
             // 
             // DTPDateTo
-            //
+            // 
             DTPDateTo.CustomFormat = "dd.MM.yyyy.";
             DTPDateTo.Format = DateTimePickerFormat.Custom;
             DTPDateTo.Location = new Point(125, 132);
@@ -100,6 +100,7 @@
             BtnSave.TabIndex = 6;
             BtnSave.Text = "Prosledi";
             BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
             // 
             // BtnCancel
             // 

@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             DataGridViewDrivers = new DataGridView();
-            ColName = new DataGridViewTextBoxColumn();
-            ColLastName = new DataGridViewTextBoxColumn();
-            ColDriverLicense = new DataGridViewTextBoxColumn();
             DateTimeValue = new Label();
             GroupBoxListDrivers = new GroupBox();
             button1 = new Button();
@@ -40,6 +38,7 @@
             BtnAddDriver = new Button();
             BtnSort = new Button();
             ComboBoxSort = new ComboBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)DataGridViewDrivers).BeginInit();
             GroupBoxListDrivers.SuspendLayout();
             SuspendLayout();
@@ -47,7 +46,6 @@
             // DataGridViewDrivers
             // 
             DataGridViewDrivers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridViewDrivers.Columns.AddRange(new DataGridViewColumn[] { ColName, ColLastName, ColDriverLicense });
             DataGridViewDrivers.Location = new Point(6, 26);
             DataGridViewDrivers.Name = "DataGridViewDrivers";
             DataGridViewDrivers.RowHeadersVisible = false;
@@ -55,33 +53,6 @@
             DataGridViewDrivers.RowTemplate.Height = 29;
             DataGridViewDrivers.Size = new Size(764, 295);
             DataGridViewDrivers.TabIndex = 1;
-            // 
-            // ColName
-            // 
-            ColName.HeaderText = "Ime";
-            ColName.MinimumWidth = 6;
-            ColName.Name = "ColName";
-            ColName.ReadOnly = true;
-            ColName.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColName.Width = 125;
-            // 
-            // ColLastName
-            // 
-            ColLastName.HeaderText = "Prezime";
-            ColLastName.MinimumWidth = 6;
-            ColLastName.Name = "ColLastName";
-            ColLastName.ReadOnly = true;
-            ColLastName.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColLastName.Width = 125;
-            // 
-            // ColDriverLicense
-            // 
-            ColDriverLicense.HeaderText = "Broj vozacke dozvole";
-            ColDriverLicense.MinimumWidth = 6;
-            ColDriverLicense.Name = "ColDriverLicense";
-            ColDriverLicense.ReadOnly = true;
-            ColDriverLicense.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColDriverLicense.Width = 125;
             // 
             // DateTimeValue
             // 
@@ -164,6 +135,10 @@
             ComboBoxSort.Size = new Size(292, 28);
             ComboBoxSort.TabIndex = 3;
             // 
+            // timer1
+            // 
+            timer1.Tick += Timer1_Tick;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -179,6 +154,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Lista Vozaca";
             FormClosing += FormMain_FormClosing;
+            Load += FormMain_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridViewDrivers).EndInit();
             GroupBoxListDrivers.ResumeLayout(false);
             ResumeLayout(false);
@@ -195,8 +171,6 @@
         private DataGridView DataGridViewDrivers;
         private Button button1;
         private Button BtnChangeDriver;
-        private DataGridViewTextBoxColumn ColName;
-        private DataGridViewTextBoxColumn ColLastName;
-        private DataGridViewTextBoxColumn ColDriverLicense;
+        private System.Windows.Forms.Timer timer1;
     }
 }
