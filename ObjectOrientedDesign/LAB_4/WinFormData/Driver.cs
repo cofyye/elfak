@@ -91,14 +91,14 @@ namespace WinFormData
         public List<Category> Categories
         {
             get { return categories; }
-            set { categories = value; }
+            set { categories.Clear(); categories = value; }
         }
 
         [Browsable(false)]
         public List<Category> Restrctions
         {
             get { return restrictions; }
-            set { restrictions = value; }
+            set { restrictions.Clear(); restrictions = value; }
         }
 
         #endregion

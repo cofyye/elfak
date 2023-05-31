@@ -273,6 +273,7 @@
             BtnDeleteCategory.Text = "Obrisi Kategoriju";
             BtnDeleteCategory.TextAlign = ContentAlignment.MiddleRight;
             BtnDeleteCategory.UseVisualStyleBackColor = true;
+            BtnDeleteCategory.Click += BtnDeleteCategory_Click;
             // 
             // BtnNewCategory
             // 
@@ -295,6 +296,7 @@
             DataGridViewCategories.RowHeadersVisible = false;
             DataGridViewCategories.RowHeadersWidth = 51;
             DataGridViewCategories.RowTemplate.Height = 29;
+            DataGridViewCategories.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DataGridViewCategories.Size = new Size(628, 148);
             DataGridViewCategories.TabIndex = 0;
             // 
@@ -322,6 +324,7 @@
             BtnDeleteRestriction.Text = "Obrisi Zabranu";
             BtnDeleteRestriction.TextAlign = ContentAlignment.MiddleRight;
             BtnDeleteRestriction.UseVisualStyleBackColor = true;
+            BtnDeleteRestriction.Click += BtnDeleteRestriction_Click;
             // 
             // BtnNewRestriction
             // 
@@ -345,6 +348,7 @@
             DataGridViewRestrictions.RowHeadersVisible = false;
             DataGridViewRestrictions.RowHeadersWidth = 51;
             DataGridViewRestrictions.RowTemplate.Height = 29;
+            DataGridViewRestrictions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DataGridViewRestrictions.Size = new Size(628, 148);
             DataGridViewRestrictions.TabIndex = 0;
             // 

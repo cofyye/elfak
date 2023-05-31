@@ -5,7 +5,7 @@ namespace WinFormData
 {
     public class DriverList
     {
-        public delegate void SortDelegate(List<Driver> drivers);
+        public delegate void SortDelegate(List<Driver> drivers, int value);
         public SortDelegate SortListDelegate { get; set; }
 
         #region Atributes
@@ -26,7 +26,7 @@ namespace WinFormData
 
         #region Constructors
 
-        private DriverList()
+        public DriverList()
         {
             drivers = new List<Driver>();
         }
@@ -41,12 +41,6 @@ namespace WinFormData
                 return false;
 
             drivers.Insert(0, driver);
-            return true;
-        }
-
-        public bool AddCategory(Driver driver, List<Category> categories)
-        {
-            driver.Categories = categories;
             return true;
         }
 
@@ -117,10 +111,7 @@ namespace WinFormData
 
         public void SortList(int value)
         {
-            if (SortListDelegate != null)
-            {
-                SortListDelegate(drivers);
-            }
+            SortListDelegate?.Invoke(drivers, value);
         }
 
         #endregion

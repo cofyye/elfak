@@ -33,7 +33,7 @@
             DataGridViewDrivers = new DataGridView();
             DateTimeValue = new Label();
             GroupBoxListDrivers = new GroupBox();
-            button1 = new Button();
+            BtnDeleteDriver = new Button();
             BtnChangeDriver = new Button();
             BtnAddDriver = new Button();
             BtnSort = new Button();
@@ -51,6 +51,7 @@
             DataGridViewDrivers.RowHeadersVisible = false;
             DataGridViewDrivers.RowHeadersWidth = 51;
             DataGridViewDrivers.RowTemplate.Height = 29;
+            DataGridViewDrivers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DataGridViewDrivers.Size = new Size(764, 295);
             DataGridViewDrivers.TabIndex = 1;
             // 
@@ -66,7 +67,7 @@
             // 
             // GroupBoxListDrivers
             // 
-            GroupBoxListDrivers.Controls.Add(button1);
+            GroupBoxListDrivers.Controls.Add(BtnDeleteDriver);
             GroupBoxListDrivers.Controls.Add(BtnChangeDriver);
             GroupBoxListDrivers.Controls.Add(DataGridViewDrivers);
             GroupBoxListDrivers.Controls.Add(BtnAddDriver);
@@ -77,18 +78,19 @@
             GroupBoxListDrivers.TabStop = false;
             GroupBoxListDrivers.Text = "Lista Vozaca";
             // 
-            // button1
+            // BtnDeleteDriver
             // 
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(641, 333);
-            button1.Name = "button1";
-            button1.Size = new Size(129, 46);
-            button1.TabIndex = 3;
-            button1.Text = "Obrisi Vozaca";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = true;
+            BtnDeleteDriver.BackgroundImageLayout = ImageLayout.None;
+            BtnDeleteDriver.Image = (Image)resources.GetObject("BtnDeleteDriver.Image");
+            BtnDeleteDriver.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnDeleteDriver.Location = new Point(641, 333);
+            BtnDeleteDriver.Name = "BtnDeleteDriver";
+            BtnDeleteDriver.Size = new Size(129, 46);
+            BtnDeleteDriver.TabIndex = 3;
+            BtnDeleteDriver.Text = "Obrisi Vozaca";
+            BtnDeleteDriver.TextAlign = ContentAlignment.MiddleRight;
+            BtnDeleteDriver.UseVisualStyleBackColor = true;
+            BtnDeleteDriver.Click += BtnDeleteDriver_Click;
             // 
             // BtnChangeDriver
             // 
@@ -102,6 +104,7 @@
             BtnChangeDriver.Text = "Izmeni Vozaca";
             BtnChangeDriver.TextAlign = ContentAlignment.MiddleRight;
             BtnChangeDriver.UseVisualStyleBackColor = true;
+            BtnChangeDriver.Click += BtnChangeDriver_Click;
             // 
             // BtnAddDriver
             // 
@@ -125,6 +128,7 @@
             BtnSort.TabIndex = 2;
             BtnSort.Text = "Sortiraj";
             BtnSort.UseVisualStyleBackColor = true;
+            BtnSort.Click += BtnSort_Click;
             // 
             // ComboBoxSort
             // 
@@ -169,7 +173,7 @@
         private Button BtnSort;
         private ComboBox ComboBoxSort;
         private DataGridView DataGridViewDrivers;
-        private Button button1;
+        private Button BtnDeleteDriver;
         private Button BtnChangeDriver;
         private System.Windows.Forms.Timer timer1;
     }

@@ -14,15 +14,52 @@ namespace Forms
 
         private readonly FormCategory formCategory = new();
         private readonly FormRestriction formRestriction = new();
-        private readonly List<Category> categories = new();
-        private readonly List<Category> restrictions = new();
+        private List<Category> categories = new();
+        private List<Category> restrictions = new();
 
+        private static bool isEditable = false;
+        private static int editableIndex = -1;
 
         public FormDriver()
         {
             InitializeComponent();
             ComboBoxGender.SelectedIndex = 0;
             ComboBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
+            LoadCategories();
+            LoadRestrictions();
+        }
+
+        public static bool IsEditable
+        {
+            set { isEditable = value; }
+        }
+
+        public static int EditableIndex
+        {
+            set { editableIndex = value; }
+        }
+
+        public void InjectDriver(Driver driver)
+        {
+            PictureBoxAvatar.ImageLocation = driver.Photo;
+            TextBoxDriverLicenseNum.Text = driver.LicenseNumber;
+            TextBoxName.Text = driver.FirstName;
+            TextBoxLastName.Text = driver.LastName;
+            TextBoxPlace.Text = driver.Place;
+            DTPBirthDate.Text = driver.BornDate.ToString("dd.MM.yyyy.");
+            DTPUntilDate.Text = driver.LicenseTo.ToString("dd.MM.yyyy.");
+            DTPExpiredDate.Text = driver.LicenseFrom.ToString("dd.MM.yyyy.");
+            if(driver.Gender == "M")
+            {
+                ComboBoxGender.SelectedIndex = 0;
+            } else
+            {
+                ComboBoxGender.SelectedIndex = 1;
+            }
+
+            categories = driver.Categories.ToList();
+            restrictions = driver.Restrctions.ToList();
+
             LoadCategories();
             LoadRestrictions();
         }
@@ -39,7 +76,7 @@ namespace Forms
 
         private bool IsInCategory(Category category)
         {
-            for(int i = 0; i < categories.Count; i++)
+            for (int i = 0; i < categories.Count; i++)
             {
                 if (categories[i].CategoryValue == category.CategoryValue)
                 {
@@ -78,6 +115,8 @@ namespace Forms
             DataGridViewCategories.DataSource = categories.ToList();
             restrictions.Clear();
             DataGridViewRestrictions.DataSource = restrictions.ToList();
+            isEditable = false;
+            editableIndex = -1;
         }
 
         private void BtnNewCategory_Click(object sender, EventArgs e)
@@ -86,9 +125,9 @@ namespace Forms
 
             Category cat = formCategory.Category;
 
-            if (cat.CategoryValue != null && cat.DateFrom != null && cat.DateTo != null)
+            if (cat.CategoryValue != "" && cat.DateFrom != "" && cat.DateTo != "")
             {
-                if(IsInCategory(cat))
+                if (IsInCategory(cat))
                 {
                     MessageBox.Show("Vec imate ovu kategoriju !", "Greska !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -108,7 +147,7 @@ namespace Forms
         private void BtnNewRestriction_Click(object sender, EventArgs e)
         {
 
-            if(categories.Count < 1)
+            if (categories.Count < 1)
             {
                 MessageBox.Show("Morate dodati barem jednu kategoriju !", "Greska !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -119,7 +158,7 @@ namespace Forms
 
             Category cat = formRestriction.Restriction;
 
-            if (cat.CategoryValue != null && cat.DateFrom != null && cat.DateTo != null)
+            if (cat.CategoryValue != "" && cat.DateFrom != "" && cat.DateTo != "")
             {
                 if (IsInRestriction(cat))
                 {
@@ -176,28 +215,44 @@ namespace Forms
             string monthLicenseToDate = DTPUntilDate.Text.Substring(3, 2);
             string yearLicenseToDate = DTPUntilDate.Text.Substring(6, 4);
 
-            Driver driver = new()
+            if(isEditable && editableIndex != -1)
             {
-                FirstName = TextBoxName.Text,
-                LastName = TextBoxLastName.Text,
-                LicenseNumber = TextBoxDriverLicenseNum.Text,
-                Place = TextBoxPlace.Text,
-                Gender = ComboBoxGender.Text,
-                Photo = PictureBoxAvatar.ImageLocation,
-                BornDate = new DateTime(Int32.Parse(yearBornDate), Int32.Parse(monthBornDate), Int32.Parse(dayBornDate)),
-                LicenseFrom = new DateTime(Int32.Parse(yearLicenseFromDate), Int32.Parse(monthLicenseFromDate), Int32.Parse(dayLicenseFromDate)),
-                LicenseTo = new DateTime(Int32.Parse(yearLicenseToDate), Int32.Parse(monthLicenseToDate), Int32.Parse(dayLicenseToDate)),
-                Categories = categories,
-                Restrctions = restrictions
-            };
+                Driver dr = DriverList.Instance.DriverListValues.ElementAt(editableIndex);
 
-            if (!DriverList.Instance.AddDriver(driver))
+                dr.FirstName = TextBoxName.Text;
+                dr.LastName = TextBoxLastName.Text;
+                dr.LicenseNumber = TextBoxDriverLicenseNum.Text;
+                dr.Place = TextBoxPlace.Text;
+                dr.Gender = ComboBoxGender.Text;
+                dr.Photo = PictureBoxAvatar.ImageLocation;
+                dr.BornDate = new DateTime(Int32.Parse(yearBornDate), Int32.Parse(monthBornDate), Int32.Parse(dayBornDate));
+                dr.LicenseFrom = new DateTime(Int32.Parse(yearLicenseFromDate), Int32.Parse(monthLicenseFromDate), Int32.Parse(dayLicenseFromDate));
+                dr.LicenseTo = new DateTime(Int32.Parse(yearLicenseToDate), Int32.Parse(monthLicenseToDate), Int32.Parse(dayLicenseToDate));
+                dr.Categories = categories.ToList();
+                dr.Restrctions = restrictions.ToList();
+            } else
             {
-                MessageBox.Show("Vozac postoji u listi !", "Greska !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                Driver driver = new()
+                {
+                    FirstName = TextBoxName.Text,
+                    LastName = TextBoxLastName.Text,
+                    LicenseNumber = TextBoxDriverLicenseNum.Text,
+                    Place = TextBoxPlace.Text,
+                    Gender = ComboBoxGender.Text,
+                    Photo = PictureBoxAvatar.ImageLocation,
+                    BornDate = new DateTime(Int32.Parse(yearBornDate), Int32.Parse(monthBornDate), Int32.Parse(dayBornDate)),
+                    LicenseFrom = new DateTime(Int32.Parse(yearLicenseFromDate), Int32.Parse(monthLicenseFromDate), Int32.Parse(dayLicenseFromDate)),
+                    LicenseTo = new DateTime(Int32.Parse(yearLicenseToDate), Int32.Parse(monthLicenseToDate), Int32.Parse(dayLicenseToDate)),
+                    Categories = categories.ToList(),
+                    Restrctions = restrictions.ToList()
+                };
+
+                if (!DriverList.Instance.AddDriver(driver))
+                {
+                    MessageBox.Show("Vozac postoji u listi !", "Greska !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
-
-            MessageBox.Show(driver.Categories.Count.ToString() + " - " + driver.Restrctions.Count.ToString());
 
             EmptyFields();
             this.Close();
@@ -207,8 +262,46 @@ namespace Forms
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                PictureBoxAvatar.Image = Image.FromFile(openFileDialog1.FileName);
                 PictureBoxAvatar.ImageLocation = openFileDialog1.FileName;
+
             }
+        }
+
+        private void BtnDeleteCategory_Click(object sender, EventArgs e)
+        {
+            if (DataGridViewCategories.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Niste izabrali nijednu kategoriju !", "Greska !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int index = DataGridViewCategories.SelectedRows[0].Index;
+
+            if (IsInRestriction(categories.ElementAt(index)))
+            {
+                MessageBox.Show("Ova kategorija se nalazi u listi zabrana pa se ne moze obrisati !", "Greska !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            categories.RemoveAt(index);
+
+            LoadCategories();
+        }
+
+        private void BtnDeleteRestriction_Click(object sender, EventArgs e)
+        {
+            if (DataGridViewRestrictions.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Niste izabrali nijednu zabranu !", "Greska !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int index = DataGridViewRestrictions.SelectedRows[0].Index;
+
+            restrictions.RemoveAt(index);
+
+            LoadRestrictions();
         }
     }
 }
