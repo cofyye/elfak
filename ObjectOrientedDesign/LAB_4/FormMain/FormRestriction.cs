@@ -25,6 +25,8 @@ namespace FormMain
         {
             categories = cats;
 
+            if (categories.Count > 0) return;
+
             for(int i = 0; i < categories.Count; i++)
             {
                 ComboBoxCategories.Items.Add(categories[i].CategoryValue);

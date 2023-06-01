@@ -49,10 +49,11 @@ namespace Forms
             DTPBirthDate.Text = driver.BornDate.ToString("dd.MM.yyyy.");
             DTPUntilDate.Text = driver.LicenseTo.ToString("dd.MM.yyyy.");
             DTPExpiredDate.Text = driver.LicenseFrom.ToString("dd.MM.yyyy.");
-            if(driver.Gender == "M")
+            if (driver.Gender == "M")
             {
                 ComboBoxGender.SelectedIndex = 0;
-            } else
+            }
+            else
             {
                 ComboBoxGender.SelectedIndex = 1;
             }
@@ -215,7 +216,7 @@ namespace Forms
             string monthLicenseToDate = DTPUntilDate.Text.Substring(3, 2);
             string yearLicenseToDate = DTPUntilDate.Text.Substring(6, 4);
 
-            if(isEditable && editableIndex != -1)
+            if (isEditable && editableIndex != -1)
             {
                 Driver dr = DriverList.Instance.DriverListValues.ElementAt(editableIndex);
 
@@ -230,7 +231,8 @@ namespace Forms
                 dr.LicenseTo = new DateTime(Int32.Parse(yearLicenseToDate), Int32.Parse(monthLicenseToDate), Int32.Parse(dayLicenseToDate));
                 dr.Categories = categories.ToList();
                 dr.Restrctions = restrictions.ToList();
-            } else
+            }
+            else
             {
                 Driver driver = new()
                 {

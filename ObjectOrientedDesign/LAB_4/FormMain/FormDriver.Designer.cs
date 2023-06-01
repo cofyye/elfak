@@ -106,10 +106,12 @@
             // 
             // PictureBoxAvatar
             // 
+            PictureBoxAvatar.Anchor = AnchorStyles.None;
             PictureBoxAvatar.BorderStyle = BorderStyle.FixedSingle;
             PictureBoxAvatar.Location = new Point(414, 34);
             PictureBoxAvatar.Name = "PictureBoxAvatar";
             PictureBoxAvatar.Size = new Size(220, 185);
+            PictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             PictureBoxAvatar.TabIndex = 16;
             PictureBoxAvatar.TabStop = false;
             // 
@@ -269,7 +271,7 @@
             BtnDeleteCategory.Location = new Point(482, 180);
             BtnDeleteCategory.Name = "BtnDeleteCategory";
             BtnDeleteCategory.Size = new Size(152, 44);
-            BtnDeleteCategory.TabIndex = 18;
+            BtnDeleteCategory.TabIndex = 19;
             BtnDeleteCategory.Text = "Obrisi Kategoriju";
             BtnDeleteCategory.TextAlign = ContentAlignment.MiddleRight;
             BtnDeleteCategory.UseVisualStyleBackColor = true;
@@ -282,7 +284,7 @@
             BtnNewCategory.Location = new Point(6, 180);
             BtnNewCategory.Name = "BtnNewCategory";
             BtnNewCategory.Size = new Size(194, 44);
-            BtnNewCategory.TabIndex = 19;
+            BtnNewCategory.TabIndex = 18;
             BtnNewCategory.Text = "Dodaj Novu Kategoriju";
             BtnNewCategory.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnNewCategory.UseVisualStyleBackColor = true;
@@ -320,7 +322,7 @@
             BtnDeleteRestriction.Location = new Point(491, 176);
             BtnDeleteRestriction.Name = "BtnDeleteRestriction";
             BtnDeleteRestriction.Size = new Size(137, 44);
-            BtnDeleteRestriction.TabIndex = 20;
+            BtnDeleteRestriction.TabIndex = 21;
             BtnDeleteRestriction.Text = "Obrisi Zabranu";
             BtnDeleteRestriction.TextAlign = ContentAlignment.MiddleRight;
             BtnDeleteRestriction.UseVisualStyleBackColor = true;
