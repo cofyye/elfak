@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_MAvooH5ZEe6FWIcj3P8drQ" name="UseCase">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_DlczIH5gEe644IRAnhbeDg">
+    <body>Igrac&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_IW_PgH5gEe644IRAnhbeDg">
+    <body>Trener&#xD;
+</body>
+  </ownedComment>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_MHaRUH5ZEe6FWIcj3P8drQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_aT8BcH5ZEe6FWIcj3P8drQ" name="Korisnik"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_eeZPsH5ZEe6FWIcj3P8drQ" name="Igrac"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_fdANAH5ZEe6FWIcj3P8drQ" name="Trener"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ho-VUH5ZEe6FWIcj3P8drQ" name="Je" memberEnd="_hpHfQH5ZEe6FWIcj3P8drQ _hpKikH5ZEe6FWIcj3P8drQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hpGRIH5ZEe6FWIcj3P8drQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hpG4MH5ZEe6FWIcj3P8drQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_hpHfQH5ZEe6FWIcj3P8drQ" name="igrac" type="_eeZPsH5ZEe6FWIcj3P8drQ" association="_ho-VUH5ZEe6FWIcj3P8drQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_hpKikH5ZEe6FWIcj3P8drQ" name="korisnik" type="_aT8BcH5ZEe6FWIcj3P8drQ" association="_ho-VUH5ZEe6FWIcj3P8drQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_k3cccH5ZEe6FWIcj3P8drQ" name="je" memberEnd="_k3dqkn5ZEe6FWIcj3P8drQ _k3eRoH5ZEe6FWIcj3P8drQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k3dqkH5ZEe6FWIcj3P8drQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k3dqkX5ZEe6FWIcj3P8drQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_k3dqkn5ZEe6FWIcj3P8drQ" name="trener" type="_fdANAH5ZEe6FWIcj3P8drQ" association="_k3cccH5ZEe6FWIcj3P8drQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_k3eRoH5ZEe6FWIcj3P8drQ" name="korisnik" type="_aT8BcH5ZEe6FWIcj3P8drQ" association="_k3cccH5ZEe6FWIcj3P8drQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_2kEPMH5ZEe644IRAnhbeDg" name="Potreba za klubom"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8Jb8QH5ZEe644IRAnhbeDg" memberEnd="_8Jg0wH5ZEe644IRAnhbeDg _8Jhb0H5ZEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8JfmoH5ZEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8JfmoX5ZEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_8Jg0wH5ZEe644IRAnhbeDg" name="potreba za klubom" type="_2kEPMH5ZEe644IRAnhbeDg" association="_8Jb8QH5ZEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_8Jhb0H5ZEe644IRAnhbeDg" name="igrac" type="_eeZPsH5ZEe6FWIcj3P8drQ" association="_8Jb8QH5ZEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="__guBIH5ZEe644IRAnhbeDg" name="Pronalazak web aplikacije">
+    <include xmi:type="uml:Include" xmi:id="_KOSXEH5aEe644IRAnhbeDg" addition="_2kEPMH5ZEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_VJrtoH5aEe644IRAnhbeDg" name="Web aplikacija"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ZsiNwH5aEe644IRAnhbeDg" memberEnd="_Zsi00n5aEe644IRAnhbeDg _Zsjb4H5aEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Zsi00H5aEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Zsi00X5aEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Zsi00n5aEe644IRAnhbeDg" name="pronalazak web aplikacije" type="__guBIH5ZEe644IRAnhbeDg" association="_ZsiNwH5aEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Zsjb4H5aEe644IRAnhbeDg" name="web aplikacija" type="_VJrtoH5aEe644IRAnhbeDg" association="_ZsiNwH5aEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_e7vdkH5aEe644IRAnhbeDg" name="Autentifikaija">
+    <include xmi:type="uml:Include" xmi:id="_54LckH5fEe644IRAnhbeDg" addition="_zYD-gH5fEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ga-bsH5aEe644IRAnhbeDg" memberEnd="_ga_Cwn5aEe644IRAnhbeDg _ga_p0H5aEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ga_CwH5aEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ga_CwX5aEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ga_Cwn5aEe644IRAnhbeDg" name="web aplikacija" type="_VJrtoH5aEe644IRAnhbeDg" association="_ga-bsH5aEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ga_p0H5aEe644IRAnhbeDg" name="autentifikaija" type="_e7vdkH5aEe644IRAnhbeDg" association="_ga-bsH5aEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_iiIVcH5aEe644IRAnhbeDg" name="Registracija">
+    <generalization xmi:type="uml:Generalization" xmi:id="_vLu6QH5aEe644IRAnhbeDg" general="_e7vdkH5aEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_m9WjkH5aEe644IRAnhbeDg" name="Logovanje">
+    <generalization xmi:type="uml:Generalization" xmi:id="_v39HEH5aEe644IRAnhbeDg" general="_e7vdkH5aEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_yjW9YH5aEe644IRAnhbeDg" name="Autorizacija">
+    <include xmi:type="uml:Include" xmi:id="_0SjqIH5aEe644IRAnhbeDg" addition="_e7vdkH5aEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_8ZeG4H5aEe644IRAnhbeDg" name="Prijava u klub i postavljanje licne karte i zdr. kartona">
+    <include xmi:type="uml:Include" xmi:id="_FNI78H5bEe644IRAnhbeDg" addition="_yjW9YH5aEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_LFE_sH5bEe644IRAnhbeDg" name="Cekanje odgovora">
+    <include xmi:type="uml:Include" xmi:id="_Mc0OsH5bEe644IRAnhbeDg" addition="_8ZeG4H5aEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_OFhR4H5bEe644IRAnhbeDg" name="Dobio odgovor">
+    <include xmi:type="uml:Include" xmi:id="_PvI7EH5bEe644IRAnhbeDg" addition="_LFE_sH5bEe644IRAnhbeDg"/>
+    <include xmi:type="uml:Include" xmi:id="_PtjX8H5hEe644IRAnhbeDg" addition="_KCw_YH5hEe644IRAnhbeDg"/>
+    <include xmi:type="uml:Include" xmi:id="_SWLAAH5hEe644IRAnhbeDg" addition="_y51U8H5gEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Sy_GkH5bEe644IRAnhbeDg" name="Odbijen">
+    <include xmi:type="uml:Include" xmi:id="_c1MyYH5bEe644IRAnhbeDg" addition="_OFhR4H5bEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_moSdEH5bEe644IRAnhbeDg" name="Obavestavanje igraca da je odbijen">
+    <include xmi:type="uml:Include" xmi:id="_o61HcH5bEe644IRAnhbeDg" addition="_Sy_GkH5bEe644IRAnhbeDg"/>
+    <include xmi:type="uml:Include" xmi:id="_Rjw9kH5fEe644IRAnhbeDg" addition="_18ffkH5eEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_sZg00H5bEe644IRAnhbeDg" name="Igrac je odbijen">
+    <include xmi:type="uml:Include" xmi:id="_11jRcH5bEe644IRAnhbeDg" addition="_moSdEH5bEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vWuz4H5bEe644IRAnhbeDg" memberEnd="_vWwCAH5bEe644IRAnhbeDg _vWwCAX5bEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vWva8H5bEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vWva8X5bEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vWwCAH5bEe644IRAnhbeDg" name="igrac" type="_eeZPsH5ZEe6FWIcj3P8drQ" association="_vWuz4H5bEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vWwCAX5bEe644IRAnhbeDg" name="igrac je odbijen" type="_sZg00H5bEe644IRAnhbeDg" association="_vWuz4H5bEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_5mZF0H5bEe644IRAnhbeDg" name="Prihvacen">
+    <include xmi:type="uml:Include" xmi:id="_602dAH5bEe644IRAnhbeDg" addition="_OFhR4H5bEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_9CL3QH5bEe644IRAnhbeDg" name="Cekanje termina">
+    <include xmi:type="uml:Include" xmi:id="_-QYvwH5bEe644IRAnhbeDg" addition="_5mZF0H5bEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_DS940H5cEe644IRAnhbeDg" name="Ide na testiranje">
+    <include xmi:type="uml:Include" xmi:id="_E1bKEH5cEe644IRAnhbeDg" addition="_9CL3QH5bEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Hf5MQH5cEe644IRAnhbeDg" name="Testiranje zapocinje">
+    <include xmi:type="uml:Include" xmi:id="_PY5I0H5cEe644IRAnhbeDg" addition="_DS940H5cEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_TlJG0H5cEe644IRAnhbeDg" name="Testiranje"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VJi40H5cEe644IRAnhbeDg" memberEnd="_VJjf4n5cEe644IRAnhbeDg _VJjf435cEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VJjf4H5cEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VJjf4X5cEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VJjf4n5cEe644IRAnhbeDg" name="testiranje zapocinje" type="_Hf5MQH5cEe644IRAnhbeDg" association="_VJi40H5cEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VJjf435cEe644IRAnhbeDg" name="testiranje" type="_TlJG0H5cEe644IRAnhbeDg" association="_VJi40H5cEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_g2-wUH5cEe644IRAnhbeDg" name="Izvrsava testiranje"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_nLW4cH5cEe644IRAnhbeDg" memberEnd="_nLXfgn5cEe644IRAnhbeDg _nLXfg35cEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nLXfgH5cEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nLXfgX5cEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_nLXfgn5cEe644IRAnhbeDg" name="izvrsava testiranje" type="_g2-wUH5cEe644IRAnhbeDg" association="_nLW4cH5cEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_nLXfg35cEe644IRAnhbeDg" name="igrac" type="_eeZPsH5ZEe6FWIcj3P8drQ" association="_nLW4cH5cEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_1I5KUH5cEe644IRAnhbeDg" name="Ceka na zavrseno testiranje igraca">
+    <include xmi:type="uml:Include" xmi:id="_9oga8H5cEe644IRAnhbeDg" addition="_g2-wUH5cEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_28BU0H5cEe644IRAnhbeDg" memberEnd="_28B74H5cEe644IRAnhbeDg _28B74X5cEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_28BU0X5cEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_28BU0n5cEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_28B74H5cEe644IRAnhbeDg" name="ceka na zavrseno testiranje igraca" type="_1I5KUH5cEe644IRAnhbeDg" association="_28BU0H5cEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_28B74X5cEe644IRAnhbeDg" name="trener" type="_fdANAH5ZEe6FWIcj3P8drQ" association="_28BU0H5cEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_EAuhQH5dEe644IRAnhbeDg" name="Utisak">
+    <include xmi:type="uml:Include" xmi:id="_KLbI8H5dEe644IRAnhbeDg" addition="_1I5KUH5cEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_FUlV0H5dEe644IRAnhbeDg" name="Zadovoljan">
+    <generalization xmi:type="uml:Generalization" xmi:id="_LHw1YH5dEe644IRAnhbeDg" general="_EAuhQH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_GCXo4H5dEe644IRAnhbeDg" name="Nezadovoljan">
+    <generalization xmi:type="uml:Generalization" xmi:id="_NkhLsH5dEe644IRAnhbeDg" general="_EAuhQH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_TMncoH5dEe644IRAnhbeDg" name="Igrac je prihvacen">
+    <include xmi:type="uml:Include" xmi:id="_XWomAH5dEe644IRAnhbeDg" addition="_FUlV0H5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_V_nIsH5dEe644IRAnhbeDg" name="Prima povratnu informaciju">
+    <include xmi:type="uml:Include" xmi:id="_YJj3wH5dEe644IRAnhbeDg" addition="_TMncoH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_iIaGgH5dEe644IRAnhbeDg" memberEnd="_iIbUoH5dEe644IRAnhbeDg _iIbUoX5dEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iIatkH5dEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iIatkX5dEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_iIbUoH5dEe644IRAnhbeDg" name="prima povratnu informaciju" type="_V_nIsH5dEe644IRAnhbeDg" association="_iIaGgH5dEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_iIbUoX5dEe644IRAnhbeDg" name="igrac" type="_eeZPsH5ZEe6FWIcj3P8drQ" association="_iIaGgH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_sg49QH5dEe644IRAnhbeDg" client="_Hf5MQH5cEe644IRAnhbeDg" supplier="_V_nIsH5dEe644IRAnhbeDg"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_z5XmsH5dEe644IRAnhbeDg" name="Baza"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_5XA7IH5dEe644IRAnhbeDg" name="Ispitivanje stanja testiranja">
+    <include xmi:type="uml:Include" xmi:id="_84oAsH5dEe644IRAnhbeDg" addition="_Hf5MQH5cEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7NgisH5dEe644IRAnhbeDg" memberEnd="_7Ngis35dEe644IRAnhbeDg _7NgitH5dEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7NgisX5dEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7Ngisn5dEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7Ngis35dEe644IRAnhbeDg" name="ispitivanje stanja testiranja" type="_5XA7IH5dEe644IRAnhbeDg" association="_7NgisH5dEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7NgitH5dEe644IRAnhbeDg" name="baza" type="_z5XmsH5dEe644IRAnhbeDg" association="_7NgisH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_-hhRIH5dEe644IRAnhbeDg" name="Prihvacen">
+    <generalization xmi:type="uml:Generalization" xmi:id="_GQcrsH5eEe644IRAnhbeDg" general="_5XA7IH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="__-vdEH5dEe644IRAnhbeDg" name="Odbijen">
+    <generalization xmi:type="uml:Generalization" xmi:id="_GtInsH5eEe644IRAnhbeDg" general="_5XA7IH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_PxgLMH5eEe644IRAnhbeDg" name="Ubaci u klub">
+    <include xmi:type="uml:Include" xmi:id="_fhkKoH5eEe644IRAnhbeDg" addition="_-hhRIH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_RNu4oH5eEe644IRAnhbeDg" name="Izbrisi iz baze">
+    <include xmi:type="uml:Include" xmi:id="_e1uYUH5eEe644IRAnhbeDg" addition="__-vdEH5dEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_18ffkH5eEe644IRAnhbeDg" name="Igrac je obrisan i nije prihvacen u klub">
+    <include xmi:type="uml:Include" xmi:id="_3eO_IH5eEe644IRAnhbeDg" addition="_RNu4oH5eEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_5Nn5IH5eEe644IRAnhbeDg" name="Igrac je evidentiran i primljen u klub">
+    <include xmi:type="uml:Include" xmi:id="_7Nv90H5eEe644IRAnhbeDg" addition="_PxgLMH5eEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_ch44AH5fEe644IRAnhbeDg" name="Obavestavanje da je igrac prihvacen">
+    <include xmi:type="uml:Include" xmi:id="_hIU3oH5fEe644IRAnhbeDg" addition="_5Nn5IH5eEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_droHQH5fEe644IRAnhbeDg" memberEnd="_drouUn5fEe644IRAnhbeDg _drpVYH5fEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_drouUH5fEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_drouUX5fEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_drouUn5fEe644IRAnhbeDg" name="obavestavanje da je igrac prihvacen" type="_ch44AH5fEe644IRAnhbeDg" association="_droHQH5fEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_drpVYH5fEe644IRAnhbeDg" name="igrac" type="_eeZPsH5ZEe6FWIcj3P8drQ" association="_droHQH5fEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_zYD-gH5fEe644IRAnhbeDg" name="Ulazi u google chrome i kuca link web aplikacije"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1VpskH5fEe644IRAnhbeDg" memberEnd="_1Vpsk35fEe644IRAnhbeDg _1VqToH5fEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1VpskX5fEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1Vpskn5fEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_1Vpsk35fEe644IRAnhbeDg" name="ulazi u google chrome i kuca link web aplikacije" type="_zYD-gH5fEe644IRAnhbeDg" association="_1VpskH5fEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_1VqToH5fEe644IRAnhbeDg" name="trener" type="_fdANAH5ZEe6FWIcj3P8drQ" association="_1VpskH5fEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_9i3loH5fEe644IRAnhbeDg" name="Pregled prijavnica u klub">
+    <include xmi:type="uml:Include" xmi:id="__lY3AH5fEe644IRAnhbeDg" addition="_yjW9YH5aEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_UWMMcH5gEe644IRAnhbeDg" name="Pribavljanje svih prijavnica igraca iz baze">
+    <include xmi:type="uml:Include" xmi:id="_a8z7IH5gEe644IRAnhbeDg" addition="_9i3loH5fEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_V7y4UH5gEe644IRAnhbeDg" memberEnd="_V7zfYn5gEe644IRAnhbeDg _V7zfY35gEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V7zfYH5gEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V7zfYX5gEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_V7zfYn5gEe644IRAnhbeDg" name="pribavljanje svih prijavnica igraca iz baze" type="_UWMMcH5gEe644IRAnhbeDg" association="_V7y4UH5gEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_V7zfY35gEe644IRAnhbeDg" name="baza" type="_z5XmsH5dEe644IRAnhbeDg" association="_V7y4UH5gEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_jJ7tkH5gEe644IRAnhbeDg" name="Prihvatanje ili odbijanje igraca">
+    <include xmi:type="uml:Include" xmi:id="_qVkN0H5gEe644IRAnhbeDg" addition="_UWMMcH5gEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ksVUcH5gEe644IRAnhbeDg" memberEnd="_ksV7gX5gEe644IRAnhbeDg _ksV7gn5gEe644IRAnhbeDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ksVUcX5gEe644IRAnhbeDg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ksV7gH5gEe644IRAnhbeDg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ksV7gX5gEe644IRAnhbeDg" name="prihvatanje ili odbijanje igraca" type="_jJ7tkH5gEe644IRAnhbeDg" association="_ksVUcH5gEe644IRAnhbeDg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ksV7gn5gEe644IRAnhbeDg" name="web aplikacija" type="_VJrtoH5aEe644IRAnhbeDg" association="_ksVUcH5gEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_yEbW8H5gEe644IRAnhbeDg" name="Prihvacen">
+    <generalization xmi:type="uml:Generalization" xmi:id="_4lKgEH5gEe644IRAnhbeDg" general="_jJ7tkH5gEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y51U8H5gEe644IRAnhbeDg" name="Odbijen">
+    <generalization xmi:type="uml:Generalization" xmi:id="_5VOEAH5gEe644IRAnhbeDg" general="_jJ7tkH5gEe644IRAnhbeDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_KCw_YH5hEe644IRAnhbeDg" name="Slanje termina igracu">
+    <include xmi:type="uml:Include" xmi:id="_K-5QcH5hEe644IRAnhbeDg" addition="_yEbW8H5gEe644IRAnhbeDg"/>
+  </packagedElement>
+</uml:Model>

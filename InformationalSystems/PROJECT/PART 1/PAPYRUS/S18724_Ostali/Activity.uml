@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_-mhToH5iEe644IRAnhbeDg" name="Activity">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_-ntmcH5iEe644IRAnhbeDg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_-msSwH5iEe644IRAnhbeDg" name="Activity1" node="_KnXPUH5jEe644IRAnhbeDg _M28sUH5jEe644IRAnhbeDg _QgQ8YH5jEe644IRAnhbeDg _brkXMH5jEe644IRAnhbeDg _h2FYsH5jEe644IRAnhbeDg _l05-sH5jEe644IRAnhbeDg _ycHW0H5jEe644IRAnhbeDg _1N0CYH5jEe644IRAnhbeDg _3rGkMH5jEe644IRAnhbeDg _GmJAIH5kEe644IRAnhbeDg _NDHqoH5kEe644IRAnhbeDg _Yii7UH5kEe644IRAnhbeDg _Z7aLsH5kEe644IRAnhbeDg _bQo5QH5kEe644IRAnhbeDg _qvdXsH5kEe644IRAnhbeDg _ukqHoH5kEe644IRAnhbeDg _z7OjsH5kEe644IRAnhbeDg _-c8O8H5kEe644IRAnhbeDg _A5ctoH5lEe644IRAnhbeDg _CCbu8H5lEe644IRAnhbeDg _If6IsH5lEe644IRAnhbeDg _W2QjMH5lEe644IRAnhbeDg _gCFZkH5lEe644IRAnhbeDg _lRPmEH5lEe644IRAnhbeDg _p6mW0H5lEe644IRAnhbeDg _vhl0gH5lEe644IRAnhbeDg _5sVxQH5lEe644IRAnhbeDg _-H6ksH5lEe644IRAnhbeDg _Cc_HgH5mEe644IRAnhbeDg _HP1ygH5mEe644IRAnhbeDg _KE0bkH5mEe644IRAnhbeDg _MIrwwH5mEe644IRAnhbeDg _QDvREH5mEe644IRAnhbeDg _U5HroH5mEe644IRAnhbeDg _onmocH5mEe644IRAnhbeDg _D8RTgH5nEe644IRAnhbeDg _IYCUMH5nEe644IRAnhbeDg _LaLPgH5nEe644IRAnhbeDg _Q1JqcH5nEe644IRAnhbeDg _T6NW4H5nEe644IRAnhbeDg _bsVPYH5nEe644IRAnhbeDg _nJAuEH5nEe644IRAnhbeDg _vJ6pcH5nEe644IRAnhbeDg _78Jl0H5nEe644IRAnhbeDg ___b1EH5nEe644IRAnhbeDg _Eu504H5oEe644IRAnhbeDg _Fy3zUH5oEe644IRAnhbeDg _OAi_YH5oEe644IRAnhbeDg _Qh1QYH5oEe644IRAnhbeDg _jcEs0H5oEe644IRAnhbeDg _-T5D0H5oEe644IRAnhbeDg _IZW38H5pEe644IRAnhbeDg _d10ZgH5pEe644IRAnhbeDg _rt2gUH5pEe644IRAnhbeDg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZeusMH5jEe644IRAnhbeDg" target="_QgQ8YH5jEe644IRAnhbeDg" source="_KnXPUH5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_dBZhsH5jEe644IRAnhbeDg" target="_brkXMH5jEe644IRAnhbeDg" source="_QgQ8YH5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_j-0m0H5jEe644IRAnhbeDg" target="_h2FYsH5jEe644IRAnhbeDg" source="_brkXMH5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_m9f-cH5jEe644IRAnhbeDg" target="_l05-sH5jEe644IRAnhbeDg" source="_h2FYsH5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="__gJ04H5jEe644IRAnhbeDg" target="_ycHW0H5jEe644IRAnhbeDg" source="_l05-sH5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_A_oDkH5kEe644IRAnhbeDg" target="_1N0CYH5jEe644IRAnhbeDg" source="_ycHW0H5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_CtPb8H5kEe644IRAnhbeDg" target="_3rGkMH5jEe644IRAnhbeDg" source="_ycHW0H5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_IWyeYH5kEe644IRAnhbeDg" target="_GmJAIH5kEe644IRAnhbeDg" source="_3rGkMH5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_JDtOwH5kEe644IRAnhbeDg" target="_GmJAIH5kEe644IRAnhbeDg" source="_1N0CYH5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_P5DV8H5kEe644IRAnhbeDg" target="_NDHqoH5kEe644IRAnhbeDg" source="_GmJAIH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hwQoEH5kEe644IRAnhbeDg" target="_Z7aLsH5kEe644IRAnhbeDg" source="_Yii7UH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ifMxsH5kEe644IRAnhbeDg" target="_bQo5QH5kEe644IRAnhbeDg" source="_Yii7UH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_jbDV8H5kEe644IRAnhbeDg" target="_Yii7UH5kEe644IRAnhbeDg" source="_NDHqoH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_srRkIH5kEe644IRAnhbeDg" target="_qvdXsH5kEe644IRAnhbeDg" source="_Z7aLsH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_v0mskH5kEe644IRAnhbeDg" target="_ukqHoH5kEe644IRAnhbeDg" source="_qvdXsH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3RBa0H5kEe644IRAnhbeDg" target="_z7OjsH5kEe644IRAnhbeDg" source="_ukqHoH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="__uGU0H5kEe644IRAnhbeDg" target="_-c8O8H5kEe644IRAnhbeDg" source="_z7OjsH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Ehbg8H5lEe644IRAnhbeDg" target="_A5ctoH5lEe644IRAnhbeDg" source="_-c8O8H5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_FUJ-YH5lEe644IRAnhbeDg" target="_CCbu8H5lEe644IRAnhbeDg" source="_-c8O8H5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_L0yZ0H5lEe644IRAnhbeDg" target="_If6IsH5lEe644IRAnhbeDg" source="_A5ctoH5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_cTdLsH5lEe644IRAnhbeDg" target="_W2QjMH5lEe644IRAnhbeDg" source="_If6IsH5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hnVgIH5lEe644IRAnhbeDg" target="_gCFZkH5lEe644IRAnhbeDg" source="_CCbu8H5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_mv2SEH5lEe644IRAnhbeDg" target="_lRPmEH5lEe644IRAnhbeDg" source="_gCFZkH5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_roNIIH5lEe644IRAnhbeDg" target="_p6mW0H5lEe644IRAnhbeDg" source="_lRPmEH5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yLP-YH5lEe644IRAnhbeDg" target="_vhl0gH5lEe644IRAnhbeDg" source="_M28sUH5jEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3Mj8IH5lEe644IRAnhbeDg" target="_h2FYsH5jEe644IRAnhbeDg" source="_vhl0gH5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_6qYt4H5lEe644IRAnhbeDg" target="_5sVxQH5lEe644IRAnhbeDg" source="_bQo5QH5kEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="__1s8MH5lEe644IRAnhbeDg" target="_-H6ksH5lEe644IRAnhbeDg" source="_5sVxQH5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_DpcTkH5mEe644IRAnhbeDg" target="_Cc_HgH5mEe644IRAnhbeDg" source="_-H6ksH5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_IPobkH5mEe644IRAnhbeDg" target="_HP1ygH5mEe644IRAnhbeDg" source="_Cc_HgH5mEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_OkY-MH5mEe644IRAnhbeDg" target="_KE0bkH5mEe644IRAnhbeDg" source="_HP1ygH5mEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_PPPSAH5mEe644IRAnhbeDg" target="_MIrwwH5mEe644IRAnhbeDg" source="_HP1ygH5mEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_RQR8sH5mEe644IRAnhbeDg" target="_QDvREH5mEe644IRAnhbeDg" source="_KE0bkH5mEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_XQEU4H5mEe644IRAnhbeDg" target="_U5HroH5mEe644IRAnhbeDg" source="_QDvREH5mEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_sOMUoH5mEe644IRAnhbeDg" target="_onmocH5mEe644IRAnhbeDg" source="_MIrwwH5mEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_s8x48H5mEe644IRAnhbeDg" target="_QDvREH5mEe644IRAnhbeDg" source="_onmocH5mEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_2GhrsH5mEe644IRAnhbeDg" name="Obavestavanje igraca" target="_z7OjsH5kEe644IRAnhbeDg" source="_U5HroH5mEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_FGmYoH5nEe644IRAnhbeDg" target="_D8RTgH5nEe644IRAnhbeDg" source="_p6mW0H5lEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_JadagH5nEe644IRAnhbeDg" target="_IYCUMH5nEe644IRAnhbeDg" source="_D8RTgH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_OCDQsH5nEe644IRAnhbeDg" target="_LaLPgH5nEe644IRAnhbeDg" source="_IYCUMH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_WvYNMH5nEe644IRAnhbeDg" target="_Q1JqcH5nEe644IRAnhbeDg" source="_LaLPgH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_XmI2EH5nEe644IRAnhbeDg" target="_T6NW4H5nEe644IRAnhbeDg" source="_LaLPgH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_jPmMgH5nEe644IRAnhbeDg" target="_bsVPYH5nEe644IRAnhbeDg" source="_T6NW4H5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_wty3AH5nEe644IRAnhbeDg" target="_vJ6pcH5nEe644IRAnhbeDg" source="_Q1JqcH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_9nWjYH5nEe644IRAnhbeDg" target="_78Jl0H5nEe644IRAnhbeDg" source="_nJAuEH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Br1sgH5oEe644IRAnhbeDg" target="___b1EH5nEe644IRAnhbeDg" source="_78Jl0H5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_I_TTEH5oEe644IRAnhbeDg" target="_Eu504H5oEe644IRAnhbeDg" source="___b1EH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_KBg-AH5oEe644IRAnhbeDg" target="_Fy3zUH5oEe644IRAnhbeDg" source="___b1EH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_TZI0sH5oEe644IRAnhbeDg" target="_OAi_YH5oEe644IRAnhbeDg" source="_Fy3zUH5oEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_UKFJcH5oEe644IRAnhbeDg" target="_Qh1QYH5oEe644IRAnhbeDg" source="_Eu504H5oEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_kUtlAH5oEe644IRAnhbeDg" target="_jcEs0H5oEe644IRAnhbeDg" source="_bsVPYH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_lI-TgH5oEe644IRAnhbeDg" target="_jcEs0H5oEe644IRAnhbeDg" source="_vJ6pcH5nEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_omimkH5oEe644IRAnhbeDg" target="_nJAuEH5nEe644IRAnhbeDg" source="_jcEs0H5oEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="__dkBoH5oEe644IRAnhbeDg" target="_-T5D0H5oEe644IRAnhbeDg" source="_Qh1QYH5oEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_D5ezUH5pEe644IRAnhbeDg" target="_If6IsH5lEe644IRAnhbeDg" source="_-T5D0H5oEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_JynJ4H5pEe644IRAnhbeDg" target="_IZW38H5pEe644IRAnhbeDg" source="_OAi_YH5oEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_jyOtkH5pEe644IRAnhbeDg" target="_d10ZgH5pEe644IRAnhbeDg" source="_IZW38H5pEe644IRAnhbeDg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_s-_YEH5pEe644IRAnhbeDg" target="_rt2gUH5pEe644IRAnhbeDg" source="_d10ZgH5pEe644IRAnhbeDg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_KnXPUH5jEe644IRAnhbeDg" name="Uclanjenje u klub" outgoing="_ZeusMH5jEe644IRAnhbeDg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_M28sUH5jEe644IRAnhbeDg" name="Angazovanje igraca" outgoing="_yLP-YH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_QgQ8YH5jEe644IRAnhbeDg" name="Potreba za klubom" incoming="_ZeusMH5jEe644IRAnhbeDg" outgoing="_dBZhsH5jEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_brkXMH5jEe644IRAnhbeDg" name="Pronalazak web aplikacije" incoming="_dBZhsH5jEe644IRAnhbeDg" outgoing="_j-0m0H5jEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_h2FYsH5jEe644IRAnhbeDg" name="Pristup web aplikaciji" incoming="_j-0m0H5jEe644IRAnhbeDg _3Mj8IH5lEe644IRAnhbeDg" outgoing="_m9f-cH5jEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_l05-sH5jEe644IRAnhbeDg" name="Autentifikacija" incoming="_m9f-cH5jEe644IRAnhbeDg" outgoing="__gJ04H5jEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_ycHW0H5jEe644IRAnhbeDg" name="" incoming="__gJ04H5jEe644IRAnhbeDg" outgoing="_A_oDkH5kEe644IRAnhbeDg _CtPb8H5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_1N0CYH5jEe644IRAnhbeDg" name="Logovanje" incoming="_A_oDkH5kEe644IRAnhbeDg" outgoing="_JDtOwH5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_3rGkMH5jEe644IRAnhbeDg" name="Registracija" incoming="_CtPb8H5kEe644IRAnhbeDg" outgoing="_IWyeYH5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_GmJAIH5kEe644IRAnhbeDg" name="" incoming="_IWyeYH5kEe644IRAnhbeDg _JDtOwH5kEe644IRAnhbeDg" outgoing="_P5DV8H5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_NDHqoH5kEe644IRAnhbeDg" name="Autorizacija" incoming="_P5DV8H5kEe644IRAnhbeDg" outgoing="_jbDV8H5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_Yii7UH5kEe644IRAnhbeDg" name="" incoming="_jbDV8H5kEe644IRAnhbeDg" outgoing="_hwQoEH5kEe644IRAnhbeDg _ifMxsH5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_Z7aLsH5kEe644IRAnhbeDg" name="Igrac" incoming="_hwQoEH5kEe644IRAnhbeDg" outgoing="_srRkIH5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_bQo5QH5kEe644IRAnhbeDg" name="Trener" incoming="_ifMxsH5kEe644IRAnhbeDg" outgoing="_6qYt4H5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_qvdXsH5kEe644IRAnhbeDg" name="Prijava u klub i postavljanje licne karte i zdr. kartona" incoming="_srRkIH5kEe644IRAnhbeDg" outgoing="_v0mskH5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_ukqHoH5kEe644IRAnhbeDg" name="Cekanje odgovora" incoming="_v0mskH5kEe644IRAnhbeDg" outgoing="_3RBa0H5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_z7OjsH5kEe644IRAnhbeDg" name="Dobio odgovor" incoming="_3RBa0H5kEe644IRAnhbeDg _2GhrsH5mEe644IRAnhbeDg" outgoing="__uGU0H5kEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_-c8O8H5kEe644IRAnhbeDg" name="" incoming="__uGU0H5kEe644IRAnhbeDg" outgoing="_Ehbg8H5lEe644IRAnhbeDg _FUJ-YH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_A5ctoH5lEe644IRAnhbeDg" name="Odbijen" incoming="_Ehbg8H5lEe644IRAnhbeDg" outgoing="_L0yZ0H5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_CCbu8H5lEe644IRAnhbeDg" name="Prihvacen" incoming="_FUJ-YH5lEe644IRAnhbeDg" outgoing="_hnVgIH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_If6IsH5lEe644IRAnhbeDg" name="Obavestavanje igraca da je odbijen" incoming="_L0yZ0H5lEe644IRAnhbeDg _D5ezUH5pEe644IRAnhbeDg" outgoing="_cTdLsH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:FlowFinalNode" xmi:id="_W2QjMH5lEe644IRAnhbeDg" name="Igrac je odbijen" incoming="_cTdLsH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_gCFZkH5lEe644IRAnhbeDg" name="Cekanje termina" incoming="_hnVgIH5lEe644IRAnhbeDg" outgoing="_mv2SEH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_lRPmEH5lEe644IRAnhbeDg" name="Ide na testiranje" incoming="_mv2SEH5lEe644IRAnhbeDg" outgoing="_roNIIH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_p6mW0H5lEe644IRAnhbeDg" name="Testiranje zapocinje" incoming="_roNIIH5lEe644IRAnhbeDg" outgoing="_FGmYoH5nEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_vhl0gH5lEe644IRAnhbeDg" name="Ulazi u google chrome i kuca link web aplikacije" incoming="_yLP-YH5lEe644IRAnhbeDg" outgoing="_3Mj8IH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_5sVxQH5lEe644IRAnhbeDg" name="Pregled prijavnica u klub" incoming="_6qYt4H5lEe644IRAnhbeDg" outgoing="__1s8MH5lEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_-H6ksH5lEe644IRAnhbeDg" name="Pribavljanje svih prijavnica igraca iz baze" incoming="__1s8MH5lEe644IRAnhbeDg" outgoing="_DpcTkH5mEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_Cc_HgH5mEe644IRAnhbeDg" name="Prihvatanje ili odbijanje igraca" incoming="_DpcTkH5mEe644IRAnhbeDg" outgoing="_IPobkH5mEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_HP1ygH5mEe644IRAnhbeDg" name="" incoming="_IPobkH5mEe644IRAnhbeDg" outgoing="_OkY-MH5mEe644IRAnhbeDg _PPPSAH5mEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_KE0bkH5mEe644IRAnhbeDg" name="Odbijen" incoming="_OkY-MH5mEe644IRAnhbeDg" outgoing="_RQR8sH5mEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_MIrwwH5mEe644IRAnhbeDg" name="Prihvacen" incoming="_PPPSAH5mEe644IRAnhbeDg" outgoing="_sOMUoH5mEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_QDvREH5mEe644IRAnhbeDg" name="" incoming="_RQR8sH5mEe644IRAnhbeDg _s8x48H5mEe644IRAnhbeDg" outgoing="_XQEU4H5mEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_U5HroH5mEe644IRAnhbeDg" name="Azuriranje statusa (Prihvacen ili Odbijen)" incoming="_XQEU4H5mEe644IRAnhbeDg" outgoing="_2GhrsH5mEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_onmocH5mEe644IRAnhbeDg" name="Slanje termina igracu" incoming="_sOMUoH5mEe644IRAnhbeDg" outgoing="_s8x48H5mEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_D8RTgH5nEe644IRAnhbeDg" name="Izvrsava testiranje" incoming="_FGmYoH5nEe644IRAnhbeDg" outgoing="_JadagH5nEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_IYCUMH5nEe644IRAnhbeDg" name="Ceka na zavrseno testiranje igraca" incoming="_JadagH5nEe644IRAnhbeDg" outgoing="_OCDQsH5nEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_LaLPgH5nEe644IRAnhbeDg" name="" incoming="_OCDQsH5nEe644IRAnhbeDg" outgoing="_WvYNMH5nEe644IRAnhbeDg _XmI2EH5nEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_Q1JqcH5nEe644IRAnhbeDg" name="Nezadovoljan" incoming="_WvYNMH5nEe644IRAnhbeDg" outgoing="_wty3AH5nEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_T6NW4H5nEe644IRAnhbeDg" name="Zadovoljan" incoming="_XmI2EH5nEe644IRAnhbeDg" outgoing="_jPmMgH5nEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_bsVPYH5nEe644IRAnhbeDg" name="Igrac je prihvacen" incoming="_jPmMgH5nEe644IRAnhbeDg" outgoing="_kUtlAH5oEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_nJAuEH5nEe644IRAnhbeDg" name="Prima povratnu informaciju" incoming="_omimkH5oEe644IRAnhbeDg" outgoing="_9nWjYH5nEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_vJ6pcH5nEe644IRAnhbeDg" name="Igrac je odbijen" incoming="_wty3AH5nEe644IRAnhbeDg" outgoing="_lI-TgH5oEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_78Jl0H5nEe644IRAnhbeDg" name="Ispitivanje stanja testiranja" incoming="_9nWjYH5nEe644IRAnhbeDg" outgoing="_Br1sgH5oEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="___b1EH5nEe644IRAnhbeDg" name="" incoming="_Br1sgH5oEe644IRAnhbeDg" outgoing="_I_TTEH5oEe644IRAnhbeDg _KBg-AH5oEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_Eu504H5oEe644IRAnhbeDg" name="Odbijen" incoming="_I_TTEH5oEe644IRAnhbeDg" outgoing="_UKFJcH5oEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_Fy3zUH5oEe644IRAnhbeDg" name="Prihvacen" incoming="_KBg-AH5oEe644IRAnhbeDg" outgoing="_TZI0sH5oEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_OAi_YH5oEe644IRAnhbeDg" name="Ubaci u klub" incoming="_TZI0sH5oEe644IRAnhbeDg" outgoing="_JynJ4H5pEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_Qh1QYH5oEe644IRAnhbeDg" name="Izbrisi iz baze" incoming="_UKFJcH5oEe644IRAnhbeDg" outgoing="__dkBoH5oEe644IRAnhbeDg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_jcEs0H5oEe644IRAnhbeDg" name="" incoming="_kUtlAH5oEe644IRAnhbeDg _lI-TgH5oEe644IRAnhbeDg" outgoing="_omimkH5oEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_-T5D0H5oEe644IRAnhbeDg" name="Igrac je obrisan i nije prihvacen u klub" incoming="__dkBoH5oEe644IRAnhbeDg" outgoing="_D5ezUH5pEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_IZW38H5pEe644IRAnhbeDg" name="Igrac je evidentiran i primljen u klub" incoming="_JynJ4H5pEe644IRAnhbeDg" outgoing="_jyOtkH5pEe644IRAnhbeDg"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_d10ZgH5pEe644IRAnhbeDg" name="Obavestavanje da je igrac prihvacen" incoming="_jyOtkH5pEe644IRAnhbeDg" outgoing="_s-_YEH5pEe644IRAnhbeDg"/>
+    <node xmi:type="uml:FlowFinalNode" xmi:id="_rt2gUH5pEe644IRAnhbeDg" name="Igrac je prihvacen" incoming="_s-_YEH5pEe644IRAnhbeDg"/>
+  </packagedElement>
+</uml:Model>
