@@ -1,0 +1,129 @@
+####################### Router0 ##########################
+
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int fa0/0
+Router(config-if)#ip add 10.0.0.129 255.255.255.192
+Router(config-if)#ip nat inside              // privatna
+Router(config-if)#no shutdown
+
+Router(config-if)#
+Router(config-if)#int se2/0
+Router(config-if)#ip add 220.20.11.9 255.255.255.248
+Router(config-if)#ip nat outside
+Router(config-if)#no shutdown
+
+Router(config-if)#exit
+Router(config)#ip nat inside source static 10.0.0.130 220.20.11.10	
+Router(config)#access-list 1 permit 10.0.0.128 0.0.0.63
+Router(config)#ip nat pool net1 220.20.11.11 220.20.11.12 netmask 255.255.255.248
+Router(config)#
+
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no auto-summ
+Router(config-router)#net 220.20.11.8
+Router(config-router)#exit
+
+Router(config)#int fa0/0
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+
+Router(config)#int se2/0
+Router(config-if)#ip nat outside
+Router(config-if)#ip nat inside source list 1 pool net1 overload	
+Router(config)#ip dhcp excluded-address 10.0.0.129 10.0.0.130
+Router(config)#ip dhcp pool lokal01
+Router(dhcp-config)#net 10.0.0.128 255.255.255.192
+Router(dhcp-config)#default-router 10.0.0.129
+Router(dhcp-config)#exit
+Router(config)#exit
+
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+// Zatim odmah na toj mrezi,podesi se Web Server
+ - Na Services se podesi HTTP na "On"
+  - Staticki namestiti i default Gateway na 10.0.0.129
+  - U Config -> FastEthernet0 namestiti staticku ip adresu 10.0.0.130 255.255.255.192
+
+######################### Router0 ##############################
+
+
+######################### Router1 ###########################
+
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int se2/0
+Router(config-if)#ip add 220.20.11.18 255.255.255.248
+Router(config-if)#no shutdown
+
+%LINK-5-CHANGED: Interface Serial2/0, changed state to down
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#int f0/0
+Router(config-if)#ip add 192.168.5.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+Router(config)#
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no auto-sum
+Router(config-router)#net 220.20.11.0
+Router(config-router)#exit
+Router(config)#access-list 1 permit 192.168.5.0 0.0.0.255
+Router(config)#ip nat inside source list 1 int se2/0 overload
+Router(config)#exit
+Router#copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+ // Na ovoj mrezi,moze samo da se klikne da DHCP server i da se podesi staticka adresa za Gateway
+ Settings : Static : 192.168.5.1
+
+
+########################### Router1 ################################
+
+
+########################### Router2 ################################
+
+
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int se2/0
+Router(config-if)#ip add 220.20.11.13 255.255.255.248
+Router(config-if)#clock rate 64000
+Router(config-if)#no shutdown
+Router(config-if)#exit
+	
+Router(config)#int se3/0
+Router(config-if)#ip add 220.20.11.17 255.255.255.248
+Router(config-if)#clock rate 64000
+Router(config-if)#no shutdown
+Router(config-if)#exit
+
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no auto-sum
+Router(config-router)#net 220.20.11.0
+Router(config-router)#exit
+Router(config)#exit
+
+Router#copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+
+########################### Router2 ################################
+

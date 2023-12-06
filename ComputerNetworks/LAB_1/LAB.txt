@@ -1,0 +1,36 @@
+193.10.17.0/24
+Administracija: 32 racunara
+Uprava: 32 racunara
+Programersko odeljenje: 112 racunara
+
+1. Programersko odeljenje: 112 racunara
+
+112 + 3 = 115 => 2^7 =128
+
+8 - 7 = 1
+
+Nulta adresa: 193.10.17.0/25
+Gateway adresa: 193.10.17.1/25 (adresa rutera)
+Host adrese: 193.10.17.2/25 - 193.10.17.126/25
+Broadcast adresa: 193.10.17.127/25
+Maska: 255.255.255.128
+
+2. Administracija: 32 racunara
+
+32 + 3 = 35 => 2^6
+
+8 - 6 = 2
+
+Nulta adresa: 193.10.17.128/26
+Gateway adresa: 193.10.17.129/26
+Host adrese: 193.10.17.130/26 - 193.10.17.190/26
+Broadcast adresa: 193.10.17.191/26
+Maska: 255.255.255.192
+
+3. Uprava: 32 racunara
+
+Nulta adresa: 193.10.17.192/26
+Gateway adresa: 193.10.17.193/26
+Host adrese: 193.10.17.194/26 - 193.10.17.253/26
+Broadcast adresa: 193.10.17.254/26
+Maska: 255.255.255.192

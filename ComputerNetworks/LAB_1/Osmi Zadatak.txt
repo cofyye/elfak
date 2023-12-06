@@ -1,0 +1,40 @@
+193.10.18.0/24
+Administracija: 33 racunara
+Uprava: 16 racunara
+Programersko odeljenje: 66 racunara
+
+1. Programersko odeljenje: 66 racunara
+
+66 + 3 = 69 => 2^7
+
+8 - 7 = 1
+
+Adresa mreze: 193.10.18.0/25
+Gateway adresa: 193.10.18.1/25
+Host adrese: 193.10.18.2/25 - 193.10.18.126/25
+Broadcast adresa: 193.10.18.127/25
+Maska: 255.255.255.128
+
+2. Administracija: 33 racunara
+
+33 + 3 = 36 => 2^6
+
+8 - 6 = 2
+
+Adresa mreze: 193.10.18.128/26
+Gateway adresa: 193.10.18.129/26
+Host adrese: 193.10.18.130 - 193.10.18.190/26
+Boradcast adresa: 193.10.18.191/26
+Maska: 255.255.255.192
+
+3. Uprava: 16 racunara
+
+16 + 3 = 19 => 2^5
+
+8 - 5 = 3
+
+Adresa mreze: 193.10.18.192/27
+Gateway adresa: 193.10.18.193/27
+Host adrese: 193.10.18.194/27 - 193.10.18.222/27
+Broadcast adrese: 193.10.18.223/27
+Maska: 255.255.255.224

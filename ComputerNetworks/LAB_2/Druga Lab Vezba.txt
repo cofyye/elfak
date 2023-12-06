@@ -1,0 +1,8 @@
+Save running config file:
+
+copy running-config startup-config
+
+RIP:
+
+no auto-summary
+version 2

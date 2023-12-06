@@ -1,0 +1,72 @@
+Privatne adrese nisu "routable accross the internet" 
+10.0.0.0/8 - 10.255.255.255
+172.16.0.0/12 - 172.31.255.255
+192.168.0.0/16 - 192.168.255.255
+Ako ih koristimo u LAN-u, te adrese kada prodju kroz ruter treba da budu prevedene
+u javne adrese (NAT network address translate)
+1.Static translation 1-to-1
+
+Translate 1 public IP address to 1 private IP address (npr. javna adresa servera u 
+privatnu adresu servera)
+
+2. Port Address Translation 1-to-1 Port 80 (Scenario Web server-a)
+
+Kada ljudi kontaktiraju javnu adresu na port 80, ona se prevodi na privatnu adresu na port 80
+
+3. NAT Overload Translation (PAT)
+
+Jedna public adresa se prevodi u sve privatne adrese na LAN-u
+Na primer imamo kucni LAN na kome imamo 4 telefona, 2 racunara, laptop i stampac.
+Svaki nas uredjaj ima svoju privatnu IP adresu iz nekog datog opsega:
+
+Npr. 192.168.1.0/26 je adresa mreze
+     192.168.1.1/26 je gateway
+     192.168.1.2/26 - 192.168.1.190/26 su hostovi (tu spadaju nasi uredjaji)
+     192.168.1.191/26 je broadcast
+     255.255.255.192 je Maska
+
+E sad, pomocu PAT-a, sve nase privatne adrese se prevode u JEDNU javnu adresu i vice verca
+(Nasa javna adresa se prevodi u vise privatnih adresa).
+
+4. Dynamic Translation (NAT Pool)
+
+Kada imamo vise javnih adresa i one se prevode u vise privatnih adresa.
+Ovo se moze izvrsiti takodje preko PAT-a.
+
+Kod mog rutera, deo koji gleda ka WAN-u je inside global, a ka mrezi je inside local.
+Drugi ruter je outside global i outside local.
+
+NAT komande
+
+conf t da udjes u config
+int g0/0 izaberes port (config-if)
+ip nat out
+int g0/1
+ip nat inside
+ip nat inside source static 10.0.0.240 209.165.100.29 (staticko prevodjenje) 1.
+ip nat inside source static tcp 10.0.0.250 80 209.165.100.30.80 (Port 80) 2.
+Za racunare 3. PAT
+
+ip nat pool <name> <start_ip> <end_ip> {netmask <mask>|prefix-length <prefixlen>}
+access-list 10 permit 10.0.0.0 0.0.0.255
+ip nat inside source?
+ip nat inside source list 10 interface g0/0 overload //Kad treba PAT overloading, a kad ne treba, izbacis kljucnu rec overload
+				pool <name> overload
+
+show ip translation
+
+4. Dynamic Translation (NAT Pool) Kad iams dosta javnih adresa
+
+enable
+conf t
+int g0/0
+ip nat outside
+int g0/1
+ip nat inside
+access-list 1 permit 192.168.1.0 0.0.0.255
+ip nat pool MYPOOL 209.165.100.17 209.165.100.24 netmask 255.255.255.240
+ip nat inside source list 1 pool MYPOOL overload
+
+show ip nat translations
+
+router(config)#ip dhcp excluded-address <st><en>

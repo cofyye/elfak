@@ -1,0 +1,41 @@
+enter
+en
+conf t
+int f0/0
+ip add adress mask
+no sh
+
+enter
+int s2/0   (veze na levo)
+ip add adress mask
+no sh
+
+enter
+int s3/0   (veze na desno)
+ip add adress mask
+no sh
+
+DINAMICKO RUTIRANJE
+
+router rip
+net(network) adress - linija kojom se povezuje na drugi ruter
+net adress - linija na koju je povezan switch
+ver 2
+no auto-summ
+end
+
+STATICKO RUTIRANJE
+en
+conf t
+ip route 0.0.0.0 0.0.0.0 200.1.1.146 200
+end
+copy run start (copy running-config startup-config)
+enter
+
+
+R1:
+en
+conf t
+ip route 0.0.0.0 0.0.0.0 200.1.1.142 200
+ip route 172.16.8.0 255.255.248.0 200.1.1.142 200
+end copy run start
