@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MyHost Game & Web Hosting</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid container-custom">
+        <!-- Navbar Logo -->
+        <a class="navbar-brand" href="index.html">
+          <div class="d-flex justify-content-between">
+            <div class="ms-2 d-flex align-items-center">
+              <h4 class="mb-0">MyHost</h4>
+            </div>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Navbar Links -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Game Servers</a
+              >
+              <div
+                class="dropdown-menu dropdown-large dropdown-menu-end fade-up"
+              >
+                <div class="row g-3 py-3 px-3">
+                  <div class="col-6">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="#"
+                          ><img src="assets/img/game-icons/game-ark.png" />
+                          ARK:SE Hosting</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img src="assets/img/game-icons/game-rust.png" />
+                          RUST Hosting</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/img/game-icons/game-minecraft.png"
+                          />
+                          Minecraft Hosting</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-6">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="#"
+                          ><img src="assets/img/game-icons/game-csgo.png" />
+                          CS:GO Hosting</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img src="assets/img/game-icons/game-conan.png" />
+                          Conan Exiles Hosting</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/img/game-icons/game-garrysmod.png"
+                          />
+                          Garry's Mod Hosting</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="dropdown-footer text-center">
+                  <a href="#" class="w-100 d-block py-2">View All</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                VPS Game
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end fade-up">
+                <li><a class="dropdown-item" href="#">UK VPS</a></li>
+                <li><a class="dropdown-item" href="#">Dallas VPS</a></li>
+                <li><a class="dropdown-item" href="#">German VPS</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dedicated
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end fade-up">
+                <li><a class="dropdown-item" href="#">UK</a></li>
+                <li><a class="dropdown-item" href="#">Germany</a></li>
+                <li><a class="dropdown-item" href="#">Dallas</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Web</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Company
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end fade-up">
+                <li><a class="dropdown-item" href="#">About us</a></li>
+                <li><a class="dropdown-item" href="#">Partners</a></li>
+                <li><a class="dropdown-item" href="#">Legal</a></li>
+                <li><a class="dropdown-item" href="#">Knowlegebase</a></li>
+              </ul>
+            </li>
+            <li class="text-center">
+              <div class="dropdown">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  type="button"
+                  id="dropdownLogin"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Login
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="dropdownLogin"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Client Area
+                      <span class="d-block">Billing & Support</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Game Panel
+                      <span class="d-block">Game Management</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      cPanel
+                      <span class="d-block">Website Management</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Bot Panel
+                      <span class="d-block">Bot Control Management</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero_section">
+      <div class="container-fluid container-custom">
+        <div class="hero_main">
+          <ul class="hero_slider">
+            <li>
+              <div class="row d-flex justify-content-between">
+                <div class="col-lg-6 d-flex align-items-center">
+                  <div class="hero_content">
+                    <h2 class="mb-3">Minecraft Hosting</h2>
+                    <p class="mb-5">
+                      Start your community and grow your player base with
+                      powerful Minecraft servers!
+                    </p>
+                    <div class="hero_plans">
+                      <div class="hero_plans_left">
+                        <span class="starting_at">Servers start as</span>
+                        <h3 class="mb-3">
+                          &dollar;2.56<span class="ms-2">per / RAM</span>
+                        </h3>
+                        <a href="#" class="btn btn-primary mt-3"
+                          >See more <i class="fas fa-long-arrow-alt-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero_content_image float-end">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/minecraft_hero.png"
+                      alt="Lorem input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row d-flex justify-content-between">
+                <div class="col-lg-6 d-flex align-items-center">
+                  <div class="hero_content">
+                    <h2 class="mb-3">ARK Hosting</h2>
+                    <p class="mb-5">
+                      Start your community and grow your player base with
+                      powerful ARK servers!
+                    </p>
+                    <div class="hero_plans">
+                      <div class="hero_plans_left">
+                        <span class="starting_at">Servers start as</span>
+                        <h3 class="mb-3">
+                          &dollar;0.75<span class="ms-2">per / Slots</span>
+                        </h3>
+                        <a href="#" class="btn btn-primary mt-3"
+                          >See more <i class="fas fa-long-arrow-alt-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero_content_image float-end">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/ark_hero.png"
+                      alt="Lorem input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row d-flex justify-content-between">
+                <div class="col-lg-6 d-flex align-items-center">
+                  <div class="hero_content">
+                    <h2 class="mb-3">Web Hosting</h2>
+                    <p class="mb-5">
+                      With MyHost Web Hosting you get all the features, tools,
+                      and guidance you need to build and launch truly impressive
+                      WordPress websites.
+                    </p>
+                    <div class="hero_plans">
+                      <div class="hero_plans_left">
+                        <span class="starting_at">Servers start as</span>
+                        <h3 class="mb-3">
+                          &dollar;4.62<span class="ms-2">per / month</span>
+                        </h3>
+                        <a href="#" class="btn btn-primary mt-3"
+                          >See more <i class="fas fa-long-arrow-alt-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero_content_image float-end">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/web_hero.png"
+                      alt="Lorem input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row d-flex justify-content-between">
+                <div class="col-lg-6 d-flex align-items-center">
+                  <div class="hero_content">
+                    <h2 class="mb-3">VPS Hosting</h2>
+                    <p class="mb-5">
+                      Precision-tuned KVM VPS offerings that are designed to
+                      meet high performance requirements demanding a
+                      low-latency, reponsive hosting platform. This makes a
+                      perfect solution for game servers, modern web applications
+                      and more.
+                    </p>
+                    <div class="hero_plans">
+                      <div class="hero_plans_left">
+                        <span class="starting_at">Servers start as</span>
+                        <h3 class="mb-3">
+                          &dollar;3.60<span class="ms-2">per / month</span>
+                        </h3>
+                        <a href="" class="btn btn-primary mt-3"
+                          >See more <i class="fas fa-long-arrow-alt-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero_content_image float-end">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/vps_hero.png"
+                      alt="Lorem input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row d-flex justify-content-between">
+                <div class="col-lg-6 d-flex align-items-center">
+                  <div class="hero_content">
+                    <h2 class="mb-3">Discord Bot Hosting</h2>
+                    <p class="mb-5">
+                      Affordable, premium and fast servers to host your powerful
+                      Discord bot
+                    </p>
+                    <div class="hero_plans">
+                      <div class="hero_plans_left">
+                        <span class="starting_at">Servers start as</span>
+                        <h3 class="mb-3">
+                          &dollar;2.65<span class="ms-2">per / month</span>
+                        </h3>
+                        <a href="" class="btn btn-primary mt-3"
+                          >See more <i class="fas fa-long-arrow-alt-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero_content_image float-end">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/discord_hero.png"
+                      alt="Lorem input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="hero_dots" id="bx-pager">
+            <a data-slide-index="0" href="#">
+              <div class="hero_box">
+                <div class="pager__icons">
+                  <span class="icon">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/minecraft_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                  <span class="icon_active">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/minecraft_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                </div>
+                <div class="hero_box_content">
+                  <h5>Minecraft Hosting</h5>
+                  <p class="w-100">&dollar;3.00<span> per / GB</span></p>
+                </div>
+              </div>
+            </a>
+            <a data-slide-index="1" href="#">
+              <div class="hero_box">
+                <div class="pager__icons">
+                  <span class="icon">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/ark_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                  <span class="icon_active">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/ark_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                </div>
+                <div class="hero_box_content">
+                  <h5>ARK:SE Hosting</h5>
+                  <p class="w-100">&dollar;0.75<span> per / slots</span></p>
+                </div>
+              </div>
+            </a>
+            <a data-slide-index="2" href="#">
+              <div class="hero_box">
+                <div class="pager__icons">
+                  <span class="icon">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/web_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                  <span class="icon_active">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/web_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                </div>
+                <div class="hero_box_content">
+                  <h5>Web Hosting</h5>
+                  <p class="w-100">&dollar;4.76<span> per / month</span></p>
+                </div>
+              </div>
+            </a>
+            <a data-slide-index="3" href="#">
+              <div class="hero_box">
+                <div class="pager__icons">
+                  <span class="icon">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/vps_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                  <span class="icon_active">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/vps_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                </div>
+                <div class="hero_box_content">
+                  <h5>VPS Hosting</h5>
+                  <p class="w-100">&dollar;3.70<span> per / month</span></p>
+                </div>
+              </div>
+            </a>
+            <a data-slide-index="4" href="#">
+              <div class="hero_box">
+                <div class="pager__icons">
+                  <span class="icon">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/discord_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                  <span class="icon_active">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/hero_slider/discord_hero_dot.png"
+                      alt
+                    />
+                  </span>
+                </div>
+                <div class="hero_box_content">
+                  <h5>Discord Bot Hosting</h5>
+                  <p class="w-100">&dollar;2.60<span> per / month</span></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features py-5">
+      <div class="container-fluid container-custom">
+        <div class="section_title">
+          <h2>Server Features</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-4">
+            <div class="features_box text-center mb-5">
+              <img class="img-fluid mb-3" src="assets/img/features/ddos.svg" />
+              <h3>DDoS Protection</h3>
+              <p>
+                Our free Anti-DDoS protection ensures your infrastructure
+                remains accessible 24/7 through a network capacity of 20+ Tbps.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="features_box text-center mb-5">
+              <img
+                class="img-fluid mb-3"
+                src="assets/img/features/uptime.svg"
+              />
+              <h3>99.9% Uptime</h3>
+              <p>
+                99.9% Service Uptime Guaranteed. We utilize the best datacenters
+                with the most reliable infrastructure.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="features_box text-center mb-5">
+              <img
+                class="img-fluid mb-3"
+                src="assets/img/features/support.svg"
+              />
+              <h3>Quick & Friendly Support</h3>
+              <p>
+                Our support team is avaliable 24/7/365. Our customers receive an
+                average ticket response time of 15 minutes.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="features_box text-center mb-5">
+              <img class="img-fluid mb-3" src="assets/img/features/ssd.svg" />
+              <h3>Fast Storage</h3>
+              <p>
+                Our services use the best NVME solutions to provide a quality
+                experience for our customers.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="features_box text-center mb-5">
+              <img class="img-fluid mb-3" src="assets/img/features/setup.svg" />
+              <h3>Instant Setup</h3>
+              <p>
+                After the placement of an order, a provisioning process begins
+                automatically. Your new hosting service will be online and
+                accessible for use in minutes.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="features_box text-center mb-5">
+              <img class="img-fluid mb-3" src="assets/img/features/smile.svg" />
+              <h3>Satisfaction Guarrantee</h3>
+              <p>
+                We strive to provide quality experience. We'll give you a full
+                refund within 72 hours of initial purchase, no questions asked.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="top_games py-5">
+      <div class="container-fluid container-custom">
+        <div class="section_title">
+          <h2>Popular Games</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <a class="game_box" href="#">
+              <div
+                class="game_box_content mb-4"
+                style="background-image: url(assets/img/minecraft_bg.png)"
+              >
+                <h2 class="game_name">Minecraft</h2>
+                <p class="game_paragraph">
+                  Start your community and grow your player base with powerful
+                  Minecraft servers!
+                </p>
+                <div
+                  class="d-flex align-items-end justify-content-between mt-5"
+                >
+                  <div class="game_price">
+                    <span class="sub">Starting at</span>
+                    <h3 class="title-3">$3.00<small> / GB</small></h3>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="game_box" href="#">
+              <div
+                class="game_box_content mb-4"
+                style="background-image: url(assets/img/ark_bg.png)"
+              >
+                <h2 class="game_name">ARK</h2>
+                <p class="game_paragraph">
+                  Start your community and grow your player base with powerful
+                  ARK servers!
+                </p>
+                <div
+                  class="d-flex align-items-end justify-content-between mt-5"
+                >
+                  <div class="game_price">
+                    <span class="sub">Starting at</span>
+                    <h3 class="title-3">$1.69<small> / Slots</small></h3>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="game_box" href="#">
+              <div
+                class="game_box_content mb-4"
+                style="background-image: url(assets/img/rust_bg.png)"
+              >
+                <h2 class="game_name">RUST</h2>
+                <p class="game_paragraph">
+                  Start your community and grow your player base with powerful
+                  Rust servers!
+                </p>
+                <div
+                  class="d-flex align-items-end justify-content-between mt-5"
+                >
+                  <div class="game_price">
+                    <span class="sub">Starting at</span>
+                    <h3 class="title-3">$2.20<small> / Slots</small></h3>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="game_box" href="#">
+              <div
+                class="game_box_content mb-4"
+                style="background-image: url(assets/img/conan_bg.png)"
+              >
+                <h2 class="game_name">Conan Exiles</h2>
+                <p class="game_paragraph">
+                  Start your community and grow your player base with powerful
+                  Conan Exiles servers!
+                </p>
+                <div
+                  class="d-flex align-items-end justify-content-between mt-5"
+                >
+                  <div class="game_price">
+                    <span class="sub">Starting at</span>
+                    <h3 class="title-3">$0.90<small> / Slots</small></h3>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="game_box" href="#">
+              <div
+                class="game_box_content mb-4"
+                style="background-image: url(assets/img/csgo_bg.png)"
+              >
+                <h2 class="game_name">CS:GO</h2>
+                <p class="game_paragraph">
+                  Start your community and grow your player base with powerful
+                  CS:GO servers!
+                </p>
+                <div
+                  class="d-flex align-items-end justify-content-between mt-5"
+                >
+                  <div class="game_price">
+                    <span class="sub">Starting at</span>
+                    <h3 class="title-3">$1.02<small> / Slots</small></h3>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="game_box" href="#">
+              <div
+                class="game_box_content mb-4"
+                style="background-image: url(assets/img/gm_bg.png)"
+              >
+                <h2 class="game_name">Garry's Mod</h2>
+                <p class="game_paragraph">
+                  Start your community and grow your player base with powerful
+                  Garry's Mod servers!
+                </p>
+                <div
+                  class="d-flex align-items-end justify-content-between mt-5"
+                >
+                  <div class="game_price">
+                    <span class="sub">Starting at</span>
+                    <h3 class="title-3">$5.30<small> / Slots</small></h3>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer py-5">
+      <div class="container-fluid container-custom">
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Hosting</h3>
+            <ul>
+              <li><a href="#">Game Servers</a></li>
+              <li><a href="#">Essential Dedicated Servers</a></li>
+              <li><a href="#">Premium Dedicated Servers</a></li>
+              <li><a href="#">Web Hosting</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Discord Support</a></li>
+              <li><a href="#">Knowledge Base</a></li>
+              <li><a href="#">Client Area</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">Acceptable Usage Policy</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>MyHost</h3>
+            <p class="text-muted">
+              &copy; MyHost - All rights reserved 2024<br />
+              Report abuse @
+              <a href="mailto:abuse@newhost.com">abuse@myhost.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="assets/js/jquery.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

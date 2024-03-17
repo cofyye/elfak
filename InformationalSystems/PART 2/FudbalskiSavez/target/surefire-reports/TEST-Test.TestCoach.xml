@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Test.TestCoach" time="2.385" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\filip\eclipse-workspace\FudbalskiSavez\target\test-classes;C:\Users\filip\eclipse-workspace\FudbalskiSavez\target\classes;C:\Users\filip\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\filip\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\filip\.m2\repository\org\eclipse\persistence\javax.persistence\2.2.1\javax.persistence-2.2.1.jar;C:\Users\filip\.m2\repository\org\hibernate\hibernate-entitymanager\5.5.6.Final\hibernate-entitymanager-5.5.6.Final.jar;C:\Users\filip\.m2\repository\org\jboss\logging\jboss-logging\3.4.2.Final\jboss-logging-3.4.2.Final.jar;C:\Users\filip\.m2\repository\org\hibernate\hibernate-core\5.5.6.Final\hibernate-core-5.5.6.Final.jar;C:\Users\filip\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\filip\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\filip\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\filip\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\filip\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\filip\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\filip\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\filip\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\filip\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\filip\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\filip\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\filip\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\filip\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\filip\.m2\repository\net\bytebuddy\byte-buddy\1.11.8\byte-buddy-1.11.8.jar;C:\Users\filip\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\filip\.m2\repository\mysql\mysql-connector-java\8.0.23\mysql-connector-java-8.0.23.jar;C:\Users\filip\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\filip\.m2\repository\org\jboss\spec\javax\ejb\jboss-ejb-api_3.2_spec\1.0.0.Final\jboss-ejb-api_3.2_spec-1.0.0.Final.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Prague"/>
+    <property name="user.country.format" value="RS"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_311\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\filip\AppData\Local\Temp\surefire4465312446210052214\surefirebooter-20240112135007637_3.jar C:\Users\filip\AppData\Local\Temp\surefire4465312446210052214 2024-01-12T13-50-07_194-jvmRun1 surefire-20240112135007637_1tmp surefire_0-20240112135007637_2tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\filip\eclipse-workspace\FudbalskiSavez\target\test-classes;C:\Users\filip\eclipse-workspace\FudbalskiSavez\target\classes;C:\Users\filip\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\filip\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\filip\.m2\repository\org\eclipse\persistence\javax.persistence\2.2.1\javax.persistence-2.2.1.jar;C:\Users\filip\.m2\repository\org\hibernate\hibernate-entitymanager\5.5.6.Final\hibernate-entitymanager-5.5.6.Final.jar;C:\Users\filip\.m2\repository\org\jboss\logging\jboss-logging\3.4.2.Final\jboss-logging-3.4.2.Final.jar;C:\Users\filip\.m2\repository\org\hibernate\hibernate-core\5.5.6.Final\hibernate-core-5.5.6.Final.jar;C:\Users\filip\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\filip\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\filip\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\filip\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\filip\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\filip\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\filip\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\filip\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\filip\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\filip\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\filip\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\filip\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\filip\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\filip\.m2\repository\net\bytebuddy\byte-buddy\1.11.8\byte-buddy-1.11.8.jar;C:\Users\filip\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\filip\.m2\repository\mysql\mysql-connector-java\8.0.23\mysql-connector-java-8.0.23.jar;C:\Users\filip\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\filip\.m2\repository\org\jboss\spec\javax\ejb\jboss-ejb-api_3.2_spec\1.0.0.Final\jboss-ejb-api_3.2_spec-1.0.0.Final.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\filip"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_311\jre"/>
+    <property name="basedir" value="C:\Users\filip\eclipse-workspace\FudbalskiSavez"/>
+    <property name="style.color" value="always"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\filip\AppData\Local\Temp\surefire4465312446210052214\surefirebooter-20240112135007637_3.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_311\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="user.script.format" value="Cyrl"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_311-b11"/>
+    <property name="user.name" value="filip"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\filip\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\filip\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_311"/>
+    <property name="user.dir" value="C:\Users\filip\eclipse-workspace\FudbalskiSavez"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="user.language.format" value="sr"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_311\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047/jre/bin/server;D:/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Git\cmd;D:\GNU GCC Compiler\bin;C:\Users\filip\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\filip\AppData\Local\Programs\Python\Python311\;C:\Users\filip\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\filip\AppData\Roaming\npm;C:\ngnix\nginx;C:\adb;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\XAMPP\php;D;D:\NodeJS\;D:\TortoiseSVN\bin;D:\Azure Data Studio\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;C:\Users\filip\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\filip\AppData\Local\Programs\Python\Python311\;C:\Users\filip\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\ngnix\nginx;D:\ffmpeg\bin;C:\Users\filip\Desktop\udemy-downloader;D:\IntelliJ IDEA Community Edition 2022.3.2\bin;;C:\Users\filip\AppData\Roaming\npm;D:\Azure Data Studio\bin;C:\Users\filip\.dotnet\tools;D:\eclipse;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.311-b11"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="test" classname="Test.TestCoach" time="0.268">
+    <system-out><![CDATA[BeforeClass: Test initialized
+Hibernate: 
+    select
+        coach0_.id as id1_0_,
+        coach0_.email_address as email_ad2_0_,
+        coach0_.first_name as first_na3_0_,
+        coach0_.fixed_phone as fixed_ph4_0_,
+        coach0_.jmbg as jmbg5_0_,
+        coach0_.last_name as last_nam6_0_,
+        coach0_.mobile_phone as mobile_p7_0_,
+        coach0_.place_address as place_ad8_0_,
+        coach0_.username as username9_0_ 
+    from
+        coaches coach0_ 
+    where
+        coach0_.jmbg=?
+Hibernate: 
+    select
+        coach0_.id as id1_0_0_,
+        coach0_.email_address as email_ad2_0_0_,
+        coach0_.first_name as first_na3_0_0_,
+        coach0_.fixed_phone as fixed_ph4_0_0_,
+        coach0_.jmbg as jmbg5_0_0_,
+        coach0_.last_name as last_nam6_0_0_,
+        coach0_.mobile_phone as mobile_p7_0_0_,
+        coach0_.place_address as place_ad8_0_0_,
+        coach0_.username as username9_0_0_ 
+    from
+        coaches coach0_ 
+    where
+        coach0_.id=?
+Before: Coach does not exist with JMBG : 45453124321
+Before: Coach exist with ID : 6
+Hibernate: 
+    insert 
+    into
+        coaches
+        (email_address, first_name, fixed_phone, jmbg, last_name, mobile_phone, place_address, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    update
+        coaches 
+    set
+        email_address=?,
+        first_name=?,
+        fixed_phone=?,
+        jmbg=?,
+        last_name=?,
+        mobile_phone=?,
+        place_address=?,
+        username=? 
+    where
+        id=?
+Test success
+Hibernate: 
+    select
+        coach0_.id as id1_0_,
+        coach0_.email_address as email_ad2_0_,
+        coach0_.first_name as first_na3_0_,
+        coach0_.fixed_phone as fixed_ph4_0_,
+        coach0_.jmbg as jmbg5_0_,
+        coach0_.last_name as last_nam6_0_,
+        coach0_.mobile_phone as mobile_p7_0_,
+        coach0_.place_address as place_ad8_0_,
+        coach0_.username as username9_0_ 
+    from
+        coaches coach0_ 
+    where
+        coach0_.jmbg=?
+After: Coach exist with ID : 45453124321
+After: Coach's fixed phone with ID 6 is : 028-348938903
+]]></system-out>
+    <system-err><![CDATA[??? 12, 2024 1:50:08 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [name: FudbalskiSavezPU]
+??? 12, 2024 1:50:08 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 5.5.6.Final
+??? 12, 2024 1:50:08 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+??? 12, 2024 1:50:08 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+??? 12, 2024 1:50:08 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3307/baza2]
+??? 12, 2024 1:50:08 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {user=root, password=****}
+??? 12, 2024 1:50:08 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+??? 12, 2024 1:50:08 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+??? 12, 2024 1:50:09 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+??? 12, 2024 1:50:09 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@bcb09a6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+??? 12, 2024 1:50:10 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+]]></system-err>
+  </testcase>
+</testsuite>

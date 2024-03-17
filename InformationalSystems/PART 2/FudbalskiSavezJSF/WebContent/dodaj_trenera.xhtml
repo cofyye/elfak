@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Fudbalski Savez | Dodaj Trenera</title>
+	
+	<link href="./assets/css/main.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />	
+</h:head>
+<h:body>
+	<div class="row">
+		<div class="col-md-2">
+			<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark vh-100">
+    			<a href="./index.xhtml" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      				<span class="fs-4">Fudbalski Savez</span>
+    			</a>
+    			<hr />
+    			<ul class="nav nav-pills flex-column mb-auto">
+      				<li class="nav-item">
+        				<a href="./index.xhtml" class="nav-link text-white">
+        					<img src="./assets/icons/house-door-fill.svg" width="16" height="16" style="filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg);" class="mb-1" />
+          					Pocetna
+        				</a>
+      				</li>
+     	 			<li>
+        				<a href="./dodaj_igraca.xhtml" class="nav-link text-white">
+        					<img src="./assets/icons/person-fill-add.svg" width="16" height="16" style="filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg);" class="mb-1" />
+          					Dodaj Igraca
+        				</a>
+      				</li>
+      				<li>
+        				<a href="./dodaj_trenera.xhtml" class="nav-link active" aria-current="page">
+							<img src="./assets/icons/person-fill-add.svg" width="16" height="16" style="filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg);" class="mb-1" />
+          					Dodaj Trenera
+        				</a>
+      				</li>
+      				<li>
+        				<a href="./dodaj_prijavu.xhtml" class="nav-link text-white">
+  							<img src="./assets/icons/box-arrow-in-right.svg" width="16" height="16" style="filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg);" class="mb-1" />
+          					Dodaj Prijavu
+        				</a>
+      				</li>
+      				<li>
+        				<a href="./lista_igraca.xhtml" class="nav-link text-white">
+  							<img src="./assets/icons/list-columns.svg" width="16" height="16" style="filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg);" class="mb-1" />
+          					Lista Igraca
+        				</a>
+      				</li>
+       				<li>
+        				<a href="./lista_trenera.xhtml" class="nav-link text-white">
+  							<img src="./assets/icons/list-columns.svg" width="16" height="16" style="filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg);" class="mb-1" />
+          					Lista Trenera
+        				</a>
+      				</li>
+        				<li>
+        				<a href="./lista_prijava.xhtml" class="nav-link text-white">
+  							<img src="./assets/icons/list-columns.svg" width="16" height="16" style="filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg);" class="mb-1" />
+          					Lista Prijava
+        				</a>
+      				</li>
+    			</ul>
+			</div>
+		</div>
+		<div class="col-md-10 px-4" style="margin-top: 5rem;">
+			<div class="jumbotron jumbotron-fluid">
+			  	<div class="container">
+			    	<h1 class="display-4">Dodavanje Trenera</h1>
+			    	<p class="lead">Ovde mozete dodati trenera u bazu podataka.</p>
+				    	<h:form>
+				    		<div class="my-4 #{coachController.message == null ? 'd-none' : 'd-block'}">
+				    			<div class="alert alert-#{coachController.messageType}" role="alert">
+								  #{coachController.message}
+								</div>				    		
+				    		</div>
+				    		<div class="row">
+					    		<div class="col-md-6 form-group mt-3">
+									<h:outputLabel value="Ime:" />
+									<h:inputText value="#{coachController.coach.firstName}" class="form-control bg-dark border-secondary text-white" />
+								</div>
+		
+								<div class="col-md-6 form-group mt-3">
+									<h:outputLabel value="Prezime:" />
+									<h:inputText value="#{coachController.coach.lastName}" class="form-control bg-dark border-secondary text-white" />
+								</div>
+		
+								<div class="col-md-6 form-group mt-3">
+									<h:outputLabel value="Korisnicko Ime:" />
+									<h:inputText value="#{coachController.coach.username}" class="form-control bg-dark border-secondary text-white" />
+								</div>
+								
+								<div class="col-md-6 form-group mt-3">
+									<h:outputLabel value="JMBG:" />
+									<h:inputText value="#{coachController.coach.jmbg}" class="form-control bg-dark border-secondary text-white" />
+								</div>
+		
+								<div class="col-md-6 form-group mt-3">
+									<h:outputLabel value="Mobilni Telefon:" />
+									<h:inputText value="#{coachController.coach.mobilePhone}" class="form-control bg-dark border-secondary text-white" />
+								</div>
+		
+								<div class="col-md-6 form-group mt-3">
+									<h:outputLabel value="Fiksni Telefon:" />
+									<h:inputText value="#{coachController.coach.fixedPhone}" class="form-control bg-dark border-secondary text-white" />
+								</div>
+								
+										
+								<div class="col-md-6 form-group mt-3">
+									<h:outputLabel value="Adresa Stanovanja:" />
+									<h:inputText value="#{coachController.coach.placeAddress}" class="form-control bg-dark border-secondary text-white" />
+								</div>
+		
+								<div class="col-md-6 form-group mt-3">
+									<h:outputLabel value="E-Mail Adresa:" />
+									<h:inputText value="#{coachController.coach.emailAddress}" class="form-control bg-dark border-secondary text-white" />
+								</div>
+								
+								<div class="col-md-6 form-group mt-4">
+									<h:commandButton value="Dodaj Trenera" class="btn bg-dark text-white border-secondary"
+										action="#{coachController.addCoach(coachController.coach)}" />
+								</div>
+							</div>
+						</h:form>
+			  	</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</h:body>
+
+</html>

@@ -1,0 +1,10 @@
+services\PlayerService.class
+services\RequestService.class
+models\Coach.class
+models\Player.class
+services\ICoachService.class
+App.class
+services\CoachService.class
+services\IRequestService.class
+services\IPlayerService.class
+models\Request.class
