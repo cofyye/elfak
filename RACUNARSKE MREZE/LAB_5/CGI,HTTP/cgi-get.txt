@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include "cgi.h"
+
+//brojIndeksa=15084&ekstenzija=.jpg
+
+int main(int argc, TCHAR* argv[], TCHAR*[] envp)
+{
+	char *requestMethod = getenv("REQUEST_METHOD");
+	char *queryString = getenv("QUERY_STRING");
+	CString s_get = "GET";
+
+	printf("Content-type: text/html\n\n");
+   	printf("<html>\n");
+   	printf("<head>\n");
+
+	if(s_get.CompareNoCase(requestMethod) == 0)
+	{
+		if(queryString != NULL)
+			parse(queryString);
+		else {
+			printf("<title> Desila se neka greska. </title>\n");
+      			printf("<body> <p> Niste odabrali broj indeksa i ekstenziju);
+			printf("</p> </body> </html>\n");
+  		        exit (0);
+		}
+	}
+}
+
+void parse(char* queryString) //Ovu funkciju pisemo kako bi izvukli podatke iz queryStringa, tj. one koje
+//smo uneli u formu
+{
+	//DOVDE TI JE SKORO SVE UVEK ISTO KAD PISES CGI
+
+	//Vadimo broj indeksa i ekstenziju iz forme
+	 brojIndeksa = parmval (queryString, "brojIndeksa");
+         ekstenzija = parmval (queryString, "ekstenzija");
+	 
+	char* imeFajla = brojIndeksa + ekstenzija;
+	
+	FILE *file;
+   
+	if ((file = fopen(imeFajla, "r"))) //Proveravamo da li slika sa takvim imenom postoji
+    	{
+        	printf("<title> Postoji slika sa takvim nazivom. </title>\n");
+      		printf("<body> <p> Slika: </p></body>");
+		printf("<img src="%s" /></body>", imeFajla);
+		printf("</html>\n");
+		fclose(file);
+    	}
+    	else { //Ne postoji
+	   
+	        printf("<title> Ne postoji slika sa takvim nazivom. </title>\n");
+      		printf("<body> <p> Ne postoji slika sa takvim nazivom.</p></body>");
+		printf("</html>\n");	
+
+		fclose(file);
+	}
+}
+

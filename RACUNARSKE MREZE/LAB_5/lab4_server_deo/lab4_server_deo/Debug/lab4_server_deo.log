@@ -1,0 +1,3 @@
+﻿  lab4_server_deo.cpp
+D:\OneDrive - Faculty of Electronic Engineering\_Fakultet\RM\Lab vezbe\Lab4\lab4_server_deo\lab4_server_deo\lab4_server_deo.cpp(7,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  lab4_server_deo.vcxproj -> D:\OneDrive - Faculty of Electronic Engineering\_Fakultet\RM\Lab vezbe\Lab4\lab4_server_deo\Debug\lab4_server_deo.exe

@@ -1,0 +1,4 @@
+﻿  lab4server.cpp
+D:\OneDrive - Faculty of Electronic Engineering\_Fakultet\RM\Lab vezbe\Lab4\lab4server\lab4server\lab4server.cpp(32,5): error C2601: 'WindowProcedure': local function definitions are illegal
+D:\OneDrive - Faculty of Electronic Engineering\_Fakultet\RM\Lab vezbe\Lab4\lab4server\lab4server\lab4server.cpp(25): message : this line contains a '{' which has not yet been matched
+D:\OneDrive - Faculty of Electronic Engineering\_Fakultet\RM\Lab vezbe\Lab4\lab4server\lab4server\lab4server.cpp(37,13): error C2065: 'hBtn1': undeclared identifier

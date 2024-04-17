@@ -1,0 +1,299 @@
+INSERT INTO BANKA (Id, Ime, Email, Web_adresa, Adresa_centrale) VALUES
+(1, 'UniCredit', 'info@unicreditbank.rs', 'https://www.unicreditbank.rs/', 'Rajićeva 27-29, 11000 Beograd');
+
+INSERT INTO BANKA (Id, Ime, Email, Web_adresa, Adresa_centrale) VALUES
+(2, 'OTP', 'info@otpbanka.rs', 'https://www.otpbanka.rs/', 'Novi Sad, Trg slobode 5');
+
+INSERT INTO BANKA (Id, Ime, Email, Web_adresa, Adresa_centrale) VALUES
+(3, 'Raiffeisen', 'info@raiffeisenbank.rs', 'https://www.raiffeisenbank.rs/', 'Đorđa Stanojevića 16, 11070 Beograd');
+
+INSERT INTO BANKA (Id, Ime, Email, Web_adresa, Adresa_centrale) VALUES
+(4, 'Intesa', 'info@bancaintesa.rs', 'https://www.bancaintesa.rs/', 'Milentija Popovića 7b, 11070 Novi Beograd');
+
+INSERT INTO BANKA (Id, Ime, Email, Web_adresa, Adresa_centrale) VALUES
+(5, 'Erste', 'info@erstebank.rs', 'https://www.erstebank.rs/', 'Bulevar oslobođenja 5, 21101 Novi Sad');
+
+
+INSERT INTO BR_TEL_BANKE (Id_banke, Broj_telefona) VALUES (1, '+381113777888');
+INSERT INTO BR_TEL_BANKE (Id_banke, Broj_telefona) VALUES (2, '0800 232-322');
+INSERT INTO BR_TEL_BANKE (Id_banke, Broj_telefona) VALUES (3, '0800 111-000');
+INSERT INTO BR_TEL_BANKE (Id_banke, Broj_telefona) VALUES (4, '+381 11 3108888');
+INSERT INTO BR_TEL_BANKE (Id_banke, Broj_telefona) VALUES (5, '021 423 364');
+
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(12, 1, 'Trg kralja Milana 7, Niš', '011 3777888', '08:00 - 16:00');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(13, 1, 'Nikole Pašića 63, Niš 18105', '011 3777888', '08:00 - 16:00');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(14, 1, 'Kralja Petra I 23, Kragujevac 34000', '011 13777888', '08:00 - 16:00');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(15, 2, 'Bulevar Nemanjića 67a, Niš 700582', '0800 232322', '09:00 - 16:30');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(16, 2, '21. Srpske Divizije 1, Prokuplje', '0800 232322', '08:00 - 15:30');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(17, 3, 'Jug Bogdanova 100, Prokuplje 18400', '011 3202100', '08:30 - 16:00');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(18, 3, 'Balkanska 13, Niš 18106', '011 3202100', '09:00 - 16:30');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(19, 4, '9. oktobra 6, Prokuplje', '011 3108888', '08:30 - 16:00');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(20, 4, 'Sinđelićev trg 18/1, Niš 700188', '018 511017', '08:30 - 18:00');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(21, 5, 'Vojvode Mišića 19A, Prokuplje 18400', '0800 201201', '08:00 - 15:30');
+
+INSERT INTO FILIJALA (Rbr_filijale, Id_banke, Adresa, Br_telefona, Radno_vreme) VALUES
+(22, 5, 'Sinđelićev trg 20, Niš 18000', '0800 201201', '08:30 - 17:00');
+
+
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(1, 12, 'Nis', 'Euronet EFT', 'operativan', TO_TIMESTAMP('2023-08-09 16:02:24', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(2, 13, 'Nis', 'Wincor Nixdorf', 'operativan', TO_TIMESTAMP('2024-03-12 16:02:24', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(3, 14, 'Kragujevac', 'Wincor Nixdorf', 'neoperativan', TO_TIMESTAMP('2024-04-10 16:06:07', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(4, 15, 'Nis', 'Wincor Nixdorf', 'operativan', TO_TIMESTAMP('2024-01-10 16:06:07', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(5, 16, 'Prokuplje', 'NCR Corporation', 'operativan', TO_TIMESTAMP('2024-04-16 16:06:07', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(6, 17, 'Prokuplje', 'NCR Corporation', 'operativan', TO_TIMESTAMP('2024-04-15 16:06:07', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(7, 18, 'Nis', 'NCR Corporation', 'operativan', TO_TIMESTAMP('2024-01-07 16:06:07', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(8, 19, 'Prokuplje', 'NCR Corporation', 'operativan', TO_TIMESTAMP('2024-04-11 16:06:07', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) 
+VALUES (9, 20, 'Nis', 'NCR Corporation', 'operativan', TO_TIMESTAMP('2024-02-16 16:08:12', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) 
+VALUES (10, 21, 'Prokuplje', 'Diebold Nixdorf', 'operativan', TO_TIMESTAMP('2024-04-12 16:08:34', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO BANKOMAT (Id, Rbr_filijale, Lokacija, Proizvodjac, Status, Datum_poslednjeg_servisa) VALUES 
+(11, 22, 'Nis', 'Diebold Nixdorf', 'operativan', TO_TIMESTAMP('2023-09-12 16:08:56', 'YYYY-MM-DD HH24:MI:SS'));
+
+
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (1, 'Brzo i jednostavno podizanje gotovine!');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (2, 'Uvek pouzdan servis.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (3, 'Odlična lokacija, lako dostupan.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (4, 'Ponekad se desi da bankomat bude van funkcije.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (5, 'Dobra opcija za hitne situacije.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (6, 'Redovno održavan, retko kvarovi.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (7, 'Brzi transakcioni procesi.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (8, 'Moglo bi biti više bankomata u ovom području.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (9, 'Nikada nisam imao problema sa ovim bankomatima.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (10, 'Prihvatljive naknade za podizanje novca.');
+INSERT INTO KOM_BANKOMATA (Id_bankomata, Komentar) VALUES (11, 'Potrebno je unapređenje interfejsa.');
+
+
+INSERT INTO KLIJENT (Id, Naziv, Adresa, Email, Br_tel) VALUES 
+(1, 'MMF', 'Bulevar Kralja Aleksandra 87, 11000 Beograd', 'mateja.jovic@elfak.rs', '+381657473845');
+
+INSERT INTO KLIJENT (Id, Naziv, Adresa, Email, Br_tel) VALUES 
+(2, 'PitajStrucnjaka', 'Trg Republike 15, 21000 Novi Sad', 'andjela.doncov@elfak.rs', '+381646965786');
+
+INSERT INTO KLIJENT (Id, Naziv, Adresa, Email, Br_tel) VALUES 
+(3, 'Aleksa Ilic', 'Kralja Milutina 22, 16000 Leskovac', 'aleksa.ilic@elfak.rs', '+381617435751');
+
+INSERT INTO KLIJENT (Id, Naziv, Adresa, Email, Br_tel) VALUES 
+(4, 'Filip Lakicevic', 'Kralja Petra I 33, 18000 Niš', 'cofyye@elfak.rs', '+381649584624');
+
+INSERT INTO KLIJENT (Id, Naziv, Adresa, Email, Br_tel) VALUES 
+(5, 'Ilija Ivanovic', 'Cara Lazara 5, 24000 Subotica', 'ilija.ivanovic@elfak.rs', '+381693642834');
+
+
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (1, 'Odlična usluga i brza podrška!');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (2, 'Veoma zadovoljna sa njihovim uslugama.');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (3, 'Profesionalno osoblje i efikasna komunikacija.');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (4, 'Ponekad se desi kašnjenje u odgovoru na mejlove.');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (5, 'Sjajan izbor proizvoda i usluga.');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (1, 'Lako obavljanje transakcija putem njihove aplikacije.');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (2, 'Dobra dostupnost ATM-ova.');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (3, 'Potrebna je poboljšana transparentnost u troškovima.');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (4, 'Često organizuju korisne radionice i seminare.');
+INSERT INTO KOM_KLIJENT (Id_klijenta, Komentar) VALUES (5, 'Brzo rešavanje svih mojih zahteva');
+
+
+INSERT INTO FIZICKO_LICE (Id, Lime, Ime_roditelja, Prezime, JMBG, Br_licne_karte, Mesto_izdavanja, Datum_rodjenja) VALUES 
+(3, 'Aleksa', 'Dusan', 'Ilic', '0101984753210', '123456789', 'Kursumlija', TO_DATE('2002-04-16 16:51:46', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO FIZICKO_LICE (Id, Lime, Ime_roditelja, Prezime, JMBG, Br_licne_karte, Mesto_izdavanja, Datum_rodjenja) VALUES 
+(5, 'Ilija', 'Nikola', 'Ivanovic', '2510996245987', '456789123', 'Prokuplje', TO_DATE('2002-07-03 20:10:08', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO FIZICKO_LICE (Id, Lime, Ime_roditelja, Prezime, JMBG, Br_licne_karte, Mesto_izdavanja, Datum_rodjenja) VALUES 
+(4, 'Filip', 'Dejan', 'Lakicevic', '0305987198745', '987654321', 'Prokuplje', TO_DATE('2002-05-07 20:10:08', 'YYYY-MM-DD HH24:MI:SS'));
+
+
+INSERT INTO PRAVNO_LICE (Id, Poreski_id) VALUES (1, '1234567890123');
+INSERT INTO PRAVNO_LICE (Id, Poreski_id) VALUES (2, '9876543210987');
+
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(1, 1, 1, 'devizni', '10000', TO_DATE('2024-04-16 20:13:31', 'YYYY-MM-DD HH24:MI:SS'), 'EUR');
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(2, 1, 1, 'dinarski', '100000', TO_DATE('2024-04-16 20:14:16', 'YYYY-MM-DD HH24:MI:SS'), NULL);
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(3, 2, 4, 'devizni', '100000000', TO_DATE('2024-04-16 20:14:16', 'YYYY-MM-DD HH24:MI:SS'), 'EUR');
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(4, 2, 4, 'dinarski', '35000', TO_DATE('2024-04-16 20:14:16', 'YYYY-MM-DD HH24:MI:SS'), NULL);
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(5, 1, 4, 'devizni', '5000000', TO_DATE('2024-04-16 20:18:16', 'YYYY-MM-DD HH24:MI:SS'), 'USD');
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(6, 5, 3, 'devizni', '10000', TO_DATE('2024-04-16 20:18:16', 'YYYY-MM-DD HH24:MI:SS'), 'RUB');
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(7, 5, 3, 'dinarski', '0', TO_DATE('2024-04-15 20:18:16', 'YYYY-MM-DD HH24:MI:SS'), NULL);
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(8, 4, 5, 'devizni', '200', TO_DATE('2024-04-09 20:18:16', 'YYYY-MM-DD HH24:MI:SS'), 'USD');
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(9, 3, 2, 'devizni', '149', TO_DATE('2024-04-12 20:18:16', 'YYYY-MM-DD HH24:MI:SS'), 'EUR');
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(10, 3, 2, 'dinarski', '45141', TO_DATE('2024-04-16 20:18:16', 'YYYY-MM-DD HH24:MI:SS'), NULL);
+
+INSERT INTO RACUN (Br_racuna, Id_banke, Id_klijenta, Tip, Tekuci_saldo, Datum_otvaranja, Valuta) VALUES 
+(11, 4, 2, 'dinarski', '0', TO_DATE('2024-04-15 20:18:16', 'YYYY-MM-DD HH24:MI:SS'), NULL);
+
+
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(1, 1, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '60000', 'kreditna', '50000', TO_DATE('2025-01-01 20:24:23', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(2, 2, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '60000', 'debitna', NULL, NULL);
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(3, 3, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '60000', 'kreditna', '70000', TO_DATE('2025-01-01 20:24:23', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(4, 4, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '60000', 'debitna', NULL, NULL);
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(5, 5, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '100000', 'kreditna', '100000', TO_DATE('2024-12-31 20:24:23', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(6, 6, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '90000', 'kreditna', '200000', TO_DATE('2024-11-30 20:24:23', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(7, 7, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '40000', 'debitna', NULL, NULL);
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(8, 8, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '60000', 'kreditna', '200000', TO_DATE('2025-07-17 20:24:23', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(9, 9, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '300000', 'kreditna', '300000', TO_DATE('2025-11-29 20:24:23', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(10, 10, TO_DATE('2024-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:24:23', 'YYYY-MM-DD HH24:MI:SS'), '50000', 'debitna', NULL, NULL);
+
+INSERT INTO KARTICA (Id, Br_racuna, Datum_izdavanja, Datum_isteka, Dnevni_limit, Tip, Max_iznos_zaduzenja, Max_datum_vracanja_duga) VALUES 
+(11, 11, TO_DATE('2024-04-16 20:32:54', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2029-04-16 20:32:54', 'YYYY-MM-DD HH24:MI:SS'), '70000', 'debitna', NULL, NULL);
+
+
+
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (1, 1, 'Euronet EFT');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (2, 2, 'Wincor Nixdorf');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (3, 3, 'Wincor Nixdorf');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (4, 4, 'Wincor Nixdorf');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (5, 5, 'NCR Corporation');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (6, 6, 'NCR Corporation');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (7, 7, 'NCR Corporation');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (8, 8, 'NCR Corporation');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (9, 9, 'NCR Corporation');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (10, 10, 'Diebold Nixdorf');
+INSERT INTO SERVIS (Kod, Id_bankomata, Firma) VALUES (11, 11, 'Diebold Nixdorf');
+
+
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (4, '5000', TO_DATE('2024-04-16', 'YYYY-MM-DD'), TO_TIMESTAMP('12:09:11', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (5, '3000', TO_DATE('2024-02-14', 'YYYY-MM-DD'), TO_TIMESTAMP('17:12:09', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (6, '7000', TO_DATE('2024-04-03', 'YYYY-MM-DD'), TO_TIMESTAMP('06:14:11', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (7, '11000', TO_DATE('2024-04-02', 'YYYY-MM-DD'), TO_TIMESTAMP('12:09:11', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (8, '25000', TO_DATE('2024-02-10', 'YYYY-MM-DD'), TO_TIMESTAMP('12:09:11', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (9, '33000', TO_DATE('2024-04-03', 'YYYY-MM-DD'), TO_TIMESTAMP('12:09:11', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (10, '18000', TO_DATE('2024-03-12', 'YYYY-MM-DD'), TO_TIMESTAMP('12:09:11', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (11, '54010', TO_DATE('2024-03-09', 'YYYY-MM-DD'), TO_TIMESTAMP('12:09:11', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (12, '14000', TO_DATE('2023-12-13', 'YYYY-MM-DD'), TO_TIMESTAMP('13:40:58', 'HH24:MI:SS'));
+INSERT INTO TRANSAKCIJA (Id, Podignuti_iznos, Datum, Vreme) VALUES (13, '12500', TO_DATE('2024-04-10', 'YYYY-MM-DD'), TO_TIMESTAMP('13:40:58', 'HH24:MI:SS'));
+
+
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (1, 1, 4);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (2, 2, 10);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (3, 3, 11);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (4, 4, 5);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (5, 5, 6);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (6, 6, 13);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (7, 7, 12);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (8, 8, 7);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (9, 9, 8);
+INSERT INTO KORISTI_ZA_PODIZANJE_NOVCA (Id_bankomata, Id_kartice, Id_transakcije) VALUES (10, 10, 9);
+
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(1, 'Greška u isplati gotovine je bila uzrokovana kvarom senzora za detekciju novčanica, koji je uspešno zamenjen.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(2, 'Problemi sa komunikacijom bankomata su otklonjeni nakon intervencije tehničara i zamene mrežnih kablova.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(3, 'Softverska greška koja je uzrokovala prekide u transakcijama je ispravljena ažuriranjem softvera.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(4, 'Otklonjena je mehanička blokada unutar bankomata koja je uzrokovala zastoje u unosu kartice.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(5, 'Zamenjen je neispravan ekran bankomata koji je prikazivao pogrešne informacije klijentima.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(6, 'Servis je rešio problem sa neispravnom štamparskom jedinicom, koja je uzrokovala nečitljive izvode transakcija.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(7, 'Zamenjen je oštećeni deo bankomata koji je prouzrokovao zastoje u izdavanju novčanica.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(8, 'Problemi sa čitačem kartica su otklonjeni nakon detaljne dijagnostike i kalibracije uređaja.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(9, 'Tehničari su revidirali električne veze i rešili prekide napajanja koji su prouzrokovali prekide u radu bankomata.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(10, 'Otklonjeni su problemi sa hardverskom memorijom bankomata koji su uzrokovali sporije odzive na transakcije.');
+
+INSERT INTO OTKLONJENE_GRESKE_SERVISA (Kod_servisa, Otklonjena_greska) VALUES
+(11, 'Promenjen je neispravan senzor za detekciju novčanica koji je prouzrokovao greške pri unosu novčanica u bankomat.');
+
+
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (1, 'Mateja');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (2, 'Mateja');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (3, 'Filip');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES 4, 'Filip');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES 5, 'Filip');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (6, 'Aleksa');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (7, 'Aleksa');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (8, 'Ilija');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (9, 'Andjela');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (10, 'Andjela');
+INSERT INTO OVLASCENO_LICE_RACUNA (Br_racuna, Ime_ovlascenog_lica) VALUES (11, 'Andjela');

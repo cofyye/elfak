@@ -1,0 +1,17 @@
+<html>
+ <head>
+  <title>Slika</title>
+ </head>
+ <body>
+  <form action="cgi.exe" method="POST">moze method i GET
+   <p>Broj indeksa:</p>
+   <input type="number" name="brojIndeksa" value="0" />
+   <select name="ekstenzija">
+     <option value="0">Odaberi ekstenziju</option>
+     <option value=".jpg">.jpg</option>
+     <option value=".png">.png</option>
+   </select>
+   <input type="submit" value="Preuzmi" />
+  </form>
+ </body>
+</html>
