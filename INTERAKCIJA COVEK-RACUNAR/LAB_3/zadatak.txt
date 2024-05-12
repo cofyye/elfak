@@ -1,0 +1,13 @@
+
+Lab. vežba 3 - Unity (29.04.2024)
+U Unity-u, napraviti jednostavnu "igru" koja zadovoljava sledeće zahteve:
+
+Kreirati objekat koji predstavlja igrača
+Stilizovati igrača korišćenjem materijala
+Kreirati objekte koji predstavljaju platforme
+Stilizovati platfrome korišćenjem materijala (i tekstura) 
+Kreirati objekte koje predstavljaju novčiće
+Stilizovati novčiće korišćenjem materijala (i tekstura)
+Omogućiti kretanje igrača duz x i z ose
+Omogućiti skakanje igrača
+Obezbediti da igrač može da pokupi novčić (kada dođe do susreta igrača i novčića, novčić nestaje).

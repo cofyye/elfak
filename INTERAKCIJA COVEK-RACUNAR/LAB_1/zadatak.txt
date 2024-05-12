@@ -1,0 +1,11 @@
+Lab. vežba 1 - Bootstrap (18.03.2024)
+Lab. vežba 1 - Bootstrap
+Napraviti jednostraničnu web prezentaciju korišćenjem Bootstrap-a. Prezentacija može biti o sebi, hipotetičkoj firmi ili nekoj drugoj organizaciji. Prezentacija treba da poseduje standardne elemente tipične za sajtove odgovarajućeg tipa (zaglavlje sa menijem, futer i sl.). Prezentacija mora biti optimizovana za desktop i mobilne uređaje (responsive). 
+
+Pored upotrebe Bootstrap klasa za strukutiranje sadržaja potrebno je izvršiti stilizaciju prezentacije korišćenjem neke CSS teme.
+
+Za pripremu vežbe pogledati materijal sa sajta:
+
+https://www.w3schools.com/bootstrap5/index.php
+
+Na sajtu https://startbootstrap.com/themes/ možete naći neke besplatne teme koje možete iskoristiti.

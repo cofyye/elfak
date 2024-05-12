@@ -1,0 +1,12 @@
+Lab. vežba 2 - React
+Korišćenjem React biblioteke napraviti klijentski deo aplikacije imenika. Aplikacija treba da obezbedi:
+
+Prikaz liste kontakata gde svaki kontakt poseduje ime, prezime, telefon i e-mail adresu. 
+Mogućnost ažuriranja kontakata (jedan u jednom trenutku) aktiviranjem odgovarajuće opcije. Obezbediti mogućnost snimanja promena i otkazivanja izmena. Kontrole za izmenu kontakta se prikazuju na mestu originalog kontakta (umesto njega).
+Mogućnost dodavavanja novog kontakta u listu. 
+Mogućnost pretraživanja (filtriranja) liste kontakata.
+Pri dodavanju i ažuriranju kontakta vrišiti validaciju da li su sva polja popunjena. U slučaju da korisnik pokuša da unese kontakt, a da pri tome nije popunio sva polja, potrebno je dati do znanja korisniku da mora prvo da unese sva polja.
+
+Za pripremu vežbe pogledati materijal sa sajta: https://www.w3schools.com/react/default.asp. Takođe, na stranici predmeta su dostupni i dodatni primeri koji mogu biti od pomoći pri izradi vežbe.
+
+NAPOMENA: Za potrebe ove laboratorijske vežbe je dovoljno koristiti React preko CDN-a.
