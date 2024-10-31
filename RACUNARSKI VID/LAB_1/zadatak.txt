@@ -1,0 +1,23 @@
+Zadatak ove laboratorijske vežbe je implementacija sistema za filtriranje periodičnog šuma na slici u programskom jeziku Python.
+
+Na ulazu je slika koja sadrži šum, svaki student preuzima sliku (sa ovog linka) čiji broj se računa po formuli: broj_slike=broj_indeksa % 5, gde je % operacija modula (ostatka pri deljenju), koja će služiti kao ulaz u sistem za filtriranje.
+
+Svako rešenje za sistem koji filtrira šum sa slike je prihvatljivo (inovativna rešenja će dobiti veći broj poena).
+
+Standardni način za rešavanje problema je transformacijom i filtriranje u frekventnom domenu (koristeći Furijeovu transformaciju slike):
+
+Učitati sliku iz fajla
+Primenom Furijeove transformacije (fft2 iz numpy) prebaciti sliku u frekventni domen i iskoristiti funkciju fftshift.
+Sa amplitude (magnitude) spektra pronaći tačke koje generišu šum na slici.
+Ukloniti šum obradom tih tačaka (postoji više načina, ali za potrebe laboratorijske vežbe je dovoljno postaviti vrednost u pomenutim tačkama na nulu).
+Vratiti sliku u prostorni domen i sačuvati je.
+Značajno poboljšanje standardnog načina će biti ocenjeno većim brojem poena.
+Rešenje koje se prikazuje za pregled treba da sadrži sledećih 5 slika/fajlova:
+
+Ulaznu sliku
+Magnitudu spektra pre uklanjanja šuma
+Magnitudu spektra nakon uklanjanja šuma 
+Ulaznu sliku nakon uklanjanja šuma 
+Izvorni kod 
+Ako se predaje rešenje koje ne koristi Furijeovu transformaciju onda rešenje treba da sadrži samo prvi, četvrti i peti fajl sa spiska.
+Last modified: Friday, 25 October 2024, 12:24 PM
