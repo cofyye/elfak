@@ -1,0 +1,24 @@
+Laboratorijska vežba 2 - Morfološke operacije
+Zadatak druge laboratorijske vežbe je segmentacija objekata na slici. 
+
+Na ulazu je slika novčića koji su na beloj pozadini, od kojih su svi srebrni, osim jednog koji je bakarni. Potrebno je projektovati sistem koji segmentira bakarni novčić korišćenjem thresholdovanja i morfoloških operacija. Na izlazu treba biti maska koja ima vrednost piksela 255 na pozicijama gde se nalazi bakarni novčić, a na ostalim pozicijama vrednost piksela je 0. Tolerancija za veličinu maske je ±10%.
+
+Pomoć pri izradi:
+
+- Ideja je da se koristi threshold za segmentaciju novčića, morfološke operacije za popunjavanje rupa i filtriranje viškova, a morfološka rekonstrukcija za izdvajanje bakarnog novčića od ostalih.
+
+- Sliku novčića pretvoriti u Grayscale (nijanse sive) i na toj slici segmentirati sve novčiće što je bolje moguće korišćenjem funkcije cv2.threshold, prag segmentacije (threshold) pronaći ručno. Iskoristiti odgovarajuću morfološku operaciju za popunjavanje rupa unutar novčića. Ovime se dobija maska svih novčića.
+
+- Početnu sliku novčića pretvoriti u HSV prostor boja i na njenom Saturation kanalu uraditi segmentaciju markera (za morfološku rekonstrukciju) korišćenjem thresholda (opet prag pronaći ručno). Iskoristiti odgovarajuću morfološku operaciju za filtriranje nepotrebnih piksela. Na ovaj način se dobija marker koji se nalazi samo u okviru bakarnog novčića.
+
+- Iskoristiti morfološku rekonstrukciju (kod se može naći u odeljku za računske vežbe) za izdvajanje bakarnog novčića.
+
+Svako rešenje koje na drugačiji način segmentira bakarni novčić će biti ocenjeno dodatnim poenima, kao i svako poboljšanje bilo koje prethodne stavke
+
+Slike koje prikazujete na vezbi su sledeće:
+
+- Izlazna maska bakarnog novčića
+
+- Izvorni kod
+
+Last modified: Friday, 3 November 2023, 12:53 PM

@@ -1,0 +1,75 @@
+Naravno! Ovaj kod koristi biblioteku OpenCV za obradu slika i Matplotlib za prikaz rezultata obrade. Prikazan je osnovni tok obrade slike, s fokusom na izdvajanje objekata (u ovom slučaju, kovanica) na osnovu njihovih karakteristika u slici. Evo detaljnog objašnjenja:
+
+Učitavanje slike:
+
+python
+Copy code
+image = cv2.imread('coins.png')
+Učitava sliku iz datoteke "coins.png" koristeći OpenCV. Slika se učitava u BGR formatu (plavo-zelena-crvena), što je standard za OpenCV.
+Pretvaranje u RGB format:
+
+python
+Copy code
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+Konvertuje sliku iz BGR formata u RGB, jer Matplotlib koristi RGB format za prikaz slike, dok OpenCV koristi BGR.
+Pretvaranje u sivu sliku:
+
+python
+Copy code
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+Konvertuje sliku u sivu nijansu (grayscale). Ovo je često koristan korak u obradi slika jer smanjuje složenost rada sa slikama (radimo sa jednom bojom umesto tri).
+Binarna slika pomoću praga:
+
+python
+Copy code
+_, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY_INV)
+Primenjuje binarizaciju praga. Pikseli sa sivom vrednošću većom od 150 postaju 0 (crna), a oni ispod 150 postaju 255 (bela). cv2.THRESH_BINARY_INV inverzuje ove vrednosti. Tako je rezultat binarna slika sa belim pikselima na mestima gde su tamniji objekti.
+Zatvaranje (morfološka operacija):
+
+python
+Copy code
+kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15))
+closing = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+Prvo se kreira eliptični kernel veličine 15x15. Zatim se primenjuje morfološka operacija zatvaranja (closing), koja pomaže da se zatvore sitne rupe u binarnoj slici, povezujući bele regione. Ovo pomaže u uklanjanju manjih nedostataka u konturama objekata.
+Ekstrahovanje saturacije:
+
+python
+Copy code
+hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+saturation = hsv_image[:, :, 1]
+Konvertuje sliku u HSV (Hue, Saturation, Value) prostor boja. Zatim se izdvaja samo kanal saturacije (saturation), koji predstavlja intenzitet boje u pikselima slike.
+Marker pomoću praga:
+
+python
+Copy code
+_, marker = cv2.threshold(saturation, 30, 255, cv2.THRESH_BINARY)
+Kreira binarnu masku (marker) na osnovu praga saturacije. Pikseli sa saturacijom većom od 30 postaju 255 (beli), dok ostali postaju 0 (crni).
+Otvaranje i zatvaranje za poboljšanje markera:
+
+python
+Copy code
+marker = cv2.morphologyEx(marker, cv2.MORPH_OPEN, kernel)
+reconstructed = cv2.morphologyEx(marker, cv2.MORPH_CLOSE, kernel)
+Primenjuje otvaranje (opening) i zatvaranje (closing) nad markerom, koristeći eliptični kernel, kako bi se dodatno uklonili manji šumovi i popunile rupe u markeru.
+Kombinovanje maski:
+
+python
+Copy code
+final_mask = cv2.bitwise_and(closing, reconstructed)
+Koristi bitwise_and kako bi kombinovao dve maske (closing i reconstructed) u jednu. Ovo daje završnu masku koja se koristi za ekstrakciju relevantnih objekata (npr. kovanica).
+Prikaz rezultata:
+
+python
+Copy code
+plt.imshow(image_rgb)
+plt.show()
+
+plt.imshow(final_mask, cmap='gray')
+plt.show()
+
+result = cv2.bitwise_and(image, image, mask=final_mask)
+result_rgb = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)
+plt.imshow(result_rgb)
+plt.show()
+Prikazuje originalnu sliku, finalnu masku u sivoj boji, i konačni rezultat gde je finalna maska primenjena na originalnu sliku. Primenom maske na originalnu sliku izdvajaju se samo oni delovi slike gde maska ima vrednost 255 (bele oblasti na slici final_mask).
+Ovaj kod radi izdvajanje objekata na slici na osnovu njihovih boja i morfoloških karakteristika, što može biti korisno u prepoznavanju i segmentaciji objekata kao što su kovanice.
