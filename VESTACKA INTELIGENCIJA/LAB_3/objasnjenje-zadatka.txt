@@ -1,0 +1,89 @@
+1. Graph klasa
+Ova klasa predstavlja neusmereni graf sa metodama za dodavanje grana i pretragu puteva određenih dužina. Graf je implementiran koristeći Python-ov defaultdict iz collections modula, gde se svaki čvor mapira na listu svojih suseda.
+
+Metode u klasi Graph:
+__init__ metoda:
+
+python
+Copy code
+def __init__(self):
+    self.graph = defaultdict(list)
+Konstruktor inicijalizuje self.graph kao prazan defaultdict gde je podrazumevana vrednost lista. Svaki čvor će imati listu susednih čvorova, a svaki čvor koji nema suseda automatski će imati praznu listu.
+add_edge metoda:
+
+python
+Copy code
+def add_edge(self, u, v):
+    self.graph[u].append(v)
+    self.graph[v].append(u)  # Neusmereni graf
+Ova metoda dodaje granu između čvorova u i v. Budući da je graf neusmeren, veza između u i v važi u oba smera, pa se v dodaje u listu suseda čvora u, a u se dodaje u listu suseda čvora v.
+find_paths_of_length metoda:
+
+python
+Copy code
+def find_paths_of_length(self, start, end, path_length):
+    ...
+Ova metoda pronalazi sve puteve od početnog čvora start do krajnjeg čvora end koji su tačno dužine path_length. Koristi pomoćnu funkciju dfs koja implementira pretragu u dubinu (DFS) kako bi se istražili svi putevi od start do end dužine path_length.
+2. Unutrašnja funkcija dfs
+python
+Copy code
+def dfs(current, destination, path, current_length):
+    ...
+dfs (Depth-First Search) je rekurzivna funkcija koja se koristi za pronalaženje svih mogućih puteva između current čvora (trenutno istraživanog čvora) i destination čvora, sa tačnom dužinom path_length.
+Argumenti funkcije dfs:
+current: Trenutni čvor koji se istražuje.
+destination: Krajnji čvor.
+path: Lista čvorova koja predstavlja trenutni put.
+current_length: Trenutna dužina puta.
+Logika dfs funkcije:
+Provera dužine puta i destinacije:
+
+python
+Copy code
+if current == destination and current_length == path_length:
+    paths.append(path.copy())
+    return
+Ako je current čvor isti kao destination i trenutna dužina puta (current_length) je jednaka zadatom path_length, tada smo pronašli validan put. Kopija trenutnog puta se dodaje u listu paths, i funkcija se završava za ovaj poziv.
+Prekoračenje dužine puta:
+
+python
+Copy code
+if current_length > path_length:
+    return
+Ako je trenutna dužina puta veća od zadate (path_length), prekidamo pretragu jer je put predug i neće odgovarati zadatoj dužini.
+Iteracija kroz susede trenutnog čvora:
+
+python
+Copy code
+for neighbor in self.graph[current]:
+    if neighbor not in path:  # Da izbegnemo cikluse
+        path.append(neighbor)
+        dfs(neighbor, destination, path, current_length + 1)
+        path.pop()
+Iteriramo kroz susedne čvorove trenutnog čvora (current). Ako susedni čvor (neighbor) nije već u trenutnom putu (da izbegnemo cikluse), dodajemo ga u path i rekurzivno pozivamo dfs sa neighbor kao novim trenutnim čvorom i current_length + 1 kao dužinom puta.
+Nakon završetka rekurzivnog poziva, uklanjamo neighbor iz path (backtracking) kako bi se istražili svi putevi od start do end.
+Povratak iz find_paths_of_length metode:
+python
+Copy code
+paths = []
+dfs(start, end, [start], 0)
+return paths
+Inicijalizuje se prazna lista paths koja će čuvati sve validne puteve.
+Poziva se dfs sa početnim čvorom start, krajnjim čvorom end, početnim putem [start], i trenutnom dužinom puta 0.
+Funkcija vraća listu paths koja sadrži sve puteve između start i end dužine path_length.
+Primer korišćenja koda:
+python
+Copy code
+# Primer korišćenja
+g = Graph()
+g.add_edge(1, 2)
+g.add_edge(2, 3)
+g.add_edge(1, 3)
+g.add_edge(3, 4)
+
+# Pronalazi sve puteve dužine 2 između čvorova 1 i 3
+paths = g.find_paths_of_length(1, 3, 2)
+print("Pronađeni putevi dužine 2 između čvorova 1 i 3:", paths)
+Kreira se instanca grafa g.
+Dodaju se grane između čvorova pomoću add_edge.
+find_paths_of_length pronalazi sve puteve dužine 2 između čvorova 1 i 3, što rezultira prikazivanjem svih validnih puteva dužine 2 između zadatih čvorova.
