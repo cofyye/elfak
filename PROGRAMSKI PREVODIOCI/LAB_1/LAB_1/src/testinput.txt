@@ -1,0 +1,14 @@
+program
+begin
+	a:integer := 0xA10;
+	b:integer := 041;
+	g:integer := 20.2;
+	
+	** komentar 1 **
+	c:boolean := false;
+	while a >= g:
+		c := b or a;
+	else:
+		c := b and a;
+	** komentar 2 **
+end
