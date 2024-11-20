@@ -1,0 +1,102 @@
+Ovaj kod rešava problem raspoređivanja piona na šahovskoj tabli tako da svaki pion bude postavljen na različitoj koloni, a da pritom prati početni raspored koji je zadan. Kod koristi backtracking tehniku kako bi pronašao rešenje. Evo detaljnog objašnjenja svakog dela koda:
+
+1. Funkcija print_board(board, pawn_symbol='*')
+Cilj:
+Prikazuje stanje šahovske table, gde su pionu predstavljeni simbolom pawn_symbol.
+
+Parametri:
+board: Lista veličine 
+𝑛
+n, gde je svaka vrednost pozicija piona u odgovarajućem redu.
+pawn_symbol: Simbol koji se koristi za predstavljanje piona (podrazumevano je *).
+Kako radi:
+Prolazi kroz svaki red.
+Inicijalizuje red kao niz tačaka (.), što predstavlja prazne pozicije.
+Na osnovu pozicije piona (board[row]), postavlja simbol piona na odgovarajuću kolonu.
+Ispisuje red kao string sa razmakom između elemenata.
+Primer:
+Ako je tabla [3, 2, -1, -1] za 
+𝑛
+=
+4
+n=4, ispisuje:
+
+Copy code
+. . . *
+. . * .
+. . . .
+. . . .
+2. Funkcija solve_pawns(initial_board)
+Cilj:
+Rešava problem raspoređivanja piona na šahovskoj tabli koristeći backtracking tehniku.
+
+Parametri:
+initial_board: Lista početnih pozicija piona. Vrednost na svakom indeksu predstavlja početnu kolonu piona u tom redu.
+Lokalni promenljivi:
+n: Veličina table.
+board: Lista koja prati trenutne pozicije piona na tabli. Inicijalno, sve vrednosti su -1, što znači da pion nije postavljen.
+moves_log: Lista koja beleži sve poteze tokom rešavanja problema.
+3. Funkcija is_safe(board, row, col)
+Cilj:
+Proverava da li je bezbedno postaviti piona u dati red (row) i kolonu (col).
+
+Kako radi:
+Prolazi kroz sve prethodne redove (jer su svi pionu do trenutnog reda već postavljeni).
+Ako je bilo koji pion u istoj koloni kao trenutni, vraća False.
+4. Funkcija place_pawns(board, row)
+Cilj:
+Pokušava da postavi pion u trenutni red (row), koristeći backtracking tehniku.
+
+Kako radi:
+Ako je pion postavljen u sve redove (uslov row == n), vraća True, jer je rešenje pronađeno.
+Pokušava da postavi pion u svaku kolonu trenutnog reda:
+Proverava da li je bezbedno postaviti piona u tu kolonu pomoću is_safe.
+Ako jeste:
+Pamti početnu poziciju iz initial_board.
+Postavlja piona u trenutni red i beleži potez u moves_log.
+Rekurzivno pokušava da postavi piona u sledeći red (row + 1).
+Ako rekurzivni poziv vrati True, vraća uspeh.
+Ako potez ne uspe, uklanja poslednji potez iz moves_log.
+Ako nije moguće postaviti piona ni u jednu kolonu, vraća False.
+5. Glavna logika u solve_pawns
+Ispisuje početno stanje table pomoću print_board.
+Poziva place_pawns(board, 0) da započne rešavanje od prvog reda.
+Ako je rešenje pronađeno:
+Ispisuje konačno stanje table.
+Ispisuje sve poteze iz moves_log.
+Ako rešenje ne postoji, ispisuje poruku "Nije moguće rešiti problem".
+Primer ulaza:
+python
+Copy code
+initial_board = [3, 2, 3, 3, 7, 6, 2, 1]
+Tabla ima 8 redova.
+Početne kolone su: red 1 -> kolona 4, red 2 -> kolona 3, itd.
+Izlaz:
+yaml
+Copy code
+Početno stanje tabele:
+. . . * . . . .
+. . * . . . . .
+. . . * . . . .
+. . . * . . . .
+. . . . . . . *
+. . . . . . * .
+. * . . . . . .
+* . . . . . . .
+
+Konačno stanje tabele:
+* . . . . . . .
+. * . . . . . .
+. . * . . . . .
+. . . * . . . .
+. . . . * . . .
+. . . . . * . .
+. . . . . . * .
+. . . . . . . *
+
+Logovi pomeranja:
+Pion u redu 1 pomeren sa kolone 4 na kolonu 1
+Pion u redu 2 pomeren sa kolone 3 na kolonu 2
+...
+Zaključak:
+Ovaj kod koristi backtracking tehniku da sistematski postavi pionu tako da svaki red i kolona imaju tačno jednog piona, pritom beležeći sve poteze. Ako rešenje postoji, ono se prikazuje zajedno sa svim potezima; ako ne, ispisuje se odgovarajuća poruka.
