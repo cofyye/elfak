@@ -1,0 +1,68 @@
+﻿@ATM_WebApi_HostAddress = https://localhost:7257
+
+# Dodaj Banku
+POST {{ATM_WebApi_HostAddress}}/banka/DodajBanku
+Content-Type: application/json
+{
+  "Ime": "Postanska stedionica",
+  "Email": "postanskastedionica@gmail.com",
+  "Web_adresa": "www.postanskastedionica.com",
+  "Adresa_centrale": "Kraljice Marije 3, 11120 Beograd"
+}
+
+###
+
+# Obrisi Banku
+DELETE {{ATM_WebApi_HostAddress}}/banka/IzbrisiBanku/263
+
+###
+
+# Preuzmi sve Banke
+GET {{ATM_WebApi_HostAddress}}/banka/PreuzmiBanke
+
+###
+
+# Preuzmi banku sa Id-jem
+GET {{ATM_WebApi_HostAddress}}/banka/PreuzmiBanku/1
+
+###
+
+# Azuriraj Banku
+PUT {{ATM_WebApi_HostAddress}}/banka/IzmeniBanku/281
+Content-Type: application/json
+{
+  "Ime": "Postanska stedionica",
+  "Email": "info@postanskastedionica.com",
+  "Web_adresa": "https://www.posted.co.rs/",
+  "Adresa_centrale": "Kraljice Marije 3, 11120 Beograd"
+}
+
+###
+
+//Preuzimanje svih brojeva telefona banke
+GET {{ATM_WebApi_HostAddress}}/banka/brojeviTelefona/VratiSveBrojeve/1
+
+###
+
+//Dodaj novi broj telefona banke
+POST {{ATM_WebApi_HostAddress}}/banka/brojeviTelefona/DodajBrTelefona/281
+Content-Type: application/json
+{
+  "brTelefona": "011 254 980"
+}
+
+###
+
+//Izmeni broj telefona banke
+PUT {{ATM_WebApi_HostAddress}}/banka/brojeviTelefona/IzmeniBrTelefona/142
+Content-Type: application/json
+{
+  "brTelefona": "011 111 222"
+}
+
+###
+
+//Izbrisi broj telefona banke
+DELETE {{ATM_WebApi_HostAddress}}/banka/brojeviTelefona/IzbrisiBrTelefona/142
+
+###

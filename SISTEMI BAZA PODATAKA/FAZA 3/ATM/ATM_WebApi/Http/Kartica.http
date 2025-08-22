@@ -1,0 +1,66 @@
+﻿@ATM_WebApi_HostAddress = https://localhost:7257
+
+GET {{ATM_WebApi_HostAddress}}/Kartica/PreuzmiKartice
+
+###
+
+GET {{ATM_WebApi_HostAddress}}/Kartica/PreuzmiKarticeOdRacuna/8
+
+###
+
+GET {{ATM_WebApi_HostAddress}}/Kartica/PreuzmiKarticu/8
+
+###
+
+DELETE {{ATM_WebApi_HostAddress}}/Kartica/IzbrisiKarticu/7
+
+
+###Izmena debitne
+PUT {{ATM_WebApi_HostAddress}}/Kartica/IzmeniKarticu/105
+Content-Type: application/json
+
+{
+  "Datum_izdavanje": "2024-06-01T00:00:00",
+  "Datum_isteka": "2026-06-01T00:00:00",
+  "Dnevni_limit": "100000",
+  "Tip": "debitna"
+}
+
+
+###Izmena kreditne
+PUT {{ATM_WebApi_HostAddress}}/Kartica/IzmeniKarticu/8
+Content-Type: application/json
+
+{
+  "Datum_izdavanje": "2024-06-01T00:00:00",
+  "Datum_isteka": "2026-06-01T00:00:00",
+  "Dnevni_limit": "2000000",
+  "Tip": "kreditna",
+  "Max_iznos_zaduzenja": "500000",
+  "Max_datum_vracanja_duga": "2025-06-01T00:00:00"
+}
+
+###Dodavanje debitne
+POST {{ATM_WebApi_HostAddress}}/Kartica/DodajKarticu/83/debitna
+Content-Type: application/json
+
+{
+    "Datum_izdavanje": "2024-06-01",
+    "Datum_isteka": "2030-06-11",
+    "Dnevni_limit": "2000"
+}
+
+###Dodavanje kreditne
+POST {{ATM_WebApi_HostAddress}}/Kartica/DodajKarticu/83/kreditna
+Content-Type: application/json
+
+{
+    "Datum_izdavanje": "2024-06-01",
+    "Datum_isteka": "2030-06-17",
+    "Dnevni_limit": "2000",
+    
+    "Max_iznos_zaduzenja": "1000",
+    "Max_datum_vracanja_duga": "2026-06-11"
+}
+
+

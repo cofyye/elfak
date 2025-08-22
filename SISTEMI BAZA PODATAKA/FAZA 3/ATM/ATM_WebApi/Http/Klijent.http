@@ -1,0 +1,38 @@
+﻿@ATM_WebApi_HostAddress = https://localhost:7257
+
+GET {{ATM_WebApi_HostAddress}}/klijent/PreuzmiKlijente
+
+###
+
+DELETE {{ATM_WebApi_HostAddress}}/klijent/IzbrisiKlijenta/82
+
+###
+
+//VRATI SVE KOMENTARE KLIJENTA
+GET {{ATM_WebApi_HostAddress}}/klijent/komentari/VratiSveKomentareKlijenta/1
+
+###
+
+//DODAJ NOVI KOMENTAR KLIJENTA
+POST {{ATM_WebApi_HostAddress}}/klijent/komentari/DodajKomentar/62
+Content-Type: application/json
+{
+  "komentar": "Moj komentar bez teksta sam"
+}
+
+###
+
+//IZMENI KOMENTAR KLIJENTA
+PUT {{ATM_WebApi_HostAddress}}/klijent/komentari/IzmeniKomentarKlijenta/82
+Content-Type: application/json
+{
+  "komentar": "Izmena izmena izmena"
+}
+
+###
+
+//IZBRISI KOMENTAR KLIJENTA
+DELETE {{ATM_WebApi_HostAddress}}/klijent/komentari/IzbrisiKomentarKlijenta/82
+
+###
+

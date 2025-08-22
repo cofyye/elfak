@@ -1,0 +1,18 @@
+@ATM_WebApi_HostAddress = https://localhost:7257
+
+//Vrati sve transakcije obavljene na bankomatu ciji je id prosledjen
+GET {{ATM_WebApi_HostAddress}}/transakcija/PreuzmiTransakcijeBankomata/bankomat/6
+Content-Type: application/json
+###
+
+
+//Dodaj transakciju
+POST {{ATM_WebApi_HostAddress}}/transakcija/DodajTransakciju/bankomat/2/kartica/29
+Content-Type: application/json
+{
+  "podignuti_iznos": "500",
+  "datum_Podizanja_Novca": "2024-06-16T11:37:39.33Z",
+  "vreme_Podizanja_Novca": "11:37:39.33"
+}
+
+###

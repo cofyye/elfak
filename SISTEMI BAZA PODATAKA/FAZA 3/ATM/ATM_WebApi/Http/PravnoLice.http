@@ -1,0 +1,39 @@
+﻿@ATM_WebApi_HostAddress = https://localhost:7257
+
+# Get All Pravno Lice
+GET {{ATM_WebApi_HostAddress}}/PravnoLice/PreuzmiPravnoLice
+
+###
+
+# Add Pravno Lice
+POST {{ATM_WebApi_HostAddress}}/PravnoLice/DodajPravnoLice
+Content-Type: application/json
+
+{
+  "poreski_id": "1234567890160",
+  "naziv": "Novo Pravno",
+  "br_tel": "018333344",
+  "email": "contact@gmail.com",
+  "adresa": "Ulica 123, Grad"
+}
+
+
+###
+
+# Update Pravno Lice
+PUT {{ATM_WebApi_HostAddress}}/PravnoLice/IzmeniPravnoLice/98
+Content-Type: application/json
+
+{
+  "poreski_id": "987654321",
+  "naziv": "Izmenjeno Pravno Lice",
+  "br_tel": "018333342",
+  "email": "contact@izmenjenopravnolice.com",
+  "adresa": "Nova Ulica 456, Grad"
+}
+
+
+###
+
+# Delete Pravno Lice
+DELETE {{ATM_WebApi_HostAddress}}/PravnoLice/IzbrisiPravnoLice/98

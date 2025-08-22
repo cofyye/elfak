@@ -1,0 +1,78 @@
+@ATM_WebApi_HostAddress = https://localhost:7257
+
+//Vrati sve bankomate
+GET {{ATM_WebApi_HostAddress}}/bankomat/PreuzmiBankomate/
+Content-Type: application/json
+
+###
+
+//Vrati bankomat na osnovu Id-ja
+GET {{ATM_WebApi_HostAddress}}/bankomat/PreuzmiBankomat/11
+Content-Type: application/json
+
+###
+
+//Vrati bankomate koji pripadaju filijali ciji je rbr prosledjen
+GET {{ATM_WebApi_HostAddress}}/bankomat/PreuzmiBankomateOdFilijale/17
+Content-Type: application/json
+
+###
+
+//Dodaj Bankomat filijali
+POST {{ATM_WebApi_HostAddress}}/bankomat/DodajBankomat/17
+Content-Type: application/json
+
+{
+  "lokacija": "Prokuplje",
+  "proizvodjac": "MIA Coorporation",
+  "status": "operativan",
+  "datum_Poslednjeg_Servisa": "2023-04-01T12:16:08.103Z"
+}
+
+###
+
+//Izmeni bankomat
+PUT {{ATM_WebApi_HostAddress}}/bankomat/IzmeniBankomat/25
+Content-Type: application/json
+
+{
+  "lokacija": "Prokuplje",
+  "proizvodjac": "Euronet EFT",
+  "status": "neoperativan",
+  "datum_Poslednjeg_Servisa": "2023-04-01T12:16:08.103Z"
+}
+
+###
+
+//Izbrisi bankomat
+DELETE {{ATM_WebApi_HostAddress}}/bankomat/IzbrisiBankomat/81
+
+###
+
+//Vrati sve komentare bankomata
+GET {{ATM_WebApi_HostAddress}}/bankomat/komentari/VratiSveKomentareBankomata/1
+
+###
+
+//Dodaj novi komentar bankomata
+POST {{ATM_WebApi_HostAddress}}/bankomat/komentari/DodajKomentar/6
+Content-Type: application/json
+{
+  "komentar": "Rad ovog bankomata je izuzetan"
+}
+
+###
+
+//Izmeni komentar bankomata
+PUT {{ATM_WebApi_HostAddress}}/bankomat/komentari/IzmeniKomentarBankomata/101
+Content-Type: application/json
+{
+  "komentar": "Rad ovog bankomata je izuzetan, korisnici zadovoljni"
+}
+
+###
+
+//Izbrisi komentar bankomata
+DELETE {{ATM_WebApi_HostAddress}}/bankomat/komentari/IzbrisiKomentarBankomata/101
+
+###

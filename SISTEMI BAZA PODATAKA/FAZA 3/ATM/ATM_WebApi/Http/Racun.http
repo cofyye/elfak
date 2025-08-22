@@ -1,0 +1,88 @@
+﻿@ATM_WebApi_HostAddress = https://localhost:7257
+
+GET {{ATM_WebApi_HostAddress}}/racun/PreuzmiRacune
+
+
+###
+
+GET {{ATM_WebApi_HostAddress}}/racun/PreuzmiRacuneOdBanke/1
+
+###
+
+GET {{ATM_WebApi_HostAddress}}/racun/PreuzmiRacun/6
+
+###
+
+DELETE {{ATM_WebApi_HostAddress}}/racun/IzbrisiRacun/5
+
+###Izmena dinarskog racuna
+
+PUT {{ATM_WebApi_HostAddress}}/racun/IzmeniRacun/7
+Content-Type: application/json
+
+{
+    "Datum_otvaranja": "2023-06-01",
+    "Tekuci_saldo": "999999"
+}
+
+###Izmena deviznog racuna
+PUT {{ATM_WebApi_HostAddress}}/racun/IzmeniRacun/8
+Content-Type: application/json
+
+{
+    "Datum_otvaranja": "2023-06-01",
+    "Tekuci_saldo": "546123",
+    "Tip": "devizni",
+    "Valuta": "EUR"
+}
+
+###Dodavanje deviznog racuna
+POST {{ATM_WebApi_HostAddress}}/Racun/DodajRacun/3/101/devizni
+Content-Type: application/json
+
+{
+  "Datum_otvaranja": "2024-06-11T15:07:17.450Z",
+  "Tekuci_saldo": "6500",
+  "Valuta": "EUR"
+}
+
+###Dodavanje dinarskog racuna
+
+POST {{ATM_WebApi_HostAddress}}/Racun/DodajRacun/5/5/dinarski
+Content-Type: application/json
+
+{
+  "Datum_otvaranja": "2024-06-01T15:07:17.450Z",
+  "Tekuci_saldo": "1000"
+}
+
+###
+
+//VRATI SVA OVLASCENA LICA RACUNA
+GET {{ATM_WebApi_HostAddress}}/racun/ovlascenaLica/VratiSvaOvlascenaLica/11
+
+###
+
+//DODAJ OVLASCENO LICE RACUNU
+POST {{ATM_WebApi_HostAddress}}/racun/ovlascenaLica/DodajOvlascenoLice/7
+Content-Type: application/json
+{
+  "imeOvlascenogLica": "Pera"
+}
+
+###
+
+//IZMENI OVLASCENO LICE
+PUT {{ATM_WebApi_HostAddress}}/racun/ovlascenaLica/IzmeniOvlascenoLice/121
+Content-Type: application/json
+{
+  "imeOvlascenogLica": "Petar"
+}
+
+###
+
+//IZBRISI OVLASCENO LICE
+DELETE {{ATM_WebApi_HostAddress}}/racun/ovlascenaLica/IzbrisiOvlascenoLice/121
+
+###
+

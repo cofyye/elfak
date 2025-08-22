@@ -1,0 +1,82 @@
+@ATM_WebApi_HostAddress = https://localhost:7257
+
+# GET {{ATM_WebApi_HostAddress}}/weatherforecast/
+# Accept: application/json
+
+# ###
+
+GET {{ATM_WebApi_HostAddress}}/bankomat/PreuzmiBankomate/
+Content-Type: application/json
+
+
+###
+
+GET {{ATM_WebApi_HostAddress}}/bankomat/PreuzmiBankomat/11
+Content-Type: application/json
+
+
+
+###
+
+POST {{ATM_WebApi_HostAddress}}/bankomat/DodajBankomat/17
+Content-Type: application/json
+
+{
+  "lokacija": "Prokuplje",
+  "proizvodjac": "MIA Coorporation",
+  "status": "operativan",
+  "datum_Poslednjeg_Servisa": "2023-04-01T12:16:08.103Z"
+}
+
+###
+PUT {{ATM_WebApi_HostAddress}}/bankomat/IzmeniBankomat/25
+Content-Type: application/json
+
+{
+  "lokacija": "Prokuplje",
+  "proizvodjac": "Euronet EFT",
+  "status": "neoperativan",
+  "datum_Poslednjeg_Servisa": "2023-04-01T12:16:08.103Z"
+}
+
+###
+
+DELETE {{ATM_WebApi_HostAddress}}/bankomat/IzbrisiBankomat/81
+
+# ###
+
+# GET {{ATM_WebApi_HostAddress}}/banka/PreuzmiBanke
+
+###
+
+GET {{ATM_WebApi_HostAddress}}/bankomat/PreuzmiBankomateOdFilijale/17
+Content-Type: application/json
+
+###
+GET {{ATM_WebApi_HostAddress}}/servis/PreuzmiSveServiseBankomata/7
+Content-Type: application/json
+
+###
+
+POST {{ATM_WebApi_HostAddress}}/servis/DodajServis/7
+Content-Type: application/json
+{
+  "firma": "MIA SERVISIRANJE"
+}
+
+###
+PUT {{ATM_WebApi_HostAddress}}/servis/IzmeniServis/81
+Content-Type: application/json
+
+{
+  "firma": "MIA SERVISIRANJE UPGRADE"
+}
+
+###
+DELETE {{ATM_WebApi_HostAddress}}/servis/IzbrisiServis/81
+###
+
+###
+GET {{ATM_WebApi_HostAddress}}/servis/PreuzmiSveOtklonjeneGreske/1
+Content-Type: application/json
+###

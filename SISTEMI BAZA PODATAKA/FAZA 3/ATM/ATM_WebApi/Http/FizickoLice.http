@@ -1,0 +1,47 @@
+﻿@ATM_WebApi_HostAddress = https://localhost:7257
+
+GET {{ATM_WebApi_HostAddress}}/FizickoLice/PreuzmiFizickaLica
+
+
+###
+
+POST {{ATM_WebApi_HostAddress}}/FizickoLice/DodajFizickoLice
+Content-Type: application/json
+
+{
+  "naziv": "Mateja1 Jovic",
+  "br_tel": "0644941111",
+  "email": "mata112@gmail.com",
+  "adresa": "Krusevacka 28",
+  "jmbg": "0605002733511",
+  "datum_rodjenja": "2024-06-01T15:07:17.450Z",
+  "lIme": "Mateja1 ",
+  "ime_roditelja": "Bratislav",
+  "prezime": "Jovic",
+  "br_licne_karte": "010474315",
+  "mesto_izdavanja": "Prokuplje"
+}
+
+###
+
+PUT {{ATM_WebApi_HostAddress}}/FizickoLice/IzmeniFizickoLice/90
+Content-Type: application/json
+
+{
+  "Id": 90,
+  "naziv": "Mateja2 Jovic",
+  "br_tel": "0644941131",
+  "email": "mata1123@gmail.com",
+  "adresa": "Krusevacka 28",
+  "jmbg": "0605002733311",
+  "datum_rodjenja": "2024-06-01T15:07:17.450Z",
+  "lIme": "Mateja2 ",
+  "ime_roditelja": "Bratislav",
+  "prezime": "Jovic",
+  "br_licne_karte": "010474313",
+  "mesto_izdavanja": "Prokuplje"
+}
+
+###
+DELETE {{ATM_WebApi_HostAddress}}/FizickoLice/IzbrisiFizickoLice/93
+

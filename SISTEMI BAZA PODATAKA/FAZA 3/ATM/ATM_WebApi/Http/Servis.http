@@ -1,0 +1,59 @@
+@ATM_WebApi_HostAddress = https://localhost:7257
+
+//Vrati sve servise bankomata
+GET {{ATM_WebApi_HostAddress}}/servis/PreuzmiSveServiseBankomata/7
+Content-Type: application/json
+
+###
+//Dodaj servis bankomatu
+POST {{ATM_WebApi_HostAddress}}/servis/DodajServis/7
+Content-Type: application/json
+
+{
+  "firma": "MIA SERVISIRANJE"
+}
+
+###
+//Izmeni servis
+PUT {{ATM_WebApi_HostAddress}}/servis/IzmeniServis/81
+Content-Type: application/json
+
+{
+  "firma": "MIA SERVISIRANJE UPGRADE"
+}
+
+###
+
+//Izbrisi servis
+DELETE {{ATM_WebApi_HostAddress}}/servis/IzbrisiServis/81
+###
+
+//Preuzmi servis na osnovu njegovog koda
+GET {{ATM_WebApi_HostAddress}}/servis/PreuzmiServis/11
+Content-Type: application/json
+###
+
+//Vrati sve otklonjenje greske jednog servisa
+GET {{ATM_WebApi_HostAddress}}/servis/PreuzmiSveOtklonjeneGreske/1
+Content-Type: application/json
+
+###
+//Dodaj otklonjenu gresku servisa
+POST {{ATM_WebApi_HostAddress}}/servis/DodajOtklonjenuGreskuServisa/2
+Content-Type: application/json
+{
+  "otklonjena_greska": "Uspesno reseni problemi aloooo!"
+}
+
+###
+//Izmeni otklonjenu gresku servisa
+PUT {{ATM_WebApi_HostAddress}}/servis/IzmeniOtklonjejuGresku/81
+Content-Type: application/json
+{
+   "otklonjena_greska": "Otklonila sam sve kvarove kao doktor koji jesam verzija 2.0!"
+}
+###
+
+//Izbrisi otklonjenu gresku servisa
+DELETE {{ATM_WebApi_HostAddress}}/servis/IzbrisiOtklonjenuGresku/123
+###

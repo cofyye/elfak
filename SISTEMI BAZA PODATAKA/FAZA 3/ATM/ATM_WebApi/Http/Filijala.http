@@ -1,0 +1,48 @@
+﻿@ATM_WebApi_HostAddress = https://localhost:7257
+
+
+# Dodaj Filijalu
+POST {{ATM_WebApi_HostAddress}}/filijala/DodajFilijalu/281
+Content-Type: application/json
+
+{
+  "Adresa": "Savski Venac 123",
+  "Br_telefona": "0123456789",
+  "Radno_vreme": "08:00-16:00"
+}
+
+###
+
+# Obrisi Filijalu 
+DELETE {{ATM_WebApi_HostAddress}}/filijala/IzbrisiFilijalu/144
+
+###
+
+# Vrati sve filijale svih banaka
+GET {{ATM_WebApi_HostAddress}}/filijala/PreuzmiFilijale
+
+###
+
+# Vrati izabranu filijalu
+GET {{ATM_WebApi_HostAddress}}/filijala/PreuzmiFilijalu/12
+
+###
+
+# Vrati sve filijale odabrane banke
+GET {{ATM_WebApi_HostAddress}}/filijala/PreuzmiFilijaleOdBanke/1
+
+###
+
+# Azuriraj filijalu
+PUT {{ATM_WebApi_HostAddress}}/filijala/IzmeniFilijalu/161
+Content-Type: application/json
+
+{
+  "Adresa": "Izmenjena Adresa 4561",
+  "Br_telefona": "0987654321",
+  "Radno_vreme": "10:00-18:00",
+  "Bankomati": [],
+  "PripadaBanci": null
+}
+
+
