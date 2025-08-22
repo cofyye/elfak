@@ -1,0 +1,33 @@
+<p-toast></p-toast>
+<app-navbar></app-navbar>
+
+<app-hero></app-hero>
+
+<div class="col-md-12 custom-div">
+  <h2 class="relative-text">
+    <i class="fa-regular fa-star-shooting"></i>Istaknuti oglasi za vas
+  </h2>
+  <h6>Pogledajte neke od naših istaknutih oglasa</h6>
+  <p-button>Pogledaj odmah!</p-button>
+</div>
+
+<div id="strucnjaci">
+  <app-expert-carousel [users]="experts"></app-expert-carousel></div>
+
+<div id="faq">
+  <app-faq></app-faq>
+</div>
+<div class="container">
+  <div class="row firstrow">
+    <div class="col-md-6">
+      <p>Dobijajte najnovije informacije putem email-a:</p>
+    </div>
+    <div class="col-md-6">
+      <div class="row firstmidrow">
+        <input class="col-11" pInputText placeholder="Unesite vasu email adresu" [(ngModel)]="mail" />
+        <p-button class="col-1" icon="pi pi-check" (onClick)="addToMailingList()"></p-button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

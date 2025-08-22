@@ -1,0 +1,31 @@
+.p-card {
+  width: 600px;
+}
+
+.p-card-body {
+  width: 600px;
+}
+
+@media (max-width: 470px) {
+  .p-card {
+    width: 300px;
+  }
+
+  .p-card-body {
+    width: 300px;
+  }
+}
+
+@media (max-width: 380px) {
+  .p-card {
+    width: 240px;
+  }
+
+  .p-card-body {
+    width: 240px;
+  }
+}
+
+.p-inputtext{
+  font-size:0.9rem;
+}

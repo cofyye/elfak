@@ -1,0 +1,48 @@
+h1 {
+  font-family: arial black, sans-serif;
+  font-size: 3.5rem;
+  color: var(--surface-700);
+  font-weight: 800;
+  margin: 0;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+@media screen and (max-width: 476px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h1 span {
+  color: var(--surface-900);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--surface-600);
+  margin: 0;
+  line-height: 1;
+}
+
+.text-container {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.hero-container {
+  margin-bottom: 4rem;
+}

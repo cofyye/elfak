@@ -1,0 +1,151 @@
+<div class="d-flex justify-content-end">
+  <p-confirmDialog />
+</div>
+<div class="p-3">
+  <h3>Profil</h3>
+  <p-divider></p-divider>
+  <div class="container">
+    <p-card>
+      <div class="row">
+        <div class="row col-12 col-lg-8 order-2 order-lg-1">
+          <div class="col-12 mb-5">
+            <div>
+              <h4 class="title-section">Osnovna podesavanja</h4>
+            </div>
+            <div
+              class="row mb-4 pl-3"
+              *ngFor="let info of userInformation; let i = index"
+            >
+              <div
+                class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start text-center"
+              >
+                <label>{{ info.label }}</label>
+              </div>
+              <div
+                class="col-12 col-md-6 basic-info d-flex justify-content-center justify-content-md-end mt-1-custom"
+              >
+                <ng-container *ngIf="!info.inputVisible; else inputField">
+                  <label class="basic-info" (click)="edit(i)">{{
+                    info.value
+                  }}</label>
+                  <i (click)="edit(i)" class="pi pi-pencil ml-1"></i>
+                </ng-container>
+
+                <ng-template #inputField>
+                  <input
+                    class="input-fix basic-info w-100 text-center text-md-right"
+                    type="text"
+                    pInputText
+                    [(ngModel)]="info.value"
+                    (blur)="saveInput(i)"
+                    (keydown.enter)="saveInput(i)"
+                    (keydown.escape)="cancelEdit(i)"
+                    #inputFieldRef
+                    style="position: relative; z-index: 1"
+                  />
+                </ng-template>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mb-5">
+            <div>
+              <h4 class="title-section">Podesavanja sifre</h4>
+            </div>
+            <div
+              class="row d-flex align-items-center justify-content-center justify-content-md-between mb-3 pl-3"
+              *ngFor="
+                let passwordInfo of passwordInformation;
+                let i = index;
+                let isLast = last
+              "
+            >
+              <div class="col-12 col-md-6 text-center text-md-left">
+                <label>{{ passwordInfo.label }}</label>
+              </div>
+              <form [formGroup]="valForm">
+                <div class="col-12 col-md-6">
+                  <ng-container *ngIf="!passwordInfo.type; else otherPassword">
+                    <p-password
+                      class="password-info"
+                      [feedback]="false"
+                      [toggleMask]="true"
+                      [(ngModel)]="passwordValues[i]"
+                      [ngModelOptions]="{ standalone: true }"
+                    />
+                  </ng-container>
+                  <ng-template #otherPassword>
+                    <p-password
+                      class="p-inputtext-sm password-info"
+                      [toggleMask]="true"
+                      promptLabel="Unesite lozinku"
+                      weakLabel="Previse jednostavno"
+                      mediumLabel="Srednja slozenost"
+                      strongLabel="Slozena lozinka"
+                      formControlName="password"
+                      [ngClass]="
+                        valForm.controls['password'].invalid &&
+                        (valForm.controls['password'].dirty ||
+                          valForm.controls['password'].touched)
+                          ? 'ng-invalid ng-dirty'
+                          : ''
+                      "
+                      [tooltipDisabled]="
+                        !(
+                          valForm.controls['password'].invalid &&
+                          (valForm.controls['password'].dirty ||
+                            valForm.controls['password'].touched)
+                        )
+                      "
+                      [pTooltip]="
+                    valForm.controls['password'].errors?.['required'] && 'Polje ne sme biti prazno' ||
+                    valForm.controls['password'].errors?.['minlength'] && 'Sifra mora sadrzati najmanje 8 karaktera' ||
+                    valForm.controls['password'].errors?.['maxlength'] && 'Sifra mora sadrzati najvise 32 karaktera'
+                  "
+                    ></p-password>
+                  </ng-template>
+                </div>
+              </form>
+            </div>
+
+            <div
+              class="row pl-3 pr-3 d-flex justify-content-center justify-content-md-end"
+            >
+              <p-button [text]="true" (click)="clearPassword()"
+                >Otkazi</p-button
+              >
+              <p-button (click)="savePassword()">Sacuvaj</p-button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-12 col-lg-4 d-flex align-items-center flex-column order-lg-2 order-1 mt-3"
+        >
+          <div class="avatar-container mb-3">
+            <div
+              class="image-container"
+              [ngStyle]="{ backgroundImage: 'url(' + file + ')' }"
+            ></div>
+
+            <label for="avatar-input-file">
+              <div class="icon-wrapper">
+                <input
+                  type="file"
+                  id="avatar-input-file"
+                  accept="image/*"
+                  (change)="onFileChange($event)"
+                />
+                <i class="fa-pen fa-light icon"></i>
+              </div>
+            </label>
+          </div>
+          <h2 class="mb-1 mt-2">
+            {{ userInformation[1].value + " " + userInformation[2].value }}
+          </h2>
+
+          
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="main p-3">
+  <h3>Lista zahteva korisnika</h3>
+  <p-divider></p-divider>
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center mt-2">
+      <div class="col-md-10 col-sm-12 pr-0 pl-0">
+        <div class="row">
+          <!-- NASLOV -->
+          <div class="col-md-6 col-sm-12"></div>
+          <!-- DROPDOWN -->
+          <div class="col-md-6 col-sm-12 d-flex justify-content-end mb-3">
+            <p-dropdown
+              [options]="statusList"
+              [(ngModel)]="selectedStatus"
+              optionLabel="status"
+              [showClear]="true"
+              placeholder="Sortiraj"
+              (onChange)="filterTickets()"
+              class="ng-dirty ng-invalid custom-dropdown dropdown"
+            ></p-dropdown>
+          </div>
+        </div>
+        <!-- TABELA -->
+        <div class="card mb-5">
+          <p-table
+            class="custom-table table-hover"
+            [value]="filteredTicketList"
+            [scrollable]="true"
+          >
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Naslov</th>
+                <th class="d-flex justify-content-center">ID zahteva</th>
+                <th class="pl-0">Status</th>
+                <th class="pl-0">Datum</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-ticket="$implicit">
+              <tr
+                class="hoverable-row"
+                [routerLink]="['/panel/admin/ticket', ticket.id]"
+              >
+                <td class="pr-0">{{ ticket.title }}</td>
+                <td class="p-0 text-center">{{ ticket.id }}</td>
+                <td class="p-0">{{ translateStatus(ticket.status) }}</td>
+                <td class="p-0">{{ ticket.createdAt }}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+      <p-paginator
+        class="mb-5"
+        [first]="first"
+        [rows]="rows"
+        [totalRecords]="totalRecords"
+        [showCurrentPageReport]="true"
+        currentPageReportTemplate="{{ reportMessage }}"
+        (onPageChange)="onPageChange($event)"
+        [rowsPerPageOptions]="[12, 24, 48]"
+      ></p-paginator>
+    </div>
+  </div>
+</div>

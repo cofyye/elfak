@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "Sofia";
+  src: url("../../assets/fonts/Sofia\ Pro\ Regular\ Az.otf") format("truetype");
+}
+
+.relative-text {
+  margin: 0;
+  font-family: "Sofia", sans-serif;
+}
+
+.relative-text i {
+  position: relative;
+  top: -30px;
+}
+
+.custom-div h2 {
+  font-size: 3.5em;
+  font-weight: 800;
+  color: var(--surface-800);
+}
+
+.custom-div button {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.custom-div h6 {
+  margin: 1.2rem 0;
+  font-family: "Sofia", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--surface-700);
+}
+
+.custom-div {
+  background-color: var(--primary-200);
+  padding: 9rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 0.8;
+}
+
+.p-button {
+  font-weight: 500;
+}
+
+.firstrow {
+  border-top: 1px solid #404040;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.firstmidrow {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 476px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .custom-div h2 {
+    font-size: 2.25em;
+  }
+}

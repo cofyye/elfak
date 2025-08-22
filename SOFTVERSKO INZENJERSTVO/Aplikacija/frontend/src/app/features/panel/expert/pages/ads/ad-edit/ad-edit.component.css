@@ -1,0 +1,154 @@
+.addAd {
+  border-radius: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: none;
+}
+
+.box {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #222;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.box p {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.box:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.show-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+@media screen and (max-width: 576px) {
+  .p-1-sm.p-3 {
+    padding: 0.2rem !important;
+  }
+
+  .col-lg-8 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .col-lg-4 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .mlt-1-sm {
+    margin-top: 35px !important;
+    margin-left: 15px !important;
+  }
+}
+
+.generalInfo,
+.categorize {
+  border-radius: 12px;
+}
+
+.p-inputtext {
+  font-family: "Lato", sans-serif;
+}
+
+.p-component,
+.p-element {
+  font-size: 0.8rem;
+  font-family: "Lato", sans-serif;
+}
+
+.p-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.p-checkbox .p-checkbox-box {
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+}
+
+.p-fileupload-buttonbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.tag-spacing {
+  margin-right: 10px;
+}
+
+.p-ripple.p-element.p-button.p-component.p-button-rounded {
+  height: 26px;
+  width: 60px;
+  border-radius: 10rem;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.p-tag.p-tag-rounded {
+  border-radius: 6rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.p-element.p-ripple.p-tabview-nav-link {
+  font-size: large;
+}
+
+.plan .p-card .p-card-content {
+  padding-top: 0rem;
+}
+
+@media (max-width: 767.5px) {
+  .btn-1 {
+    margin-top: 6px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .tag-spacing {
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 370px) {
+  .tasks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: none;
+  }
+}

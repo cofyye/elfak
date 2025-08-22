@@ -1,0 +1,158 @@
+@media (max-width: 576px) {
+  .container {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .p-card .p-card-body {
+    padding: 0;
+  }
+
+  .col-lg-8 {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .input-fix.profession {
+    width: 125px;
+  }
+
+  .password-info .p-inputtext {
+    height: 32px;
+    width: 140px !important;
+  }
+}
+
+.p-card-content {
+  padding: 0px;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.input-fix.basic-info {
+  width: 120px;
+  border: none;
+  background-color: transparent;
+}
+
+.input-fix:focus.basic-info {
+  box-shadow: none;
+}
+
+.p-inputtext.basic-info {
+  color: black;
+  border-radius: 0;
+  padding: 0;
+}
+
+.p-component {
+  font-family: "Lato", sans-serif;
+  font-feature-settings: normal;
+}
+
+.avatar-container {
+  position: relative;
+  width: fit-content;
+}
+
+.image-container {
+  height: 150px;
+  width: 150px;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 20px 20px var(--custom-bg);
+}
+
+.icon-wrapper {
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+
+.icon-wrapper {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  padding: 0.35rem;
+  background-color: var(--primary-500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 75%;
+  z-index: 2;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.25s;
+    background-color: var(--primary-600);
+  }
+
+  .icon {
+    color: white;
+  }
+
+  label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+
+.p-inputtext-sm .p-inputtext {
+  font-size: 1rem;
+}
+
+.title-section {
+  margin-top: 5px;
+}
+
+.password-info .p-inputtext {
+  height: 32px;
+  width: 200px;
+}
+
+.title-info.p-inputtext {
+  height: 32px;
+}
+
+.p-button.p-element {
+  margin-left: 15px;
+  height: 32px;
+  width: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .mt-1-custom {
+    margin-top: 0.5rem;
+  }
+}
+
+/* ZA DIALOG KOMPONENTU - CAN DEACTIVATE GUARD */
+.p-dialog .p-dialog-footer {
+  display: flex;
+  justify-content: end;
+}

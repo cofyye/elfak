@@ -1,0 +1,112 @@
+<div class="d-flex justify-content-end">
+  <p-confirmDialog />
+</div>
+<div
+  class="container-fluid row d-flex justify-content-center align-items-center vh-100 main-container"
+>
+  <div class="">
+    <p-card class="col-12">
+      <h3 class="mb-3 mt-0 text-center">Pošaljite zahtev</h3>
+      <div [style.border-bottom]="'1px solid #d3d3d3'">
+        <h6
+          class="mb-3 mt-0 p-1 text-center"
+          style="font-weight: 400; font-size: 15px"
+        >
+          Od problema do predloga, ovde smo da Vam pomognemo!
+        </h6>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 p-0 d-flex justify-content-center">
+          <p-dropdown
+            [options]="tickets"
+            [(ngModel)]="selectedTicket"
+            optionLabel="name"
+            [showClear]="true"
+            placeholder="Izaberite stavku"
+            class="fixed-width-dropdown"
+          ></p-dropdown>
+        </div>
+      </div>
+
+      <!-- NASLOV -->
+      <div class="row mt-4-custom" *ngIf="selectedTicket">
+        <div class="col-12 d-flex justify-content-center">
+          <p-floatLabel>
+            <input
+              pInputText
+              id="naslov"
+              [(ngModel)]="naslov"
+              [maxLength]="100"
+            />
+            <label for="username">Naslov zahteva</label>
+          </p-floatLabel>
+        </div>
+      </div>
+      <div
+        class="row"
+        *ngIf="
+          selectedTicket && selectedTicket.name === 'Problem sa korisnikom'
+        "
+      >
+        <div class="col-12 d-flex justify-content-center">
+          <div
+            class="row mt-4-custom"
+            *ngIf="
+              selectedTicket && selectedTicket.name === 'Problem sa korisnikom'
+            "
+          >
+            <div class="col-12 d-flex justify-content-center">
+              <div class="card flex justify-content-center">
+                <p-floatLabel>
+                  <input
+                    pInputText
+                    id="username"
+                    [(ngModel)]="username"
+                    [maxLength]="12"
+                  />
+                  <label for="username">Korisničko ime</label>
+                </p-floatLabel>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPIS ZAHTEVA -->
+      <div class="row mt-4-custom" *ngIf="selectedTicket">
+        <div class="col-12 d-flex justify-content-center">
+          <p-floatLabel>
+            <textarea
+              id="float-input"
+              rows="8"
+              cols="30"
+              pInputTextarea
+              [(ngModel)]="opisProblema"
+              [autoResize]="true"
+              class="description"
+              [maxLength]="2000"
+            ></textarea>
+            <label for=" float-input">Opis zahteva</label>
+          </p-floatLabel>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-center">
+          <p-button [disabled]="!isFormValid()" (click)="submitForm()"
+            >Pošalji</p-button
+          >
+        </div>
+      </div>
+
+      <!-- LISTA -->
+      <button
+        pButton
+        pRipple
+        [text]="true"
+        label="Lista zahteva"
+        class="p-button-primary mt-3"
+        routerLink="/panel/expert/ticket-list"
+      ></button>
+    </p-card>
+  </div>
+</div>

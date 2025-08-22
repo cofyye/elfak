@@ -1,0 +1,73 @@
+<div class="sidebar-cont" [ngClass]="isSidebarVisible ? 'expand' : ''">
+  <aside id="sidebar" [ngClass]="isSidebarVisible ? 'expand' : ''">
+    <div class="d-flex">
+      <button class="toggle-btn" type="button">
+        <i class="pi pi-th-large" (click)="toggleSidebar()"></i>
+      </button>
+      <div class="sidebar-logo">
+        <a routerLink="/">Pitaj Strucnjaka</a>
+      </div>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a routerLink="/panel/expert/home" class="sidebar-link">
+          <i class="pi pi-home"></i>
+          <span>Pocetna</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#auth"
+          aria-expanded="false" aria-controls="auth">
+          <i class="pi pi-clone"></i>
+          <span>Oglasi</span>
+        </a>
+        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+          <li class="sidebar-item">
+            <a routerLink="/panel/expert/ads" class="sidebar-link">Lista oglasa</a>
+          </li>
+          <li class="sidebar-item">
+            <a routerLink="/panel/expert/ads/add" class="sidebar-link">Dodaj oglas</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/panel/expert/chats" class="sidebar-link">
+          <i class="pi pi-comments"></i>
+          <span>Razgovori</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/panel/expert/history-credit" class="sidebar-link">
+          <i class="pi pi-wallet"></i>
+          <span>Placanje</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/panel/expert/ticket" class="sidebar-link">
+          <i class="fa-solid fa-headphones-simple"></i>
+          <span>Pomoc</span>
+        </a>
+      </li>
+    </ul>
+    <div class="mt-0 mb-0">
+      <li class="sidebar-item">
+        <a routerLink="/panel/expert/profile" class="sidebar-link">
+          <i class="pi pi-user"></i>
+          <span>Profil</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/panel/expert/profile" class="sidebar-link">
+          <i class="fa-light fa-gear"></i>
+          <span>Podesavanja</span>
+        </a>
+      </li>
+    </div>
+    <div class="sidebar-footer">
+      <a class="sidebar-link" (click)="logout()" style="cursor: pointer">
+        <i class="pi pi-sign-out"></i>
+        <span>Izlogujte se</span>
+      </a>
+    </div>
+  </aside>
+</div>

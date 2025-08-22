@@ -1,0 +1,20 @@
+<div class="carousel">
+  <h1 class="text-center">Istaknuti strucnjaci</h1>
+  <p-carousel
+    [value]="products"
+    [numVisible]="5"
+    [numScroll]="1"
+    [circular]="true"
+    autoplayInterval="5000"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-product pTemplate="item">
+      <app-expert-card
+        [cardTitle]="product.title"
+        [cardText]="product.text"
+        [cardImage]="product.image"
+      >
+      </app-expert-card>
+    </ng-template>
+  </p-carousel>
+</div>

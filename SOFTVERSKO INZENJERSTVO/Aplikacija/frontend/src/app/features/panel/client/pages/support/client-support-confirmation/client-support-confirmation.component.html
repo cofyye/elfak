@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p-card
+        class="d-flex flex-column align-items-center justify-content-center vh-100"
+      >
+        <div class="row">
+          <div
+            class="col-12 p-0 d-flex justify-content-center align-items-center mb-3"
+          >
+            <i
+              class="fa-regular fa-circle-check"
+              style="color: var(--primary-color); font-size: 75px"
+            ></i>
+          </div>
+        </div>
+        <p class="m-0 d-flex justify-content-center text-center">
+          Uskoro ce Vam se javiti tim za podrsku.
+        </p>
+        <p class="mt-0 mb-0 d-flex justify-content-center">Hvala Vam!</p>
+        <div class="row" style="margin-top: 40px">
+          <div class="col-12">
+            <p-button
+              label="Vrati se na pomoc"
+              [style]="{ width: '100%' }"
+              [routerLink]="'/panel/client/ticket'"
+            />
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</div>

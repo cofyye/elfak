@@ -1,0 +1,77 @@
+<div
+  class="advertisement-container"
+  style="min-height: 309px; max-height: 309px"
+  [routerLink]="'/adverts/' + advertId"
+>
+  <div class="container cont">
+    <div class="row">
+      <ng-container *ngIf="isValidImage(image_1); else checkImage2">
+        <img class="add-image" [src]="image_1" />
+      </ng-container>
+      <ng-template #checkImage2>
+        <ng-container *ngIf="isValidImage(image_2); else checkVideo">
+          <img class="add-image" [src]="image_2" />
+        </ng-container>
+      </ng-template>
+      <ng-template #checkVideo>
+        <ng-container *ngIf="isValidVideo(video)">
+          <div
+            class="video-container"
+            (mouseenter)="playVideo($event)"
+            (mouseleave)="pauseVideo($event)"
+          >
+            <video
+              class="add-video"
+              [src]="video"
+              [muted]="'true'"
+              controlsList="nofullscreen"
+              loop
+            ></video>
+            <div class="video-controls">
+              <i
+                class="fa-light fa-play video-icon"
+                (click)="togglePlay($event)"
+              ></i>
+              <i
+                class="fa-light fa-volume-mute video-icon"
+                [style.display]="muteIconVisible ? 'block' : 'none'"
+                (click)="toggleMute($event)"
+              ></i>
+            </div>
+          </div>
+        </ng-container>
+      </ng-template>
+
+      <div class="profile-info">
+        <p-chip>
+          <img [src]="sellerImage" class="mr-2 rounded-circle avatarimg" />
+          <label class="labelaIme">{{ sellerName }}</label>
+
+          <div
+            *ngIf="rating > 0"
+            style="
+              font-size: 12px;
+              display: flex;
+              align-items: center;
+              margin-left: 11px;
+            "
+          >
+            <i
+              class="pi pi-star-fill pi-cog mr-1"
+              style="font-size: 0.75rem; color: var(--primary-color)"
+            ></i>
+            {{ rating | number : "1.1-1" }}
+          </div>
+        </p-chip>
+      </div>
+
+      <div class="w-100">
+        <p-fieldset [legend]="limitText(header, maxTitleLength)">
+          <div class="py-1">
+            {{ limitText(description, maxDescriptionLength) }}
+          </div>
+        </p-fieldset>
+      </div>
+    </div>
+  </div>
+</div>

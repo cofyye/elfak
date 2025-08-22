@@ -1,0 +1,146 @@
+<app-navbar></app-navbar> <br />
+<div class="container p-4" style="border-radius: 1%">
+  <div class="row">
+    <div class="col-md-9 col-sm-12" *ngIf="userProfile">
+      <div class="row mt-2 ml-2">
+        <p-avatar
+          [image]="environment.API_URL + '/uploads/' + userProfile.avatar"
+          styleClass="mr-2"
+          size="xlarge"
+          shape="circle"
+        ></p-avatar>
+
+        <div class="col-md-7 col-sm-7 pl-0 mt-4 ml-2">
+          <div class="row mt-1 ml-0">
+            <h2 class="mr-2 mb-0 mt-0" style="color: black">
+              {{ userProfile.firstName }} {{ userProfile.lastName }}
+            </h2>
+            <h2 class="mt-0 mb-0" style="color: #777">
+              &#64;{{ userProfile.username }}
+            </h2>
+          </div>
+          <p class="mt-0 mb-0" style="font-size: 20px; color: black">
+            {{ userProfile.profession }}
+          </p>
+          <p class="mt-0 mb-1">Clan od {{ userProfile.registrationDate }}</p>
+          <p
+            class="mt-0"
+            style="font-weight: 500"
+            *ngIf="userProfile.averageGrade > 0"
+          >
+            <i
+              class="pi pi-star-fill pi-cog mr-1"
+              style="font-size: 1rem; color: var(--primary-color)"
+            ></i
+            >{{ userProfile.averageGrade | number : "1.1-1" }}
+          </p>
+        </div>
+      </div>
+      <h3 class="ml-3 mb-0">Biografija</h3>
+      <p class="ml-4 mt-1">{{ showFullBio ? bioFull : bioShort }}</p>
+      <div class="d-flex justify-content-center" *ngIf="isLongBio">
+        <p-button
+          label="{{ showFullBio ? 'Prikazi manje' : 'Prikazi više' }}"
+          [text]="true"
+          (click)="toggleBio()"
+          class="bio-toggle-button"
+        ></p-button>
+      </div>
+      <!-- KOMENTARI -->
+      <!-- RECENZIJE NA KORISNIKA -->
+      <div class="row">
+        <div class="col-12 ml-1"><h2 class="mb-0">Recezije</h2></div>
+
+        <div
+          class="container"
+          *ngFor="let comment of comments.slice(0, itemsToShow)"
+        >
+          <div class="container p-4">
+            <div class="row">
+              <div class="col-6 d-flex">
+                <p-avatar
+                  [image]="comment.profilePic"
+                  styleClass="mr-2"
+                  size="normal"
+                  shape="circle"
+                ></p-avatar>
+                <a
+                  href="home"
+                  style="margin-top: 0; text-decoration: none; color: black"
+                  ><b
+                    ><section style="font-size: 14px">
+                      {{ comment.profileName }}
+                    </section></b
+                  >
+                  <p class="mt-0">{{ comment.job }}</p></a
+                >
+              </div>
+              <div class="col-6 d-flex justify-content-end">
+                <p style="color: #999; font-size: 14px; margin: 0">
+                  {{ comment.time }}
+                </p>
+              </div>
+            </div>
+            <div class="row mt-0 mb-1 pl-4">
+              <div class="col-2">
+                <p-rating
+                  [ngModel]="comment.sellerRating"
+                  [cancel]="false"
+                  [readonly]="true"
+                ></p-rating>
+              </div>
+            </div>
+            <p class="m-0 pl-4">
+              {{ comment.text }}
+            </p>
+          </div>
+        </div>
+        <div
+          class="container d-flex justify-content-center"
+          *ngIf="comments.length > 2"
+        >
+          <p-button
+            label="Prikazi više"
+            [text]="true"
+            (click)="showMore()"
+            *ngIf="itemsToShow === 2"
+            [ngStyle]="{ 'text-decoration': 'none', cursor: 'pointer' }"
+          ></p-button>
+          <p-button
+            label="Prikazi manje"
+            [text]="true"
+            (click)="showLess()"
+            *ngIf="itemsToShow === comments.length"
+            [ngStyle]="{ 'text-decoration': 'none', cursor: 'pointer' }"
+          ></p-button>
+        </div>
+      </div>
+
+      <!-- OGLASI KORISNIKA -->
+      <div>
+        <p-table [value]="userProfile.expert_ads">
+          <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+              OGLASI KORISNIKA
+            </div>
+          </ng-template>
+          <ng-template pTemplate="body" let-ad>
+            <tr>
+              <td style="padding: 0">
+                <img
+                  src="https://fiverr-res.cloudinary.com/f_auto,q_auto/v1/attachments/generic_asset/asset/c8c0b94d835437aaa18685a80831010a-1675613384041/Website%20Developer%20med2.jpeg"
+                  width="150"
+                />
+              </td>
+              <td>{{ ad.title }}</td>
+              <td>{{ ad.description }}</td>
+              <td>{{ ad.createdAt }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

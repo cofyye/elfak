@@ -1,0 +1,107 @@
+<p-dialog
+  header="Header"
+  [visible]="isVisible"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+  [(visible)]="isVisible"
+  [breakpoints]="{ '1199px': '25rem', '575px': '25rem' }"
+  [draggable]="false"
+>
+  <ng-template pTemplate="header">
+    <div class="d-flex align-items-center justify-content-center">
+      <h3>Zatrazite novi verifikacioni kod</h3>
+    </div>
+  </ng-template>
+  <form
+    class="my-0 w-100 d-flex justify-content-center align-items-center"
+    [formGroup]="requestCodeForm"
+  >
+    <p-iconField iconPosition="left" class="w-75 input-field">
+      <p-inputIcon styleClass="pi pi-user" />
+      <input
+        type="text"
+        pInputText
+        placeholder="Email"
+        class="w-100 p-inputtext-sm"
+        formControlName="req_code_email"
+        [value]="this.requestCodeForm.get('req_code_email')?.value"
+      />
+    </p-iconField>
+  </form>
+  <ng-template pTemplate="footer">
+    <div
+      class="d-flex align-items-center justify-content-between w-100 flex-wrap"
+    >
+      <p-button
+        icon="pi pi-times"
+        severity="danger"
+        label="Otkazi"
+        (onClick)="isVisible = false"
+      ></p-button>
+      <p-button
+        icon="pi pi-check"
+        [label]="isLoading2 ? '' : 'Zatrazi'"
+        [loading]="isLoading2"
+        (onClick)="onRequestCode()"
+        [disabled]="requestCodeForm.invalid"
+        [style]="{ width: '124px' }"
+      ></p-button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<div
+  class="container w-100 vh-100 d-flex justify-content-center align-items-center"
+>
+  <p-card class="login-card" [style]="{ 'border-radius': '14px' }">
+    <div class="w-100 h-100 py-2 px-4">
+      <h1>Prijavljivanje</h1>
+      <form [formGroup]="loginForm" class="w-100">
+        <div class="row">
+          <div class="col-md-12 mt-2">
+            <p-iconField iconPosition="left" class="input-field">
+              <p-inputIcon styleClass="pi pi-user" />
+              <input
+                type="text"
+                pInputText
+                placeholder="Email"
+                class="w-100 p-inputtext-sm"
+                formControlName="email"
+              />
+            </p-iconField>
+          </div>
+          <div class="col-md-12 mt-2 mb-2">
+            <p-iconField iconPosition="left" class="input-field">
+              <p-inputIcon styleClass="pi pi-key" />
+              <input
+                type="password"
+                pInputText
+                placeholder="Lozinka"
+                class="w-100 p-inputtext-sm"
+                formControlName="password"
+              />
+            </p-iconField>
+          </div>
+        </div>
+
+        <a routerLink="/auth/password/forgot">Zaboravili ste lozinku?</a>
+
+        <button
+          pButton
+          pRipple
+          [label]="isLoading1 ? '' : 'Prijavi se'"
+          class="mt-3 w-100"
+          size="small"
+          [loading]="isLoading1"
+          [disabled]="loginForm.invalid"
+          (click)="onLogin()"
+        ></button>
+      </form>
+
+      <span class="text-center w-100 d-block mt-3"
+        >Nemate nalog?
+        <a routerLink="/auth/register">Registrujte se</a>
+      </span>
+    </div>
+  </p-card>
+</div>

@@ -1,0 +1,279 @@
+<p-toast></p-toast>
+<div class="main p-3 p-1-sm">
+  <h3 class="mlt-1-sm">Izmeni Oglas</h3>
+  <p-divider></p-divider>
+  <div class="row addAd">
+    <div class="col-lg-8" style="display: flex; flex-direction: column">
+      <p-card class="generalInfo mb-3">
+        <h4 class="mt-0">Osnovne informacije</h4>
+        <div class="mb-3 d-flex flex-column">
+          <label for="name" class="mb-1">Naslov</label>
+          <input
+            pInputText
+            id="title"
+            aria-describedby="name-help"
+            placeholder="Unesite naslov za Vas oglas."
+            style="font-size: 0.8rem"
+            maxlength="100"
+            [(ngModel)]="title"
+          />
+        </div>
+        <div class="mb-3 d-flex flex-column">
+          <label for="adDescription" class="mb-1">Opis</label>
+          <textarea
+            rows="5"
+            cols="30"
+            pInputTextarea
+            [autoResize]="true"
+            id="description"
+            placeholder="Unesite opis za Vas oglas."
+            style="font-size: 0.8rem"
+            maxlength="2500"
+            [(ngModel)]="description"
+          ></textarea>
+        </div>
+      </p-card>
+
+      <p-card class="plans mb-3">
+        <h4 class="mt-0">Plan oglasa</h4>
+        <label style="font-size: larger"
+          >Dizajnirajte planove za Vas oglas</label
+        >
+        <div class="row ml-2 mb-2 mt-3">
+          <ng-container *ngFor="let tag of tags; let i = index">
+            <div style="display: flex; align-items: center">
+              <p-tag
+                [value]="tag"
+                [rounded]="true"
+                (click)="selectTab(i)"
+                class="tag-spacing"
+              >
+                <i
+                  *ngIf="i > 0"
+                  class="pi pi-times"
+                  style="cursor: pointer; color: #ffffff; margin-left: 10px"
+                  (click)="removeTag(i)"
+                ></i>
+              </p-tag>
+            </div>
+          </ng-container>
+          <p-button [rounded]="true" *ngIf="tags.length < 3" (click)="addTag()"
+            >+</p-button
+          >
+        </div>
+        <p-card class="plan">
+          <p-tabView [(activeIndex)]="activeIndex">
+            <ng-container *ngFor="let tab of tabs; let i = index">
+              <p-tabPanel [header]="tab.title">
+                <div class="mt-0" style="display: flex; flex-direction: column">
+                  <h6 class="mb-2 mt-0">Opis plana</h6>
+                  <textarea
+                    rows="5"
+                    cols="60"
+                    pInputTextarea
+                    [(ngModel)]="tab.description"
+                    placeholder="Unesite opis plana."
+                    maxlength="400"
+                  ></textarea>
+                </div>
+
+                <div class="mt-0">
+                  <h6 class="mb-1">Sta je ukljuceno u izabrani plan</h6>
+                  <ul>
+                    <li
+                      *ngFor="let item of tab.items; let j = index"
+                      class="mb-1"
+                    >
+                      <div class="tasks">
+                        <i
+                          *ngIf="item.addedInPlan === 'Osnovni'"
+                          class="fa-duotone fa-check"
+                          style="margin-right: 10px; color: #3b82f6"
+                        ></i>
+                        <i
+                          *ngIf="
+                            item.addedInPlan === 'Srednji' &&
+                            tab.title === 'Osnovni'
+                          "
+                          class="fa-duotone fa-check fa-gray"
+                          style="margin-right: 10px"
+                        ></i>
+                        <i
+                          *ngIf="
+                            item.addedInPlan === 'Srednji' &&
+                            tab.title !== 'Osnovni'
+                          "
+                          class="fa-duotone fa-check"
+                          style="margin-right: 10px; color: #3b82f6"
+                        ></i>
+                        <i
+                          *ngIf="
+                            item.addedInPlan === 'Napredni' &&
+                            tab.title === 'Napredni'
+                          "
+                          class="fa-duotone fa-check"
+                          style="margin-right: 10px; color: #3b82f6"
+                        ></i>
+                        <i
+                          *ngIf="
+                            item.addedInPlan === 'Napredni' &&
+                            tab.title !== 'Napredni'
+                          "
+                          class="fa-duotone fa-check fa-gray"
+                          style="margin-right: 10px"
+                        ></i>
+                        {{ item.name }}
+                        <i
+                          class="fa-solid fa-xmark"
+                          style="cursor: pointer; margin-left: 10px"
+                          (click)="removeItem(j)"
+                        ></i>
+                      </div>
+                    </li>
+                  </ul>
+                  <div *ngIf="tab.items.length < 10" class="row mb-2 ml-0">
+                    <div
+                      class="col-12 col-sm-8 pl-0 d-flex justify-content-start mt-1"
+                    >
+                      <input
+                        type="text"
+                        pInputText
+                        [(ngModel)]="newItem"
+                        placeholder="Unesite stavku."
+                        class="col-lg-7 col-md-7 col-sm-12"
+                        maxlength="50"
+                      />
+                    </div>
+                    <div
+                      class="col-12 col-sm-4 d-flex justify-content-center justify-content-sm-end mt-1"
+                    >
+                      <p-button (click)="addItem(i)">Dodaj</p-button>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h6 class="mb-2">Vreme trajanja konsultacija</h6>
+                  <div style="display: flex; flex-direction: column">
+                    <input
+                      type="number"
+                      pInputText
+                      placeholder="Unesite vreme trajanja konsultacija."
+                      class="w-50"
+                      [(ngModel)]="tab.time"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <h6 class="mb-2">Broj ponavljanja konsultacija</h6>
+                  <div style="display: flex; flex-direction: column">
+                    <input
+                      type="number"
+                      pInputText
+                      placeholder="Unesite broj ponavljanja konsultacija."
+                      class="w-50"
+                      [(ngModel)]="tab.repeat"
+                    />
+                  </div>
+                </div>
+              </p-tabPanel>
+            </ng-container>
+          </p-tabView>
+        </p-card>
+      </p-card>
+    </div>
+
+    <div class="col-lg-4 col-sm-12">
+      <div class="mb-3 d-flex flex-column">
+        <p-card class="mb-3">
+          <h4 class="mt-0">Dodajte slike i video</h4>
+          <div class="box" (click)="handleImageOne(imageOneInput)">
+            <input
+              type="file"
+              name="image_one"
+              id="image_one"
+              class="d-none"
+              multiple="false"
+              accept="image/*"
+              #imageOneInput
+              (change)="
+                onImageOneChange(imageOneInput, imageOneTag!.nativeElement)
+              "
+            />
+            <p *ngIf="!imageOneUrl">Kliknite ovde da biste dodali prvu sliku</p>
+            <img
+              *ngIf="imageOneUrl"
+              [src]="imageOneUrl"
+              class="show-file show"
+              #imageOneTag
+            />
+          </div>
+          <div class="box" (click)="handleImageTwo(imageTwoInput)">
+            <input
+              type="file"
+              name="image_two"
+              id="image_two"
+              class="d-none"
+              multiple="false"
+              accept="image/*"
+              #imageTwoInput
+              (change)="
+                onImageTwoChange(imageTwoInput, imageTwoTag!.nativeElement)
+              "
+            />
+            <p *ngIf="!imageTwoUrl">
+              Kliknite ovde da biste dodali drugu sliku
+            </p>
+            <img
+              *ngIf="imageTwoUrl"
+              [src]="imageTwoUrl"
+              class="show-file show"
+              #imageTwoTag
+            />
+          </div>
+          <div class="box" (click)="handleVideo(videoInput)">
+            <input
+              type="file"
+              name="video"
+              id="video"
+              class="d-none"
+              multiple="false"
+              accept="video/*"
+              #videoInput
+              (change)="onVideoChange(videoInput, videoTag!.nativeElement)"
+            />
+            <p *ngIf="!videoUrl">Kliknite ovde da biste dodali video</p>
+            <video
+              *ngIf="videoUrl"
+              [src]="videoUrl"
+              class="show-file show"
+              #videoTag
+              controls="true"
+            ></video>
+          </div>
+        </p-card>
+
+        <p-card class="categorize mb-3">
+          <div class="mb-3 d-flex flex-column gap-2">
+            <h4 class="mb-3 mt-0">Izaberite kategorije</h4>
+            <span class="p-fluid">
+              <p-autoComplete
+                placeholder="Unesite kategorije vezane za Vas oglas."
+                [(ngModel)]="selectedCategories"
+                [suggestions]="suggestedCategories"
+                (completeMethod)="search($event)"
+                field="name"
+                [multiple]="true"
+              />
+            </span>
+          </div>
+        </p-card>
+
+        <div style="display: flex; justify-content: center; margin-top: 10px" (onClick)="editAd()">
+          <p-button>Izmeni Oglas</p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

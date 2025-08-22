@@ -1,0 +1,196 @@
+.p-card-body {
+  padding-top: 0;
+}
+
+.p-card {
+  margin-bottom: 10px;
+}
+
+.p-rating .p-rating-item .p-rating-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.p-rating {
+  gap: 0.2rem;
+}
+
+.advert-picture {
+  height: 370px;
+  display: block;
+  margin: 0 auto;
+}
+
+.advert .p-card {
+  box-shadow: none;
+}
+
+.advert .p-card-body {
+  padding: 0rem;
+  margin-top: 0;
+}
+
+.advert .p-card-content {
+  padding: 0;
+}
+
+p-rating {
+  pointer-events: none;
+}
+
+.p-tabview-nav {
+  justify-content: center;
+}
+
+.p-tabview-nav-link {
+  color: var(--surface-500);
+}
+
+.PrikaziBtn .p-button-text {
+  padding-left: 0;
+}
+
+.PrikaziBtn .p-button:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 992px) {
+  .planovi {
+    width: 100%;
+    min-width: 700px;
+  }
+  .oglas {
+    width: 100%;
+    min-width: 700px;
+  }
+  .Glavnicont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 767.5px) {
+  .planovi {
+    min-width: unset;
+  }
+  .oglas {
+    min-width: unset;
+  }
+}
+
+@media (max-width: 446px) {
+  .planovi {
+    min-width: unset;
+  }
+  .oglas {
+    min-width: unset;
+  }
+  .mb-sm-2 {
+    margin-bottom: 10px;
+  }
+}
+
+/*  */
+.underline-input {
+  border: none; /* Uklanja sve granice */
+  border-bottom: 1px solid #d3d3d3; /* Dodaje donju crtu */
+  padding: 3px 0; /* Dodaje malo prostora iznad i ispod teksta */
+  font-size: 14px; /* Podesite veličinu fonta po potrebi */
+  color: #a0a0a0;
+  outline: none; /* Uklanja fokus obrub */
+}
+
+.underline-input:focus {
+  border-bottom-color: #007bff; /* Menja boju donje crte kada je input u fokusu */
+}
+
+@media (max-width: 760px) {
+  .custom-form {
+    border-top: 1px solid black;
+    margin-top: 10px;
+  }
+
+  .static-form {
+    margin-bottom: 10px;
+  }
+}
+
+.dugme-posalji {
+  display: flex;
+  align-items: flex-end;
+}
+
+.gallery-container {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  height: 370px;
+}
+
+.gallery-item {
+  display: none;
+  height: 370px;
+}
+
+.gallery-item.active {
+  display: block;
+}
+
+.media-item {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.no-fullscreen::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+
+.no-fullscreen::-moz-fullscreen-button {
+  display: none;
+}
+
+.no-fullscreen::-ms-fullscreen-button {
+  display: none;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nav-button.left {
+  left: 0;
+}
+
+.nav-button.right {
+  right: 0;
+}
+
+/*  */
+.form-control.bs-timepicker-field {
+  padding: 2px;
+}
+.table {
+  size: 40px;
+}
+
+.p-dialog-header {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.custom-textarea {
+  width: 70% !important;
+}
+
+.p-datepicker-mask {
+  z-index: auto !important;
+}

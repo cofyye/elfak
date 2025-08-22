@@ -1,0 +1,145 @@
+.navbar {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+}
+
+.navbar li {
+  margin: 0 5%;
+}
+
+.navbar li a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 16px;
+  text-align: center;
+}
+
+.navbar li a:hover {
+  color: var(--primary-500);
+  text-decoration: none;
+}
+
+.navbar-right {
+  justify-content: end;
+}
+
+.p-button {
+  padding: 8px 15px;
+  font-size: 16px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+}
+
+.dropdown-menu a:hover {
+  color: var(--primary-500);
+  cursor: pointer;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.menu-button {
+  display: none;
+}
+
+.p-sidebar {
+  max-width: 250px;
+}
+
+.profile-menu {
+  margin-bottom: 15px;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-item span {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.profile-dropdown {
+  display: none;
+  flex-direction: column;
+}
+
+.profile-dropdown.show {
+  display: flex;
+}
+
+.profile-dropdown a {
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.profile-dropdown a:hover {
+  color: var(--primary-500);
+}
+
+@media (max-width: 550px) {
+  .menu-button {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-nav li {
+    margin: 15px 0;
+  }
+
+  .sidebar-nav li a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+  }
+
+  .sidebar-nav li a:hover {
+    color: var(--primary-500);
+  }
+}

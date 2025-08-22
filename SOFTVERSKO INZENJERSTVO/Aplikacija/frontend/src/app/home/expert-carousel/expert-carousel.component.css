@@ -1,0 +1,8 @@
+.carousel {
+  margin-top:10rem;
+}
+.carousel h1{
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--surface-800);
+}

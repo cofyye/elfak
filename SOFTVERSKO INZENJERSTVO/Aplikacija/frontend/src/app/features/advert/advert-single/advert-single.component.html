@@ -1,0 +1,461 @@
+<div class="container p-4" style="border-radius: 1%">
+  <div class="row Glavnicont">
+    <div class="col-md-7 col-sm-12 col-12 order-1 oglas">
+      <p-card class="advert">
+        <div class="container">
+          <div class="row">
+            <header class="col-12 p-3 text-left">
+              <h1
+                class="mb-0 mt-0"
+                style="color: var(--text-color); font-size: 30px"
+              >
+                {{ advert.title }}
+              </h1>
+            </header>
+          </div>
+        </div>
+
+        <div class="gallery-container mt-3 mb-4">
+          <div
+            class="gallery-item"
+            *ngFor="let media of mediaArray; let i = index"
+            [ngClass]="{ active: i === currentIndex }"
+          >
+            <img
+              *ngIf="media.type === 'image'"
+              [src]="media.src"
+              class="media-item"
+            />
+            <video
+              *ngIf="media.type === 'video'"
+              [src]="media.src"
+              controls
+              playsinline
+              webkit-playsinline
+              class="media-item no-fullscreen"
+            ></video>
+          </div>
+          <button (click)="prevItem()" class="nav-button left">
+            <i class="fa-thin fa-angle-left" style="font-size: 40px"></i>
+          </button>
+          <button (click)="nextItem()" class="nav-button right">
+            <i class="fa-thin fa-angle-right" style="font-size: 40px"></i>
+          </button>
+        </div>
+        <div class="container mt-3" style="padding-left: 0">
+          <div
+            class="row mt-0 m-1"
+            style="display: flex; justify-content: space-between"
+          >
+            <div class="col-12 mb-sm-2 col-sm-6" style="display: flex">
+              <div
+                style="display: flex; align-items: center; padding-bottom: 4px"
+              >
+                <p-avatar
+                  [image]="advert.expert.avatar"
+                  styleClass="mr-2"
+                  size="large"
+                  shape="circle"
+                ></p-avatar>
+              </div>
+              <a
+                [routerLink]="['/profile', advert.expertId]"
+                style="margin-top: 5px; text-decoration: none; color: black"
+              >
+                <div class="row mt-1 ml-0">
+                  <b class="mr-2">
+                    <section>
+                      {{
+                        advert.expert.firstName + " " + advert.expert.lastName
+                      }}
+                    </section>
+                  </b>
+                  <p class="mt-0 mb-0" style="color: #777; font-size: 14px">
+                    &#64;{{ advert.expert.username }}
+                  </p>
+                </div>
+                <p class="m-0">{{ advert.expert.profession }}</p>
+              </a>
+            </div>
+            <div
+              class="m-0 pl-3"
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              "
+            >
+              <div
+                *ngIf="advert.averageGrade > 0"
+                style="display: flex; justify-content: space-between"
+              >
+                <p class="m-0" style="font-size: 14px; text-align: right">
+                  Ocena:
+                </p>
+                <p
+                  class="m-0"
+                  style="font-size: 14px; font-weight: 500; text-align: right"
+                >
+                  <i
+                    class="pi pi-star-fill pi-cog mr-0"
+                    style="margin-left: 17.5px; color: var(--primary-color)"
+                  ></i>
+                  {{ advert.averageGrade | number : "1.1-1" }}
+                </p>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <p class="m-0 mr-3" style="font-size: 14px; text-align: right">
+                  Postavljen:
+                </p>
+                <p
+                  class="m-0"
+                  style="font-size: 14px; font-weight: 500; text-align: right"
+                >
+                  {{ advert.createdAt }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-3">
+          <div class="row">
+            <div
+              class="col-12 mt-0"
+              style="padding-left: 20px; padding-right: 20px"
+            >
+              <p class="mt-1">{{ advert.description }}</p>
+            </div>
+          </div>
+        </div>
+        <div
+          *ngIf="advert.canGrade"
+          class="pr-3"
+          style="display: flex; justify-content: end"
+        >
+          <button
+            pButton
+            label="Oceni"
+            (click)="navigateToGrade()"
+            class="p-button-primary"
+          ></button>
+        </div>
+
+        <p-divider type="solid" />
+
+        <div class="row" *ngIf="comments.length > 0">
+          <div class="col-12">
+            <h3 class="mb-0 px-4">Recenzije</h3>
+          </div>
+          <div
+            class="container"
+            *ngFor="let comment of comments.slice(0, commentsToShow)"
+          >
+            <div class="container p-4">
+              <div class="row">
+                <div class="col-6 d-flex">
+                  <p-avatar
+                    [image]="comment.user.avatar"
+                    styleClass="mr-2"
+                    size="normal"
+                    shape="circle"
+                  ></p-avatar>
+                  <a style="margin-top: 0; text-decoration: none; color: black"
+                    ><b>
+                      <section style="font-size: 14px">
+                        {{
+                          comment.user.firstName + " " + comment.user.lastName
+                        }}
+                      </section>
+                    </b>
+                    <p class="mt-0">{{ comment.user.profession }}</p>
+                  </a>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <p
+                    style="
+                      color: #999;
+                      font-size: 14px;
+                      margin: 0;
+                      padding-right: 20px;
+                      padding-top: 1.4px;
+                    "
+                  >
+                    {{ comment.createdAt }}
+                  </p>
+                  <p-rating
+                    [ngModel]="comment.grade"
+                    [cancel]="false"
+                    [readonly]="true"
+                  ></p-rating>
+                </div>
+              </div>
+              <p class="m-0">
+                {{ comment.comment }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="container pb-3"
+          *ngIf="comments.length > 2"
+          style="display: flex; justify-content: center"
+        >
+          <p-button
+            label="Prikaži više"
+            [text]="true"
+            (click)="showMoreComments()"
+            *ngIf="commentsToShow === 2"
+            [ngStyle]="{ 'text-decoration': 'none', cursor: 'pointer' }"
+          ></p-button>
+          <p-button
+            label="Prikaži manje"
+            [text]="true"
+            (click)="showLessComments()"
+            *ngIf="commentsToShow === comments.length"
+            [ngStyle]="{ 'text-decoration': 'none', cursor: 'pointer' }"
+          ></p-button>
+        </div>
+      </p-card>
+    </div>
+
+    <div
+      class="col-md-5 col-sm-12 col-12 order-2 planovi mt-0"
+      style="height: 100%; position: sticky; top: 60px"
+    >
+      <p-card>
+        <p-tabView>
+          <ng-container *ngFor="let plan of Plans; let i = index">
+            <p-tabPanel [header]="plan.header">
+              <p>{{ plan.description }}</p>
+              <div>
+                <li
+                  *ngFor="
+                    let item of plan.items.slice(0, documentItemsToShow[i]);
+                    let j = index
+                  "
+                  class="mb-1"
+                >
+                  <i
+                    class="fa-duotone fa-check"
+                    [style.color]="
+                      item.isSelected
+                        ? 'var(--primary-color)'
+                        : 'var(--surface-300)'
+                    "
+                    style="margin-right: 5px"
+                  ></i>
+                  {{ item.name }}
+                </li>
+              </div>
+              <div *ngIf="plan.items.length > 5" class="text-center mt-2">
+                <p-button
+                  class="PrikaziBtn"
+                  label="{{
+                    documentItemsToShow[i] === 5
+                      ? 'Prikaži više'
+                      : 'Prikaži manje'
+                  }}"
+                  [icon]="
+                    documentItemsToShow[i] === 5
+                      ? 'pi pi-chevron-down'
+                      : 'pi pi-chevron-up'
+                  "
+                  [text]="true"
+                  (click)="
+                    documentItemsToShow[i] === 5
+                      ? showMoreDocumentItems(i)
+                      : showLessDocumentItems(i)
+                  "
+                  [ngStyle]="{ 'text-decoration': 'none', cursor: 'pointer' }"
+                ></p-button>
+              </div>
+              <div
+                class="col-12 text-center mt-4 mb-2"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding-right: 0;
+                  padding-left: 0;
+                "
+              >
+                <div style="display: flex; justify-content: left">
+                  <i
+                    class="pi pi-clock"
+                    style="font-size: 1.2rem; margin-right: 5px"
+                  ></i>
+                  <span style="font-size: 14px">{{ plan.duration }}</span>
+                </div>
+                <div style="display: flex; justify-content: right">
+                  <i
+                    class="pi pi-refresh"
+                    style="font-size: 1.2rem; margin: 0 5px"
+                  ></i>
+                  <span style="font-size: 14px">{{
+                    plan.numofconsultation
+                  }}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button
+                    pButton
+                    pRipple
+                    label="Zakaži"
+                    class="p-button-primary w-100"
+                    style="font-size: 1.2rem"
+                    (click)="showDialog(plan.header)"
+                  ></button>
+                </div>
+              </div>
+            </p-tabPanel>
+          </ng-container>
+        </p-tabView>
+      </p-card>
+    </div>
+
+    <!-- POP UP -->
+    <div class="row">
+      <div class="col-12">
+        <p-dialog
+          header="Zakazivanje konsultacija iz oglasa: {{ advert.title }}"
+          [(visible)]="visible"
+          [modal]="true"
+          [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+          [style]="{ width: '50vw' }"
+          [draggable]="false"
+          [resizable]="false"
+        >
+          <!-- PLAN INFO -->
+          <div class="row mb-3">
+            <div class="col-12">
+              <h4>
+                Plan:
+                {{ isCustomVisible ? "Personalizovani" : selectedPlanName }}
+              </h4>
+            </div>
+          </div>
+          <input id="someOtherElement" type="text" style="display: none" />
+
+          <!-- DATUM -->
+          <div class="row mb-3">
+            <div class="col-12">
+              <div class="flex-auto">
+                <p-calendar
+                  inputId="calendar-24h"
+                  [(ngModel)]="datetime24h"
+                  [showTime]="true"
+                  [touchUI]="true"
+                  [hourFormat]="'24'"
+                  [minDate]="minDate"
+                  placeholder="Unesite datum i vreme"
+                  styleClass="small-calendar"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- DESKRIPCIJA -->
+          <div class="card flex justify-content-center mb-3">
+            <textarea
+              id="float-input"
+              rows="5"
+              cols="40"
+              pInputTextarea
+              class="custom-textarea"
+              placeholder="Unesite opis"
+              id="descriptionPlan"
+            ></textarea>
+          </div>
+
+          <!-- DUGMICI -->
+          <div class="row mb-3">
+            <div class="col-6">
+              <button
+                pButton
+                pRipple
+                label="Pošalji poruku"
+                class="p-button-primary w-100"
+                style="font-size: 1rem"
+                [disabled]="isCustomVisible"
+                (click)="onCreateConsultation()"
+              ></button>
+            </div>
+            <div class="col-6">
+              <button
+                pButton
+                pRipple
+                [label]="
+                  isCustomVisible
+                    ? 'Želim vaš plan'
+                    : 'Želim personalizovani plan'
+                "
+                class="p-button-secondary w-100"
+                style="font-size: 1rem"
+                (click)="prosiriCustom()"
+              ></button>
+            </div>
+          </div>
+
+          <!-- CUSTOM PLAN -->
+          <div class="row" *ngIf="isCustomVisible">
+            <div class="col-12 custom-form">
+              <h2>Personalizovani plan:</h2>
+              <div class="row mb-3">
+                <div class="col-10 d-flex">
+                  <input
+                    #inputField
+                    type="text"
+                    class="form-control underline-input mr-2"
+                    placeholder="Stavka"
+                    maxlength="15"
+                  />
+                  <p-button
+                    class="btn btn-primary"
+                    label="Dodaj stavku"
+                    (click)="addInput(inputField)"
+                    [text]="true"
+                    [disabled]="inputs.length >= 10"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <ul class="pl-0">
+                    <li
+                      *ngFor="let input of inputs; let i = index"
+                      class="d-flex align-items-center"
+                    >
+                      <i
+                        class="fa-duotone fa-check mr-2"
+                        [style.color]="'black'"
+                      ></i>
+                      {{ input }}
+                      <i
+                        class="pi pi-times ml-auto"
+                        (click)="removeInput(i)"
+                        style="font-size: 0.75rem; color: red; cursor: pointer"
+                      ></i>
+                    </li>
+                  </ul>
+                  <div *ngIf="inputs.length > 0" class="text-center mt-3">
+                    <button
+                      pButton
+                      pRipple
+                      label="Pošalji poruku"
+                      class="p-button-primary w-100"
+                      style="font-size: 1rem"
+                      [disabled]="inputs.length == 0"
+                      (click)="onCreateConsultation()"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p-dialog>
+      </div>
+    </div>
+  </div>
+</div>

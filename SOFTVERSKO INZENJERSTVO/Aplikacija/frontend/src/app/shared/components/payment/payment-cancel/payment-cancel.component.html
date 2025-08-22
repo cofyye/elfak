@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p-card class="d-flex flex-column align-items-center justify-content-center vh-100">
+        <div class="row">
+          <div class="col-12 p-0 d-flex justify-content-center align-items-center mb-3">
+            <i class="pi pi-times-circle" style="color: var(--primary-color); font-size: 75px;"></i>
+          </div>
+        </div>
+        <p class="m-0 d-flex justify-content-center text-center">
+          Zao nam je sto ste otkazali kupovinu tokena.
+        </p>
+        <p class="mt-0 d-flex justify-content-center text-center">
+          Ukoliko se budete predomislili, mozete da kupite tokene u bilo kom trenutku.
+        </p>
+        <div class="row" style="margin-top: 40px">
+          <div class="col-12">
+            <p-button label="Vrati se na istoriju placanja" [style]="{ width: '100%' }"
+              [routerLink]="fullUrl + '/history-credit'" />
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</div>

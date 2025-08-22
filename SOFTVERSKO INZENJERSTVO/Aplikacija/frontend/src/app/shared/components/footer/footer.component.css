@@ -1,0 +1,61 @@
+.footer {
+  font-family: "Sofia", sans-serif;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.SecondRow {
+  border-top: 1px solid #404040;
+}
+
+.pitaj-strucnjaka {
+  font-family: "Sofia", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--surface-800);
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+}
+li a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0px 5px;
+}
+
+li a:hover {
+  color: var(--primary-500);
+  text-decoration: none;
+}
+
+.copyright {
+  text-align: left;
+}
+
+@media screen and (max-width: 1000px) {
+  ul {
+    justify-content: space-between;
+  }
+  .copyright {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  ul li {
+    margin: 2px 0px;
+  }
+}

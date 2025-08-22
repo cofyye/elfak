@@ -1,0 +1,23 @@
+.login-card {
+  width: 420px;
+}
+
+.login-card p {
+  color: var(--text-color-secondary);
+  font-size: small;
+}
+.p-button {
+  padding: 0.5rem 1.25rem;
+  font-size: medium;
+}
+.p-dialog .p-dialog-header {
+  padding-top: 0.25rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+  padding-bottom: 1rem;
+}
+
+a,
+span {
+  font-size: 0.8rem;
+}

@@ -1,0 +1,15 @@
+.p-card {
+  width: 360px;
+}
+
+@media (max-width: 470px) {
+  .p-card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 380px) {
+  .p-card {
+    width: 240px;
+  }
+}

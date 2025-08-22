@@ -1,0 +1,99 @@
+<div class="d-flex justify-content-end">
+  <p-confirmDialog></p-confirmDialog>
+</div>
+<div class="main p-3">
+  <h3>Odgovori na zahtev korisnika</h3>
+  <p-divider></p-divider>
+  <div class="container-fluid">
+    <div class="row mt-5">
+      <!-- SIDE -->
+      <div class="col-md-4 col-sm-12 pr-0">
+        <h4 class="mb-0" style="color: var(--surface-500)">Naslov</h4>
+        <h4 class="mt-2" style="color: black">{{ ticket?.title }}</h4>
+
+        <h4 class="mb-0" style="color: var(--surface-500)">Tip</h4>
+        <h4 class="mt-2" style="color: black">
+          {{ ticketTypeMapping[ticket!.type] }}
+        </h4>
+
+        <h4 class="mb-0" style="color: var(--surface-500)">Status</h4>
+        <h4 class="mt-2" style="color: black">
+          {{ ticket?.status === "closed" ? "Zatvoren" : "Otvoren" }}
+        </h4>
+
+        <h4 class="mb-0" style="color: var(--surface-500)">ID zahteva</h4>
+        <h4 class="mt-2" style="color: black">{{ ticket?.id }}</h4>
+
+        <div *ngIf="ticket?.type == 'user_problem'">
+          <h4 class="mb-0" style="color: var(--surface-500)">
+            Problem sa korisnikom:
+          </h4>
+          <h4 class="mt-2" style="color: black">{{ ticket?.username }}</h4>
+        </div>
+        <div style="width: 200px">
+          <div class="row w-100" *ngIf="ticket?.status == 'open'">
+            <div class="col-12">
+              <p-button label="Zatvori zahtev" (click)="finishResponse()"
+                [disabled]="ticket?.status === 'closed'"></p-button>
+            </div>
+          </div>
+          <div class="row mt-3 mb-3 w-100">
+            <div class="col-12">
+              <p-button *ngIf="ticket?.status !== 'closed' && !isInputVisible" label="Odgovori" severity="secondary"
+                [disabled]="isOdgovoriDisabled" (click)="showInputField()"></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CHAT -->
+      <div class="col-md-8 col-sm-12 d-flex flex-column p-0">
+        <div class="chat-messages flex-grow-1 overflow-auto p-3">
+          <section *ngFor="let message of messages" class="border-bottom mb-4"
+            style="border-bottom: solid 1px var(--surface-300)">
+            <div class="d-flex">
+              <p-avatar [image]="environment.API_URL + '/uploads/' + message.avatar" styleClass="mr-2" size="large"
+                shape="circle"></p-avatar>
+              <div class="flex-column">
+                <h4 class="mt-1 mb-0" style="color: black">
+                  {{ "@" + message.sender }}
+                </h4>
+                <p class="m-0 text-muted" style="font-size: 14px; font-weight: 500">
+                  {{ message.date }}
+                </p>
+              </div>
+            </div>
+
+            <p class="pl-4 pr-5 pb-3" style="font-family: sans-serif; font-size: 16px; color: #4b5563">
+              {{ message.message }}
+            </p>
+          </section>
+        </div>
+        <!-- INPUT -->
+        <div class="chat-input p-3" *ngIf="isInputVisible">
+          <textarea id="biography" rows="3" class="form-control w-100" pInputTextarea placeholder="Poruka..."
+            [(ngModel)]="messageText" maxlength="2000" #messageInput style="resize: none"></textarea>
+          <div class="d-flex justify-content-end mt-2">
+            <p-button class="btn btn-primary" label="Pošalji"
+              (click)="sendMessage(messageInput.value); messageInput.value = ''"></p-button>
+            <p-button class="btn btn-secondary ml-2" label="Otkaži" (click)="cancelResponse()"></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Dialog -->
+<div [class.show]="confirmDialogVisible" class="confirm-dialog-overlay">
+  <p-card class="confirm-dialog">
+    <h2 class="mt-0">Zatvaranje zahteva</h2>
+    <p>
+      Da li ste sigurni da zelite da zatvorite zahtev sa naslovom
+      <strong>{{ ticket?.title }}</strong>?
+    </p>
+    <div class="dialog-buttons">
+      <p-button label="Da" (click)="confirmCloseTicket()"></p-button>
+      <p-button label="Ne" (click)="cancelCloseTicket()"></p-button>
+    </div>
+  </p-card>
+</div>

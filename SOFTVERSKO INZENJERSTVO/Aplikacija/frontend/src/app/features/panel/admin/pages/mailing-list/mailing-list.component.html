@@ -1,0 +1,41 @@
+<p-toast></p-toast>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p-card class="d-flex flex-column align-items-center justify-content-center vh-100">
+        <!-- <div class="row">
+          <div
+            class="col-12 p-0 d-flex justify-content-center align-items-center mb-3"
+          >
+            <i
+              class="fa-regular fa-newspaper"
+              style="color: var(--primary-color); font-size: 75px"
+            ></i>
+          </div>
+        </div> -->
+        <h3 class="m-0 d-flex justify-content-center text-center">
+          Obavestite klijente o novim ponudama putem mail-a
+        </h3>
+        <div class="row" style="margin-top: 40px">
+          <div class="col-12">
+            <div class="mb-2 d-flex flex-column justify-content-center text-center align-items-center">
+              <span class="mt-2 mb-2">Unesite naslov ponude:</span>
+              <input type="text" class="w-75" pInputText [(ngModel)]="titleOfNotification" />
+            </div>
+
+            <div class="mt-2 mb-2 d-flex justify-content-center text-center">
+              Unesite novu ponudu:
+            </div>
+
+            <div>
+              <textarea class="w-100 mb-4" rows="6" pInputTextarea [(ngModel)]="notification">
+              </textarea>
+            </div>
+
+            <p-button label="Posaljite obavestenje" [style]="{ width: '100%' }" (click)="sendNotification()" />
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</div>

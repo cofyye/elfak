@@ -1,0 +1,332 @@
+<div
+  class="container w-100 vh-100 d-flex justify-content-center align-items-center main-container"
+>
+  <form [formGroup]="registerForm" class="w-100">
+    <p-stepper [linear]="true" class="w-100">
+      <p-stepperPanel header="Tip">
+        <ng-template
+          pTemplate="content"
+          let-nextCallback="nextCallback"
+          let-index="index"
+        >
+          <div class="d-flex flex-column">
+            <h1 class="w-100 text-center choose-type">Izaberite tip naloga</h1>
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="row">
+                <div class="col-md-6">
+                  <div
+                    class="select-user-type"
+                    [ngClass]="
+                      registerForm.controls['isExpert'].value === null ||
+                      registerForm.controls['isExpert'].value !== false
+                        ? ''
+                        : 'active'
+                    "
+                    (click)="handleChooseTypeUser(typeUser, typeExpert)"
+                    #typeUser
+                  >
+                    <i class="fa-duotone fa-user"></i>
+                    <h2 class="mt-5 mb-2">Korisnik</h2>
+                    <span>
+                      Dobijte precizne odgovore od akreditovanih stručnjaka!
+                      Postavite pitanje iz različitih oblasti i primite
+                      personalizovanu pomoć kako biste rešili svoje dileme i
+                      probleme.
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div
+                    class="select-user-type"
+                    [ngClass]="
+                      registerForm.controls['isExpert'].value === null ||
+                      registerForm.controls['isExpert'].value !== true
+                        ? ''
+                        : 'active'
+                    "
+                    (click)="handleChooseTypeExpert(typeExpert, typeUser)"
+                    #typeExpert
+                  >
+                    <i class="fa-duotone fa-user-tie"></i>
+                    <h2 class="mt-5 mb-2">Strucnjak</h2>
+                    <span>
+                      Pružite ekspertsku pomoć i istovremeno ostvarite prihod!
+                      Kreirajte detaljan profil koji ističe vaše kvalifikacije i
+                      iskustvo, odgovarajte na pitanja u vašoj oblasti i
+                      zaradite novčanu nadoknadu svojim stručnim savetima.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex pt-4 justify-content-between">
+            <span
+              class="d-flex flex-row justify-content-center align-items-center existing-account"
+            >
+              Vec imate nalog?
+              <a routerLink="/auth/login" class="ml-1">Prijavite se</a>
+            </span>
+            <p-button
+              label="Napred"
+              icon="pi pi-arrow-right"
+              iconPos="right"
+              (onClick)="handleUserTypes(nextCallback)"
+            />
+          </div>
+        </ng-template>
+      </p-stepperPanel>
+      <p-stepperPanel header="Informacije">
+        <ng-template
+          pTemplate="content"
+          let-prevCallback="prevCallback"
+          let-nextCallback="nextCallback"
+          let-index="index"
+        >
+          <div class="d-flex flex-column">
+            <h1 class="w-100 text-center mb-4 mt-4">Unesite Vase podatke</h1>
+            <div class="d-flex justify-content-center align-items-center mb-3">
+              <div class="row register-content">
+                <div class="col-md-6 mt-2">
+                  <input
+                    type="text"
+                    pInputText
+                    placeholder="Ime"
+                    class="w-100 p-inputtext-sm"
+                    [ngClass]="
+                      registerForm.controls['firstName'].invalid &&
+                      (registerForm.controls['firstName'].dirty ||
+                        registerForm.controls['firstName'].touched)
+                        ? 'ng-invalid ng-dirty'
+                        : ''
+                    "
+                    formControlName="firstName"
+                    [tooltipDisabled]="
+                      !(
+                        registerForm.controls['firstName'].invalid &&
+                        (registerForm.controls['firstName'].dirty ||
+                          registerForm.controls['firstName'].touched)
+                      )
+                    "
+                    [pTooltip]="
+                      registerForm.controls['firstName'].errors?.['required'] && 'Polje ne sme biti prazno' ||
+                      registerForm.controls['firstName'].errors?.['minlength'] && 'Ime mora sadrzati najmanje 2 karaktera' ||
+                      registerForm.controls['firstName'].errors?.['maxlength'] && 'Ime mora sadrzati najvise 12 karaktera' ||
+                      registerForm.controls['firstName'].errors?.['pattern'] && 'Ime mora sadrzati samo karaktere'
+                    "
+                  />
+                </div>
+                <div class="col-md-6 mt-2">
+                  <input
+                    type="text"
+                    pInputText
+                    placeholder="Prezime"
+                    class="w-100 p-inputtext-sm"
+                    formControlName="lastName"
+                    [ngClass]="
+                      registerForm.controls['lastName'].invalid &&
+                      (registerForm.controls['lastName'].dirty ||
+                        registerForm.controls['lastName'].touched)
+                        ? 'ng-invalid ng-dirty'
+                        : ''
+                    "
+                    [tooltipDisabled]="
+                      !(
+                        registerForm.controls['lastName'].invalid &&
+                        (registerForm.controls['lastName'].dirty ||
+                          registerForm.controls['lastName'].touched)
+                      )
+                    "
+                    [pTooltip]="
+                      registerForm.controls['lastName'].errors?.['required'] && 'Polje ne sme biti prazno' ||
+                      registerForm.controls['lastName'].errors?.['minlength'] && 'Prezime mora sadrzati najmanje 2 karaktera' ||
+                      registerForm.controls['lastName'].errors?.['maxlength'] && 'Prezime mora sadrzati najvise 12 karaktera' ||
+                      registerForm.controls['lastName'].errors?.['pattern'] && 'Prezime mora sadrzati samo karaktere'
+                    "
+                  />
+                </div>
+                <div class="col-md-12 mt-2">
+                  <input
+                    type="text"
+                    pInputText
+                    placeholder="Korisnicko ime"
+                    class="w-100 p-inputtext-sm"
+                    formControlName="username"
+                    [ngClass]="
+                      registerForm.controls['username'].invalid &&
+                      (registerForm.controls['username'].dirty ||
+                        registerForm.controls['username'].touched)
+                        ? 'ng-invalid ng-dirty'
+                        : ''
+                    "
+                    [tooltipDisabled]="
+                      !(
+                        registerForm.controls['username'].invalid &&
+                        (registerForm.controls['username'].dirty ||
+                          registerForm.controls['username'].touched)
+                      )
+                    "
+                    [pTooltip]="
+                      registerForm.controls['username'].errors?.['required'] && 'Polje ne sme biti prazno' ||
+                      registerForm.controls['username'].errors?.['minlength'] && 'Korisnicko ime mora sadrzati najmanje 3 karaktera' ||
+                      registerForm.controls['username'].errors?.['maxlength'] && 'Korisnicko ime mora sadrzati najvise 12 karaktera' ||
+                      registerForm.controls['username'].errors?.['pattern'] && 'Korisnicko ime nije validno. Dozvoljeni karakteri su: a-z(samo mala slova), 0-9, _ i .(tacka)' ||
+                      registerForm.controls['username'].errors?.['usernameAvailable'] && 'Ovo korisnicko ime je zauzeto'
+                    "
+                  />
+                </div>
+                <div class="col-md-12 mt-2">
+                  <input
+                    type="email"
+                    pInputText
+                    placeholder="Email"
+                    class="w-100 p-inputtext-sm"
+                    formControlName="email"
+                    [ngClass]="
+                      registerForm.controls['email'].invalid &&
+                      (registerForm.controls['email'].dirty ||
+                        registerForm.controls['email'].touched)
+                        ? 'ng-invalid ng-dirty'
+                        : ''
+                    "
+                    [tooltipDisabled]="
+                      !(
+                        registerForm.controls['email'].invalid &&
+                        (registerForm.controls['email'].dirty ||
+                          registerForm.controls['email'].touched)
+                      )
+                    "
+                    [pTooltip]="
+                      registerForm.controls['email'].errors?.['required'] && 'Polje ne sme biti prazno' ||
+                      registerForm.controls['email'].errors?.['maxlength'] && 'E-mail mora sadrzati najvise 100 karaktera' ||
+                      registerForm.controls['email'].errors?.['pattern'] && 'Unesite ispravnu e-mail adresu' ||
+                      registerForm.controls['email'].errors?.['emailAvailable'] && 'Ova e-mail adresa je zauzeta'
+                    "
+                  />
+                </div>
+                <div class="col-md-12 mt-2">
+                  <p-password
+                    placeholder="Lozinka"
+                    class="p-inputtext-sm"
+                    [toggleMask]="true"
+                    promptLabel="Unesite lozinku"
+                    weakLabel="Previse jednostavno"
+                    mediumLabel="Srednja slozenost"
+                    strongLabel="Slozena lozinka"
+                    formControlName="password"
+                    [ngClass]="
+                      registerForm.controls['password'].invalid &&
+                      (registerForm.controls['password'].dirty ||
+                        registerForm.controls['password'].touched)
+                        ? 'ng-invalid ng-dirty'
+                        : ''
+                    "
+                    [tooltipDisabled]="
+                      !(
+                        registerForm.controls['password'].invalid &&
+                        (registerForm.controls['password'].dirty ||
+                          registerForm.controls['password'].touched)
+                      )
+                    "
+                    [pTooltip]="
+                      registerForm.controls['password'].errors?.['required'] && 'Polje ne sme biti prazno' ||
+                      registerForm.controls['password'].errors?.['minlength'] && 'Sifra mora sadrzati najmanje 8 karaktera' ||
+                      registerForm.controls['password'].errors?.['maxlength'] && 'Sifra mora sadrzati najvise 32 karaktera'
+                    "
+                  ></p-password>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex pt-4 justify-content-between">
+            <p-button
+              label="Nazad"
+              icon="pi pi-arrow-left"
+              (onClick)="prevCallback.emit()"
+            />
+            <p-button
+              label="Napred"
+              icon="pi pi-arrow-right"
+              iconPos="right"
+              (onClick)="handleUserInfo(nextCallback)"
+            />
+          </div>
+        </ng-template>
+      </p-stepperPanel>
+      <p-stepperPanel header="Slika">
+        <ng-template
+          pTemplate="content"
+          let-prevCallback="prevCallback"
+          let-index="index"
+        >
+          <div class="d-flex flex-column">
+            <div class="d-flex justify-content-center align-items-center">
+              <div
+                id="dragArea"
+                class="drag-area d-flex align-items-center justify-content-center flex-column"
+                [ngClass]="isChoosedFile ? 'p-2' : 'p-5'"
+                (drop)="onDrop($event)"
+                #dragArea
+              >
+                <div
+                  *ngIf="isChoosedFile"
+                  class="w-100 h-100 position-relative d-flex align-items-center justify-content-center"
+                >
+                  <p-button
+                    icon="pi pi-times"
+                    [rounded]="true"
+                    severity="primary"
+                    class="remove-img-btn"
+                    (onClick)="onUnChooseFile()"
+                  ></p-button>
+                  <img
+                    class="uploaded-image"
+                    [src]="fileUrl"
+                    alt="Otpremanje slike, pitajStrucnjaka"
+                  />
+                </div>
+                <i
+                  class="fa-thin fa-cloud-arrow-up my-2"
+                  *ngIf="!isChoosedFile"
+                ></i>
+                <div class="upload-container my-2" *ngIf="!isChoosedFile">
+                  Prevucite da biste otpremili datoteku
+                  <br />
+                  <p class="upload-or">ILI</p>
+                </div>
+                <input
+                  type="file"
+                  name="file"
+                  hidden
+                  (change)="onChooseFile(fileInput)"
+                  accept="image/png, image/jpeg, image/JPG"
+                  #fileInput
+                />
+                <p-button
+                  label="Pretrazite sliku"
+                  (onClick)="fileInput.click()"
+                  *ngIf="!isChoosedFile"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex pt-4 justify-content-between">
+            <p-button
+              label="Nazad"
+              icon="pi pi-arrow-left"
+              (onClick)="prevCallback.emit()"
+            />
+            <p-button
+              [label]="isLoading ? '' : 'Registruj se'"
+              icon="pi pi-plus-circle"
+              iconPos="right"
+              [loading]="isLoading"
+              (onClick)="onRegister()"
+              [style]="{ width: '159px' }"
+            />
+          </div>
+        </ng-template>
+      </p-stepperPanel>
+    </p-stepper>
+  </form>
+</div>

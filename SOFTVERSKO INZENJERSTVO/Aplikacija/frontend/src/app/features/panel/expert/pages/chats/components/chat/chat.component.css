@@ -1,0 +1,113 @@
+.main-container {
+  height: 100vh;
+}
+
+.custom-form-container {
+  background-color: var(--primary-50);
+  position: relative;
+  z-index: 1;
+  border-radius: 1.25rem;
+}
+
+.p-button.p-button-outlined {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.95rem;
+}
+
+.p-button-label {
+  font-weight: 500;
+}
+
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 70%;
+}
+
+.client-message {
+  background-color: var(--surface-200);
+  color: black;
+}
+
+.expert-message {
+  background-color: #cfe2ff;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.timestamp {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.65rem;
+  color: gray;
+  margin-top: 2px;
+}
+
+.inputMess {
+  border: none;
+  height: 25px;
+}
+
+.inputMess:focus {
+  box-shadow: none;
+}
+
+.no-focus-outline {
+  outline: none;
+}
+
+.no-focus-outline:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 992px) {
+  .mt-2-custom {
+    margin-top: 8px;
+  }
+
+  .main-container {
+    height: 82.5vh;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-height: 500px) {
+  .mt-2-custom {
+    margin-top: 8px;
+  }
+
+  .main-container {
+    height: 87vh;
+  }
+}
+
+.btn-custom .p-ripple {
+  margin-right: 0;
+}
+
+.custom-icon {
+  display: flex;
+  align-items: end;
+}

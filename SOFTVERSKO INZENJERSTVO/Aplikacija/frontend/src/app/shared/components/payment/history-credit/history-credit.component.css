@@ -1,0 +1,36 @@
+/* CSS za PrimeNG tabelu */
+:host ::ng-deep .custom-table .p-datatable-wrapper {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+:host ::ng-deep .custom-table .p-datatable-scrollable-wrapper {
+  border-radius: 5rem;
+  overflow: hidden;
+}
+
+:host ::ng-deep .custom-table .p-datatable-scrollable-header,
+:host ::ng-deep .custom-table .p-datatable-scrollable-body,
+:host ::ng-deep .custom-table .p-datatable-scrollable-footer {
+  overflow-x: auto;
+}
+
+:host ::ng-deep .custom-table .p-datatable-tbody > tr {
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .custom-table .p-datatable-tbody > tr:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  position: relative;
+  z-index: 1;
+}
+
+:host ::ng-deep .custom-table .p-datatable-thead > tr > th,
+:host ::ng-deep .custom-table .p-datatable-tbody > tr > td {
+  border: none;
+}
+
+td {
+  padding: 8;
+}

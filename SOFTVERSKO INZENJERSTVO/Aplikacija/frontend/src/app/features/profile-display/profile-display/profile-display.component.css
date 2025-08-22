@@ -1,0 +1,34 @@
+.p-avatar.p-avatar-xl {
+  width: 9rem;
+  height: 9rem;
+}
+
+h1 {
+  color: black;
+  font-size: 60px;
+}
+
+.Name h2 {
+  color: black;
+}
+
+.p-datatable .p-datatable-header {
+  background-color: inherit;
+  border-bottom: 0;
+}
+
+.p-datatable .p-datatable-footer {
+  background-color: inherit;
+}
+
+.p-datatable-wrapper {
+  margin-left: 24px;
+}
+
+p-rating {
+  pointer-events: none;
+}
+
+td {
+  background-color: var(--custom-bg);
+}

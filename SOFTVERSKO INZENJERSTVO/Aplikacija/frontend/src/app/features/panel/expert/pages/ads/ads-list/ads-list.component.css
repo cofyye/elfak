@@ -1,0 +1,109 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ad-card-wrapper {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.ad-card-wrapper:hover {
+  transform: scale(1.01);
+}
+
+.ad-image,
+.ad-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.ad-image-container {
+  flex: 1;
+  margin-right: -10px;
+  z-index: 2;
+}
+
+.mainCard {
+  flex: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.p-card .p-card-content {
+  padding: 0;
+}
+
+.Btn {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 682px) {
+  .ad-image-container {
+    display: none;
+  }
+  @media (max-width: 375px) {
+    .Btn {
+      justify-content: center;
+    }
+  }
+}
+
+.confirm-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 26px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.confirm-dialog-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.confirm-dialog {
+  width: 400px;
+  transition: transform 0.2s ease;
+}
+
+.confirm-dialog.show {
+  transform: scale(1);
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.mainCard .p-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.ad-text {
+  flex: 1;
+}

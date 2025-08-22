@@ -1,0 +1,79 @@
+<div class="p-3">
+  <h3>Lista oglasa</h3>
+  <p-divider></p-divider>
+  <div class="container">
+    <div *ngFor="let ad of ads" class="ad-card-wrapper">
+      <div class="ad-image-container">
+        <ng-container *ngIf="ad.image_one; else checkImageTwo">
+          <img
+            [src]="apiUrl + '/uploads/' + ad.image_one"
+            alt="{{ ad.title }}"
+            class="ad-image"
+          />
+        </ng-container>
+        <ng-template #checkImageTwo>
+          <ng-container *ngIf="ad.image_two; else checkVideo">
+            <img
+              [src]="apiUrl + '/uploads/' + ad.image_two"
+              alt="{{ ad.title }}"
+              class="ad-image"
+            />
+          </ng-container>
+        </ng-template>
+        <ng-template #checkVideo>
+          <ng-container *ngIf="ad.video">
+            <video controls class="ad-video">
+              <source
+                [src]="apiUrl + '/uploads/' + ad.video"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </ng-container>
+        </ng-template>
+      </div>
+      <p-card class="mainCard">
+        <div>
+          <div class="ad-text">
+            <h2 class="mt-0">{{ ad.title | truncate : 23 }}</h2>
+            <p>{{ ad.description | truncate : 80 }}</p>
+            <p>
+              <strong>Datum postavljanja:</strong>
+              {{ getFormattedDate(ad.createdAt) }}
+            </p>
+            <p><strong>Aktivan:</strong> {{ ad.active ? "da" : "ne" }}</p>
+            <p>
+              <strong>Ocena:</strong> 4
+              <i
+                class="pi pi-star-fill mr-1"
+                style="font-size: 1rem; color: var(--primary-color)"
+              ></i>
+            </p>
+            <div class="Btn">
+              <p-button [routerLink]="['edit', ad.id]" class="pr-3"
+                >Izmeni</p-button
+              >
+              <p-button (click)="openConfirmDialog(ad.id, ad.title)"
+                >Obrisi</p-button
+              >
+            </div>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+  <div [class.show]="confirmDialogVisible" class="confirm-dialog-overlay">
+    <p-card class="confirm-dialog">
+      <h2>Brisanje oglasa</h2>
+      <p>
+        Da li sigurno zelite da obrisete
+        <strong>{{ adTitleToDelete }}</strong
+        >?
+      </p>
+      <div class="dialog-buttons">
+        <p-button label="Da" (click)="confirmDelete()"></p-button>
+        <p-button label="Ne" (click)="cancelDelete()"></p-button>
+      </div>
+    </p-card>
+  </div>
+</div>

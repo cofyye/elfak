@@ -1,0 +1,127 @@
+<div class="app-container">
+  <div class="app-main">
+    <div class="video-call-wrapper">
+      <!-- Video Participant 1 -->
+      <div class="video-participant">
+        <div class="participant-action">
+          <button class="btn-mute"></button>
+          <button class="btn-camera"></button>
+        </div>
+        <a href="#" class="name-tag">{{ expertName }}</a>
+        <img
+          src="https://images.unsplash.com/photo-1566821582776-92b13ab46bb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+          alt="participant"
+        />
+      </div>
+      <!-- Video Participant 2 -->
+      <div class="video-participant">
+        <div class="participant-action">
+          <button class="btn-mute"></button>
+          <button class="btn-camera"></button>
+        </div>
+        <a href="#" class="name-tag">{{ clientName }}</a>
+        <img
+          src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+          alt="participant"
+        />
+      </div>
+    </div>
+
+    <div class="video-call-actions">
+      <button class="video-action-button mic"></button>
+      <button class="video-action-button camera"></button>
+      <button class="video-action-button maximize"></button>
+      <button class="video-action-button endcall">Leave</button>
+    </div>
+  </div>
+
+  <!-- Right Side -->
+  <div class="right-side">
+    <button class="btn-close-right">
+      <!-- Close Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="feather feather-x-circle"
+        viewBox="0 0 24 24"
+        style="position: absolute"
+      >
+        <defs></defs>
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M15 9l-6 6M9 9l6 6"></path>
+      </svg>
+      <!-- Close Icon -->
+    </button>
+
+    <!--Forma-->
+    <div class="form-container">
+      <div class="form-header">
+        <h1 class="mb-1">Odabrani plan</h1>
+        <h6 class="mb-0">Teme koje se obradjuju:</h6>
+      </div>
+      <div class="form-tasks">
+        <div
+          class="flex align-items-center mb-1 task"
+          *ngFor="let task of tasks"
+          [ngClass]="{ 'task-completed': task.completed }"
+        >
+          <p-checkbox
+            [(ngModel)]="task.completed"
+            (onCheckChange)="toggleTaskCompletion(task)"
+            [binary]="true"
+            [label]="task.label"
+          ></p-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="expand-btn">
+    <!-- expand icon -->
+    <svg
+      viewBox="0 -0.5 21 21"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      fill="#000000"
+    >
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></g>
+      <g id="SVGRepo_iconCarrier">
+        <title>grid_system [#1520]</title>
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <g
+          id="Page-1"
+          stroke="none"
+          stroke-width="1"
+          fill="none"
+          fill-rule="evenodd"
+        >
+          <g
+            id="Dribbble-Light-Preview"
+            transform="translate(-59.000000, -240.000000)"
+            fill="#000000"
+          >
+            <g id="icons" transform="translate(56.000000, 160.000000)">
+              <path
+                d="M16.65,98 L21.9,98 L21.9,93 L16.65,93 L16.65,98 Z M14.55,100 L24,100 L24,91 L14.55,91 L14.55,100 Z M5.1,98 L10.35,98 L10.35,93 L5.1,93 L5.1,98 Z M3,100 L12.45,100 L12.45,91 L3,91 L3,100 Z M16.65,87 L21.9,87 L21.9,82 L16.65,82 L16.65,87 Z M14.55,89 L24,89 L24,80 L14.55,80 L14.55,89 Z M5.1,87 L10.35,87 L10.35,82 L5.1,82 L5.1,87 Z M3,89 L12.45,89 L12.45,80 L3,80 L3,89 Z"
+                id="grid_system-[#1520]"
+              ></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <!-- expand icon -->
+  </button>
+</div>

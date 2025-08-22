@@ -1,0 +1,184 @@
+/* MENJANJE PRIMENG KLASE */
+.p-stepper-action {
+  background-color: transparent;
+}
+
+/* MENJANJE STEPPER NUMBER KLASE KADA NIJE AKTIVNA */
+.p-stepper .p-stepper-header .p-stepper-action .p-stepper-number {
+  background-color: transparent;
+  border: 1px solid #6b7280;
+  color: #6b7280;
+}
+
+/* MENJANJE STEPPER NUMBER KLASE KADA JE AKTIVNA */
+.p-stepper .p-stepper-header.p-highlight .p-stepper-number {
+  background-color: var(--primary-500);
+  border: none;
+  color: #fff;
+}
+
+/* MENJANJE STEPPER TITLE KLASE KADA JE AKTIVNA */
+.p-stepper .p-stepper-header.p-highlight .p-stepper-title {
+  color: var(--primary-500);
+}
+
+/* MENJANJE STEPPER SEPARATOR KLASE KADA NIJE AKTIVNA */
+.p-stepper .p-stepper-separator {
+  background-color: rgba(107, 114, 128, 0.5);
+}
+
+/* MENJANJE STEPPER SEPARATOR KLASE KADA JE AKTIVNA */
+.p-stepper .p-stepper-header:has(~ .p-highlight) .p-stepper-separator {
+  background-color: var(--primary-500);
+}
+
+/* MENJANJE STEPPER PANELS KLASE */
+.p-stepper .p-stepper-panels {
+  border-radius: 14px;
+}
+
+/* MENJANJE P PASSWORD KLASE */
+.p-password,
+.p-password input {
+  width: 100%;
+}
+
+/* MENJANJE P BUTTON KLASE */
+.remove-img-btn button {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 3px;
+  right: 3px;
+  z-index: 2;
+}
+
+/* KRAJ MENJANJA PRIMENG KLASE */
+
+.main-container {
+  max-width: 800px;
+}
+
+.existing-account {
+  font-size: 0.8rem;
+}
+
+.select-user-type span {
+  min-height: 9rem;
+}
+
+.choose-type {
+  font-size: 1.75rem;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.select-user-type {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px outset rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px; /* Zaobljeni rubovi */
+  user-select: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Glatki prijelaz boje ruba i sjene */
+  background-color: #ffffff; /* Bijela pozadina */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Senka */
+}
+
+.select-user-type:hover {
+  border-color: rgba(
+    107,
+    114,
+    128,
+    0.8
+  ); /* Promjena boje ruba prilikom prelaska mišem */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Povećanje sjene prilikom prelaska mišem */
+}
+
+.select-user-type i {
+  font-size: 150px;
+}
+
+.select-user-type.active {
+  border-color: var(--primary-300);
+}
+
+.register-content {
+  max-width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+  .register-content {
+    max-width: 100%;
+  }
+}
+
+.drag-area {
+  position: relative;
+  border: 2px dashed rgba(107, 114, 128, 0.5);
+  border-radius: 14px;
+  user-select: none;
+  height: 350px;
+  width: 100%;
+  text-align: center;
+}
+
+.drag-area.active {
+  border: 2px solid rgba(107, 114, 128, 0.5);
+  background-color: var(--primary-50);
+}
+
+.drag-area i {
+  font-size: 72px;
+}
+
+.drag-area header {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.drag-area header span {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.drag-area img {
+  height: 70%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 745px) {
+  .drag-area header {
+    font-size: 25px;
+    font-weight: 450;
+  }
+}
+
+.upload-or {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.upload-or:before,
+.upload-or:after {
+  content: "";
+  flex-grow: 1;
+  background: linear-gradient(to left, var(--surface-600), var(--surface-100));
+  height: 1px;
+  margin: 0 10px;
+}
+
+.upload-or:after {
+  background: linear-gradient(to right, var(--surface-600), var(--surface-100));
+}

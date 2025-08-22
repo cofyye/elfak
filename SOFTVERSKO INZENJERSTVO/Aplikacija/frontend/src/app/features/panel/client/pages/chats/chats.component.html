@@ -1,0 +1,63 @@
+<div
+  class="main-container container-fluid row pt-3 d-flex flex-column container-fix"
+>
+  <div class="col-12 col-lg-4 col-xl-3 chat-list">
+    <div *ngIf="!toggle" class="mb-1 sticky-search" style="height: 50px">
+      <p-iconField iconPosition="left">
+        <p-inputIcon styleClass="pi pi-search" />
+        <input
+          type="text"
+          style="height: 32px; width: 100%; font-size: smaller"
+          pInputText
+          placeholder="Pretrazi razgovore"
+          [(ngModel)]="searchTerm"
+          (input)="filterChats()"
+        />
+      </p-iconField>
+    </div>
+
+    <div [ngClass]="{ 'd-mobile': toggle }">
+      <div
+        *ngFor="let chat of filteredChats; let i = index"
+        class="row justify-content-center chat-list-item pt-1"
+        (click)="selectChat('{{i+1}}')"
+        routerLink="{{ i + 1 }}"
+      >
+        <div class="col-auto avatar-mobile mr-2">
+          <p-avatar
+            [image]="chat.profilePicture"
+            [size]="toggle ? 'large' : 'xlarge'"
+            shape="circle"
+          ></p-avatar>
+        </div>
+        <div class="col d-none d-lg-block">
+          <h5 class="mt-0 mb-0">{{ chat.name }}</h5>
+          <div
+            class="d-flex"
+            style="align-items: center"
+            appElementWidth
+            (widthChange)="onWidthChange($event, i)"
+          >
+            <img
+              [src]="chat.chatStatus"
+              style="
+                height: 20px;
+                width: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 1.5px;
+              "
+            />
+            <label #chatLabel style="font-size: smaller">{{
+              truncatedTexts[i]
+            }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-8 col-xl-9 chat-component flex-grow-1">
+    <router-outlet></router-outlet>
+  </div>
+</div>

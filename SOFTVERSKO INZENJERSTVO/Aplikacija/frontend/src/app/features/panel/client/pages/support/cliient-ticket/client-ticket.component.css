@@ -1,0 +1,37 @@
+.main-container {
+  margin: 0;
+}
+
+.p-inputtext {
+  font-size: 0.9rem;
+}
+
+.p-component {
+  font-size: 0.9rem;
+}
+
+.description {
+  width: 300px;
+  max-height: 220px;
+}
+
+.fixed-width-dropdown .p-dropdown-label {
+  width: 180px;
+}
+
+@media (max-width: 768px) {
+  .description {
+    width: 226px;
+    max-height: 160px;
+  }
+}
+
+.mt-4-custom {
+  margin-top: 1.75rem !important;
+}
+
+/* ZA DIALOG KOMPONENTU - CAN DEACTIVATE GUARD */
+.p-dialog .p-dialog-footer {
+  display: flex;
+  justify-content: end;
+}

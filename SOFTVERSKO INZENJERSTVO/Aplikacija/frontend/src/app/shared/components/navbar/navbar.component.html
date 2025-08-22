@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="row navbar">
+    <div class="col-8 text-left">
+      <ul class="navbar-left">
+        <li><a href="">Pocetna</a></li>
+        <li><a href="#strucnjaci">Strucnjaci</a></li>
+        <li><a [routerLink]="['/adverts']">Oglasi</a></li>
+      </ul>
+    </div>
+    <div class="col-4 text-right" *ngIf="(isAuthenticated$ | async) === false">
+      <ul class="navbar-right">
+        <li>
+          <button pButton type="button" routerLink="/auth/login">
+            Prijavi se
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-4 text-right" *ngIf="(isAuthenticated$ | async) === true">
+      <ul class="navbar-right">
+        <li>
+          <p-avatar
+            image="{{ avatarUrl }}"
+            styleClass="mr-2"
+            size="large"
+            shape="circle"
+            (click)="toggleDropdown()"
+          />
+          <div class="dropdown-menu" [ngClass]="{ show: dropdownVisible }">
+            <a
+              *ngIf="role == 'admin'"
+              routerLink="/panel/admin"
+              (click)="toggleProfileDropdown()"
+              >Admin panel</a
+            >
+            <a
+              [routerLink]="isExpert ? '/panel/expert' : '/panel/client'"
+              (click)="toggleProfileDropdown()"
+              >Moj profil</a
+            >
+            <a (click)="logout()">Odjavi se</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-4 text-right menu-button">
+      <button
+        pButton
+        type="button"
+        icon="pi pi-bars"
+        (click)="toggleSidebar()"
+      ></button>
+    </div>
+  </div>
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible">
+  <ul class="sidebar-nav">
+    <li *ngIf="(isAuthenticated$ | async) === true" class="profile-menu">
+      <div class="profile-item" (click)="toggleProfileDropdown()">
+        <p-avatar
+          image="{{ avatarUrl }}"
+          styleClass="mr-2"
+          shape="circle"
+        ></p-avatar>
+        <a>{{ firstName }} {{ lastName }}</a>
+      </div>
+      <div
+        class="profile-dropdown"
+        [ngClass]="{ show: profileDropdownVisible }"
+      >
+        <a
+          *ngIf="role == 'admin'"
+          routerLink="/panel/admin"
+          (click)="toggleProfileDropdown()"
+          >Admin Panel</a
+        >
+        <a
+          [routerLink]="isExpert ? '/panel/expert' : '/panel/client'"
+          (click)="toggleProfileDropdown()"
+          >Moj profil</a
+        >
+        <a (click)="logout()">Odjavi se</a>
+      </div>
+    </li>
+
+    <li><a href="" (click)="toggleSidebar()">Pocetna</a></li>
+    <li><a href="#strucnjaci" (click)="toggleSidebar()">Strucnjaci</a></li>
+    <li>
+      <a href="" [routerLink]="['/adverts']" (click)="toggleSidebar()"
+        >Oglasi</a
+      >
+    </li>
+    <li *ngIf="(isAuthenticated$ | async) === false">
+      <button
+        pButton
+        type="button"
+        routerLink="/auth/login"
+        (click)="toggleSidebar()"
+      >
+        Prijavi se
+      </button>
+    </li>
+  </ul>
+</p-sidebar>

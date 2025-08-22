@@ -1,0 +1,254 @@
+<p-dialog
+  header="Detalji oglasa"
+  [(visible)]="toggleForm"
+  [modal]="true"
+  [style]="{ 'max-width': '1000px' }"
+  [baseZIndex]="10000"
+  [closable]="true"
+  (onHide)="onDialogHide()"
+>
+  <div>
+    <div class="row">
+      <label class="col-5 mr-0 pr-0">Izabrani oglas:</label>
+      <p class="col-7 mt-0 ml-0 mr-0" style="text-align: center">
+        {{ selectedForm.advert.title }}
+      </p>
+    </div>
+    <div class="row">
+      <label class="col-5">Izabrani plan:</label>
+      <p class="col-7 mt-0 pl-0 pr-0" style="text-align: center">
+        {{ selectedForm.choosedPlan }}
+      </p>
+    </div>
+    <div class="row mb-3">
+      <label class="col-5">Cena:</label>
+      <input
+        [disabled]="isLockedInputs"
+        [(ngModel)]="selectedForm.price"
+        class="col-7 task-input no-focus-outline pr-1"
+        type="text"
+        style="
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          color: #4b5563;
+          font-size: 1rem;
+          font-family: var(--font-family);
+        "
+      />
+    </div>
+    <div class="row mb-3">
+      <label class="col-5">Zakazani datum:</label>
+      <input
+        [disabled]="isLockedInputs"
+        type="date"
+        [(ngModel)]="selectedForm.date"
+        class="col-7 date-input no-focus-outline"
+        style="
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          color: #4b5563;
+          font-size: 1rem;
+          font-family: var(--font-family);
+        "
+      />
+    </div>
+    <div class="row mb-3">
+      <label class="col-5">Zakazano vreme:</label>
+      <input
+        [disabled]="isLockedInputs"
+        type="time"
+        [(ngModel)]="selectedForm.time"
+        class="col-7 time-input no-focus-outline"
+        style="
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          color: #4b5563;
+          font-size: 1rem;
+          font-family: var(--font-family);
+        "
+      />
+    </div>
+    <div class="row">
+      <label class="col-5">Opis:</label>
+      <textarea
+        [disabled]="isLockedInputs"
+        [(ngModel)]="selectedForm.description"
+        class="col-7 mb-3 description-input no-focus-outline"
+        rows="5"
+        style="
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          color: #4b5563;
+          font-size: 1rem;
+          font-family: var(--font-family);
+        "
+      ></textarea>
+    </div>
+    <div class="row">
+      <label class="col-12 row">Stavke koje se obradjuju tokom sastanka:</label>
+      <ul style="display: flex; justify-content: center" class="pl-0">
+        <li *ngFor="let task of selectedForm.tasks; let i = index">
+          <div style="display: flex; align-items: center" class="col-12">
+            <i
+              class="pi pi-check-circle custom-icon"
+              style="color: #3b82f6"
+            ></i>
+            <input
+              [disabled]="isLockedInputs"
+              [(ngModel)]="selectedForm.tasks[i]"
+              class="form-control ml-1 mr-1 task-input no-focus-outline"
+              style="
+                flex: 1;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                color: #4b5563;
+                font-size: 0.85rem;
+                font-family: var(--font-family);
+              "
+            />
+            <i
+              class="pi pi-times-circle"
+              style="
+                color: #f44336;
+                cursor: pointer;
+                display: flex;
+                align-items: end;
+              "
+              (click)="deleteTask(i)"
+            ></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="p-dialog-footer p-0">
+    <div style="display: flex; justify-content: flex-end">
+      <p-button
+        label="Odobri"
+        icon="pi pi-check"
+        class="p-button-success mr-2"
+        (click)="acceptForm()"
+        *ngIf="selectedForm.status === 'in_progress'"
+      ></p-button>
+      <p-button
+        label="Odbij"
+        icon="pi pi-times"
+        class="p-button-danger pr-0 btn-custom"
+        (click)="rejectForm()"
+        *ngIf="selectedForm.status === 'in_progress'"
+      ></p-button>
+      <p-button
+        icon="pi pi-phone"
+        class="p-button-success"
+        *ngIf="selectedForm.status === 'accepted'"
+        (onClick)="redirectToCall()"
+      ></p-button>
+    </div>
+  </div>
+</p-dialog>
+
+<div class="container-fluid main-container">
+  <div #aboveChatMessages>
+    <div
+      class="row d-flex justify-content-start align-items-center mt-2-custom"
+      style="
+        border-radius: 1.25rem;
+        background-color: var(--blue-50);
+        height: 10vh;
+      "
+    >
+      <p-avatar
+        image="{{ avatar }}"
+        styleClass="mr-2"
+        size="large"
+        shape="circle"
+        class="ml-2"
+      ></p-avatar>
+      <h6 class="mt-0 mb-0">{{ fullname | truncate : truncateLength }}</h6>
+    </div>
+    <div class="container-fluid" *ngIf="selectedForm.id">
+      <p-button
+        label="Plan sastanka"
+        [outlined]="true"
+        (onClick)="onToggleForm()"
+      />
+    </div>
+  </div>
+
+  <div
+    class="row chat-messages py-2"
+    #chatMessages
+    style="overflow-y: auto"
+    *ngIf="!toggleForm"
+  >
+    <div class="col-12">
+      <div
+        *ngFor="let message of messages"
+        class="d-flex align-items-center"
+        [ngClass]="{
+          'justify-content-start': message.sentBy === 'other',
+          'justify-content-end': message.sentBy === 'me'
+        }"
+      >
+        <img
+          *ngIf="message.sentBy === 'other'"
+          [src]="message.profilePic"
+          class="profile-pic mr-2"
+        />
+        <div
+          class="message"
+          [ngClass]="{
+            'client-message': message.sentBy === 'other',
+            'expert-message': message.sentBy === 'me'
+          }"
+        >
+          <div>{{ message.text }}</div>
+          <div class="timestamp">{{ message.timestamp }}</div>
+        </div>
+
+        <img
+          *ngIf="message.sentBy === 'me'"
+          [src]="message.profilePic"
+          class="profile-pic ml-2"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="container-fluid w-100"
+  #chatInputContainer
+  style="margin-bottom: 10px; position: absolute; bottom: 20px; right: 0px"
+>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      background-color: var(--primary-100);
+      border-radius: 1.25rem;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+    "
+  >
+    <input
+      type="text"
+      class="form-control inputMess"
+      style="
+        width: 90%;
+        margin-right: 10px;
+        background-color: var(--primary-100);
+      "
+      placeholder="Otkucajte nesto..."
+      pInputText
+      [(ngModel)]="newMessage"
+      (keyup.enter)="sendMessage()"
+    />
+    <p-button class="btn btn-primary" (click)="sendMessage()">
+      <i class="pi pi-send"></i>
+    </p-button>
+  </div>
+</div>

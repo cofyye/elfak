@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p-card
+        class="custom-card d-flex flex-column align-items-center justify-content-center vh-100"
+      >
+        <!-- AMOUNT -->
+        <div class="row d-flex justify-content-center">
+          <div
+            *ngFor="let option of options"
+            [id]="option.id"
+            (click)="selectOption(option)"
+            (mouseover)="changeCursor('pointer')"
+            (mouseout)="changeCursor('default')"
+            class="col-3 d-flex justify-content-center selectable p-0"
+            [ngClass]="{
+              selected: selectedOption === option.id,
+              'option-selected': selectedOption === option.id
+            }"
+            style="
+              border: 2px solid var(--surface-400);
+              border-radius: 5px;
+              margin: 8px;
+            "
+          >
+            <h6 class="mt-1 mb-1">
+              {{ option.value }}
+              <i class="fa-solid fa-coins" style="margin-left: 3px"></i>
+            </h6>
+          </div>
+        </div>
+
+        <!-- PAYPAL -->
+        <div
+          class="mt-3 row-paypal"
+          style="display: flex"
+          (click)="selectPaymentMethod('PayPal')"
+          [ngClass]="{
+            'row-paypal-selected': selectedPaymentMethod === 'PayPal'
+          }"
+        >
+          <div class="col-3 pic-paypal" style="height: 20px">
+            <i class="fa-brands fa-cc-paypal mt-3"></i>
+          </div>
+          <div class="col-9 text-paypal">
+            <h3>PayPal</h3>
+          </div>
+        </div>
+
+        <!-- STRIPE -->
+        <div
+          class="mt-3 row-paypal mb-5"
+          style="display: flex"
+          (click)="selectPaymentMethod('Stripe')"
+          [ngClass]="{
+            'row-paypal-selected': selectedPaymentMethod === 'Stripe'
+          }"
+        >
+          <div class="col-3 pic-paypal" style="height: 20px">
+            <img
+              class="smanjena-slika"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png"
+              alt="Ovo je slika"
+              style="margin-top: 20px; margin-left: -5px"
+            />
+          </div>
+          <div class="col-9 text-paypal">
+            <h3>Stripe</h3>
+          </div>
+        </div>
+
+        <!-- Dugme -->
+        <div class="row" style="margin-top: 10px">
+          <div class="col-12">
+            <p-button
+              id="continueButton"
+              label="Nastavi"
+              [style]="{ width: '100%' }"
+              [disabled]="!selectedOption || !selectedPaymentMethod"
+              (onClick)="openConfirmDialog()"
+            ></p-button>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+  <!-- Confirm Dialog -->
+  <div [class.show]="confirmDialogVisible" class="confirm-dialog-overlay">
+    <p-card class="confirm-dialog">
+      <h2>Potvrda kupovine</h2>
+      <p>
+        Da li ste sigurni da želite da kupite
+        <strong
+          >{{ selectedOptionValue }} tokena za
+          {{ selectedOptionPrice }}€</strong
+        >?
+      </p>
+      <div class="dialog-buttons">
+        <p-button label="Da" (click)="confirmPurchase()"></p-button>
+        <p-button label="Ne" (click)="closeConfirmDialog()"></p-button>
+      </div>
+    </p-card>
+  </div>
+</div>
