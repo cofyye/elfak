@@ -1,0 +1,6 @@
+Realni deo je : 5
+Imaginarni deo je : 6
+Realni deo je : 7
+Imaginarni deo je : 8
+Realni deo je : 9
+Imaginarni deo je : 10

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZadatakHesTablicaSpoljasnjeUlancavanje", "ZadatakHesTablicaSpoljasnjeUlancavanje\ZadatakHesTablicaSpoljasnjeUlancavanje.vcxproj", "{540E6D11-149B-4338-A9C8-11CA0144E99D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{540E6D11-149B-4338-A9C8-11CA0144E99D}.Debug|x64.ActiveCfg = Debug|x64
+		{540E6D11-149B-4338-A9C8-11CA0144E99D}.Debug|x64.Build.0 = Debug|x64
+		{540E6D11-149B-4338-A9C8-11CA0144E99D}.Debug|x86.ActiveCfg = Debug|Win32
+		{540E6D11-149B-4338-A9C8-11CA0144E99D}.Debug|x86.Build.0 = Debug|Win32
+		{540E6D11-149B-4338-A9C8-11CA0144E99D}.Release|x64.ActiveCfg = Release|x64
+		{540E6D11-149B-4338-A9C8-11CA0144E99D}.Release|x64.Build.0 = Release|x64
+		{540E6D11-149B-4338-A9C8-11CA0144E99D}.Release|x86.ActiveCfg = Release|Win32
+		{540E6D11-149B-4338-A9C8-11CA0144E99D}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CB0E9AA-DBB6-4BE7-9974-A06400CDD58B}
+	EndGlobalSection
+EndGlobal
