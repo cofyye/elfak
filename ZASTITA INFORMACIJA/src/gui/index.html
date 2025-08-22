@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Encryption Suite</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#e6f7ff",
+                100: "#b3ebff",
+                200: "#80dfff",
+                300: "#4dd3ff",
+                400: "#1ac7ff",
+                500: "#00d4ff",
+                600: "#0099cc",
+                700: "#006699",
+                800: "#004d73",
+                900: "#002a40",
+              },
+              dark: {
+                50: "#f7f7f8",
+                100: "#eaeaec",
+                200: "#d5d5d9",
+                300: "#b0b0b8",
+                400: "#8a8a95",
+                500: "#6c6c78",
+                600: "#565661",
+                700: "#47474f",
+                800: "#3d3d44",
+                900: "#16213e",
+                950: "#0c0c0c",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800 text-gray-100 min-h-screen overflow-x-hidden font-sans"
+  >
+    <div class="max-w-6xl mx-auto p-5">
+      <!-- Header -->
+      <div class="text-center mb-8 py-8">
+        <h1
+          class="text-5xl font-bold bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 bg-clip-text text-transparent mb-4 drop-shadow-2xl"
+        >
+          🔒 File Encryption Suite
+        </h1>
+        <p class="text-gray-300 text-xl font-light">
+          Advanced file encryption with real-time monitoring
+        </p>
+        <div
+          class="mt-4 w-32 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"
+        ></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+        <!-- File System Watcher Section -->
+        <div
+          class="lg:col-span-2 bg-dark-900/80 border border-primary-500/20 rounded-xl p-6 backdrop-blur-lg shadow-2xl hover:border-primary-500/40 transition-all duration-300"
+        >
+          <h2
+            class="text-primary-500 mb-5 text-xl font-semibold border-b-2 border-primary-500/30 pb-2"
+          >
+            ⚙️ Settings
+          </h2>
+
+          <!-- File System Watcher Toggle -->
+          <div
+            class="flex flex-col sm:flex-row gap-3 items-start sm:items-center mb-6"
+          >
+            <label class="text-gray-300 font-medium min-w-32"
+              >File System Watcher:</label
+            >
+            <div class="flex items-center gap-3">
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="fswToggle" class="sr-only peer" />
+                <div
+                  class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-500/50 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"
+                ></div>
+                <span
+                  class="ml-3 text-sm font-medium text-gray-300 peer-checked:text-primary-400"
+                  id="fswToggleLabel"
+                  >Disabled</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 mb-6">
+            <!-- Target Directory -->
+            <div
+              class="flex flex-col sm:flex-row gap-3 items-start sm:items-center"
+            >
+              <label class="text-gray-300 font-medium min-w-32"
+                >Target Directory:</label
+              >
+              <div class="flex gap-3 items-center flex-1 w-full">
+                <span
+                  id="targetDirDisplay"
+                  class="text-gray-400 flex-1 px-3 py-2 bg-dark-800/50 rounded border border-gray-600 text-sm"
+                >
+                  Not set
+                </span>
+                <button
+                  id="selectTargetDir"
+                  class="btn-modern bg-gray-700/80 border border-primary-500/30 text-white px-4 py-2 rounded-lg hover:bg-gray-600/90 hover:border-primary-500/50 transition-all duration-300 whitespace-nowrap"
+                >
+                  📁 Browse
+                </button>
+              </div>
+            </div>
+
+            <!-- Encrypted Directory -->
+            <div
+              class="flex flex-col sm:flex-row gap-3 items-start sm:items-center"
+            >
+              <label class="text-gray-300 font-medium min-w-32"
+                >Encrypted Files Directory:</label
+              >
+              <div class="flex gap-3 items-center flex-1 w-full">
+                <span
+                  id="encryptedDirDisplay"
+                  class="text-gray-400 flex-1 px-3 py-2 bg-dark-800/50 rounded border border-gray-600 text-sm"
+                >
+                  Not set
+                </span>
+                <button
+                  id="selectEncryptedDir"
+                  class="btn-modern bg-gray-700/80 border border-primary-500/30 text-white px-4 py-2 rounded-lg hover:bg-gray-600/90 hover:border-primary-500/50 transition-all duration-300 whitespace-nowrap"
+                >
+                  📁 Browse
+                </button>
+              </div>
+            </div>
+
+            <!-- FSW Algorithm Selection -->
+            <div
+              class="flex flex-col sm:flex-row gap-3 items-start sm:items-center"
+            >
+              <label class="text-gray-300 font-medium min-w-32"
+                >FSW Algorithm:</label
+              >
+              <select
+                id="fswAlgorithmSelect"
+                class="flex-1 px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300"
+              >
+                <option value="doubleTransposition">
+                  Double Transposition
+                </option>
+                <option value="a52">A5/2</option>
+                <option value="cfb" selected>CFB Mode</option>
+              </select>
+            </div>
+
+            <!-- Encrypt Secret Key -->
+            <div
+              class="flex flex-col sm:flex-row gap-3 items-start sm:items-center"
+            >
+              <label class="text-gray-300 font-medium min-w-32"
+                >🔒 Encrypt Key:</label
+              >
+              <div class="flex gap-3 items-center flex-1 w-full">
+                <input
+                  id="encryptSecretKeyInput"
+                  type="text"
+                  placeholder="Enter encryption key..."
+                  class="flex-1 px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300 text-sm font-mono"
+                />
+                <button
+                  id="generateEncryptKey"
+                  class="btn-modern bg-primary-600/80 border border-primary-500/50 text-white px-3 py-2 rounded-lg hover:bg-primary-500/90 hover:border-primary-400/70 transition-all duration-300 text-sm whitespace-nowrap"
+                  title="Generate random key"
+                >
+                  🎲
+                </button>
+              </div>
+            </div>
+
+            <!-- Decrypt Secret Key -->
+            <div
+              class="flex flex-col sm:flex-row gap-3 items-start sm:items-center"
+            >
+              <label class="text-gray-300 font-medium min-w-32"
+                >🔓 Decrypt Key:</label
+              >
+              <div class="flex gap-3 items-center flex-1 w-full">
+                <input
+                  id="decryptSecretKeyInput"
+                  type="text"
+                  placeholder="Enter decryption key..."
+                  class="flex-1 px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300 text-sm font-mono"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TCP Client Section - Send files to other students -->
+        <div
+          id="tcpClientSection"
+          class="bg-dark-900/80 border border-primary-500/20 rounded-xl p-6 backdrop-blur-lg shadow-2xl hover:border-primary-500/40 transition-all duration-300 hidden"
+        >
+          <h2
+            class="text-primary-500 mb-5 text-xl font-semibold border-b-2 border-primary-500/30 pb-2"
+          >
+            📤 TCP Client - Send Files
+          </h2>
+
+          <div class="flex flex-col gap-4 mb-6">
+            <!-- Connection Settings -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <!-- Target Host -->
+              <div class="flex flex-col gap-2">
+                <label class="text-gray-300 font-medium text-sm"
+                  >Target Host:</label
+                >
+                <input
+                  id="clientHostInput"
+                  type="text"
+                  placeholder="e.g., localhost or 192.168.1.100"
+                  value="localhost"
+                  class="px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300"
+                />
+              </div>
+
+              <!-- Target Port -->
+              <div class="flex flex-col gap-2">
+                <label class="text-gray-300 font-medium text-sm"
+                  >Target Port:</label
+                >
+                <input
+                  id="clientPortInput"
+                  type="number"
+                  placeholder="e.g., 3000"
+                  value="3000"
+                  min="1024"
+                  max="65535"
+                  class="px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300"
+                />
+              </div>
+            </div>
+
+            <!-- File Selection -->
+            <div class="flex flex-col gap-3 mb-4">
+              <button
+                id="chooseTcpFile"
+                class="btn-modern bg-primary-600/80 border border-primary-500/50 text-white px-4 py-2 rounded-lg hover:bg-primary-500/90 hover:border-primary-400/70 transition-all duration-300 w-full sm:w-auto"
+              >
+                <span id="chooseTcpFileText">📄 Choose File</span>
+              </button>
+              <div id="tcpFileStatus" class="text-sm text-gray-400">
+                No file selected
+              </div>
+            </div>
+
+            <!-- Algorithm Selection -->
+            <div
+              class="flex flex-col sm:flex-row gap-3 items-start sm:items-center"
+            >
+              <label class="text-gray-300 font-medium min-w-32"
+                >Algorithm:</label
+              >
+              <select
+                id="tcpAlgorithmSelect"
+                class="flex-1 px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300"
+              >
+                <option value="doubleTransposition">
+                  Double Transposition
+                </option>
+                <option value="a52">A5/2</option>
+                <option value="cfb" selected>CFB Mode</option>
+              </select>
+            </div>
+
+            <!-- Send Button -->
+            <div class="flex flex-wrap gap-3">
+              <button
+                id="sendFileBtn"
+                class="btn-modern bg-green-600/80 border border-green-500/50 text-white px-4 py-2 rounded-lg hover:bg-green-500/90 hover:border-green-400/70 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
+                disabled
+              >
+                📤 Send File
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TCP Server Section - Receive files from other students -->
+        <div
+          id="tcpServerSection"
+          class="bg-dark-900/80 border border-primary-500/20 rounded-xl p-6 backdrop-blur-lg shadow-2xl hover:border-primary-500/40 transition-all duration-300 hidden"
+        >
+          <h2
+            class="text-primary-500 mb-5 text-xl font-semibold border-b-2 border-primary-500/30 pb-2"
+          >
+            📥 TCP Server - Receive Files
+          </h2>
+
+          <div class="flex flex-col gap-4 mb-6">
+            <!-- Server Settings -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <!-- Server IP (read-only) -->
+              <div class="flex flex-col gap-2">
+                <label class="text-gray-300 font-medium text-sm"
+                  >Your IP Address:</label
+                >
+                <input
+                  id="serverHostDisplay"
+                  type="text"
+                  value="Loading..."
+                  readonly
+                  class="px-3 py-2 bg-dark-800/30 border border-gray-700 rounded-lg text-gray-400 cursor-not-allowed"
+                />
+              </div>
+
+              <!-- Server Port -->
+              <div class="flex flex-col gap-2">
+                <label class="text-gray-300 font-medium text-sm"
+                  >Server Port:</label
+                >
+                <input
+                  id="serverPortInput"
+                  type="number"
+                  placeholder="e.g., 3000"
+                  value="3000"
+                  min="1024"
+                  max="65535"
+                  class="px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300"
+                />
+              </div>
+            </div>
+
+            <!-- Expected Algorithm Selection -->
+            <div class="flex flex-col gap-2 mb-4">
+              <label class="text-gray-300 font-medium text-sm"
+                >Expected Algorithm (for received files):</label
+              >
+              <select
+                id="serverAlgorithmSelect"
+                class="px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300"
+              >
+                <option value="doubleTransposition">
+                  Double Transposition
+                </option>
+                <option value="a52">A5/2</option>
+                <option value="cfb" selected>CFB Mode</option>
+              </select>
+            </div>
+
+            <!-- Server Control -->
+            <div class="flex flex-wrap gap-3">
+              <button
+                id="startServerBtn"
+                class="btn-modern bg-blue-600/80 border border-blue-500/50 text-white px-4 py-2 rounded-lg hover:bg-blue-500/90 hover:border-blue-400/70 transition-all duration-300"
+              >
+                🏠 Start Server
+              </button>
+              <button
+                id="stopServerBtn"
+                class="btn-modern bg-red-600/80 border border-red-500/50 text-white px-4 py-2 rounded-lg hover:bg-red-500/90 hover:border-red-400/70 transition-all duration-300 hidden"
+              >
+                🛑 Stop Server
+              </button>
+            </div>
+
+            <!-- Server Status -->
+            <div class="text-sm text-gray-400">
+              <p>
+                <strong>Instructions:</strong> Share your IP address and port
+                with other students so they can send files to you. Received
+                files will be saved in the 'tcp_server_files' folder.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manual Encryption Section -->
+        <div
+          id="manualSection"
+          class="bg-dark-900/80 border border-primary-500/20 rounded-xl p-6 backdrop-blur-lg shadow-2xl hover:border-primary-500/40 transition-all duration-300"
+        >
+          <h2
+            class="text-primary-500 mb-5 text-xl font-semibold border-b-2 border-primary-500/30 pb-2"
+          >
+            🔐 Manual Encryption
+          </h2>
+
+          <!-- File Selection -->
+          <div class="flex flex-col gap-3 mb-4">
+            <button
+              id="chooseFile"
+              class="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-5 py-3 rounded-lg shadow-lg hover:from-primary-500 hover:to-primary-600 transition-all w-full sm:w-auto"
+            >
+              <span id="chooseFileText">📁 Choose File</span>
+            </button>
+            <div id="encryptFileStatus" class="text-sm text-gray-400">
+              No file selected
+            </div>
+          </div>
+
+          <!-- Algorithm Selection -->
+          <div class="flex flex-col gap-3 mb-4">
+            <label class="text-gray-300 font-medium text-sm">Algorithm:</label>
+            <select
+              id="algorithm"
+              class="bg-dark-800/80 border border-primary-500/30 text-white px-4 py-2.5 rounded-md text-sm"
+            >
+              <option value="cfb">CFB Mode</option>
+              <option value="doubleTransposition">Double Transposition</option>
+              <option value="a52">A5/2</option>
+            </select>
+          </div>
+
+          <!-- Encrypt Button -->
+          <div class="flex flex-wrap gap-3 items-center mb-4">
+            <button
+              id="encrypt"
+              class="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-5 py-3 rounded-lg shadow-lg hover:from-primary-500 hover:to-primary-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled
+            >
+              🔒 Encrypt File
+            </button>
+          </div>
+        </div>
+
+        <!-- File Decryption Section -->
+        <div
+          class="bg-dark-900/80 border border-primary-500/20 rounded-xl p-6 backdrop-blur-lg shadow-2xl hover:border-primary-500/40 transition-all duration-300"
+        >
+          <h2
+            class="text-primary-500 mb-5 text-xl font-semibold border-b-2 border-primary-500/30 pb-2"
+          >
+            🔓 File Decryption
+          </h2>
+
+          <!-- File Selection -->
+          <div class="flex flex-col gap-3 mb-4">
+            <button
+              id="chooseEncryptedFile"
+              class="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-5 py-3 rounded-lg shadow-lg hover:from-primary-500 hover:to-primary-600 transition-all w-full sm:w-auto"
+            >
+              <span id="chooseEncryptedFileText">📄 Choose Encrypted File</span>
+            </button>
+            <div id="decryptFileStatus" class="text-sm text-gray-400">
+              No file selected
+            </div>
+          </div>
+
+          <!-- Decryption Algorithm Selection -->
+          <div class="flex flex-col gap-3 mb-4">
+            <label class="text-gray-300 font-medium text-sm"
+              >🔧 Decryption Algorithm:</label
+            >
+            <select
+              id="decryptAlgorithmSelect"
+              class="w-full px-3 py-2 bg-dark-800/50 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300"
+            >
+              <option value="doubleTransposition">Double Transposition</option>
+              <option value="a52">A5/2</option>
+              <option value="cfb" selected>CFB Mode</option>
+            </select>
+          </div>
+
+          <!-- Decrypt Button -->
+          <div class="flex flex-wrap gap-3 items-center mb-4">
+            <button
+              id="decrypt"
+              class="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-5 py-3 rounded-lg shadow-lg hover:from-primary-500 hover:to-primary-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled
+            >
+              🔓 Decrypt File
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Log -->
+      <div
+        class="lg:col-span-2 bg-dark-900/80 border border-primary-500/20 rounded-xl p-6 backdrop-blur-lg shadow-2xl hover:border-primary-500/40 transition-all duration-300"
+      >
+        <h2
+          class="text-primary-500 mb-5 text-xl font-semibold border-b-2 border-primary-500/30 pb-2"
+        >
+          📊 Activity Log
+        </h2>
+        <div
+          id="log"
+          class="bg-black/50 border border-primary-500/20 rounded-lg p-4 h-64 overflow-y-auto font-mono text-sm leading-relaxed"
+        ></div>
+      </div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

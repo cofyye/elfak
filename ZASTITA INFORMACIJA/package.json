@@ -1,0 +1,40 @@
+{
+  "name": "file-encryption-desktop-app",
+  "version": "1.0.0",
+  "description": "File encryption desktop application",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc && npm run copy-gui",
+    "package": "electron-builder",
+    "copy-gui": "cp -r src/gui dist/src/ && cp dist/src/gui/renderer.js src/gui/"
+  },
+  "keywords": [
+    "encryption",
+    "desktop",
+    "electron"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "concurrently": "latest",
+    "electron": "^36.3.1",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3"
+  },
+  "build": {
+    "appId": "com.ziproject.app",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "src/gui/**/*"
+    ]
+  }
+}
