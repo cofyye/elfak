@@ -1,0 +1,16 @@
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\bin\Debug\net8.0-windows\FilipLakicevic_18724_MMS.exe
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\bin\Debug\net8.0-windows\FilipLakicevic_18724_MMS.deps.json
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\bin\Debug\net8.0-windows\FilipLakicevic_18724_MMS.runtimeconfig.json
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\bin\Debug\net8.0-windows\FilipLakicevic_18724_MMS.dll
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\bin\Debug\net8.0-windows\FilipLakicevic_18724_MMS.pdb
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.Form1.resources
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.csproj.GenerateResource.cache
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.AssemblyInfoInputs.cache
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.AssemblyInfo.cs
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.csproj.CoreCompileInputs.cache
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.dll
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\refint\FilipLakicevic_18724_MMS.dll
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.pdb
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\FilipLakicevic_18724_MMS.genruntimeconfig.cache
+C:\Users\cofyye\source\repos\FilipLakicevic_18724_MMS\FilipLakicevic_18724_MMS\obj\Debug\net8.0-windows\ref\FilipLakicevic_18724_MMS.dll
