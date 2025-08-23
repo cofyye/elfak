@@ -1,0 +1,6 @@
+FilipLakicevic_18724_MMS - Grupa 1
+MatrixMixer - Grupa 3
+
+
+MMS2025.pdf - sve informacije za projekat
+Filters.cs - filteri od profesora 
