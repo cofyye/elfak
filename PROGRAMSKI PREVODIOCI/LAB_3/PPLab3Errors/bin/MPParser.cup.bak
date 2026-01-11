@@ -1,0 +1,193 @@
+import java_cup.runtime.*;
+import java.io.*;
+
+parser code {:
+
+   public int errNo = 0;
+   
+   public static void main( String[] args )
+   {
+      try
+	  {
+		   FileReader file = new FileReader( args[0] );
+		   Scanner scanner = new MPLexer( file );
+		   MPParser parser = new MPParser( scanner );
+		   parser.parse();
+		   if ( parser.errNo == 0 )
+		      System.out.println( "Analiza zavrsena. U kodu nema gresaka." );
+		   else
+		      System.out.println( "Analiza zavrsena. Broj gresaka: " + parser.errNo );
+	  }
+	  catch( Exception e )
+	  {
+		   e.printStackTrace();
+	  }
+   }
+   
+   public void syntax_error(Symbol cur_token)
+   {
+   	   System.out.println("Sintaksna greska u liniji " + getLine() + ": " + cur_token.value);
+       errNo++;
+   }
+   
+   public void report_error(String message, Object info)
+   {
+   	   System.out.println(message + " u liniji " + getLine() + ": " + info);
+    	errNo++;
+   }
+   
+   public int getLine()
+   {
+   	  return (( MPLexer) getScanner()).getLine();
+   }
+:};
+
+// Terminali
+terminal PROGRAM, DOT, BEGIN, END, INTEGER, CHAR, REAL, BOOLEAN, WHILE, ELSE, OR, AND;
+terminal ID, CONST, ASSIGN, SEMI, COLON, COMMA, LEFTPAR, RIGHTPAR;
+terminal LESS, LEQ, EQUAL, NEQ, GREATER, GEQ;
+
+// Neterminali
+non terminal Program, Block, Variables, Declaration, NameList, Type, StatementList, Statement;
+non terminal WhileLoop, Expression, AndExpression, RelExpression, Term, RelOp;
+
+import java_cup.runtime.*;
+import java.io.*;
+
+parser code {:
+
+   public int errNo = 0;
+   
+   public static void main( String[] args )
+   {
+      try
+	  {
+		   FileReader file = new FileReader( args[0] );
+		   Scanner scanner = new MPLexer( file );
+		   MPParser parser = new MPParser( scanner );
+		   parser.parse();
+		   if ( parser.errNo == 0 )
+		      System.out.println( "Analiza zavrsena. U kodu nema gresaka." );
+		   else
+		      System.out.println( "Analiza zavrsena. Broj gresaka: " + parser.errNo );
+	  }
+	  catch( Exception e )
+	  {
+		   e.printStackTrace();
+	  }
+   }
+   
+   public void syntax_error(Symbol cur_token)
+   {
+   	   System.out.println("Sintaksna greska u liniji " + getLine() + ": " + cur_token.value);
+       errNo++;
+   }
+   
+   public void report_error(String message, Object info)
+   {
+   	   System.out.println(message + " u liniji " + getLine() + ": " + info);
+    	errNo++;
+   }
+   
+   public int getLine()
+   {
+   	  return (( MPLexer) getScanner()).getLine();
+   }
+:};
+
+// Terminali
+terminal PROGRAM, DOT, BEGIN, END, INTEGER, CHAR, REAL, BOOLEAN, WHILE, ELSE, OR, AND;
+terminal ID, CONST, ASSIGN, SEMI, COLON, COMMA, LEFTPAR, RIGHTPAR;
+terminal LESS, LEQ, EQUAL, NEQ, GREATER, GEQ;
+
+// Neterminali
+non terminal Program, Block, Variables, Declaration, NameList, Type, StatementList, Statement;
+non terminal WhileLoop, Expression, AndExpression, RelExpression, Term, RelOp;
+
+// Gramatika
+Program ::= PROGRAM Block DOT
+			| PROGRAM Block error
+			{:
+               System.out.println( "Greska u liniji " + parser.getLine() + ": Nedostaje '.' na kraju programa" );
+               parser.errNo++;
+            :}
+			| PROGRAM error
+			{:
+               System.out.println( "Greska u liniji " + parser.getLine() + ": Nedostaje telo programa" );
+               parser.errNo++;
+            :}
+			| error
+			{:
+               System.out.println( "Greska u liniji " + parser.getLine() + ": Nedostaje kljucna rec 'program' na pocetku" );
+               parser.errNo++;
+            :} ;
+
+Block ::= BEGIN Variables StatementList END
+			| BEGIN Variables StatementList error
+			{:
+               System.out.println( "Greska u liniji " + parser.getLine() + ": Nedostaje kljucna rec 'end' na kraju bloka." );
+               parser.errNo++;
+            :} 
+			| BEGIN error
+			{:
+               System.out.println( "Greska u liniji " + parser.getLine() + ": Ocekuju se promenljive." );
+               parser.errNo++;
+            :}
+			;
+
+Variables ::= Variables Declaration
+            |/* epsilon */;
+
+Declaration ::= NameList COLON Type SEMI
+              | NameList COLON error
+                {:
+                   System.out.println("Greska u liniji " + parser.getLine() + ": Nekorektno ime tipa.");
+                   parser.errNo++;
+                :}
+              | NameList error
+                {:
+                   System.out.println("Greska u liniji " + parser.getLine() + ": Nedostaje simbol ':' nakon imena.");
+                   parser.errNo++;
+                :} ;
+
+NameList ::= NameList COMMA ID
+           | ID;
+
+Type ::= INTEGER
+       | CHAR
+       | REAL
+       | BOOLEAN;
+
+StatementList ::= Statement
+               | StatementList Statement;
+
+Statement ::= WhileLoop
+           | ID ASSIGN Expression SEMI
+           | Block;
+
+WhileLoop ::= WHILE Expression COLON Statement ELSE Statement;
+
+Expression ::= Expression OR AndExpression
+            | AndExpression;
+
+AndExpression ::= AndExpression AND RelExpression
+               | RelExpression;
+
+RelExpression ::= Term RelOp Term
+               | Term;
+
+RelOp ::= LESS
+        | LEQ
+        | EQUAL
+        | NEQ
+        | GREATER
+        | GEQ;
+
+Term ::= ID
+       | CONST
+       | LEFTPAR Expression RIGHTPAR;
+
+
+
+
+

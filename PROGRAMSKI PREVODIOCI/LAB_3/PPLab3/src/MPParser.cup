@@ -1,0 +1,180 @@
+import java_cup.runtime.*;
+import java.io.*;
+
+parser code {:
+   public static void main( String[] args )
+   {
+      try
+	  {
+		   FileReader file = new FileReader( args[0] );
+		   Scanner scanner = new MPLexer( file );
+		   MPParser parser = new MPParser( scanner );
+		   parser.parse();
+	  }
+	  catch( Exception e )
+	  {
+		   e.printStackTrace();
+	  }
+   }
+:};
+
+// Terminali
+terminal PROGRAM, DOT, BEGIN, END, INTEGER, CHAR, REAL, BOOLEAN, WHILE, ELSE, OR, AND;
+terminal ID, CONST, ASSIGN, SEMI, COLON, COMMA, LEFTPAR, RIGHTPAR;
+terminal LESS, LEQ, EQUAL, NEQ, GREATER, GEQ;
+
+// Neterminali
+non terminal Program, Block, Variables, Declaration, NameList, Type, StatementList, Statement;
+non terminal WhileLoop, Expression, AndExpression, RelExpression, Term, RelOp;
+
+// Gramatika
+Program ::= PROGRAM Block DOT
+            {:
+               System.out.println("Redukcija 1: Program ::= program Block .");
+            :};
+
+Block ::= BEGIN Variables StatementList END
+          {:
+             System.out.println("Redukcija 2: Block ::= begin Variables StatementList end");
+          :};
+
+Variables ::= Variables Declaration
+               {:
+                  System.out.println("Redukcija 3: Variables ::= Variables Declaration");
+               :}
+            | /* epsilon */
+               {:
+                  System.out.println("Redukcija 4: Variables ::= ε");
+               :};
+
+Declaration ::= NameList COLON Type SEMI
+                {:
+                   System.out.println("Redukcija 5: Declaration ::= NameList : Type ;");
+                :};
+
+NameList ::= NameList COMMA ID
+              {:
+                 System.out.println("Redukcija 6: NameList ::= NameList , ID");
+              :}
+           | ID
+              {:
+                 System.out.println("Redukcija 7: NameList ::= ID");
+              :};
+
+Type ::= INTEGER
+          {:
+             System.out.println("Redukcija 8: Type ::= integer");
+          :}
+       | CHAR
+          {:
+             System.out.println("Redukcija 9: Type ::= char");
+          :}
+       | REAL
+          {:
+             System.out.println("Redukcija 10: Type ::= real");
+          :}
+       | BOOLEAN
+          {:
+             System.out.println("Redukcija 11: Type ::= boolean");
+          :};
+
+StatementList ::= Statement
+                  {:
+                     System.out.println("Redukcija 12: StatementList ::= Statement");
+                  :}
+               | StatementList Statement
+                  {:
+                     System.out.println("Redukcija 13: StatementList ::= StatementList Statement");
+                  :};
+
+Statement ::= WhileLoop
+              {:
+                 System.out.println("Redukcija 14: Statement ::= WhileLoop");
+              :}
+           | ID ASSIGN Expression SEMI
+              {:
+                 System.out.println("Redukcija 15: Statement ::= ID := Expression ;");
+              :}
+           | Block
+              {:
+                 System.out.println("Redukcija 16: Statement ::= Block");
+              :};
+
+WhileLoop ::= WHILE Expression COLON Statement ELSE Statement
+              {:
+                 System.out.println("Redukcija 17: WhileLoop ::= while Expression : Statement else Statement");
+              :};
+
+Expression ::= Expression OR AndExpression
+                {:
+                   System.out.println("Redukcija 18: Expression ::= Expression or AndExpression");
+                :}
+             | AndExpression
+                {:
+                   System.out.println("Redukcija 19: Expression ::= AndExpression");
+                :};
+
+AndExpression ::= AndExpression AND RelExpression
+                   {:
+                      System.out.println("Redukcija 20: AndExpression ::= AndExpression and RelExpression");
+                   :}
+                | RelExpression
+                   {:
+                      System.out.println("Redukcija 21: AndExpression ::= RelExpression");
+                   :};
+
+RelExpression ::= Term RelOp Term
+                   {:
+                      System.out.println("Redukcija 22: RelExpression ::= Term RelOp Term");
+                   :}
+                | Term
+                   {:
+                      System.out.println("Redukcija 23: RelExpression ::= Term");
+                   :};
+
+RelOp ::= LESS
+          {:
+             System.out.println("Redukcija 24: RelOp ::= <");
+          :}
+       | LEQ
+          {:
+             System.out.println("Redukcija 25: RelOp ::= <=");
+          :}
+       | EQUAL
+          {:
+             System.out.println("Redukcija 26: RelOp ::= ==");
+          :}
+       | NEQ
+          {:
+             System.out.println("Redukcija 27: RelOp ::= <>");
+          :}
+       | GREATER
+          {:
+             System.out.println("Redukcija 28: RelOp ::= >");
+          :}
+       | GEQ
+          {:
+             System.out.println("Redukcija 29: RelOp ::= >=");
+          :};
+
+Term ::= ID
+          {:
+             System.out.println("Redukcija 30: Term ::= ID");
+          :}
+       | CONST
+          {:
+             System.out.println("Redukcija 31: Term ::= CONST");
+          :}
+       | LEFTPAR Expression RIGHTPAR
+          {:
+             System.out.println("Redukcija 32: Term ::= ( Expression )");
+          :};
+
+
+
+
+
+
+
+
+
