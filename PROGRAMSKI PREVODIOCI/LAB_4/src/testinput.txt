@@ -1,0 +1,7 @@
+program
+begin
+  var1 : integer;
+  x : integer;
+  var1 := 5;
+  while var1 > 0 : x:= 10; else x:= 0;
+end.
