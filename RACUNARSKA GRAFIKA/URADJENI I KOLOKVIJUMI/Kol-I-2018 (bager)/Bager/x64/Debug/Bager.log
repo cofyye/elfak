@@ -1,0 +1,221 @@
+﻿  pch.cpp
+  Bager.cpp
+  BagerDoc.cpp
+  BagerView.cpp
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(39,68): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(40,68): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(108,18): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(109,18): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(110,15): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(111,18): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(224,14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(241,14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(248,14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(266,14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(277,14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\BagerView.cpp(282,14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '/BagerView.cpp')
+  
+  DImage.cpp
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(556,12): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(566,20): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(606,12): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(630,20): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(770,18): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(783,18): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(856,16): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(894,46): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(912,46): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(1829,46): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(1858,68): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(1876,48): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(2870,46): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(2995,50): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3001,67): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3010,33): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3012,26): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3021,52): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3057,32): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3061,28): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3083,22): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3086,60): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3097,34): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3137,56): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3337,27): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3348,34): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3352,20): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3532,16): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3536,16): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3544,16): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3552,16): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3565,16): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3582,16): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3586,22): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3734,35): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3762,20): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3773,40): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3774,40): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3788,24): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3807,45): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3825,44): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3836,36): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3846,50): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3873,28): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(3874,35): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4091,35): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4095,53): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4101,28): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4113,24): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4142,54): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4150,55): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4167,24): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4200,24): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4234,20): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4347,16): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4356,27): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4361,43): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4365,43): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\Bager\DImage.cpp(4415,72): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  (compiling source file '/DImage.cpp')
+  
+  MainFrm.cpp
+  Generating Code...
+  Bager.vcxproj -> C:\Users\cofyye\Desktop\elfak\RACUNARSKA GRAFIKA\URADJENI I KOLOKVIJUMI\Kol-I-2018 (bager)\x64\Debug\Bager.exe
