@@ -1,0 +1,213 @@
+﻿GDI BITNE FUNKCIJE
+
+
+void CMy18724FilipLakicevicView::DegToRad(float deg) { return deg * 3.14f / 180.0f; }
+
+
+void CMy18724FilipLakicevicView::Translate(CDC* pDC, float dx, float dy, bool rightMultiply)
+{
+            XFORM xf { 1, 0, 0, 1, dx, dy };
+pDC->ModifyWorldTransform(&xf, rightMultiply ?        MWT_RIGHTMULTIPLY : MWT_LEFTMULTIPLY);
+}
+
+
+void CMy18724FilipLakicevicView::Rotate(CDC* pDC, float angleDeg, bool rightMultiply)
+{
+        angle = DegToRad(angle);
+
+
+        XFORM xform;
+        xform.eM11 = cos(angle);
+        xform.eM12 = sin(angle);
+        xform.eM21 = -sin(angle);
+        xform.eM22 = cos(angle);
+        xform.eDx = 0.0;
+        xform.eDy = 0.0;
+
+
+        pDC->ModifyWorldTransform(&xform, rightMultiply ? 
+MWT_RIGHTMULTIPLY : MWT_LEFTMULTIPLY);
+}
+
+
+void CMy18724FilipLakicevicView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+        Break or if’s
+
+
+        Invalidate();
+}
+void CMy18724FilipLakicevicView::Scale(CDC* pDC, float sX, float sY, bool rightMultiply)
+{
+        XFORM xform{};
+        xform.eM11 = sX;
+        xform.eM12 = 0.0;
+        xform.eM21 = 0.0;
+        xform.eM22 = sY;
+        xform.eDx = 0.0;
+        xform.eDy = 0.0;
+
+
+pDC->ModifyWorldTransform(&xform, rightMultiply ?   MWT_RIGHTMULTIPLY : MWT_LEFTMULTIPLY);
+}
+
+
+bool CMy18724FilipLakicevicView::OnEraseBkgnd(CDC* pDC)
+{
+        return true;
+}
+
+
+void CMy18724FilipLakicevicView::Mirror(CDC* pDC, bool mx, bool my, bool rightMultiply)
+{
+Scale(pDC, mx ? -1 : 1, my ? -1 : 1, rightMultiply);
+}
+
+
+Inicijalizacija metafile
+GetEnhMetaFile(CString("GDI2018Resursi\\viljuska.emf")); 
+
+
+Brisanje metafile
+DeleteEnhMetaFile(img4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Crtanje pozadinske slike u prirodnoj velicini
+void CMy18724FilipLakicevicView::DrawBackground(CDC* pDC)
+{
+    CRect client;
+    GetClientRect(&client);
+    pozadina->Draw(pDC, CRect(0, 0, pozadina->Width(), pozadina->Height()), client);
+}
+
+
+/* Crtanje pozadinske slike  tako da
+je uvek centrirana po X-osi, prilikom promene veličine prozora, a donja ivica se poklapa sa
+donjom ivicom klijentskog dela prozora */
+void CMy18724FilipLakicevicView::DrawBackground(CDC* pDC) {
+        CRect client;
+    GetClientRect(&client);
+    int x, y, w, h;
+    x = (client.Width() - pozadina->Width()) / 2;
+    w = x + pozadina->Width();
+    y = client.Height() - pozadina->Height();
+    h = y + pozadina->Height();
+    pozadina->Draw(pDC, CRect(0, 0, pozadina->Width(), pozadina->Height()), CRect(x, y, w, h));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void CMy18724FilipLakicevicView::DrawImgTransparent(CDC* pDC, DImage* pImage)
+{
+        int w = pImage->Width();
+        int h = pImage->Height();
+
+
+        CBitmap bmpImage, bmpMask;
+        bmpImage.CreateCompatibleBitmap(pDC, w, h);
+        bmpMask.CreateBitmap(w, h, 1, 1, NULL);
+
+
+        CDC* pSrcDC = new CDC();
+        pSrcDC->CreateCompatibleDC(pDC);
+        pSrcDC->SelectObject(bmpImage);
+
+
+        CDC* pMaskDC = new CDC();
+        pMaskDC->CreateCompatibleDC(pDC);
+        pMaskDC->SelectObject(bmpMask);
+
+
+        pImage->Draw(
+                pSrcDC,
+                CRect(0, 0, w, h),
+                CRect(0, 0, w, h)
+        );
+
+
+        COLORREF pozadina = pSrcDC->GetPixel(0, 0);
+        pSrcDC->SetBkColor(pozadina);
+        pMaskDC->BitBlt(0, 0, w, h, pSrcDC, 0, 0, SRCCOPY);
+
+
+        pSrcDC->SetBkColor(RGB(0, 0, 0));
+        pSrcDC->SetTextColor(RGB(255, 255, 255));
+        pSrcDC->BitBlt(0, 0, w, h, pMaskDC, 0, 0, SRCAND);
+
+
+        pDC->BitBlt(0, 0, w, h, pMaskDC, 0, 0, SRCAND);
+        pDC->BitBlt(0, 0, w, h, pSrcDC, 0, 0, SRCPAINT);
+
+
+        delete pSrcDC, pMaskDC;
+}
+
+
+void CMy18724FilipLakicevicView::OnDraw(CDC* pDC) {
+    CLampaDoc* pDoc = GetDocument();
+    ASSERT_VALID(pDoc);
+    if (!pDoc)
+        return;
+    CRect rect;
+    GetClientRect(&rect);
+    CDC memDC;
+    memDC.CreateCompatibleDC(pDC);
+    CBitmap bmp;
+    bmp.CreateCompatibleBitmap(pDC, rect.Width(), rect.Height());
+    CBitmap* oldbmp = memDC.SelectObject(&bmp);
+    int oldmode = memDC.SetGraphicsMode(GM_ADVANCED);
+    XFORM form;
+    memDC.GetWorldTransform(&form);
+    DrawBackground(&memDC);
+    //ukljucuju DrawBakcg ti je isto
+
+
+    //odavde ti ide ako hoces da ti bude na polovini ekrana slika koju crtas
+    //ali vodi red, jer to zavisi i koliko ti je background slika
+    //znaci ovaj translate u zavinsoti od zadatka
+    Translate(&memDC, rect.Width() / 2, rect.Height() - 200, false);
+
+
+    //ovo pozivas u zavisnosti od fje, znaci moze i bez translate i sa bez
+    DrawLampShadow(&memDC);
+    DrawLamp(&memDC, false);
+    Translate(&memDC, -rect.Width() / 2, -(rect.Height() - 200), false);
+
+
+    //isto
+    memDC.SetWorldTransform(&form);
+    pDC->BitBlt(0, 0, rect.Width(), rect.Height(), &memDC, 0, 0, SRCCOPY);
+    memDC.SetGraphicsMode(oldmode);
+    memDC.SelectObject(oldbmp);
+}
