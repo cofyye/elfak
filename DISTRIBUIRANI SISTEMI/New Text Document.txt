@@ -1,0 +1,82 @@
+- Definicija DS-a
+- Šta je konzistentni presek
+- Šta je sekunda preskoka i zašto se koristi
+- Šta su algoritmi izbora navesti sve i objasni ih (Bully, Ring)
+- Kako izgleda poziv Sun rpc kompajlera koji fajlovi se dobijaju kao rezultat kompajliranja i šta sadrže
+- Šta predstavlja transakcija u distrubiranim sistemima? Koje osobine treba da zadovolji svaka transakcija da bi se uspešno izvršila
+- Šta se podrazumeva pod pojmom potpuno uređene grupne komunikacije
+- Skalabilnost Distrubiranog sistema i 3 tehnike koje se koriste
+- Prednosti i mane u DS u odnosu na centralizovani
+- Transparentnost DS-a, objasniti sve tipove transparentnosti (pristupna, lokacijska, migraciona, konkurencija, replikacija, otkazi, paralelizacija)
+- Oblasti primene DS-a i detaljno objasniti svaku ( Distribuirani računarski sistem, Distribuirani informacioni sistem, Ugrađeni (sveprisutni) distrubirani sistem) - NAPOMENA distribuirani informacioni sistem smo objašnjavaj transakciju iz jednog prošlog pitanja i acid test)
+- Middleware
+- Fizički i logički časovnici
+- Kako se može locirati server koji implementira udaljenu proceduru i objasniti oba (statičko i dinamičko povezivanje)
+- Koji modeli pristupa udaljenom fajlu postoje, prednosti i mane (Upload/Download i Model udaljenog pristupa)
+- Koja je uloga reference udaljenog objekta prilikom poziva njegovih metoda i koje ključne informacija ta referenca sadrži
+- Šta je rack awareness, objasniti
+- Vrste grešaka po trajanju
+- mirne i vizantijske greške
+
+
+- Razlika između mrežnog, distribuiranog i middleware os
+- Client centric model konzistencije, sve varijante, i primeri skladišta koja su konzistentna/nekonzistenta (monotona čitanja, upisi, read after write i write follows read)
+
+iz skripte belo zlato učiš
+2. (greška konzensus se ostvaruje sa 3m+1, vizantijske sa 2m+1, mirne m+1, koristi m ne k
+4.
+5. (Chord mini zad)
+9.
+10. (pitanje nauči)
+11.
+12.
+13.
+15.
+17.
+18.
+20.(samo pročitaj)
+22.
+23. (nauči)
+24. (nauči)
+26.(pročitaj)
+28.
+29.
+30. (nauči)
+31.
+32.
+34. pređi par puta ovo
+35. nauči
+38.
+40.
+43.
+44.
+45.
+46.
+50.
+51. (ako nije jasno, pogledaj eminu snimak taj deo samo)
+52. pročitaj
+53.
+54.
+55.
+57.
+58.
+61.
+63. pročitaj
+69.
+70.
+
+
+
+HDFS/HADOOP TVRDNJE
+- fajl podrazumevano 128mb
+- namenoda (NN) čuva metapodatke, ime fajla, permisije, mapiranje fajla na blokove, koji datanode(DN) čuva koji blok, veličinu, replike lokacije
+- HDFS ima jedan writer i više readera
+-Faktor replikacije se može konfigurisati na nivou klastera (3 default) i više readera.
+- Izveštaj o blokovima sa svakog DN-a sadrži listu svih blokova koji su smešteni na tom DN-u
+- Korisnički podaci čuvaju se na lokalnom fajl sistemu DN čvorova
+- DN ne zna kojim fajlovima pripadaju blokovi koji su na njemu smešteni, to radi NN
+- HDFS omogućava klijentima da čitaju paralelno sa različnih DN-a
+- mehanizmi za oporavak kvara DN-a ( replikacija blokova na više DN-a, periodično slanje heartbeat paketa NN-u)
+- NN čuva metapodatke, nadgleda ponašanje DN-a, i koordiniše pristup podacima, ne čuva nad kojim se podacima vrši obrada, on samo ima informaciju o blokovima koji čine fajl i gde su locirani u klasteru, vodi računa da svaki blok zadovolji faktor replikacije
+- fajl FsImage je fajl u kome se čuva snapshot meta podataka fajl sistema. EditLog je fajl u kome se trajno čuvaju promene koje se dešavaju u HDFS NN-u.
+- DODATNO NAPIŠI NEKE TVRDNJE SA PREZENTACIJA/VIDEA ZA MAP REDUCE DEAMON U HADOOP/HDFS
