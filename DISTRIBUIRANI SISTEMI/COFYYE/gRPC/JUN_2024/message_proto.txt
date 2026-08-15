@@ -1,0 +1,30 @@
+syntax = "proto3";
+package Messages;
+
+service MessageService {
+  rpc SendMessage(Text) returns (Response);
+  rpc DeleteMessage(TextId) returns (Response);
+  rpc ListMessages(EmptyRequest) returns (stream TextList);
+}
+
+message Text {
+  string msg = 1;
+}
+
+message TextId {
+  int32 id = 1;
+}
+
+message EmptyRequest {}
+
+message Response {
+  int32 textId = 1;
+  string text = 2;
+  string resMsg = 3;
+  bool success = 4;
+}
+
+message TextList {
+  int32 textId = 1;
+  string text = 2;
+}

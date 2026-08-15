@@ -1,0 +1,50 @@
+using Grpc.Core;
+using Messages;
+
+public class MessageServiceImpl : MessageService.MessageServiceBase {
+  private static int textId = 0;
+  private static List<TextList> lists = new List<TextList>();
+
+  public override Task<Response> SendMessage(Text request, ServerCallContext ctx) {
+    int id = textId++;
+
+    lists.Add(new TextList{
+      TextId = id,
+      Text = request.Msg
+    });
+
+    return Task.FromResult(new Response{
+      TextId = id,
+      Text = request.Msg,
+      ResMsg = "Uspesno kreirana poruka",
+      Success = true
+    });
+  }
+
+  public override Task<Response> DeleteMessage(TextId request, ServerCallContext ctx) {
+    var context = lists.Find(m => m.TextId == request.Id);
+    if(context != null) {
+      lists.Remove(context);
+
+      return Task.FromResult(new Response{
+        TextId = context.TextId,
+        Text = context.Text,
+        ResMsg = "Uspesno obrisana poruka",
+        Success = true
+      });
+    } else {
+      return Task.FromResult(new Response{
+        TextId = -1,
+        Text = "",
+        ResMsg = "Poruka ne postoji",
+        Success = false
+      });
+    }
+  }
+
+  public override async Task ListMessages(EmptyRequest request, IServerStreamWriter<TextList> response, ServerCallContext ctx) {
+    foreach (var t in lists) {
+      await response.WriteAsync(t);
+    }
+  }
+}
