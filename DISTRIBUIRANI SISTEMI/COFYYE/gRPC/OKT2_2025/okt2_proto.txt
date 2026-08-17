@@ -1,0 +1,15 @@
+syntax = "proto3";
+package Okt2;
+
+service Okt2Service {
+  rpc isQuadro(stream Input) returns (stream Response);
+}
+
+message Input {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message Response {
+  string text = 1;
+}

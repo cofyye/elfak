@@ -1,0 +1,15 @@
+using Grpc.Core;
+using Okt2;
+
+public class OktServiceImpl : Okt2Service.Okt2ServiceBase {
+
+  public override async Task isQuadro(IAsyncStreamReader<Input> request, IServerStreamWriter<Response> response, ServerCallContext ctx) {
+    await foreach(var r in request.ReadAllAsync()) {
+      if(r.A * r.A == r.B) {
+        await response.WriteAsync(new Response { Text = "Da" });
+      } else {
+        await response.WriteAsync(new Response { Text = "Ne" });
+      }
+    }
+  }
+}
