@@ -1,0 +1,27 @@
+syntax = "proto3";
+package Calculator;
+
+service CalculatorService {
+  rpc sum(stream SumNumReq) returns (SumNumRes);
+  rpc multiply(MulNumReq) returns(MulNumRes);
+}
+
+message SumNumReq {
+  int32 broj = 1;
+}
+
+message SumNumRes {
+  int32 suma = 1;
+  int32 vrednost = 2;
+}
+
+message MulNumReq {
+  int32 operand1 = 1;
+  int32 operand2 = 2;
+}
+
+message MulNumRes {
+  int32 operand1 = 1;
+  int32 operand2 = 2;
+  int32 rezultat = 3;
+}

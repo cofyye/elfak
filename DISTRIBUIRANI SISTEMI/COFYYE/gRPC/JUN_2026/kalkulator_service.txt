@@ -1,0 +1,25 @@
+using Grpc.Core;
+using Calculator;
+
+public class CalculatorServiceImpl : CalculatorService.CalculatorServiceBase {
+
+  public override async Task<SumNumRes> sum(IAsyncStreamReader<SumNumReq> request, ServerCallContext ctx) {
+    int suma = 0;
+    int vrednost = 0;
+    
+    await foreach(var r in request.ReadAllAsync()) {
+      suma += r.Broj;
+      vrednost++;
+    }
+
+    return new SumNumRes { Suma = suma, Vrednost = vrednost };
+  }
+
+  public override Task<MulNumRes> multiply(MulNumReq request, ServerCallContext ctx) {
+    return Task.FromResult(new MulNumRes{
+      Operand1 = request.Operand1,
+      Operand2 = request.Operand2,
+      Rezultat = request.Operand1 * request.Operand2
+    });
+  }
+}
