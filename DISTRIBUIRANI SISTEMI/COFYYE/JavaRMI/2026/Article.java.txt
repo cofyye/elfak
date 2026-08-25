@@ -1,0 +1,4 @@
+public interface Article extends Remote {
+  String info() throws RemoteException;
+  void updateContent(String newContent) throws RemoteException;
+}

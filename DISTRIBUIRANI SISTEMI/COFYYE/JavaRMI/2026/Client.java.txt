@@ -1,0 +1,18 @@
+public class Client {
+  public static void main(String[] args) {
+    try {
+      Encyclopedia enc = (Encyclopedia) Naming.lookup("rmi://localhost:5000/EncyclopediaService");
+
+      System.out.println("Naslovi : " + enc.getArticlesTitles());
+
+      System.out.println("Article 1 : " + enc.getArticleByTitle("Java RMI").info());
+
+      Article a1 = enc.getArticleByTitle("Java RMI");
+      a1.updateContent("New content");
+      System.out.println("New contentttzz : " + a1.info());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}

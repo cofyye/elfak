@@ -1,0 +1,27 @@
+public class EncyclopediaImpl extends UnicastRemoteObject implements Encyclopedia {
+  private Map<String, Article> articles = new HashMap<String, Article>();
+
+  public EncyclopediaImpl() throws RemoteException {
+    super();
+
+    Article a1 = new ArticleImpl("Java RMI", "Java RMI Content");
+    Article a2 = new ArticleImpl("NestJS", "JavaScript is the best");
+
+    this.articles.put("Java RMI", a1);
+    this.articles.put("NestJS", a2);
+  }
+
+  public String getArticlesTitles() throws RemoteException {
+    String titles = "";
+
+    for(String t : articles.keySet()) {
+      titles += t + " , ";
+    }
+
+    return titles;
+  }
+
+  public Article getArticleByTitle(String title) throws RemoteException {
+    return articles.get(title);
+  }
+}

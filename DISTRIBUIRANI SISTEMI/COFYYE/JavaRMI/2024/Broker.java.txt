@@ -1,0 +1,4 @@
+public interface Broker extends Remote {
+  void subscribe(String topic, ClientCallback cbk) throws RemoteException;
+  void publish(String topic, Message msg) throws RemoteException;
+}

@@ -1,0 +1,25 @@
+public class BrokerImpl extends UnicastRemoteObject implements Broker {
+  private Map<String, Set<ClientCallback>> topics = new HashMap<>();
+
+  public BrokerImpl() throws RemoteException {
+    super();
+  }
+
+  public void subscribe(String topic, ClientCallback cbk) throws RemoteException {
+    this.createTopic(topic);
+
+    this.topics.get(topic).add(cbk);
+  }
+
+  public void publish(String topic, Message msg) throws RemoteException {
+    this.createTopic(topic);
+
+    for(ClientCallback c : this.topics.get(topic)) {
+      c.notify(topic, msg);
+    }
+  }
+
+  private void createTopic(String topic) {
+    this.topics.putIfAbsent(topic, new HashSet<>());
+  }
+}

@@ -1,0 +1,25 @@
+public class Client {
+  public static void main(String[] args) {
+    try {
+      Broker broker = (Broker) Naming.lookup("rmi://localhost:1099/BrokerService");
+
+      ClientCallback cbk = new ClientCallbackImpl();
+
+      broker.subscribe("cs16esport", cbk);
+
+      broker.publish("cs16esport", new Message("cs16esport", "najjaca igrica svih vremena"));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static class ClientCallbackImpl extends UnicastRemoteObject implements ClientCallback {
+    public ClientCallbackImpl() throws RemoteException {
+      super();
+    }
+    
+    public void notify(String topic, Message msg) throws RemoteException {
+      System.out.println("Nova poruka u " + topic + " : " + msg.toString());
+    }
+  }
+}

@@ -1,0 +1,4 @@
+public interface Encyclopedia extends Remote {
+  String getArticlesTitles() throws RemoteException;
+  Article getArticleByTitle(String title) throws RemoteException;
+}

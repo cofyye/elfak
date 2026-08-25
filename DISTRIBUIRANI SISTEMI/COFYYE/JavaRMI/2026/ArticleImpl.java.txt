@@ -1,0 +1,21 @@
+public class ArticleImpl extends UnicastRemoteObject implements Article {
+  private String title;
+  private String content;
+  private LocalDateTime lastUpdated;
+
+  public ArticleImpl(String title, String content) throws RemoteException {
+    super();
+    this.title = title;
+    this.content = content;
+    this.lastUpdated = LocalDateTime.now();
+  }
+
+  public String info() throws RemoteException {
+    return "Naslov : " + this.title + " Content : " + this.content + " Updated : " + this.lastUpdated.toString();
+  }
+
+  public void updateContent(String newContent) throws RemoteException {
+    this.content = newContent;
+    this.lastUpdated = LocalDateTime.now();
+  }
+}

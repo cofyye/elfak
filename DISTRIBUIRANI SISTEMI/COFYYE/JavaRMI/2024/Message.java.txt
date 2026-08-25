@@ -1,0 +1,13 @@
+public class Message implements Serializable {
+  private String title;
+  private String content;
+
+  public Message(String title, String content) {
+    this.title = title;
+    this.content = content;
+  }
+
+  public String toString() {
+    return "Poruka [" + this.title + "] " + this.content;
+  }
+}

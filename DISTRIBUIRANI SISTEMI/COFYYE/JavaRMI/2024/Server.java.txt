@@ -1,0 +1,15 @@
+public class Server {
+  public static void main(String[] args) {
+    try {
+      LocateRegistry.createRegistry(1099);
+
+      Broker broker = new BrokerImpl();
+
+      Naming.rebind("rmi://localhost:1099/BrokerService", broker);
+
+      System.out.println("Server started");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}

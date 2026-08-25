@@ -1,0 +1,15 @@
+public class Server {
+  public static void main(String[] args) {
+    try {
+      LocateRegistry.createRegistry(5000);
+
+      Encyclopedia enc = new EncyclopediaImpl();
+
+      Naming.rebind("rmi://localhost:5000/EncyclopediaService", enc);
+
+      System.out.println("Server started");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
