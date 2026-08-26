@@ -1,0 +1,29 @@
+public class Client {
+  public static void main(String[] args) {
+    try {
+      AuctionHouse ah = (AuctionHouse) Naming.lookup("rmi://localhost:4000/AuctionHouseService");
+
+      ClientCallback cbk = new ClientCallbackImpl();
+
+      String subject = "cs16";
+
+      ah.registerBidder(subject, cbk);
+
+      ah.placeBid(subject, new Bid("bot", 100.0));
+
+      ah.placeBid(subject, new Bid("cofyye", 199291929.22));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static class ClientCallbackImpl extends UnicastRemoteObject implements ClientCallback {
+    public ClientCallbackImpl() throws RemoteException {
+      super();
+    }
+
+    public void notify(String subject, Bid bid) throws RemoteException {
+      System.out.println("Subject " + subject + "have a new bidder, it is :" + bid.toString());
+    }
+  }
+}

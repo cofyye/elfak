@@ -1,0 +1,35 @@
+public class AuctionHouseImpl extends UnicastRemoteObject implements AuctionHouse {
+  private Map<String, Double> bids = new HashMap<>();
+  private Map<String, Set<ClientCallback>> subscribers = new HashMap<>();
+
+  public AuctionHouseImpl() throws RemoteException {
+    super();
+  }
+
+  public void registerBidder(String subject, ClientCallback cbk) throws RemoteException {
+    this.createItem(subject);
+
+    this.subscribers.get(subject).add(cbk);
+  }
+
+  public boolean placeBid(String subject, Bid bid) throws RemoteException {
+    this.createItem(subject);
+
+    if(bid.getAmount() > this.bids.get(subject)) {
+      this.bids.put(subject, bid.getAmount());
+
+      for (ClientCallback c : this.subscribers.get(subject)) {
+        c.notify(subject, bid);
+      }
+
+      return true;
+    }
+
+    return false;
+  }
+
+  private void createItem(String subject) {
+    this.bids.putIfAbsent(subject, 0.0);
+    this.subscribers.putIfAbsent(subject, new HashSet<>());
+  }
+}

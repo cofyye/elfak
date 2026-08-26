@@ -1,0 +1,19 @@
+Korišćenjem Java RMI tehnologije implementirati simulaciju sistema 
+za onlajn aukciju. Klasa AuctionHouse treba da čuva informacije o 
+svim predmetima koji se trenutno prodaju, kao i o trenutno najvišoj 
+ponudi za svaki predmet. Ponuda je definisana klasom Bid 
+(private String bidder, private double amount).
+
+Potrebno je implementirati metodu registerBidder kojom se klijent 
+prijavljuje za praćenje određenog predmeta, kao i metodu placeBid
+ kojom klijent daje ponudu za zadati predmet. Ponuda se prihvata samo 
+ ukoliko je viša od trenutno najviše ponude za taj predmet — metoda vraća 
+ true ako je ponuda prihvaćena, odnosno false u suprotnom.
+
+Kada je ponuda prihvaćena, svi klijenti koji prate taj predmet moraju 
+biti obavešteni o novoj najvišoj ponudi. Predmet se ne kreira eksplicitno, 
+već se, ukoliko ne postoji, kreira implicitno pozivom metode createItem.
+
+Napisati serversku aplikaciju za hostovanje aukcijske kuće i registrovati 
+je u RMI registar na portu 4000, kao i klijentsku aplikaciju koja će
+ minimalno demonstrirati funkcionisanje istog.

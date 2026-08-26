@@ -1,0 +1,3 @@
+public interface ClientCallback extends Remote {
+  void notify(String subject, Bid bid) throws RemoteException;
+}

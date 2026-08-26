@@ -1,0 +1,15 @@
+public class Server {
+  public static void main(String[] args) {
+    try {
+      LocateRegistry.createRegistry(4000);
+
+      AuctionHouse ah = new AuctionHouseImpl();
+
+      Naming.rebind("rmi://localhost:4000/AuctionHouseService", ah);
+
+      System.out.println("Server started");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}

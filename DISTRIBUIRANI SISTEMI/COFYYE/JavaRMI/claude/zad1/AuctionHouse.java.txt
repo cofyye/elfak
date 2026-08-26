@@ -1,0 +1,4 @@
+public interface AuctionHouse extends Remote {
+  void registerBidder(String subject, ClientCallback cbk) throws RemoteException;
+  boolean placeBid(String subject, Bid bid) throws RemoteException;
+}

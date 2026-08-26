@@ -1,0 +1,17 @@
+public class Bid implements Serializable {
+  private String bidder;
+  private double amount;
+
+  public Bid(String bidder, double amount) {
+    this.bidder = bidder;
+    this.amount = amount;
+  }
+
+  public double getAmount() {
+    return this.amount;
+  }
+
+  public String toString() {
+    return "Bidder " + this.bidder + " bid " + this.amount;
+  }
+}
