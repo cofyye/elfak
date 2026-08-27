@@ -1,0 +1,9 @@
+<configuration>
+  <system.serviceModel>
+    <services>
+      <service name="Jun24.ZakupSkladista">
+        <endpoint contract="Jun24.IZakupSkladista" binding="basicHttpBinding" />
+      </service>
+    </services>
+  </system.serviceModel>
+</configuration>

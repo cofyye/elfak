@@ -1,0 +1,11 @@
+[DataContract]
+public class Vlasnik {
+  [DataMember]
+  public string Ime { get; set; }
+
+  [DataMember]
+  public string Prezime { get; set; }
+
+  [DataMember]
+  public string JMBG { get; set; }
+}

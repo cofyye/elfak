@@ -1,0 +1,34 @@
+public class Client {
+  public static void Main(string[] args) {
+    ZakupSkladistaClient proxy = new ZakupSkladistaClient();
+
+    Vlasnik petar = new Vlasnik {
+      Ime = "Petar",
+      Prezime = "Petrovic",
+      JMBG = "123543"
+    };
+
+    Skladiste skladiste = new Skladiste {
+      IdSkladista = 1,
+      PocetakZakupa = DateTime.Now,
+      KrajZakupa = DateTime.Now.AddDays(30),
+      Cena = 213.0m
+    };
+
+    proxy.ZakupiSkladiste(petar, skladiste);
+
+    Console.WriteLine("Aktivna skladista vlasnika:");
+    foreach (Skladiste s in proxy.VratiListuAktivnihSkladista("123543"))
+      Console.WriteLine($"Id: {s.IdSkladista}, cena: {s.Cena}, od {s.PocetakZakupa} do {s.KrajZakupa}");
+
+    Console.WriteLine("Vlasnici aktivnih skladista:");
+    foreach (Vlasnik v in proxy.VratiListuVlasnikaAktivnihSkladista())
+      Console.WriteLine($"{v.Ime} {v.Prezime}, jmbg: {v.JMBG}");
+
+    Console.WriteLine("Istorija zakupa:");
+    foreach (Zakup z in proxy.VratiIstorijuZakupa())
+      Console.WriteLine($"Skladiste {z.Skladiste.IdSkladista} - {z.Vlasnik.Ime} {z.Vlasnik.Prezime}");
+
+    proxy.Close();
+  }
+}

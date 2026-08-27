@@ -1,0 +1,14 @@
+[ServiceContract]
+public interface IZakupSkladista {
+  [OperationContract]
+  void ZakupiSkladiste(Vlasnik vlasnik, Skladiste skladiste);
+
+  [OperationContract]
+  List<Skladiste> VratiListuAktivnihSkladista(string jmbg);
+
+  [OperationContract]
+  List<Vlasnik> VratiListuVlasnikaAktivnihSkladista();
+
+  [OperationContract]
+  List<Zakup> VratiIstorijuZakupa();
+}
