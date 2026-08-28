@@ -1,0 +1,9 @@
+<configuration>
+  <system.serviceModel>
+    <services>
+      <service name="Jun26.Kalkulator">
+        <endpoint contract="Jun26.IKalkulator" binding="basicHttpBinding" />
+      </service>
+    </services>
+  </system.serviceModel>
+</configuration>

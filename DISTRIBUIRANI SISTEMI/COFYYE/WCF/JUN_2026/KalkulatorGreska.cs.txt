@@ -1,0 +1,5 @@
+[DataContract]
+public class KalkulatorGreska {
+  [DataMember]
+  public string Poruka { get; set; }
+}

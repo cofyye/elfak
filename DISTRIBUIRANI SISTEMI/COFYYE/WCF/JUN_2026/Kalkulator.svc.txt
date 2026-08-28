@@ -1,0 +1,45 @@
+[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+public class Kalkulator : IKalkulator {
+  private Response response = new Response { Rezultat = 0, Koraci = "" };
+
+  public Response ObrisiRacunicu() {
+    response.Rezultat = 0;
+    response.Koraci = "";
+
+    return response;
+  }
+
+  public Response DodajBroj(int broj) {
+    response.Rezultat += broj;
+    response.Koraci += "+" + broj;
+
+    return response;
+  }
+
+  public Response OduzmiBroj(int broj) {
+    response.Rezultat -= broj;
+    response.Koraci += "-" + broj;
+
+    return response;
+  }
+
+  public Response PomnoziBrojem(int broj) {
+    response.Rezultat *= broj;
+    response.Koraci += "*" + broj;
+
+    return response;
+  }
+
+  public Response PodeliRezultatBrojem(int broj) {
+    if(broj == 0) {
+      throw new FaultException<KalkulatorGreska>(
+        new KalkulatorGreska { Poruka = "Deljenje nulom nije dozvoljeno "}
+      );
+    }
+
+    response.Rezultat /= broj;
+    response.Koraci += "/" + broj;
+
+    return response;
+  }
+}

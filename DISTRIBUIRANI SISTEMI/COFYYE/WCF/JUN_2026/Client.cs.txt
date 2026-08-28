@@ -1,0 +1,29 @@
+public class Client {
+  public static void Main(string[] args) {
+    KalkulatorClient proxy = new KalkulatorClient();
+
+    var rez1 = proxy.DodajBroj(3);
+    Console.WriteLine($"Rezultat je {rez1.Rezultat} , Koraci : {rez1.Koraci}");
+
+    var rez2 = proxy.PomnoziBrojem(9);
+    Console.WriteLine($"Rezultat je {rez2.Rezultat} , Koraci : {rez2.Koraci}");
+
+    var rez3 = proxy.OduzmiBroj(5);
+    Console.WriteLine($"Rezultat je {rez3.Rezultat} , Koraci : {rez3.Koraci}");
+
+    try {
+        proxy.PodeliRezultatBrojem(0);
+    }
+    catch (FaultException<KalkulatorGreska> ex) {
+        Console.WriteLine($"Greska: {ex.Detail.Poruka}");
+    }
+
+    var rez4 = proxy.PodeliRezultatBrojem(3);
+    Console.WriteLine($"Rezultat je {rez4.Rezultat} , Koraci : {rez4.Koraci}");
+
+    var rez5 = proxy.ObrisiRacunicu();
+    Console.WriteLine($"Rezultat je {rez5.Rezultat} , Koraci : {rez5.Koraci}");
+
+    proxy.Close();
+  }
+}

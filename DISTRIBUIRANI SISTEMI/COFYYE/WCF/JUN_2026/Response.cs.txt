@@ -1,0 +1,8 @@
+[DataContract]
+public class Response {
+  [DataMember]
+  public int Rezultat { get; set; }
+
+  [DataMember]
+  public string Koraci { get; set; }
+}

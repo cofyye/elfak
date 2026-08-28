@@ -1,0 +1,18 @@
+[ServiceContract]
+public interface IKalkulator {
+  [OperationContract]
+  Response ObrisiRacunicu();
+
+  [OperationContract]
+  Response DodajBroj(int broj);
+
+  [OperationContract]
+  Response OduzmiBroj(int broj);
+
+  [OperationContract]
+  Response PomnoziBrojem(int broj);
+
+  [OperationContract]
+  [FaultContract(typeof(KalkulatorGreska))]
+  Response PodeliRezultatBrojem(int broj);
+}
