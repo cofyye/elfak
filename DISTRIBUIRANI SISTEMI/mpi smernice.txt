@@ -1,0 +1,13 @@
+pojedinacni pokazivaci - MPI_File_read, MPI_File_write - i ovde mora MPI_File_seek uz jednu od te dve
+
+sa eksplicitni pokazivac - MPI_File_read_at, MPI_File_write_at ( I NE IDE SEEK)
+
+offset = (MPI_Offset)(size - 1 - rank) * N * sizeof(int); - unazad
+offset = (MPI_Offset) rank * N * sizeof(int); - napred 
+
+bufsize = FILESIZE / nprocs;
+buf = (int) malloc(bufsize);
+nints = bufsize / sizeof(int); 
+1kb - 1024 
+1mb 1024 * 1024
+10mb - 10 * 1024 * 1024

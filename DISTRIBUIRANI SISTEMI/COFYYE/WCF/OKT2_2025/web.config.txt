@@ -1,0 +1,17 @@
+<configuration>
+  <system.serviceModel>
+    <services>
+      <service name="Okt225.Kalkulator">
+        <endpoint contract="Okt225.IKalkulator" binding="wsDualHttpBinding" />
+      </service>
+    </services>
+    <bindings>
+      <wsDualHttpBinding>
+        <binding name="wsDualHttpBindingConfiguration" transactionFlow="true" />
+      </wsDualHttpBinding>
+    </bindings>
+    <protocolMapping>
+      <add scheme="http" binding="wsDualHttpBinding" bindingConfiguration="wsDualHttpBindingConfiguration"/>
+    </protocolMapping>
+  </system.serviceModel>
+</configuration>

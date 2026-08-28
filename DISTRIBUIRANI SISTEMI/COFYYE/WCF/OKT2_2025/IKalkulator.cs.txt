@@ -1,0 +1,17 @@
+[ServiceContract(CallbackContract = typeof(IKalkulatorCallback), SessionMode = SessionMode.Required)]
+public interface IKalkulator {
+  [OperationContract]
+  double ObrisiRacunicu();
+
+  [OperationContract]
+  double DodajBroj(int broj);
+
+  [OperationContract]
+  double OduzmiBroj(int broj);
+
+  [OperationContract]
+  double PomnoziBrojem(int broj);
+
+  [OperationContract]
+  double PodeliBroj(int broj);
+}

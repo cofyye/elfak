@@ -1,0 +1,58 @@
+[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+public class Kalkulator : IKalkulator {
+  private string koraci = "0";
+  private double rezultat = 0;
+
+  private IKalkulatorCallback callback;
+
+  public Kalkulator() {
+    callback = OperationContext.Current.GetCurrentCallbackChannel<IKalkulatorCallback>();
+  }
+
+  public double ObrisiRacunicu() {
+    koraci = "0";
+    rezultat = 0;
+
+    callback.PrikaziIzraz(koraci);
+
+    return rezultat;
+  }
+
+  public double DodajBroj(int broj) {
+    rezultat += broj;
+    koraci += "+" + broj;
+
+    callback.PrikaziIzraz(koraci);
+
+    return rezultat;
+  }
+
+  public double OduzmiBroj(int broj) {
+    rezultat -= broj;
+    koraci += "-" + broj;
+
+    callback.PrikaziIzraz(koraci);
+
+    return rezultat;
+  }
+
+  public double PomnoziBrojem(int broj) {
+    rezultat *= broj;
+    koraci += "*" + broj;
+
+    callback.PrikaziIzraz(koraci);
+
+    return rezultat;
+  }
+
+  public double PodeliBroj(int broj) {
+    if (broj == 0) return rezultat;
+
+    rezultat /= broj;
+    koraci += "/" + broj;
+
+    callback.PrikaziIzraz(koraci);
+
+    return rezultat;
+  }
+}

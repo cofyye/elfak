@@ -1,0 +1,4 @@
+public interface IKalkulatorCallback {
+  [OperationContract(IsOneWay = true)]
+  void PrikaziIzraz(string izraz);
+}
