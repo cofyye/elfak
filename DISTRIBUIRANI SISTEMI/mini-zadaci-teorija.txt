@@ -1,0 +1,76 @@
+-=[ Otpornost na greske (broj procesa) ]=-
+
+1. U grupi postoji deset repliciranih procesa. 
+Ako mogu nastupiti samo mirne greške, koliko maksimalno procesa može otkazati 
+a da se ipak dobije korektan rezultat? Ako mogu nastupiti greške vizantijskog 
+tipa, koliko procesa može maksimalno otkazati a da se ipak dobije korektan 
+rezultat? Šta ako mogu nastupiti greške vizantijskog tipa a procesi moraju 
+postići konsenzus? Koliko u ovom slučaju maksimalno procesa može otkazati? 
+Svaki odgovor obrazložiti.
+
+n = 10;
+
+a) Mirne greske:
+k + 1 ≤ 10
+k ≤ 10 - 1
+k ≤ 9;
+Dovoljno je samo jedan proces da radi kako bismo dobili tacan rezultat.
+Iako 9 ne rade, ovaj 1 sto radi je dovoljan za tacan rezultat jer mirne greske
+znace da procesi prestanu da rade i cute, ne daju pogresne rezultate.
+
+b) Vizantijske greske:
+2k + 1 ≤ 10
+2k ≤ 10 - 1
+k ≤ 9/2
+k ≤ 4
+Ovde imamo 6 ispravnih procesa i 4 koji vracaju greske. S obzirom da kod
+vizantijskih gresaka imamo to da su to procesi koji rade i lazu odnosno
+vracaju pogresne rezultate pa tu mora da bude vecinsko glasanje. U ovom slucaju
+imamo 6 ispravnih procesa i 4 koji lazu tako da ce ovih 6 vecina dati 
+tacan rezultat
+
+c) Vizantijske + konsenzus greske:
+3k + 1 ≤ 10
+3k ≤ 10 - 1
+k ≤ 9/3
+k ≤ 3
+Kod ovih gresaka imamo procese koji lazu i moraju da se sloze koji procesi
+vracaju tacan rezultat. Ovde radi Lampartov algoritam samo u slucaju kada vazi
+2/3 procesa da moraju da vrate tacan rezultat, odnosno 2k + 1 a u ovom slucaju
+to je 2 * 3 + 1 = 6 + 1 = 7
+
+==============================
+
+Isti zadatak samo n = 5;
+
+n = 5;
+
+a) Mirne greske:
+k + 1 ≤ 5
+k ≤ 5 - 1
+k ≤ 4;
+Dovoljno je samo jedan proces da radi kako bismo dobili tacan rezultat.
+Iako 4 ne rade, ovaj 1 sto radi je dovoljan za tacan rezultat jer mirne greske
+znace da procesi prestanu da rade i cute, ne daju pogresne rezultate.
+
+b) Vizantijske greske:
+2k + 1 ≤ 5
+2k ≤ 5 - 1
+k ≤ 4/2
+k ≤ 2
+Ovde imamo 2 procesa koji lazu i 3 koji vracaju tacne rezultate. S obzirom da kod
+vizantijskih gresaka imamo to da su to procesi koji rade i lazu odnosno
+vracaju pogresne rezultate pa tu mora da bude vecinsko glasanje. U ovom slucaju
+imamo 3 ispravnih procesa i 2 koji lazu tako da ce nadjacati ove koji lazu
+
+c) Vizantijske + konsenzus greske:
+3k + 1 ≤ 5
+3k ≤ 5 - 1
+k ≤ 4/3
+k ≤ 1
+Kod ovih gresaka imamo procese koji lazu i moraju da se sloze koji procesi
+vracaju tacan rezultat. Ovde radi Lamportov algoritam samo u slucaju kada vazi
+2/3 procesa da moraju da vrate tacan rezultat. Za k = 1 to je
+3 * 1  + 1 ≤ 5 sto je 4 ≤ 5 i za k = 1 vazi uslov 2/3, ali recimo za k = 2
+ne bi vazio uslov jer imamo
+3 * 2 + 1  ≤ 5 a to je 7  ≤ 5 sto je nevazece, pa k = 2 nije moguce
