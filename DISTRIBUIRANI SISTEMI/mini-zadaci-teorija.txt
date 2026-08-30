@@ -155,3 +155,106 @@ Kolona 3: 4 + 2 + 2 = 8 i to je tacno
 ⎢  1    6    2  |  9  ⎥
 ⎣  8   10    8  | 26  ⎦
 
+==============================================================
+
+-= [ Lamport markice — Update X=25/Y=27 ] =-
+
+a) U distribuiranoj bazi podataka koriste se Lamportove markice za 
+uređivanje događaja. Dva ažuriranja dobijaju sledeće markice: 
+Update X = 25 i Update Y = 27. Da li se može zaključiti da je 
+ažuriranje X uzrokovalo ažuriranje Y? Obrazložiti odgovor.
+
+NE, ne može se zaključiti. Kod Lamportovih markica važi samo jedan smer: 
+ako je X uzrokovao Y, onda je T(X) < T(Y). Obrnuto ne važi — iz 25 < 27 ne 
+sledi uzročnost; X i Y mogu biti potpuno konkurentni 
+(u procesima koji ne razmenjuju poruke). Jedino što se sme zaključiti: 
+Y sigurno nije uzrokovao X.
+
+To je ceo odgovor. Nauči tu rečenicu i a) je rešeno zauvek.
+
+==============================================================
+
+-= [ Broj poruka za kritičnu sekciju (10 procesa) ] =-
+
+Sistem ima 10 procesa. Koliko je poruka potrebno razmeniti da bi proces
+ušao i napustio kritičnu sekciju ako se koristi: 
+a) Centralizovani algoritam; 
+b) Ricart–Agrawala algoritam?
+
+a) Centralizovani: 3 poruke — REQUEST (proces→koordinator), OK
+   (koordinator→proces), RELEASE (proces→koordinator pri napuštanju).
+   Broj poruka ne zavisi od broja procesa.
+
+b) Ricart-Agrawala: 2(n−1) = 2·(10−1) = 18 poruka — proces šalje
+   REQUEST svim ostalim procesima (9 poruka) i mora da primi OK od
+   svih (9 poruka) da bi ušao u kritičnu sekciju.
+
+==============================================================
+
+-= [ Kvorum ] =-
+
+Distribuirani sistem koristi protokol baziran na kvorumu. 
+U sistemu postoji 12 replika. Koje vrednosti Read i Write kvoruma je 
+najbolje odabrati ako se čitanja obavljaju često a ažuriranja retko?
+Obrazložiti.
+
+Uslovi kvoruma:  N_R + N_W > N   (sprečava read-write konflikte —
+                                  read i write kvorum se uvek preklapaju,
+                                  pa čitanje zakači bar jednu svežu kopiju)
+                 N_W > N/2       (sprečava write-write konflikte —
+                                  dva istovremena upisa moraju deliti server)
+
+Čitanja su česta → biramo minimalan N_R = 1.
+Iz uslova 1: 1 + N_W > 12  →  N_W = 12.   Provera uslova 2: 12 > 6 ✓
+
+Odgovor: N_R = 1, N_W = 12. Čitanje kontaktira samo jedan server pa su
+česta čitanja jeftina; skupo ažuriranje svih 12 replika plaća se retko.
+
+ N_R:   1    2    3    4    5    6
+ N_W:  12   11   10    9    8    7
+        ↑                        ↑
+   čitanje džabe,           najjeftiniji upis
+   upis dira sve            koji je uopšte dozvoljen
+
+
+Tabela koja znaci za minimum.
+
+==============================================================
+
+-= [ HDFS ] =-
+
+Pretpostavimo da je fajl veličine 514MB sačuvan na HDFS-u.
+Ako je veličina bloka 64MB i podrazumevani faktor replikacije 4, 
+koliki je ukupni broj blokova i kolika je veličina svakog od njih?
+
+Fajl od 514MB deli se na blokove od 64MB: 514 = 8 × 64 + 2, pa ima
+9 blokova po kopiji — 8 punih od 64MB i 1 blok od 2MB (poslednji blok
+zauzima samo koliko mu treba). Sa faktorom replikacije 4 svaki blok
+postoji u 4 primerka: ukupno 9 × 4 = 36 blokova, od toga 32 bloka
+od 64MB i 4 bloka od 2MB. Ukupno zauzeće: 514 × 4 = 2056MB.
+
+==============================================================
+
+-= [ NTP ] -=
+
+Časovnik na računaru se sinhronizuje korišćenjem NTP protokola.
+Zabeležena su sledeća vremena:
+a. vreme na klijentu kada upućuje zahtev serveru: 6:22:15.100
+b. vreme prijema zahteva na serveru: 7:05:10.700
+c. vreme kada server šalje odgovor: 7:05:10.710
+d. vreme na klijentu kada prima odgovor od servera: 6:22:15.250
+Na koju vrednost će se postaviti klijentski časovnik?
+
+KORAK 1 — koliko je ceo krug trajao, po klijentovom satu:
+t3 − t0 = 6:22:15.250 − 6:22:15.100 = 150 ms
+
+KORAK 2 — koliko je od toga server držao zahtev kod sebe:
+t2 − t1 = 7:05:10.710 − 7:05:10.700 = 10 ms
+
+KORAK 3 — čisto putovanje kroz mrežu (tamo + nazad):
+δ = 150 − 10 = 140 ms        →  u jednom smeru: δ/2 = 70 ms
+
+KORAK 4 — tačno vreme SADA = kad je server poslao odgovor + putovanje odgovora:
+t3' = t2 + δ/2 = 7:05:10.710 + 0.070 = 7:05:10.780
+
+==============================================================
